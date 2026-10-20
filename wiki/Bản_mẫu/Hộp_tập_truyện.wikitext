@@ -1,0 +1,39 @@
+{| class="infobox hsck-infobox"
+! colspan="2" class="hsck-infobox-title" | {{#if:{{{số tập|}}}|Tập {{{số tập}}}:&#32;}}{{{tên|{{PAGENAME}}}}}
+|-
+{{#if:{{{bìa|}}}|{{!}} colspan="2" class="hsck-infobox-image" {{!}} [[Tập tin:{{{bìa}}}|250px|alt=Bìa {{{tên|{{PAGENAME}}}}}]]{{#if:{{{chú thích|}}}|<span class="hsck-infobox-caption">{{{chú thích}}}</span>}}}}
+|-
+! colspan="2" class="hsck-infobox-header" | Xuất bản
+|-
+{{#if:{{{phát hành|}}}|! scope="row" {{!}} Phát hành
+{{!}} {{{phát hành}}}}}
+|-
+{{#if:{{{nhà xuất bản|}}}|! scope="row" {{!}} Nhà xuất bản
+{{!}} {{{nhà xuất bản}}}}}
+|-
+{{#if:{{{số trang|}}}|! scope="row" {{!}} Số trang
+{{!}} {{{số trang}}}}}
+|-
+{{#if:{{{isbn|}}}|! scope="row" {{!}} ISBN
+{{!}} {{{isbn}}}}}
+|-
+{{#if:{{{tập trước|}}}{{{tập sau|}}}|{{!}} colspan="2" class="hsck-infobox-nav" {{!}} {{#if:{{{tập trước|}}}|← [[{{{tập trước}}}]]}}{{#if:{{{tập trước|}}}|{{#if:{{{tập sau|}}}|&nbsp;·&nbsp;}}}}{{#if:{{{tập sau|}}}|[[{{{tập sau}}}]] →}}}}
+|}<includeonly>{{#ifeq:{{NAMESPACE}}||[[Thể loại:Tập truyện]]}}</includeonly><noinclude>
+== Cách dùng ==
+Đặt ở đầu bài viết về một tập truyện. Mọi tham số đều không bắt buộc. Bài viết trong không gian chính tự vào [[:Thể loại:Tập truyện]].
+<pre>
+{{Hộp tập truyện
+| số tập        =
+| tên           =
+| bìa           =
+| chú thích     =
+| phát hành     =
+| nhà xuất bản  =
+| số trang      =
+| isbn          =
+| tập trước     =
+| tập sau       =
+}}
+</pre>
+[[Thể loại:Bản mẫu hộp thông tin]]
+</noinclude>

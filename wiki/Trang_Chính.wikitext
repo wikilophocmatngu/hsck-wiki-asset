@@ -1,0 +1,46 @@
+__NOTOC__ __NOEDITSECTION__
+<div class="hsck-mainpage">
+<div class="hsck-hero">
+<div class="hsck-hero-title">Chào mừng đến với {{SITENAME}}!</div>
+<p class="hsck-hero-sub">Bách khoa toàn thư mở về bộ truyện tranh '''Học Sinh Chân Kinh''' của B.R.O, mà ai cũng có thể đóng góp.<br />Hiện có '''{{NUMBEROFARTICLES}}''' bài viết.</p>
+</div>
+<div class="hsck-grid">
+<div class="hsck-box hsck-box--wide">
+<div class="hsck-box-title">Giới thiệu</div>
+<div class="hsck-box-body">
+'''Học Sinh Chân Kinh''' là bộ truyện tranh Việt Nam dành cho tuổi teen của nhóm tác giả B.R.O, cũng là tác giả của [https://lophocmatngu.wiki Lớp Học Mật Ngữ]. Truyện xoay quanh cuộc sống học đường của các cô cậu học sinh cùng thầy cô và bạn bè.
+</div>
+</div>
+<div class="hsck-box hsck-box--ink">
+<div class="hsck-box-title">[[:Thể loại:Nhân vật|Nhân vật]]</div>
+<div class="hsck-box-body">
+Tìm hiểu về các học sinh, thầy cô và những nhân vật khác trong truyện.
+* [[:Thể loại:Học sinh|Học sinh]]
+* [[:Thể loại:Giáo viên|Giáo viên]]
+* [[:Thể loại:Nhân vật|Tất cả nhân vật]]
+</div>
+</div>
+<div class="hsck-box hsck-box--peach">
+<div class="hsck-box-title">[[:Thể loại:Tập truyện|Tập truyện]]</div>
+<div class="hsck-box-body">
+Danh sách các tập truyện đã phát hành, tóm tắt và nhân vật xuất hiện.
+* [[:Thể loại:Tập truyện|Tất cả tập truyện]]
+* [[:Thể loại:Địa điểm|Địa điểm]]
+</div>
+</div>
+<div class="hsck-box hsck-box--blossom">
+<div class="hsck-box-title">Tham gia đóng góp</div>
+<div class="hsck-box-body">
+* [[Special:NewPages|Trang mới]] · [[Special:WantedPages|Trang cần viết]]
+* Dùng [[Bản mẫu:Hộp nhân vật]] và [[Bản mẫu:Hộp tập truyện]] khi viết bài.
+* Thảo luận tại [[Project:Cộng đồng|cổng cộng đồng]].
+</div>
+</div>
+<div class="hsck-box">
+<div class="hsck-box-title">Trang mới</div>
+<div class="hsck-box-body">
+{{Special:NewPages/5}}
+</div>
+</div>
+</div>
+</div>

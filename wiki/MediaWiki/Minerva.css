@@ -1,0 +1,60 @@
+/* Wiki Học Sinh Chân Kinh — khung giao diện Minerva Neue (di động).
+   Kiểm tra trên MinervaNeue (MW 1.46.2). Chế độ tối: có (day / night / os).
+   Giả định $wgMFCustomSiteModules = false (mặc định Miraheze) → Common.css vẫn nạp. */
+
+/* ===== Tokens: liên kết & nút chính theo màu "mực" của bìa truyện ===== */
+:root, .notheme, .skin-invert {
+	--color-progressive: #1d4f9c;              /* 7.9:1 trên #fff */
+	--color-progressive--hover: #2a63ba;
+	--color-progressive--active: #143a74;
+	--background-color-progressive: #1d4f9c;
+	--border-color-progressive: #1d4f9c;
+	--hsck-header-bg: #0d6b52;
+	--hsck-header-fg: #fff;                    /* 6.5:1 */
+}
+html.skin-theme-clientpref-night {
+	--color-progressive: #7fb8f0;              /* 8.8:1 trên #101418 */
+	--color-progressive--hover: #a3ccf5;
+	--color-progressive--active: #5d9fe0;
+	--background-color-progressive: #7fb8f0;
+	--border-color-progressive: #7fb8f0;
+	--hsck-header-bg: #123a30;
+	--hsck-header-fg: #eaecf0;                 /* 10.6:1 */
+}
+@media screen and (prefers-color-scheme: dark) {
+	html.skin-theme-clientpref-os {
+		--color-progressive: #7fb8f0;
+		--color-progressive--hover: #a3ccf5;
+		--color-progressive--active: #5d9fe0;
+		--background-color-progressive: #7fb8f0;
+		--border-color-progressive: #7fb8f0;
+		--hsck-header-bg: #123a30;
+		--hsck-header-fg: #eaecf0;
+	}
+}
+
+/* ===== Header ===== */
+.header-container.header-chrome {
+	background-color: var(--hsck-header-bg);
+	border-bottom: 3px solid var(--hsck-peach, #f6a65a);
+	box-shadow: none;
+}
+.minerva-header .branding-box a,
+.header-container .minerva-header .cdx-button {
+	color: var(--hsck-header-fg);
+}
+/* Menu trượt & menu thành viên nằm bên trong header: trả lại màu chữ gốc */
+.minerva-header #mw-mf-page-left,
+.minerva-header #p-personal {
+	color: var(--color-base);
+}
+
+/* ===== Nội dung ===== */
+.skin-minerva #firstHeading {
+	color: var(--hsck-accent, #0d6b52);
+}
+
+/* ===== Chân trang ===== */
+.minerva-footer {
+	border-top: 3px solid var(--hsck-peach, #f6a65a);
+}

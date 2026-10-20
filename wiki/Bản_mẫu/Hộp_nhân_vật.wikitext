@@ -1,0 +1,47 @@
+{| class="infobox hsck-infobox"
+! colspan="2" class="hsck-infobox-title" | {{{tên|{{PAGENAME}}}}}
+|-
+{{#if:{{{hình|}}}|{{!}} colspan="2" class="hsck-infobox-image" {{!}} [[Tập tin:{{{hình}}}|250px|alt={{{tên|{{PAGENAME}}}}}]]{{#if:{{{chú thích|}}}|<span class="hsck-infobox-caption">{{{chú thích}}}</span>}}}}
+|-
+! colspan="2" class="hsck-infobox-header" | Thông tin
+|-
+{{#if:{{{tên khác|}}}|! scope="row" {{!}} Tên khác
+{{!}} {{{tên khác}}}}}
+|-
+{{#if:{{{giới tính|}}}|! scope="row" {{!}} Giới tính
+{{!}} {{{giới tính}}}}}
+|-
+{{#if:{{{sinh nhật|}}}|! scope="row" {{!}} Sinh nhật
+{{!}} {{{sinh nhật}}}}}
+|-
+{{#if:{{{vai trò|}}}|! scope="row" {{!}} Vai trò
+{{!}} {{{vai trò}}}}}
+|-
+{{#if:{{{lớp|}}}|! scope="row" {{!}} Lớp
+{{!}} {{{lớp}}}}}
+|-
+{{#if:{{{gia đình|}}}|! scope="row" {{!}} Gia đình
+{{!}} {{{gia đình}}}}}
+|-
+{{#if:{{{xuất hiện đầu|}}}|! scope="row" {{!}} Xuất hiện đầu
+{{!}} {{{xuất hiện đầu}}}}}
+|}<includeonly>{{#ifeq:{{NAMESPACE}}||[[Thể loại:Nhân vật]]{{#switch:{{lc:{{{loại|}}}}}|học sinh=[[Thể loại:Học sinh]]|giáo viên=[[Thể loại:Giáo viên]]}}}}</includeonly><noinclude>
+== Cách dùng ==
+Đặt ở đầu bài viết về nhân vật. Mọi tham số đều không bắt buộc; dòng nào để trống sẽ bị ẩn. Bài viết trong không gian chính tự vào [[:Thể loại:Nhân vật]], và thêm [[:Thể loại:Học sinh]] hoặc [[:Thể loại:Giáo viên]] theo tham số <code>loại</code>.
+<pre>
+{{Hộp nhân vật
+| tên           =
+| hình          =
+| chú thích     =
+| tên khác      =
+| giới tính     =
+| sinh nhật     =
+| vai trò       =
+| lớp           =
+| gia đình      =
+| xuất hiện đầu =
+| loại          = học sinh / giáo viên
+}}
+</pre>
+[[Thể loại:Bản mẫu hộp thông tin]]
+</noinclude>

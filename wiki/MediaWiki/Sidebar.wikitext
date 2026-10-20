@@ -1,0 +1,16 @@
+* navigation
+** mainpage|mainpage-description
+** recentchanges-url|recentchanges
+** randompage-url|randompage
+** helppage|help-mediawiki
+* Học Sinh Chân Kinh
+** Thể loại:Nhân vật|Nhân vật
+** Thể loại:Tập truyện|Tập truyện
+** Thể loại:Địa điểm|Địa điểm
+* Cộng đồng
+** Project:Cộng đồng|Cổng cộng đồng
+** Special:NewPages|Trang mới
+** Special:WantedPages|Trang cần viết
+* SEARCH
+* TOOLBOX
+* LANGUAGES
