@@ -1,0 +1,37 @@
+<templatestyles src="Bản mẫu:Hộp điều hướng/styles.css" />
+{| class="navbox hsck-navbox mw-collapsible{{#ifeq:{{{trạng thái|}}}|thu gọn|&#32;mw-collapsed}}"
+! colspan="2" class="hsck-navbox-title" | {{{tiêu đề|{{PAGENAME}}}}}
+|-
+{{#if:{{{nhóm1|}}}|! scope="row" {{!}} {{{nhóm1}}}
+{{!}} {{{danh sách1|}}}}}
+|-
+{{#if:{{{nhóm2|}}}|! scope="row" {{!}} {{{nhóm2}}}
+{{!}} {{{danh sách2|}}}}}
+|-
+{{#if:{{{nhóm3|}}}|! scope="row" {{!}} {{{nhóm3}}}
+{{!}} {{{danh sách3|}}}}}
+|-
+{{#if:{{{nhóm4|}}}|! scope="row" {{!}} {{{nhóm4}}}
+{{!}} {{{danh sách4|}}}}}
+|-
+{{#if:{{{nhóm5|}}}|! scope="row" {{!}} {{{nhóm5}}}
+{{!}} {{{danh sách5|}}}}}
+|-
+{{#if:{{{nhóm6|}}}|! scope="row" {{!}} {{{nhóm6}}}
+{{!}} {{{danh sách6|}}}}}
+|}<noinclude>
+== Cách dùng ==
+Hộp điều hướng đặt cuối bài. Giống các wiki của Weird Gloop, class <code>navbox</code> khiến MobileFrontend tự gỡ hộp này khỏi giao diện di động.
+<pre>
+{{Hộp điều hướng
+| tiêu đề      = Nhân vật
+| trạng thái   = thu gọn
+| nhóm1        = Học sinh
+| danh sách1   = [[A]] · [[B]] · [[C]]
+| nhóm2        = Giáo viên
+| danh sách2   = [[D]] · [[E]]
+}}
+</pre>
+Hỗ trợ tối đa 6 nhóm. Tạo bản mẫu riêng (ví dụ <code>Bản mẫu:Điều hướng nhân vật</code>) gọi bản mẫu này để dùng lại.
+[[Thể loại:Bản mẫu điều hướng]]
+</noinclude>

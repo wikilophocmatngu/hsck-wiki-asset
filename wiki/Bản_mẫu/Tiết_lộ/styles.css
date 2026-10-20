@@ -1,0 +1,27 @@
+/* TemplateStyles cho Bản mẫu:Tiết lộ — hộp cảnh báo với "con dấu" đỏ như ấn triện trên logo. */
+.hsck-spoiler {
+	display: flex;
+	align-items: center;
+	gap: 1em;
+	margin: 0 0 1em;
+	padding: 0.6em 1em;
+	border: 1px solid var(--border-color-base, #a2a9b1);
+	border-left: 6px solid var(--hsck-seal, #d42a2f);
+	border-radius: 6px;
+	background: var(--hsck-paper, #fffaf2);
+	color: var(--color-base, #202122);
+}
+.hsck-seal {
+	flex: none;
+	padding: 0.15em 0.4em;
+	border: 3px double var(--hsck-seal, #d42a2f);
+	border-radius: 4px;
+	color: var(--hsck-seal, #d42a2f);
+	font-weight: bold;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	transform: rotate(-8deg);
+}
+.hsck-spoiler-text {
+	flex: 1;
+}

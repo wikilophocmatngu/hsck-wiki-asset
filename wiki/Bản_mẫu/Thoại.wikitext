@@ -1,0 +1,9 @@
+<templatestyles src="Bản mẫu:Thoại/styles.css" /><div class="hsck-quote"><div class="hsck-quote-bubble">{{{1|}}}</div><div class="hsck-quote-by">— '''{{{2|}}}'''{{#if:{{{nguồn|}}}|, {{{nguồn}}}}}</div></div><noinclude>
+== Cách dùng ==
+Trích lời thoại theo kiểu bong bóng truyện tranh.
+<pre>
+{{Thoại|Lời thoại|Nhân vật|nguồn=Tập 1}}
+</pre>
+{{Thoại|Đây là ví dụ lời thoại.|Nhân vật|nguồn=Tập 1}}
+[[Thể loại:Bản mẫu định dạng]]
+</noinclude>

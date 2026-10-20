@@ -1,3 +1,4 @@
+<templatestyles src="Bản mẫu:Hộp thông tin/styles.css" />
 {| class="infobox hsck-infobox"
 ! colspan="2" class="hsck-infobox-title" | {{{tên|{{PAGENAME}}}}}
 |-

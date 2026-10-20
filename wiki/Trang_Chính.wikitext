@@ -1,4 +1,5 @@
 __NOTOC__ __NOEDITSECTION__
+<templatestyles src="Bản mẫu:Trang Chính/styles.css" />
 <div class="hsck-mainpage">
 <div class="hsck-hero">
 <div class="hsck-hero-title">Chào mừng đến với {{SITENAME}}!</div>
@@ -9,6 +10,36 @@ __NOTOC__ __NOEDITSECTION__
 <div class="hsck-box-title">Giới thiệu</div>
 <div class="hsck-box-body">
 '''Học Sinh Chân Kinh''' là bộ truyện tranh Việt Nam dành cho tuổi teen của nhóm tác giả B.R.O, cũng là tác giả của [https://lophocmatngu.wiki Lớp Học Mật Ngữ]. Truyện xoay quanh cuộc sống học đường của các cô cậu học sinh cùng thầy cô và bạn bè.
+</div>
+</div>
+<div class="hsck-box hsck-box--ink hsck-box--wide">
+<div class="hsck-box-title">Gương mặt lớp học</div>
+<div class="hsck-box-body">
+<div class="hsck-faces">
+{{Ô nhân vật|Nhân vật 1}}
+{{Ô nhân vật|Nhân vật 2}}
+{{Ô nhân vật|Nhân vật 3}}
+{{Ô nhân vật|Nhân vật 4}}
+{{Ô nhân vật|Nhân vật 5}}
+{{Ô nhân vật|Nhân vật 6}}
+{{Ô nhân vật|Nhân vật 7}}
+{{Ô nhân vật|Nhân vật 8}}
+</div>
+</div>
+</div>
+<div class="hsck-box hsck-box--peach hsck-box--wide">
+<div class="hsck-box-title">Các tập truyện</div>
+<div class="hsck-box-body">
+<div class="hsck-covers">
+{{Ô tập truyện|1|Tập 1}}
+{{Ô tập truyện|2|Tập 2}}
+{{Ô tập truyện|3|Tập 3}}
+{{Ô tập truyện|4|Tập 4}}
+{{Ô tập truyện|5|Tập 5}}
+{{Ô tập truyện|6|Tập 6}}
+{{Ô tập truyện|7|Tập 7}}
+{{Ô tập truyện|8|Tập 8}}
+</div>
 </div>
 </div>
 <div class="hsck-box hsck-box--ink">

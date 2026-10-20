@@ -1,0 +1,33 @@
+{{Tiết lộ|Tập 25}}
+{{Hộp nhân vật
+| tên           = Nhân vật mẫu
+| chú thích     = Ảnh minh họa
+| tên khác      = Biệt danh
+| giới tính     = Nữ
+| vai trò       = Học sinh
+| lớp           = 8A
+| xuất hiện đầu = [[Tập 1]]
+| loại          = học sinh
+}}
+'''Nhân vật mẫu''' là bài viết minh họa bố cục một trang nhân vật trên {{SITENAME}}. Nội dung dưới đây chỉ là chữ giữ chỗ.
+
+== Tính cách ==
+Đoạn mô tả tính cách. Lời thoại tiêu biểu được trích bằng [[Bản mẫu:Thoại]]:
+{{Thoại|Đây là một câu thoại mẫu, đặt trong bong bóng như trong truyện.|Nhân vật mẫu|nguồn=[[Tập 1]]}}
+
+== Xuất hiện ==
+{| class="wikitable"
+! Tập !! Tên tập !! Vai trò
+|-
+| 1 || [[Tập 1]] || Chính
+|-
+| 2 || [[Tập 2]] || Phụ
+|}
+
+{{Hộp điều hướng
+| tiêu đề    = Nhân vật
+| nhóm1      = Học sinh
+| danh sách1 = [[Nhân vật mẫu]] · [[Nhân vật 2]] · [[Nhân vật 3]] · [[Nhân vật 4]]
+| nhóm2      = Giáo viên
+| danh sách2 = [[Nhân vật 5]] · [[Nhân vật 6]]
+}}

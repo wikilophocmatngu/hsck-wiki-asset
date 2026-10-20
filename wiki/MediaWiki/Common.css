@@ -1,12 +1,15 @@
-/* Wiki Học Sinh Chân Kinh — CSS nội dung dùng chung (Vector 2010 + Minerva).
-   Kiểm tra trên MW 1.46.2. Chế độ tối: có (chỉ Minerva gắn skin-theme-clientpref-*;
-   Vector 2010 không có chế độ tối). Khung giao diện nằm ở Vector.css / Minerva.css.
+/* Wiki Học Sinh Chân Kinh — CSS dùng chung cho máy tính (Vector 2010) và di động (Minerva).
+   Kiểm tra trên MW 1.46.2. Chế độ tối: có trên Minerva (skin-theme-clientpref-*);
+   Vector 2010 không có chế độ tối.
+   Theo cách Weird Gloop tổ chức: Common.css = cả hai giao diện · Vector.css = chỉ máy tính ·
+   Minerva.css = chỉ di động · CSS của bản mẫu nằm trong TemplateStyles (Bản mẫu:X/styles.css).
+   File này chỉ giữ biến màu để TemplateStyles dùng qua var(--hsck-*, dự phòng).
 
    Bảng màu lấy từ bìa truyện:
      trời  #6dcff6   lá  #0d6b52 (đậm) / #1f9e7a   cam  #f6a65a
      hồng  #b0336a (đậm) / #e86b9e   mực  #1d4f9c   ấn đỏ  #d42a2f
    Tương phản (WCAG): #0d6b52/#fff 6.5 · #1d4f9c/#fff 7.9 · #b0336a/#fff 6.0
-                      #202122/#f6a65a 8.1 · #202122/#e6f6fd 14.6 */
+                      #d42a2f/#fff 5.0 · #202122/#f6a65a 8.1 · #202122/#e6f6fd 14.6 */
 
 /* ===== Tokens ===== */
 :root {
@@ -17,132 +20,28 @@
 	--hsck-seal: #d42a2f;
 	--hsck-accent: #0d6b52;            /* chữ nhấn trên nền nội dung */
 	--hsck-soft: #e6f6fd;              /* nền nhạt: nhãn hộp thông tin, ô phụ */
+	--hsck-paper: #fffaf2;             /* nền "trang giấy" cho bong bóng thoại */
+	--hsck-line: #202122;              /* nét viền kiểu truyện tranh */
 	--hsck-hero-bg: linear-gradient(135deg, #6dcff6 0%, #bdeafb 55%, #ffe3c4 100%);
 	--hsck-hero-fg: #202122;
 }
 html.skin-theme-clientpref-night {
 	--hsck-accent: #6fd6b4;
+	--hsck-seal: #ff7a7a;              /* 6.2:1 trên #1f242b */
 	--hsck-soft: #16323a;
+	--hsck-paper: #1f242b;
+	--hsck-line: #a2a9b1;
 	--hsck-hero-bg: linear-gradient(135deg, #123a4a 0%, #16323a 55%, #3a2a1a 100%);
 	--hsck-hero-fg: #e6f6fd;
 }
 @media screen and (prefers-color-scheme: dark) {
 	html.skin-theme-clientpref-os {
 		--hsck-accent: #6fd6b4;
+		--hsck-seal: #ff7a7a;
 		--hsck-soft: #16323a;
+		--hsck-paper: #1f242b;
+		--hsck-line: #a2a9b1;
 		--hsck-hero-bg: linear-gradient(135deg, #123a4a 0%, #16323a 55%, #3a2a1a 100%);
 		--hsck-hero-fg: #e6f6fd;
 	}
 }
-
-/* ===== Hộp thông tin (Bản mẫu:Hộp nhân vật, Bản mẫu:Hộp tập truyện) =====
-   Giữ class .infobox để Minerva tự trải rộng hộp trên điện thoại. */
-.mw-parser-output .hsck-infobox {
-	float: right;
-	clear: right;
-	width: 22em;
-	margin: 0 0 1em 1em;
-	border: 1px solid var(--border-color-base, #a2a9b1);
-	border-top: 4px solid var(--hsck-leaf);
-	border-radius: 6px;
-	border-collapse: separate;
-	border-spacing: 0;
-	background: var(--background-color-base, #fff);
-	color: var(--color-base, #202122);
-	font-size: 0.9em;
-	line-height: 1.5;
-}
-.mw-parser-output .hsck-infobox th,
-.mw-parser-output .hsck-infobox td {
-	padding: 0.35em 0.6em;
-	vertical-align: top;
-	text-align: left;
-}
-.mw-parser-output .hsck-infobox .hsck-infobox-title {
-	background: var(--hsck-leaf);
-	color: #fff;
-	font-size: 1.25em;
-	text-align: center;
-}
-.mw-parser-output .hsck-infobox .hsck-infobox-image {
-	text-align: center;
-	padding: 0.5em;
-}
-.mw-parser-output .hsck-infobox .hsck-infobox-caption {
-	display: block;
-	color: var(--color-subtle, #54595d);
-	font-size: 0.9em;
-}
-.mw-parser-output .hsck-infobox .hsck-infobox-header {
-	background: var(--hsck-ink);
-	color: #fff;
-	text-align: center;
-}
-.mw-parser-output .hsck-infobox th[scope="row"] {
-	width: 38%;
-	background: var(--hsck-soft);
-	color: var(--hsck-accent);
-}
-.mw-parser-output .hsck-infobox .hsck-infobox-nav {
-	text-align: center;
-	background: var(--hsck-soft);
-}
-@media (max-width: 639px) {
-	.mw-parser-output .hsck-infobox {
-		float: none;
-		width: 100%;
-		margin: 0 0 1em;
-	}
-}
-
-/* ===== Trang Chính ===== */
-.mw-parser-output .hsck-hero {
-	background: var(--hsck-hero-bg);
-	color: var(--hsck-hero-fg);
-	border-radius: 12px;
-	padding: 1.25em 1.5em;
-	margin-bottom: 1em;
-	text-align: center;
-}
-.mw-parser-output .hsck-hero-title {
-	font-size: clamp(1.4em, 4vw, 2em);
-	font-weight: bold;
-	line-height: 1.3;
-}
-.mw-parser-output .hsck-hero-sub {
-	margin: 0.4em 0 0;
-}
-.mw-parser-output .hsck-hero a {
-	color: inherit;
-	text-decoration: underline;
-}
-.mw-parser-output .hsck-grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(min(100%, 18em), 1fr));
-	gap: 1em;
-}
-.mw-parser-output .hsck-box {
-	border: 1px solid var(--border-color-subtle, #c8ccd1);
-	border-radius: 8px;
-	overflow: hidden;
-	background: var(--background-color-base, #fff);
-}
-.mw-parser-output .hsck-box--wide {
-	grid-column: 1 / -1;
-}
-.mw-parser-output .hsck-box-title {
-	padding: 0.4em 0.8em;
-	font-weight: bold;
-	font-size: 1.1em;
-	background: var(--hsck-leaf);
-	color: #fff;
-}
-.mw-parser-output .hsck-box--ink .hsck-box-title { background: var(--hsck-ink); }
-.mw-parser-output .hsck-box--blossom .hsck-box-title { background: var(--hsck-blossom); }
-.mw-parser-output .hsck-box--peach .hsck-box-title { background: var(--hsck-peach); color: #202122; }
-.mw-parser-output .hsck-box-title a { color: inherit; }
-.mw-parser-output .hsck-box-body {
-	padding: 0.6em 0.8em;
-}
-.mw-parser-output .hsck-box-body > :first-child { margin-top: 0; }
-.mw-parser-output .hsck-box-body > :last-child { margin-bottom: 0; }

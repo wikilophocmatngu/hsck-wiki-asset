@@ -43,6 +43,10 @@ html.skin-theme-clientpref-night {
 .header-container .minerva-header .cdx-button {
 	color: var(--hsck-header-fg);
 }
+/* Biểu tượng Minerva là ảnh mask tô bằng background-color (mặc định --color-subtle) */
+.header-container .minerva-header .cdx-button .minerva-icon {
+	background-color: var(--hsck-header-fg);
+}
 /* Menu trượt & menu thành viên nằm bên trong header: trả lại màu chữ gốc */
 .minerva-header #mw-mf-page-left,
 .minerva-header #p-personal {

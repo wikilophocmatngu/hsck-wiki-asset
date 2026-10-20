@@ -1,0 +1,131 @@
+/* TemplateStyles cho Trang Chính (gọi bằng <templatestyles src="Bản mẫu:Trang Chính/styles.css" />).
+   Bố cục lưới tự xuống hàng, không cần media query riêng cho di động. */
+.hsck-hero {
+	background: var(--hsck-hero-bg, #bdeafb);
+	color: var(--hsck-hero-fg, #202122);
+	border-radius: 12px;
+	padding: 1.25em 1.5em;
+	margin-bottom: 1em;
+	text-align: center;
+}
+.hsck-hero-title {
+	font-size: 1.6em;
+	font-weight: bold;
+	line-height: 1.3;
+}
+.hsck-hero-sub {
+	margin: 0.4em 0 0;
+}
+.hsck-hero a {
+	color: inherit;
+	text-decoration: underline;
+}
+.hsck-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, 18em), 1fr));
+	gap: 1em;
+}
+.hsck-box {
+	border: 1px solid var(--border-color-subtle, #c8ccd1);
+	border-radius: 8px;
+	overflow: hidden;
+	background: var(--background-color-base, #fff);
+}
+.hsck-box--wide {
+	grid-column: 1 / -1;
+}
+.hsck-box-title {
+	padding: 0.4em 0.8em;
+	font-weight: bold;
+	font-size: 1.1em;
+	background: var(--hsck-leaf, #0d6b52);
+	color: #fff;
+}
+.hsck-box--ink .hsck-box-title { background: var(--hsck-ink, #1d4f9c); }
+.hsck-box--blossom .hsck-box-title { background: var(--hsck-blossom, #b0336a); }
+.hsck-box--peach .hsck-box-title { background: var(--hsck-peach, #f6a65a); color: #202122; }
+.hsck-box-title a,
+.hsck-box-title a.new { color: inherit; }
+.hsck-box-body {
+	padding: 0.6em 0.8em;
+}
+.hsck-box-body > :first-child { margin-top: 0; }
+.hsck-box-body > :last-child { margin-bottom: 0; }
+
+/* Ý tưởng: "Gương mặt lớp học" — lưới ô chân dung nền xanh mực như ảnh tổng hợp nhân vật */
+.hsck-faces {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(6.5em, 1fr));
+	gap: 0.5em;
+}
+.hsck-face {
+	display: block;
+	background: var(--hsck-ink, #1d4f9c);
+	border: 3px solid var(--hsck-line, #202122);
+	border-radius: 6px;
+	overflow: hidden;
+	text-align: center;
+	color: #fff;
+}
+.hsck-face-img {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	aspect-ratio: 1;
+	overflow: hidden;
+}
+.hsck-face-img img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.hsck-face-initial {
+	font-size: 2.2em;
+	font-weight: bold;
+	opacity: 0.85;
+}
+.hsck-face-name {
+	display: block;
+	padding: 0.2em 0.3em;
+	background: #202122;               /* cố định: chữ trắng 16:1 ở cả nền sáng lẫn tối */
+	font-size: 0.85em;
+	font-weight: bold;
+	line-height: 1.3;
+}
+.hsck-face-name a,
+.hsck-face-name a.new {
+	color: #fff;
+}
+
+/* Ý tưởng: dải bìa các tập — cuộn ngang trên màn hẹp, không tự chạy */
+.hsck-covers {
+	display: flex;
+	gap: 0.75em;
+	overflow-x: auto;
+	padding-bottom: 0.4em;
+}
+.hsck-cover {
+	flex: 0 0 7.5em;
+	text-align: center;
+	font-size: 0.85em;
+	line-height: 1.3;
+}
+.hsck-cover-art {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	aspect-ratio: 2 / 3;
+	margin-bottom: 0.3em;
+	border: 2px solid var(--hsck-line, #202122);
+	border-radius: 4px;
+	background: var(--hsck-hero-bg, #bdeafb);
+	color: var(--hsck-hero-fg, #202122);
+	font-size: 1.8em;
+	font-weight: bold;
+	overflow: hidden;
+}
+.hsck-cover-art img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
