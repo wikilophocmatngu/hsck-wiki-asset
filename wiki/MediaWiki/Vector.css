@@ -43,3 +43,9 @@ body.skin-vector-legacy .vector-legacy-sidebar .vector-menu-portal .vector-menu-
 body.skin-vector-legacy #footer {
 	border-top: 3px solid #f6a65a;
 }
+
+/* ===== Trang Chính ===== */
+/* Trang Chính tự có tiêu đề (bìa kỷ yếu): ẩn tiêu đề trang mặc định */
+body.skin-vector-legacy.rootpage-Trang_Chính .mw-first-heading {
+	display: none;
+}

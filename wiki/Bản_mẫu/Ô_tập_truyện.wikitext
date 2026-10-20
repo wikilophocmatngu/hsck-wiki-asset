@@ -1,8 +1,0 @@
-<templatestyles src="Bản mẫu:Trang Chính/styles.css" /><div class="hsck-cover"><div class="hsck-cover-art">{{#if:{{{bìa|}}}|[[Tập tin:{{{bìa}}}|150px|link={{{2}}}|alt=Bìa tập {{{1}}}]]|{{{1}}}}}</div>[[{{{2}}}|Tập {{{1}}}]]</div><noinclude>
-== Cách dùng ==
-Một ô bìa trong dải tập truyện (bọc trong <code><nowiki><div class="hsck-covers"></nowiki></code>). Chưa có bìa thì hiện số tập.
-<pre>
-{{Ô tập truyện|25|Tên trang của tập|bìa=Bìa tập 25.jpg}}
-</pre>
-[[Thể loại:Bản mẫu trang chính]]
-</noinclude>

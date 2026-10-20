@@ -1,77 +1,83 @@
 __NOTOC__ __NOEDITSECTION__
 <templatestyles src="Bản mẫu:Trang Chính/styles.css" />
-<div class="hsck-mainpage">
-<div class="hsck-hero">
-<div class="hsck-hero-title">Chào mừng đến với {{SITENAME}}!</div>
-<p class="hsck-hero-sub">Bách khoa toàn thư mở về bộ truyện tranh '''Học Sinh Chân Kinh''' của B.R.O, mà ai cũng có thể đóng góp.<br />Hiện có '''{{NUMBEROFARTICLES}}''' bài viết.</p>
+<div class="ky">
+<div class="ky-cover">
+<p class="ky-kind">Kỷ yếu</p>
+<h2 class="ky-title">Học Sinh Chân Kinh</h2>
+<p class="ky-years">Niên khóa: Tập 1 – Tập 25</p>
+<p class="ky-lead">Bộ truyện của B.R.O đã khép lại ở Tập 25. Wiki này giữ lại những gì cả lớp còn nhớ.</p>
+<inputbox>
+type=search
+buttonlabel=Tìm
+placeholder=Tìm một gương mặt, một tập truyện…
+break=no
+</inputbox>
 </div>
-<div class="hsck-grid">
-<div class="hsck-box hsck-box--wide">
-<div class="hsck-box-title">Giới thiệu</div>
-<div class="hsck-box-body">
-'''Học Sinh Chân Kinh''' là bộ truyện tranh Việt Nam dành cho tuổi teen của nhóm tác giả B.R.O, cũng là tác giả của [https://lophocmatngu.wiki Lớp Học Mật Ngữ]. Truyện xoay quanh cuộc sống học đường của các cô cậu học sinh cùng thầy cô và bạn bè.
-</div>
-</div>
-<div class="hsck-box hsck-box--ink hsck-box--wide">
-<div class="hsck-box-title">Gương mặt lớp học</div>
-<div class="hsck-box-body">
-<div class="hsck-faces">
-{{Ô nhân vật|Nhân vật 1}}
-{{Ô nhân vật|Nhân vật 2}}
-{{Ô nhân vật|Nhân vật 3}}
-{{Ô nhân vật|Nhân vật 4}}
-{{Ô nhân vật|Nhân vật 5}}
-{{Ô nhân vật|Nhân vật 6}}
-{{Ô nhân vật|Nhân vật 7}}
-{{Ô nhân vật|Nhân vật 8}}
-</div>
-</div>
-</div>
-<div class="hsck-box hsck-box--peach hsck-box--wide">
-<div class="hsck-box-title">Các tập truyện</div>
-<div class="hsck-box-body">
-<div class="hsck-covers">
-{{Ô tập truyện|1|Tập 1}}
-{{Ô tập truyện|2|Tập 2}}
-{{Ô tập truyện|3|Tập 3}}
-{{Ô tập truyện|4|Tập 4}}
-{{Ô tập truyện|5|Tập 5}}
-{{Ô tập truyện|6|Tập 6}}
-{{Ô tập truyện|7|Tập 7}}
-{{Ô tập truyện|8|Tập 8}}
+<div class="ky-section">
+<h2 class="ky-h">Ảnh tập thể</h2>
+<div class="ky-class">
+{{Ảnh thẻ|Nhân vật 1}}
+{{Ảnh thẻ|Nhân vật 2}}
+{{Ảnh thẻ|Nhân vật 3}}
+{{Ảnh thẻ|Nhân vật 4}}
+{{Ảnh thẻ|Nhân vật 5}}
+{{Ảnh thẻ|Nhân vật 6}}
+{{Ảnh thẻ|Nhân vật 7}}
+{{Ảnh thẻ|Nhân vật 8}}
+{{Ảnh thẻ|Nhân vật 9}}
+{{Ảnh thẻ|Nhân vật 10}}
+<div class="ky-face ky-face--more">[[:Thể loại:Nhân vật|Cả lớp →]]</div>
 </div>
 </div>
+<div class="ky-section">
+<h2 class="ky-h">25 năm học</h2>
+<p class="ky-note">Mỗi tập là một năm. Bấm vào để đọc tóm tắt.</p>
+<div class="ky-years-grid">
+<div class="ky-vol">[[Tập 1|<span class="ky-vol-n">1</span>]]</div>
+<div class="ky-vol">[[Tập 2|<span class="ky-vol-n">2</span>]]</div>
+<div class="ky-vol">[[Tập 3|<span class="ky-vol-n">3</span>]]</div>
+<div class="ky-vol">[[Tập 4|<span class="ky-vol-n">4</span>]]</div>
+<div class="ky-vol">[[Tập 5|<span class="ky-vol-n">5</span>]]</div>
+<div class="ky-vol">[[Tập 6|<span class="ky-vol-n">6</span>]]</div>
+<div class="ky-vol">[[Tập 7|<span class="ky-vol-n">7</span>]]</div>
+<div class="ky-vol">[[Tập 8|<span class="ky-vol-n">8</span>]]</div>
+<div class="ky-vol">[[Tập 9|<span class="ky-vol-n">9</span>]]</div>
+<div class="ky-vol">[[Tập 10|<span class="ky-vol-n">10</span>]]</div>
+<div class="ky-vol">[[Tập 11|<span class="ky-vol-n">11</span>]]</div>
+<div class="ky-vol">[[Tập 12|<span class="ky-vol-n">12</span>]]</div>
+<div class="ky-vol">[[Tập 13|<span class="ky-vol-n">13</span>]]</div>
+<div class="ky-vol">[[Tập 14|<span class="ky-vol-n">14</span>]]</div>
+<div class="ky-vol">[[Tập 15|<span class="ky-vol-n">15</span>]]</div>
+<div class="ky-vol">[[Tập 16|<span class="ky-vol-n">16</span>]]</div>
+<div class="ky-vol">[[Tập 17|<span class="ky-vol-n">17</span>]]</div>
+<div class="ky-vol">[[Tập 18|<span class="ky-vol-n">18</span>]]</div>
+<div class="ky-vol">[[Tập 19|<span class="ky-vol-n">19</span>]]</div>
+<div class="ky-vol">[[Tập 20|<span class="ky-vol-n">20</span>]]</div>
+<div class="ky-vol">[[Tập 21|<span class="ky-vol-n">21</span>]]</div>
+<div class="ky-vol">[[Tập 22|<span class="ky-vol-n">22</span>]]</div>
+<div class="ky-vol">[[Tập 23|<span class="ky-vol-n">23</span>]]</div>
+<div class="ky-vol">[[Tập 24|<span class="ky-vol-n">24</span>]]</div>
+<div class="ky-vol ky-vol--last">[[Tập 25|<span class="ky-vol-n">25</span>]]<small>tập cuối</small></div>
+<div class="ky-vol ky-vol--myth">[[Truyền thuyết Tập 26|<span class="ky-vol-n">26?</span>]]<small>chuyện kể của fan</small></div>
 </div>
-<div class="hsck-box hsck-box--ink">
-<div class="hsck-box-title">[[:Thể loại:Nhân vật|Nhân vật]]</div>
-<div class="hsck-box-body">
-Tìm hiểu về các học sinh, thầy cô và những nhân vật khác trong truyện.
-* [[:Thể loại:Học sinh|Học sinh]]
-* [[:Thể loại:Giáo viên|Giáo viên]]
-* [[:Thể loại:Nhân vật|Tất cả nhân vật]]
 </div>
+<div class="ky-section ky-guest">
+<div class="ky-guest-text">
+<h2 class="ky-h">Lưu bút</h2>
+<p>Bạn từng đọc ''Học Sinh Chân Kinh''? Để lại một trang: một nhân vật bạn nhớ, một tập bạn thích, hay chỉ một chi tiết nhỏ.</p>
+<p class="ky-cta">[[Project:Viết bài đầu tiên|Viết bài đầu tiên trong 5 phút →]]</p>
+<inputbox>
+type=create
+buttonlabel=Ký lưu bút
+placeholder=Tên bài: một nhân vật hay một tập
+break=no
+</inputbox>
 </div>
-<div class="hsck-box hsck-box--peach">
-<div class="hsck-box-title">[[:Thể loại:Tập truyện|Tập truyện]]</div>
-<div class="hsck-box-body">
-Danh sách các tập truyện đã phát hành, tóm tắt và nhân vật xuất hiện.
-* [[:Thể loại:Tập truyện|Tất cả tập truyện]]
-* [[:Thể loại:Địa điểm|Địa điểm]]
-</div>
-</div>
-<div class="hsck-box hsck-box--blossom">
-<div class="hsck-box-title">Tham gia đóng góp</div>
-<div class="hsck-box-body">
-* [[Special:NewPages|Trang mới]] · [[Special:WantedPages|Trang cần viết]]
-* Dùng [[Bản mẫu:Hộp nhân vật]] và [[Bản mẫu:Hộp tập truyện]] khi viết bài.
-* Thảo luận tại [[Project:Cộng đồng|cổng cộng đồng]].
-</div>
-</div>
-<div class="hsck-box">
-<div class="hsck-box-title">Trang mới</div>
-<div class="hsck-box-body">
-{{Special:NewPages/5}}
-</div>
+<div class="ky-signed">
+<p class="ky-signed-title">Đã ký tên</p>
+<p class="ky-sign">[[Thành viên:Pisces|Pisces]] <small>dựng lớp</small></p>
+<p class="ky-sign ky-sign--empty">[[Project:Ban cán sự|Chỗ này dành cho bạn]]</p>
+<p class="ky-signed-more">Muốn vào Ban cán sự lớp? [[Project:Ban cán sự|Đọc thêm →]]</p>
 </div>
 </div>
 </div>

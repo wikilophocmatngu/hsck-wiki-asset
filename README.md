@@ -1,10 +1,11 @@
 # hsck-wiki-asset
 
 Giao diện và nội dung khởi tạo cho **Wiki Học Sinh Chân Kinh** (https://hsck.lophocmatngu.wiki, Miraheze, MW 1.46.2).
+Đây là wiki tưởng niệm: bộ truyện đã ngưng ở **Tập 25**; Tập 26 chỉ là chuyện kể trong cộng đồng fan.
 Skin: **Vector 2010** (máy tính) + **Minerva Neue** (di động), tổ chức theo cách các wiki Weird Gloop vẫn làm
 (không dùng GloopThemes, Less hay các tính năng riêng khác của họ vì Miraheze không có):
 
-- `MediaWiki:Common.css`: dùng cho cả hai giao diện, **chỉ** chứa biến màu `--hsck-*` (có giá trị cho chế độ tối).
+- `MediaWiki:Common.css`: dùng cho cả hai giao diện, **chỉ** chứa biến màu (`--hsck-*` cho bản mẫu nội dung, `--hs-*` OKLCH cho Trang Chính, đều có giá trị tối) và `@import` phông Bricolage Grotesque từ Google Fonts.
 - `MediaWiki:Vector.css`: chỉ máy tính. `MediaWiki:Minerva.css`: chỉ di động.
 - CSS của từng bản mẫu nằm trong **TemplateStyles** (`Bản mẫu:X/styles.css`), lấy màu qua `var(--hsck-*, dự phòng)`.
 - Hộp điều hướng dùng class `navbox`, nên MobileFrontend tự gỡ nó trên di động.
@@ -27,13 +28,12 @@ Skin: **Vector 2010** (máy tính) + **Minerva Neue** (di động), tổ chức 
 | `wiki/MediaWiki/Vector.css` | `MediaWiki:Vector.css` |
 | `wiki/MediaWiki/Minerva.css` | `MediaWiki:Minerva.css` |
 | `wiki/MediaWiki/Sidebar.wikitext` | `MediaWiki:Sidebar` |
-| `wiki/Trang_Chính.wikitext` | `Trang Chính` |
+| `wiki/Trang_Chính.wikitext` | `Trang Chính` (kiểu Kỷ yếu: bìa, Ảnh tập thể, 25 năm học, Lưu bút) |
 | `wiki/Bản_mẫu/Hộp_thông_tin/styles.css` | `Bản mẫu:Hộp thông tin/styles.css` (TemplateStyles) |
 | `wiki/Bản_mẫu/Hộp_nhân_vật.wikitext` | `Bản mẫu:Hộp nhân vật` |
 | `wiki/Bản_mẫu/Hộp_tập_truyện.wikitext` | `Bản mẫu:Hộp tập truyện` |
 | `wiki/Bản_mẫu/Trang_Chính/styles.css` | `Bản mẫu:Trang Chính/styles.css` (TemplateStyles) |
-| `wiki/Bản_mẫu/Ô_nhân_vật.wikitext` | `Bản mẫu:Ô nhân vật`: ô chân dung trong lưới "Gương mặt lớp học" |
-| `wiki/Bản_mẫu/Ô_tập_truyện.wikitext` | `Bản mẫu:Ô tập truyện`: ô bìa trong dải tập truyện |
+| `wiki/Bản_mẫu/Ảnh_thẻ.wikitext` | `Bản mẫu:Ảnh thẻ`: một ảnh trong "Ảnh tập thể" (chưa có ảnh thì hiện chữ cái đầu tên riêng) |
 | `wiki/Bản_mẫu/Thoại.wikitext` + `Thoại/styles.css` | `Bản mẫu:Thoại`: bong bóng thoại kiểu truyện tranh |
 | `wiki/Bản_mẫu/Tiết_lộ.wikitext` + `Tiết_lộ/styles.css` | `Bản mẫu:Tiết lộ`: cảnh báo tiết lộ có "con dấu" đỏ |
 | `wiki/Bản_mẫu/Hộp_điều_hướng.wikitext` + `Hộp_điều_hướng/styles.css` | `Bản mẫu:Hộp điều hướng`: navbox (tối đa 6 nhóm) |
@@ -46,9 +46,10 @@ Sửa các trang `MediaWiki:*.css` cần quyền `interface-admin`. CSS mới c�
 
 1. `Special:ManageWiki/settings` → *Styling*: `$wgDefaultSkin = vector` (Vector 2010) và skin di động = `minerva`.
 2. Giữ `$wgMFCustomSiteModules = false` (mặc định), để `Common.css` vẫn nạp trên di động.
-3. Tạo các trang thể loại: `Nhân vật`, `Học sinh`, `Giáo viên`, `Tập truyện`, `Địa điểm`, `Bản mẫu hộp thông tin`, `Bản mẫu điều hướng`, `Bản mẫu định dạng`, `Bản mẫu thông báo`, `Bản mẫu trang chính`.
-4. Khi có logo: đặt `$wgLogos` (`1x`/`2x` cho Vector 2010, `wordmark` cho Minerva). Hiện logo `snxyzmetawiki` chỉ là placeholder.
-5. (Tùy chọn) Đổi tên không gian `Project` (`$wgMetaNamespace`), ví dụ thành `Wiki Học Sinh Chân Kinh`. Sidebar và Trang Chính đang dùng tiền tố `Project:` nên vẫn chạy sau khi đổi.
+3. Tạo các trang Trang Chính đang trỏ tới: `Project:Viết bài đầu tiên` (hướng dẫn ngắn có hình), `Project:Ban cán sự`, `Truyền thuyết Tập 26` (ghi rõ ngay đầu là chuyện kể của fan, không phải tập đã phát hành), `Tập 1` … `Tập 25`.
+4. Tạo các trang thể loại: `Nhân vật`, `Học sinh`, `Giáo viên`, `Tập truyện`, `Địa điểm`, `Bản mẫu hộp thông tin`, `Bản mẫu điều hướng`, `Bản mẫu định dạng`, `Bản mẫu thông báo`, `Bản mẫu trang chính`.
+5. Khi có logo: đặt `$wgLogos` (`1x`/`2x` cho Vector 2010, `wordmark` cho Minerva). Hiện logo `snxyzmetawiki` chỉ là placeholder.
+6. (Tùy chọn) Đổi tên không gian `Project` (`$wgMetaNamespace`), ví dụ thành `Wiki Học Sinh Chân Kinh`. Sidebar và Trang Chính đang dùng tiền tố `Project:` nên vẫn chạy sau khi đổi.
 
 ## Kiểm tra
 

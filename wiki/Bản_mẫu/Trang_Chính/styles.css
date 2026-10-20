@@ -1,131 +1,240 @@
-/* TemplateStyles cho Trang Chính (gọi bằng <templatestyles src="Bản mẫu:Trang Chính/styles.css" />).
-   Bố cục lưới tự xuống hàng, không cần media query riêng cho di động. */
-.hsck-hero {
-	background: var(--hsck-hero-bg, #bdeafb);
-	color: var(--hsck-hero-fg, #202122);
-	border-radius: 12px;
-	padding: 1.25em 1.5em;
-	margin-bottom: 1em;
-	text-align: center;
-}
-.hsck-hero-title {
-	font-size: 1.6em;
-	font-weight: bold;
-	line-height: 1.3;
-}
-.hsck-hero-sub {
-	margin: 0.4em 0 0;
-}
-.hsck-hero a {
-	color: inherit;
-	text-decoration: underline;
-}
-.hsck-grid {
+/* Hallmark · genre: playful · macrostructure: Catalogue (kỷ yếu cuối cấp) · theme: custom (lớp học truyện tranh) · enrichment: Tier A CSS art (bìa vải, ảnh thẻ, giấy lưu bút) · nav/footer: của skin
+ * TemplateStyles cho Trang Chính và Bản mẫu:Ảnh thẻ. Màu lấy từ biến --hs-* trong MediaWiki:Common.css. */
+.ky {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(min(100%, 18em), 1fr));
-	gap: 1em;
+	gap: 2.5rem;
+	color: var(--hs-ink, oklch(24% 0.012 250));
 }
-.hsck-box {
-	border: 1px solid var(--border-color-subtle, #c8ccd1);
-	border-radius: 8px;
-	overflow: hidden;
-	background: var(--background-color-base, #fff);
-}
-.hsck-box--wide {
-	grid-column: 1 / -1;
-}
-.hsck-box-title {
-	padding: 0.4em 0.8em;
-	font-weight: bold;
-	font-size: 1.1em;
-	background: var(--hsck-leaf, #0d6b52);
-	color: #fff;
-}
-.hsck-box--ink .hsck-box-title { background: var(--hsck-ink, #1d4f9c); }
-.hsck-box--blossom .hsck-box-title { background: var(--hsck-blossom, #b0336a); }
-.hsck-box--peach .hsck-box-title { background: var(--hsck-peach, #f6a65a); color: #202122; }
-.hsck-box-title a,
-.hsck-box-title a.new { color: inherit; }
-.hsck-box-body {
-	padding: 0.6em 0.8em;
-}
-.hsck-box-body > :first-child { margin-top: 0; }
-.hsck-box-body > :last-child { margin-bottom: 0; }
 
-/* Ý tưởng: "Gương mặt lớp học" — lưới ô chân dung nền xanh mực như ảnh tổng hợp nhân vật */
-.hsck-faces {
+/* ===== Bìa kỷ yếu: vải xanh mực, chữ ép nhũ ===== */
+.ky-cover {
+	padding: 2rem 1.75rem 1.75rem;
+	border-radius: 0.25rem 0.75rem 0.75rem 0.25rem;
+	border-left: 0.9rem solid var(--hs-spine, oklch(32% 0.11 259));
+	background:
+		repeating-linear-gradient(45deg, transparent 0, transparent 3px, var(--hs-cloth-weave, oklch(40% 0.12 259 / 0.35)) 3px, var(--hs-cloth-weave, oklch(40% 0.12 259 / 0.35)) 4px),
+		var(--hs-blue, oklch(44% 0.137 259));
+	color: var(--hs-chalk, oklch(95.7% 0.015 94));
+}
+.ky-kind {
+	margin: 0;
+	color: var(--hs-peach, oklch(79% 0.132 62));
+	font-size: 0.85rem;
+	font-weight: 700;
+	letter-spacing: 0.3em;
+	text-transform: uppercase;
+}
+.ky .ky-title {
+	margin: 0.25rem 0 0;
+	padding: 0;
+	border: 0;
+	color: var(--hs-peach, oklch(79% 0.132 62));
+	font-family: var(--hs-font-display, sans-serif);
+	font-size: clamp(2.2rem, 7vw, 4rem);
+	font-weight: 700;
+	line-height: 1;
+	letter-spacing: -0.03em;
+	overflow-wrap: anywhere;
+}
+.ky-years {
+	margin: 0.5rem 0 1rem;
+	padding-bottom: 1rem;
+	border-bottom: 1px solid var(--hs-peach, oklch(79% 0.132 62));
+	font-variant-numeric: tabular-nums;
+}
+.ky-lead {
+	max-width: 50ch;
+	margin: 0 0 1rem;
+}
+.ky-cover .mw-inputbox-centered,
+.ky-guest .mw-inputbox-centered {
+	margin: 0;
+	text-align: left;
+}
+.ky-cover form,
+.ky-guest form {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+.ky-cover .cdx-text-input,
+.ky-guest .cdx-text-input {
+	flex: 1 1 12rem;
+	min-width: 0;
+}
+.ky-cover .cdx-text-input__input,
+.ky-guest .cdx-text-input__input {
+	box-sizing: border-box;
+	max-width: 100%;
+}
+.ky-cover input[name="fulltext"] {
+	display: none;
+}
+
+/* ===== Tiêu đề mục ===== */
+.ky .ky-h {
+	margin: 0 0 0.75rem;
+	padding: 0;
+	border: 0;
+	font-family: var(--hs-font-display, sans-serif);
+	font-size: 1.75rem;
+	font-weight: 700;
+	letter-spacing: -0.02em;
+}
+.ky-note {
+	margin: -0.5rem 0 0.75rem;
+	color: var(--hs-muted, oklch(45% 0.014 250));
+}
+
+/* ===== Ảnh tập thể: ảnh thẻ 3×4, tên dưới ảnh ===== */
+.ky-class {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(6.5em, 1fr));
-	gap: 0.5em;
+	grid-template-columns: repeat(auto-fill, minmax(min(100%, 5.5rem), 1fr));
+	gap: 1.25rem 1rem;
 }
-.hsck-face {
-	display: block;
-	background: var(--hsck-ink, #1d4f9c);
-	border: 3px solid var(--hsck-line, #202122);
-	border-radius: 6px;
-	overflow: hidden;
+.ky-face {
 	text-align: center;
-	color: #fff;
+	font-size: 0.9rem;
+	font-weight: 700;
 }
-.hsck-face-img {
+.ky-face a {
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.ky-photo {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	aspect-ratio: 1;
-	overflow: hidden;
+	aspect-ratio: 3 / 4;
+	margin-bottom: 0.4rem;
+	border: 0.35rem solid var(--hs-paper-fixed, oklch(98.5% 0.012 80));
+	outline: 1px solid var(--hs-rule, oklch(86% 0.035 230));
+	background: var(--hs-sky, oklch(81% 0.107 226));
+	color: var(--hs-ink-fixed, oklch(24% 0.012 250));
+	font-family: var(--hs-font-display, sans-serif);
+	font-size: 2rem;
 }
-.hsck-face-img img {
+.ky-photo img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
 }
-.hsck-face-initial {
-	font-size: 2.2em;
-	font-weight: bold;
-	opacity: 0.85;
-}
-.hsck-face-name {
-	display: block;
-	padding: 0.2em 0.3em;
-	background: #202122;               /* cố định: chữ trắng 16:1 ở cả nền sáng lẫn tối */
-	font-size: 0.85em;
-	font-weight: bold;
-	line-height: 1.3;
-}
-.hsck-face-name a,
-.hsck-face-name a.new {
-	color: #fff;
+.ky-face--more {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	aspect-ratio: 3 / 4;
+	border: 2px dashed var(--hs-rule, oklch(86% 0.035 230));
 }
 
-/* Ý tưởng: dải bìa các tập — cuộn ngang trên màn hẹp, không tự chạy */
-.hsck-covers {
-	display: flex;
-	gap: 0.75em;
-	overflow-x: auto;
-	padding-bottom: 0.4em;
+/* ===== 25 năm học ===== */
+.ky-years-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(3.25rem, 1fr));
+	gap: 0.5rem;
 }
-.hsck-cover {
-	flex: 0 0 7.5em;
-	text-align: center;
-	font-size: 0.85em;
-	line-height: 1.3;
-}
-.hsck-cover-art {
+.ky-vol {
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	aspect-ratio: 2 / 3;
-	margin-bottom: 0.3em;
-	border: 2px solid var(--hsck-line, #202122);
-	border-radius: 4px;
-	background: var(--hsck-hero-bg, #bdeafb);
-	color: var(--hsck-hero-fg, #202122);
-	font-size: 1.8em;
-	font-weight: bold;
-	overflow: hidden;
+	border: 2px solid var(--hs-ink, oklch(24% 0.012 250));
+	border-radius: 0.2rem;
+	background: var(--hs-paper-2, oklch(95% 0.022 80));
+	text-align: center;
+	line-height: 1.1;
 }
-.hsck-cover-art img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
+.ky-vol a {
+	color: var(--hs-ink, oklch(24% 0.012 250));
+}
+.ky-vol-n {
+	font-family: var(--hs-font-display, sans-serif);
+	font-size: 1.3rem;
+	font-weight: 700;
+	font-variant-numeric: tabular-nums;
+}
+.ky-vol small {
+	font-size: 0.65rem;
+}
+.ky-vol--last {
+	grid-column: span 2;
+	aspect-ratio: 4 / 3;               /* rộng 2 ô, cao gần bằng ô thường */
+	border-color: var(--hs-pen, oklch(53% 0.2 26));
+	background: var(--hs-note-pink, oklch(91% 0.05 358));
+	color: var(--hs-ink-fixed, oklch(24% 0.012 250));
+}
+.ky-vol--last a {
+	color: var(--hs-ink-fixed, oklch(24% 0.012 250));
+}
+/* Tập 26: chỉ là chuyện kể của fan, vẽ như bóng mờ */
+.ky-vol--myth {
+	grid-column: span 2;
+	aspect-ratio: 4 / 3;               /* rộng 2 ô, cao gần bằng ô thường */
+	border-style: dashed;
+	border-color: var(--hs-muted, oklch(45% 0.014 250));
+	background: transparent;
+	color: var(--hs-muted, oklch(45% 0.014 250));
+}
+.ky-vol--myth a {
+	color: var(--hs-muted, oklch(45% 0.014 250));
+}
+
+/* ===== Lưu bút ===== */
+.ky-guest {
+	display: grid;
+	grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+	gap: 1.5rem;
+	padding: 1.5rem 1.5rem 1.5rem 3.25rem;
+	background:
+		linear-gradient(90deg, transparent 2.2rem, var(--hs-margin, oklch(78% 0.09 20)) 2.2rem, var(--hs-margin, oklch(78% 0.09 20)) calc(2.2rem + 2px), transparent calc(2.2rem + 2px)),
+		repeating-linear-gradient(to bottom, transparent 0, transparent calc(1.6rem - 1px), var(--hs-rule, oklch(86% 0.035 230)) calc(1.6rem - 1px), var(--hs-rule, oklch(86% 0.035 230)) 1.6rem),
+		var(--hs-paper, oklch(98.5% 0.012 80));
+	line-height: 1.6rem;
+}
+.ky-guest p {
+	margin: 0 0 0.8rem;
+}
+.ky-cta {
+	font-weight: 700;
+}
+.ky-signed-title {
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	font-size: 0.8rem;
+}
+.ky-sign {
+	color: var(--hs-pen, oklch(53% 0.2 26));
+	font-family: var(--hs-font-display, sans-serif);
+	font-size: 1.3rem;
+	rotate: -2deg;
+}
+.ky-sign a {
+	color: inherit;
+}
+.ky-sign small {
+	font-family: inherit;
+	font-size: 0.75rem;
+	color: var(--hs-muted, oklch(45% 0.014 250));
+}
+.ky-sign--empty {
+	opacity: 0.7;
+	rotate: 1deg;
+}
+.ky-signed-more {
+	font-size: 0.9rem;
+}
+
+@media (max-width: 719px) {
+	.ky-guest {
+		grid-template-columns: minmax(0, 1fr);
+		padding: 1rem 0.75rem 1rem 2.25rem;
+		background:
+			linear-gradient(90deg, transparent 1.4rem, var(--hs-margin, oklch(78% 0.09 20)) 1.4rem, var(--hs-margin, oklch(78% 0.09 20)) calc(1.4rem + 2px), transparent calc(1.4rem + 2px)),
+			repeating-linear-gradient(to bottom, transparent 0, transparent calc(1.6rem - 1px), var(--hs-rule, oklch(86% 0.035 230)) calc(1.6rem - 1px), var(--hs-rule, oklch(86% 0.035 230)) 1.6rem),
+			var(--hs-paper, oklch(98.5% 0.012 80));
+	}
 }
