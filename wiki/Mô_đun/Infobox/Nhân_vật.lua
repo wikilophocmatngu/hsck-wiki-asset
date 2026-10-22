@@ -2,7 +2,7 @@
 -- Mô đun:Infobox/Nhân vật
 --
 -- Hộp thông tin nhân vật, gọi từ {{Hộp nhân vật}}.
--- Vẽ hộp, thêm thể loại và lưu một dòng vào [[Bucket:Nhan vat]].
+-- Vẽ hộp, thêm thể loại và lưu một dòng vào [[Bucket:Characters]].
 -- Tên tham số giữ nguyên như bản mẫu wikitext cũ.
 --------------------------------------------------------------------------------
 
@@ -50,6 +50,8 @@ function p._main(args)
 		:row{ label = 'Gia đình', value = args['gia đình'] }
 		:row{ label = 'Xuất hiện đầu', value = args['xuất hiện đầu'] }
 
+	infobox:metadata(args, { template = 'Hộp nhân vật' })
+
 	local out = InfoboxBuilder.styles() .. tostring(infobox)
 	if page.namespace == 0 then
 		out = out .. '[[Thể loại:Nhân vật]]'
@@ -59,7 +61,7 @@ function p._main(args)
 	end
 
 	local plain = InfoboxBuilder.plain
-	return out .. InfoboxBuilder.store('nhan_vat', {
+	return out .. InfoboxBuilder.store('characters', {
 		ten = plain(name),
 		ten_khac = plain(args['tên khác']),
 		gioi_tinh = plain(args['giới tính']),

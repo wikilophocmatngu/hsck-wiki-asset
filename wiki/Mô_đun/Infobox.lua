@@ -2,8 +2,9 @@
 -- Mô đun:Infobox
 --
 -- Bộ dựng hộp thông tin. Thêm các hàm title, header, group, section, row,
--- image, images, tabber vào mọi nút mw.html (vá metatable dùng chung).
--- Mỗi loại hộp nằm ở Mô đun:Infobox/<Loại>, gọi bộ dựng này để vẽ hộp và
+-- image, images, tabber, metadata vào mọi nút mw.html (vá metatable dùng chung).
+-- Mỗi loại hộp nằm ở Mô đun:Infobox/<Loại>, gọi bộ dựng này để vẽ hộp,
+-- metadata() để ghi JSON cho Wiki-Bot và các dịch vụ khác đọc, và
 -- InfoboxBuilder.store() để lưu dữ liệu vào Bucket.
 --
 -- Nhóm (group) bị ẩn khi không có nội dung: group() đánh dấu _skip,
@@ -12,7 +13,7 @@
 --
 -- Dựa trên https://meta.weirdgloop.org/w/Module:InfoboxBuilder, qua bản của
 -- Wiki 100 Bạn Gái (100bangai.songngu.xyz). Cần Extension:TabberNeue cho
--- tabber(), Extension:Bucket cho store().
+-- tabber() và {{InfoboxGallery}}, Extension:Bucket cho store().
 --------------------------------------------------------------------------------
 
 local InfoboxBuilder = {}
@@ -24,6 +25,9 @@ local html_build_original = htmlindex._build
 -- Cỡ ảnh khi ảnh không tự ghi cỡ. Trùng cỡ của PageImages để ảnh thu nhỏ
 -- thường đã có sẵn.
 local DEFAULT_IMAGE_SIZE = '300px'
+
+-- Đánh dấu chuỗi JSON do {{InfoboxGallery}} tạo ra (xem infoboxGallery bên dưới).
+local infobox_gallery_key = '__INFOBOX_GALLERY__'
 
 -- InfoboxBuilder() hoặc InfoboxBuilder('nhan-vat'): loại (nếu có) thêm class
 -- infobox-<loại> vào gốc để tạo kiểu riêng.
@@ -129,15 +133,7 @@ local function isMarkup(image)
 	return image:find('\127', 1, true) or image:match('<%s*gallery') or image:match('<%s*tabber')
 end
 
-htmlindex.image = function(self, args)
-	local image = args.image
-	local caption = args.caption
-	if isBlank(image) and isBlank(caption) then
-		return self
-	end
-
-	unskip(self)
-
+local function _image(self, image, caption)
 	if image and not isMarkup(image) then
 		image = image:gsub('%[%[', ''):gsub('%]%]', ''):gsub('^File:', ''):gsub('|thumb', ''):gsub('|$', '')
 		image = string.format('[[File:%s]]', image)
@@ -149,6 +145,68 @@ htmlindex.image = function(self, args)
 		container:tag('div'):addClass('infobox-image-caption'):wikitext(caption):done()
 	end
 	return container:done()
+end
+
+htmlindex.image = function(self, args)
+	local image = args.image
+	local caption = args.caption
+	if isBlank(image) and isBlank(caption) then
+		return self
+	end
+
+	unskip(self)
+
+	-- {{InfoboxGallery}}: mỗi ảnh một tab
+	if image and image:match(infobox_gallery_key) then
+		local tabber = self:tabber()
+		for _, gallery_image in ipairs(mw.text.jsonDecode(image)) do
+			if type(gallery_image) == 'table' then
+				local file = gallery_image.file
+				if file and not file:match('%d+px') then file = file .. '|' .. DEFAULT_IMAGE_SIZE end
+				_image(tabber:tab(gallery_image.tabName), file, caption)
+			end
+		end
+		return self
+	end
+	return _image(self, image, caption)
+end
+
+-- JSON ẩn trong hộp, cho Wiki-Bot và các dịch vụ khác đọc (giống bản của Wiki 100 Bạn Gái):
+--   { schema, template, wiki, page = { title, id, namespace, isContentPage }, fields = { tham số = giá trị } }
+-- opts.schema mặc định 'infobox/1'; opts.template là tên bản mẫu gọi hộp.
+htmlindex.metadata = function(self, args, opts)
+	opts = opts or {}
+	local title = mw.title.getCurrentTitle()
+
+	local data = {
+		schema = opts.schema or 'infobox/1',
+		template = opts.template,
+		wiki = mw.site.siteName,
+		page = {
+			title = title.prefixedText,
+			id = title.id,
+			namespace = title.namespace,
+			isContentPage = title.isContentPage,
+		},
+		fields = {},
+	}
+
+	for k, v in pairs(args) do
+		if type(k) == 'string' and not isBlank(v) then
+			local s = mw.text.trim(tostring(v))
+			-- Giá trị có strip marker (\127) là chỗ giữ cho <ref>, <nowiki>…; nội dung thật
+			-- chỉ được thay vào ở cuối lượt phân tích, nên lưu vào sẽ làm hỏng JSON.
+			if not s:find('\127', 1, true) then
+				data.fields[k] = s
+			end
+		end
+	end
+
+	self:tag('div')
+		:addClass('infobox-json noexcerpt navigation-not-searchable')
+		:css('display', 'none')
+		:wikitext(mw.text.nowiki(mw.text.jsonEncode(data, mw.text.JSON_PRESERVE_KEYS)))
+	return self
 end
 
 local Tabber = {}
@@ -221,7 +279,9 @@ htmlindex.images = function(self, list, opts)
 	local found = {}
 	for _, item in ipairs(list) do
 		local raw = not isBlank(item.image) and tostring(item.image) or nil
-		if raw and isMarkup(raw) then
+		if raw and (raw:find(infobox_gallery_key, 1, true) or isMarkup(raw)) then
+			-- {{InfoboxGallery}} (tab lồng nhau, vd. hai dáng vẻ của một nhân vật), hoặc
+			-- <gallery>/<tabber> viết thẳng trong tham số: giữ nguyên.
 			table.insert(found, { label = item.label, image = raw, caption = item.caption })
 		else
 			local image = resolveImage(raw)
@@ -248,6 +308,24 @@ htmlindex.images = function(self, list, opts)
 		tabber:tab(label):image{ image = item.image, caption = item.caption }
 	end
 	return self
+end
+
+-- Gọi từ [[Bản mẫu:InfoboxGallery]]: mỗi dòng "Tệp|Tên tab" thành một tab ảnh.
+function InfoboxBuilder.infoboxGallery(frame)
+	local args = frame:getParent().args
+	-- Tham số đã bị tách ở '|', nên nối lại rồi tách theo dòng.
+	local clean_args = {}
+	for _, value in ipairs(args) do
+		table.insert(clean_args, value)
+	end
+	local entries = { infobox_gallery_key }
+	for _, value in ipairs(mw.text.split(table.concat(clean_args, '|'), '\n+')) do
+		if value:match('|') then
+			local file, tabName = value:match('(.+)|(.+)')
+			table.insert(entries, { tabName = mw.text.trim(tabName), file = mw.text.trim(file) })
+		end
+	end
+	return mw.text.jsonEncode(entries)
 end
 
 -- Tham số của bản mẫu gọi tới, bị ghi đè bởi tham số không trống của chính

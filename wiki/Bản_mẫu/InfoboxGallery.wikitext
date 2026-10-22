@@ -1,0 +1,13 @@
+<includeonly>{{#invoke:Infobox|infoboxGallery}}</includeonly><noinclude>
+== Cách dùng ==
+Nhiều ảnh trong một ô ảnh của hộp thông tin, mỗi ảnh một tab. Mỗi dòng là <code>Tệp|Tên tab</code>. Dùng khi cần tab lồng nhau, ví dụ một nhân vật có hai dáng vẻ; còn vài ảnh đơn giản thì dùng <code>hình</code>, <code>hình2</code>, <code>hình3</code> của [[Bản mẫu:Hộp nhân vật]].
+<pre>
+{{Hộp nhân vật
+| hình = {{InfoboxGallery|
+Nhân vật A lúc nhỏ.png|Lúc nhỏ
+Nhân vật A.png|Hiện tại
+}}
+}}
+</pre>
+[[Thể loại:Bản mẫu hộp thông tin]]
+</noinclude>

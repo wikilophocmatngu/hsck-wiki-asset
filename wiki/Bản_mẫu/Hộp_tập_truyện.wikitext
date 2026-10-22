@@ -2,7 +2,7 @@
 == Cách dùng ==
 Đặt ở đầu bài viết về một tập truyện. Mọi tham số đều không bắt buộc. Hộp do [[Mô đun:Infobox/Tập truyện]] vẽ.
 
-Trên trang tên "Tập N", số tập tự lấy từ tên trang; tập trước và tập sau tự tính (Tập 25 là tập cuối). Bài viết trong không gian chính tự vào [[:Thể loại:Tập truyện]] và được lưu vào [[Bucket:Tap truyen]].
+Trên trang tên "Tập N", số tập tự lấy từ tên trang; tập trước và tập sau tự tính (Tập 25 là tập cuối). Bài viết trong không gian chính tự vào [[:Thể loại:Tập truyện]] và được lưu vào [[Bucket:Volumes]].
 <pre>
 {{Hộp tập truyện
 | số tập        =
