@@ -52,7 +52,7 @@ Sửa các trang `MediaWiki:*.css` cần quyền `interface-admin`. CSS mới c�
 2. Giữ `$wgMFCustomSiteModules = false` (mặc định), để `Common.css` vẫn nạp trên di động.
 3. Tạo các trang Trang Chính đang trỏ tới: `Project:Viết bài đầu tiên` (hướng dẫn ngắn có hình), `Project:Ban cán sự`, `Truyền thuyết Tập 26` (ghi rõ ngay đầu là chuyện kể của fan, không phải tập đã phát hành), `Tập 1` … `Tập 25`.
 4. Tạo các trang thể loại: `Nhân vật`, `Học sinh`, `Giáo viên`, `Tập truyện`, `Địa điểm`, `Bản mẫu hộp thông tin`, `Bản mẫu điều hướng`, `Bản mẫu định dạng`, `Bản mẫu thông báo`, `Bản mẫu trang chính`.
-5. Logo: tải lên `HSCK-logo-1x.png` (135×135), `HSCK-logo-2x.png` (270×270) và `HSCK-wordmark.png` (173×96), rồi đặt `$wgLogos` với `1x`, `2x` cho Vector 2010 và `wordmark` (`width` 86, `height` 48) cho Minerva. Logo được tách từ bìa Tập 25 bằng `tools/cut-logo.py`. `Minerva.css` đã tắt việc đảo màu logo ở chế độ tối.
+5. Logo: tải lên `HSCK-logo-1x.png` (135×135), `HSCK-logo-2x.png` (270×270) và `HSCK-wordmark.png` (178×96), rồi đặt `$wgLogos` với `1x`, `2x` cho Vector 2010 và `wordmark` (`width` 86, `height` 48) cho Minerva. Logo được tách từ bìa Tập 25 bằng Canva (bản thử đầu dùng `tools/cut-logo.py`). `Minerva.css` đã tắt việc đảo màu logo ở chế độ tối.
 6. (Tùy chọn) Đổi tên không gian `Project` (`$wgMetaNamespace`), ví dụ thành `Wiki Học Sinh Chân Kinh`. Sidebar và Trang Chính đang dùng tiền tố `Project:` nên vẫn chạy sau khi đổi.
 
 ## Kiểm tra
