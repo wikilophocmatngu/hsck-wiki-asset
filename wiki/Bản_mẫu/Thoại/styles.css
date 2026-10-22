@@ -1,5 +1,6 @@
 /* TemplateStyles cho Bản mẫu:Thoại — bong bóng thoại nét viền kiểu truyện tranh. */
 .hsck-quote {
+	display: flow-root;                /* nằm cạnh ảnh float thay vì đè lên */
 	max-width: 36em;
 	margin: 1em 0 1.25em;
 }

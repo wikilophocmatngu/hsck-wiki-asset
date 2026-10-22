@@ -2,16 +2,21 @@
    Wiki Học Sinh Chân Kinh — khung giao diện Vector 2010 (legacy), kiểm tra trên MW 1.46.2.
    Chế độ tối: không (skin không hỗ trợ). Màu lấy từ --hs-* trong MediaWiki:Common.css. */
 
-/* ===== Nền & dải đầu trang: vải xanh như bìa kỷ yếu ===== */
+/* ===== Nền & dải đầu trang =====
+   Học theo OSRS Wiki: ảnh minh họa chỉ nằm ở dải đầu trang (sau logo và tab), phần còn lại là giấy trơn.
+   Thanh bên dùng giấy đậm hơn trang nội dung, như bìa lót của cuốn kỷ yếu. */
 body.skin-vector-legacy {
-	background-color: var(--hs-desk, oklch(96% 0.02 230));
-	/* Ảnh nền riêng (tải lên wiki rồi trỏ tới đây): chỉ lộ ở cột thanh bên và quanh chân trang.
-	   background-image: url("https://hsck.lophocmatngu.wiki/wiki/Special:Redirect/file/<Tên_ảnh>"); */
+	background-color: var(--hs-paper-2-fixed, oklch(93% 0.025 80));
 }
 body.skin-vector-legacy #mw-page-base {
-	background-color: var(--hs-blue, oklch(44% 0.137 259));
-	background-image: repeating-linear-gradient(45deg, transparent 0, transparent 3px, var(--hs-cloth-weave, oklch(40% 0.12 259 / 0.35)) 3px, var(--hs-cloth-weave, oklch(40% 0.12 259 / 0.35)) 4px);
 	border-bottom: 3px solid var(--hs-peach, oklch(79% 0.132 62));
+	background-color: var(--hs-blue, oklch(44% 0.137 259));
+	/* Lớp phủ xanh mực giữ chữ công cụ cá nhân đủ tương phản trên ảnh; thay tên tệp bằng ảnh nền riêng */
+	background-image:
+		linear-gradient(to bottom, oklch(25% 0.09 259 / 0.8), oklch(25% 0.09 259 / 0.25) 70%),
+		url("https://hsck.lophocmatngu.wiki/wiki/Special:Redirect/file/Đầu_trang.webp");
+	background-position: center 35%;
+	background-size: cover;
 }
 
 /* Công cụ cá nhân nằm trên dải vải: chữ phấn trắng */
@@ -83,7 +88,7 @@ body.skin-vector-legacy .mw-body .firstHeading {
 
 /* ===== Thanh bên: mục lục kỷ yếu ===== */
 body.skin-vector-legacy .vector-legacy-sidebar .vector-menu-portal .vector-menu-heading {
-	color: var(--hs-blue, oklch(44% 0.137 259));           /* 7.4:1 trên nền bàn */
+	color: var(--hs-blue, oklch(44% 0.137 259));           /* 6.6:1 trên giấy đậm */
 	font-family: var(--hs-font-display, sans-serif);
 	font-size: 0.85em;
 	font-weight: 700;
@@ -110,10 +115,4 @@ body.skin-vector-legacy #footer a {
 body.skin-vector-legacy #footer a {
 	text-decoration: underline;
 	text-decoration-color: var(--hs-peach, oklch(79% 0.132 62));
-}
-
-/* ===== Trang Chính ===== */
-/* Trang Chính tự có tiêu đề (bìa kỷ yếu): ẩn tiêu đề trang mặc định */
-body.skin-vector-legacy.rootpage-Trang_Chính .mw-first-heading {
-	display: none;
 }

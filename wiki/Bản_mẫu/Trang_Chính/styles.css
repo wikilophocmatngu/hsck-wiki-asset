@@ -1,14 +1,25 @@
-/* Hallmark · genre: playful · macrostructure: Catalogue (kỷ yếu cuối cấp) · theme: custom (lớp học truyện tranh) · enrichment: Tier A CSS art (bìa vải, ảnh thẻ, giấy lưu bút) · nav/footer: của skin
- * TemplateStyles cho Trang Chính và Bản mẫu:Ảnh thẻ. Màu lấy từ biến --hs-* trong MediaWiki:Common.css. */
+/* Hallmark · genre: playful · macrostructure: Catalogue (kỷ yếu cuối cấp) · theme: custom (lớp học truyện tranh) · nav/footer: của skin
+ * TemplateStyles cho Trang Chính, Bản mẫu:Ảnh thẻ và Bản mẫu:Ô chủ đề. Màu lấy từ biến --hs-* trong MediaWiki:Common.css.
+ * Bố cục học theo Trang Chính của OSRS Wiki: cột giữa rộng tối đa 68rem, ô chủ đề có ảnh, thẻ khoảnh khắc,
+ * và cột phải kiểu Minecraft Wiki (Có thể bạn chưa biết, Lưu bút). */
 .ky {
 	display: grid;
-	gap: 2.5rem;
+	gap: 2.25rem;
+	max-width: 68rem;
+	margin: 0 auto;
 	color: var(--hs-ink, oklch(24% 0.012 250));
 }
+.ky p {
+	margin: 0;
+}
 
-/* ===== Bìa kỷ yếu: vải xanh mực, chữ ép nhũ ===== */
+/* ===== Bìa kỷ yếu: vải xanh mực, chữ ép nhũ, số liệu bên phải ===== */
 .ky-cover {
-	padding: 2rem 1.75rem 1.75rem;
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) auto;
+	gap: 1.5rem 2.5rem;
+	align-items: end;
+	padding: 1.75rem 1.75rem 1.5rem;
 	border-radius: 0.25rem 0.75rem 0.75rem 0.25rem;
 	border-left: 0.9rem solid var(--hs-spine, oklch(32% 0.11 259));
 	background:
@@ -17,67 +28,96 @@
 	color: var(--hs-chalk, oklch(95.7% 0.015 94));
 }
 .ky-kind {
-	margin: 0;
 	color: var(--hs-chalk, oklch(95.7% 0.015 94));          /* chữ nhỏ: dùng phấn trắng 7:1 thay vì cam 4:1 */
-	font-size: 0.85rem;
+	font-size: 0.8rem;
 	font-weight: 700;
-	letter-spacing: 0.3em;
+	letter-spacing: 0.2em;
 	text-transform: uppercase;
 }
 .ky .ky-title {
-	margin: 0.25rem 0 0;
+	margin: 0.25rem 0 0.6rem;
 	padding: 0;
 	border: 0;
 	color: var(--hs-peach, oklch(79% 0.132 62));
 	font-family: var(--hs-font-display, sans-serif);
-	font-size: clamp(2.2rem, 7vw, 4rem);
+	font-size: clamp(2rem, 5vw, 3.2rem);
 	font-weight: 700;
 	line-height: 1;
 	letter-spacing: -0.03em;
 	overflow-wrap: anywhere;
 }
-.ky-years {
-	margin: 0.5rem 0 1rem;
-	padding-bottom: 1rem;
-	border-bottom: 1px solid var(--hs-peach, oklch(79% 0.132 62));
-	font-variant-numeric: tabular-nums;
-}
 .ky-lead {
 	max-width: 50ch;
-	margin: 0 0 1rem;
+	margin-bottom: 1rem !important;
 }
-.ky-cover .mw-inputbox-centered,
-.ky-guest .mw-inputbox-centered {
+.ky-cover .mw-inputbox-centered {
 	margin: 0;
 	text-align: left;
 }
-.ky-cover form,
-.ky-guest form {
+.ky-cover form {
 	display: flex;
-	flex-wrap: wrap;
 	gap: 0.5rem;
+	max-width: 32rem;
 }
-.ky-cover .cdx-text-input,
-.ky-guest .cdx-text-input {
+.ky-cover .cdx-text-input {
 	flex: 1 1 12rem;
 	min-width: 0;
 }
-.ky-cover .cdx-text-input__input,
-.ky-guest .cdx-text-input__input {
+.ky-cover .cdx-text-input__input {
 	box-sizing: border-box;
 	max-width: 100%;
 }
 .ky-cover input[name="fulltext"] {
 	display: none;
 }
-.ky-cover-cta {
-	margin: 0.9rem 0 0;
-	font-weight: 700;
+/* Số liệu như OSRS: số đậm, chữ thường */
+.ky .ky-stats {
+	margin: 0;
+	padding: 0 0 0 1.5rem;
+	border-left: 1px solid var(--hs-peach, oklch(79% 0.132 62));
+	list-style: none;
+	line-height: 1.9;
+	font-variant-numeric: tabular-nums;
 }
-.ky-cover-cta a {
-	color: var(--hs-chalk, oklch(95.7% 0.015 94));
-	text-decoration: underline;
-	text-decoration-color: var(--hs-peach, oklch(79% 0.132 62));
+.ky .ky-stats li {
+	margin: 0;
+}
+
+/* ===== Ô chủ đề: ảnh vuông, nhãn to bên dưới ===== */
+.ky-topics {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(min(100%, 9rem), 1fr));
+	gap: 1rem;
+}
+.ky-topic {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	border: 1px solid var(--hs-rule, oklch(86% 0.035 230));
+	border-radius: 0.4rem;
+	background: var(--hs-paper, oklch(98.5% 0.012 80));
+	text-align: center;
+	transition: translate 0.15s ease-out;
+}
+.ky-topic:hover {
+	translate: 0 -2px;
+}
+.ky-topic img,
+.ky-moment img {
+	display: block;
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+}
+.ky-topic img {
+	aspect-ratio: 1;
+}
+.ky-topic > a:last-child {
+	padding: 0.6rem 0.4rem 0.7rem;
+	color: var(--hs-ink, oklch(24% 0.012 250));
+	font-family: var(--hs-font-display, sans-serif);
+	font-size: 1.15rem;
+	font-weight: 700;
 }
 
 /* ===== Tiêu đề mục ===== */
@@ -86,19 +126,93 @@
 	padding: 0;
 	border: 0;
 	font-family: var(--hs-font-display, sans-serif);
-	font-size: 1.75rem;
+	font-size: 1.6rem;
 	font-weight: 700;
 	letter-spacing: -0.02em;
 }
+.ky-h-row {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 0 1rem;
+}
+.ky-h-row > a {
+	font-weight: 700;
+}
 .ky-note {
-	margin: -0.5rem 0 0.75rem;
+	margin: -0.4rem 0 0.75rem !important;
 	color: var(--hs-muted, oklch(45% 0.014 250));
+}
+
+/* ===== Khoảnh khắc đáng nhớ: thẻ kiểu tin tức của OSRS ===== */
+.ky-moments {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+	gap: 1rem;
+}
+.ky-moment {
+	overflow: hidden;
+	border: 1px solid var(--hs-rule, oklch(86% 0.035 230));
+	border-radius: 0.4rem;
+	background: var(--hs-paper, oklch(98.5% 0.012 80));
+}
+.ky-moment img {
+	aspect-ratio: 16 / 10;
+}
+.ky-moment-body {
+	padding: 0.9rem 1rem 1.1rem;
+}
+.ky-moment-meta {
+	color: var(--hs-muted, oklch(45% 0.014 250));
+	font-size: 0.85rem;
+}
+.ky-moment-title {
+	margin: 0.2rem 0 0.4rem !important;
+	font-family: var(--hs-font-display, sans-serif);
+	font-size: 1.3rem;
+	font-weight: 700;
+	line-height: 1.2;
+}
+.ky-moment-title a {
+	color: var(--hs-ink, oklch(24% 0.012 250));
+}
+
+/* ===== Hai cột: nội dung chính + cột phải ===== */
+.ky-cols {
+	display: grid;
+	grid-template-columns: minmax(0, 2fr) minmax(16rem, 1fr);
+	gap: 2rem;
+	align-items: start;
+}
+.ky-main,
+.ky-rail {
+	display: grid;
+	gap: 2rem;
+}
+.ky-box {
+	padding: 1rem 1.25rem 1.25rem;
+	border: 1px solid var(--hs-rule, oklch(86% 0.035 230));
+	border-radius: 0.4rem;
+	background: var(--hs-paper, oklch(98.5% 0.012 80));
+}
+.ky-box .ky-h {
+	font-size: 1.3rem;
+}
+.ky-box ul {
+	margin: 0 0 0.6rem 1.1em;
+}
+.ky-box li {
+	margin-bottom: 0.35rem;
+}
+.ky-box-more {
+	font-weight: 700;
 }
 
 /* ===== Ảnh tập thể: ảnh thẻ 3×4, tên dưới ảnh ===== */
 .ky-class {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(min(100%, 5.5rem), 1fr));
+	grid-template-columns: repeat(5, minmax(0, 1fr));     /* 10 ảnh thẻ = 2 hàng đều */
 	gap: 1.25rem 1rem;
 }
 .ky-face {
@@ -125,38 +239,36 @@
 	font-family: var(--hs-font-display, sans-serif);
 	font-size: 2rem;
 }
+.ky-photo a {
+	width: 100%;
+	height: 100%;
+}
 .ky-photo img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
 }
-.ky-face--more {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	aspect-ratio: 3 / 4;
-	border: 2px dashed var(--hs-rule, oklch(86% 0.035 230));
-}
 
-/* ===== 25 năm học ===== */
+/* ===== 25 năm học: số tập và tên tập ===== */
 .ky-years-grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(3.25rem, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(6.25rem, 1fr));
 	gap: 0.5rem;
 }
 .ky-vol {
 	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	aspect-ratio: 2 / 3;
+	min-height: 5.5rem;
 	border: 2px solid var(--hs-ink, oklch(24% 0.012 250));
 	border-radius: 0.2rem;
 	background: var(--hs-paper-2, oklch(95% 0.022 80));
-	text-align: center;
-	line-height: 1.1;
+	line-height: 1.15;
 }
-.ky-vol a {
+.ky-vol > a {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	gap: 0.25rem;
+	padding: 0.45rem 0.55rem;
 	color: var(--hs-ink, oklch(24% 0.012 250));
 }
 .ky-vol-n {
@@ -165,86 +277,78 @@
 	font-weight: 700;
 	font-variant-numeric: tabular-nums;
 }
+.ky-vol-t {
+	font-size: 0.8rem;
+}
 .ky-vol small {
+	align-self: end;
+	padding: 0 0.55rem 0.45rem 0;
 	font-size: 0.75rem;
 }
 .ky-vol--last {
 	grid-column: span 2;
-	aspect-ratio: 4 / 3;               /* rộng 2 ô, cao gần bằng ô thường */
 	border-color: var(--hs-pen, oklch(53% 0.2 26));
 	background: var(--hs-note-pink, oklch(91% 0.05 358));
 	color: var(--hs-ink-fixed, oklch(24% 0.012 250));
 }
-.ky-vol--last a {
+.ky-vol--last > a {
 	color: var(--hs-ink-fixed, oklch(24% 0.012 250));
 }
 /* Tập 26: chỉ là chuyện kể của fan, vẽ như bóng mờ */
 .ky-vol--myth {
 	grid-column: span 2;
-	aspect-ratio: 4 / 3;               /* rộng 2 ô, cao gần bằng ô thường */
 	border-style: dashed;
 	border-color: var(--hs-muted, oklch(45% 0.014 250));
 	background: transparent;
-	color: var(--hs-muted, oklch(45% 0.014 250));
 }
-.ky-vol--myth a {
+.ky-vol--myth > a {
 	color: var(--hs-muted, oklch(45% 0.014 250));
 }
 
-/* ===== Lưu bút ===== */
+/* ===== Lưu bút: giấy kẻ dòng, cặp nút kiểu Minecraft Wiki ===== */
 .ky-guest {
-	display: grid;
-	grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-	gap: 1.5rem;
-	padding: 1.5rem 1.5rem 1.5rem 3.25rem;
+	padding-left: 2.5rem;
 	background:
-		linear-gradient(90deg, transparent 2.2rem, var(--hs-margin, oklch(78% 0.09 20)) 2.2rem, var(--hs-margin, oklch(78% 0.09 20)) calc(2.2rem + 2px), transparent calc(2.2rem + 2px)),
+		linear-gradient(90deg, transparent 1.6rem, var(--hs-margin, oklch(78% 0.09 20)) 1.6rem, var(--hs-margin, oklch(78% 0.09 20)) calc(1.6rem + 2px), transparent calc(1.6rem + 2px)),
 		repeating-linear-gradient(to bottom, transparent 0, transparent calc(1.6rem - 1px), var(--hs-rule, oklch(86% 0.035 230)) calc(1.6rem - 1px), var(--hs-rule, oklch(86% 0.035 230)) 1.6rem),
 		var(--hs-paper, oklch(98.5% 0.012 80));
 	line-height: 1.6rem;
 }
 .ky-guest p {
-	margin: 0 0 0.8rem;
+	margin-bottom: 0.8rem;
 }
-.ky-cta {
-	margin-bottom: 1.2rem;
+.ky-btns {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin: 0 0 1.2rem;
 }
-/* Lời mời chính của Lưu bút: một nút duy nhất */
-.ky-cta a {
-	display: inline-block;
-	padding: 0.4rem 0.9rem;
-	border-radius: 0.4rem;
-	background: var(--hs-blue, oklch(44% 0.137 259));
-	color: var(--hs-chalk, oklch(95.7% 0.015 94));
-	font-weight: 700;
-	line-height: 1.6rem;
-	white-space: nowrap;
+.ky-btn {
+	flex: 1 1 auto;
 }
-.ky-cta a:hover {
-	background: var(--hs-spine, oklch(32% 0.11 259));
-	text-decoration: none;
-}
-.ky-cta a:focus-visible {
-	outline: 3px solid var(--hs-peach, oklch(79% 0.132 62));
-	outline-offset: 2px;
-}
-.ky-or {
-	color: var(--hs-muted, oklch(45% 0.014 250));
-	font-size: 0.9rem;
-}
-/* Nút "Ký lưu bút": màu rõ ràng, không phụ thuộc token Codex của skin */
-.ky-guest input[type="submit"] {
+.ky-btn a {
+	display: block;
+	padding: 0.35rem 0.8rem;
 	border: 2px solid var(--hs-blue, oklch(44% 0.137 259));
 	border-radius: 0.4rem;
 	background: var(--hs-paper-fixed, oklch(98.5% 0.012 80));
 	color: var(--hs-blue, oklch(44% 0.137 259));
 	font-weight: 700;
-	cursor: pointer;
+	text-align: center;
+	white-space: nowrap;
 }
-.ky-guest input[type="submit"]:hover {
+.ky-btn--main a {
+	background: var(--hs-blue, oklch(44% 0.137 259));
+	color: var(--hs-chalk, oklch(95.7% 0.015 94));
+}
+.ky-btn a:hover {
 	background: var(--hs-soft, oklch(95% 0.02 230));
+	text-decoration: none;
 }
-.ky-guest input[type="submit"]:focus-visible {
+.ky-btn--main a:hover {
+	background: var(--hs-spine, oklch(32% 0.11 259));
+}
+.ky-btn a:focus-visible {
 	outline: 3px solid var(--hs-peach, oklch(79% 0.132 62));
 	outline-offset: 2px;
 }
@@ -272,19 +376,64 @@
 	font-size: 0.9rem;
 }
 
-@media (max-width: 639px) {
-	/* Điện thoại: chỉ 6 ảnh thẻ, phần còn lại ở "Cả lớp →" */
-	.ky-class .ky-face:nth-of-type(n+7):not(.ky-face--more) {
-		display: none;
+@media (max-width: 899px) {
+	.ky-cols {
+		grid-template-columns: minmax(0, 1fr);
 	}
 }
-@media (max-width: 719px) {
-	.ky-guest {
+@media (max-width: 639px) {
+	.ky-cover {
 		grid-template-columns: minmax(0, 1fr);
-		padding: 1rem 0.75rem 1rem 2.25rem;
-		background:
-			linear-gradient(90deg, transparent 1.4rem, var(--hs-margin, oklch(78% 0.09 20)) 1.4rem, var(--hs-margin, oklch(78% 0.09 20)) calc(1.4rem + 2px), transparent calc(1.4rem + 2px)),
-			repeating-linear-gradient(to bottom, transparent 0, transparent calc(1.6rem - 1px), var(--hs-rule, oklch(86% 0.035 230)) calc(1.6rem - 1px), var(--hs-rule, oklch(86% 0.035 230)) 1.6rem),
-			var(--hs-paper, oklch(98.5% 0.012 80));
+		padding: 1.25rem 1rem;
+	}
+	.ky .ky-stats {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0 1rem;
+		padding: 0.75rem 0 0;
+		border-left: 0;
+		border-top: 1px solid var(--hs-peach, oklch(79% 0.132 62));
+		font-size: 0.9rem;
+	}
+	.ky-topics {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 0.5rem;
+	}
+	.ky-topic > a:last-child {
+		padding: 0.4rem 0.2rem 0.5rem;
+		font-size: 0.95rem;
+	}
+	/* Khoảnh khắc: một hàng vuốt ngang thay vì ba thẻ chồng nhau */
+	.ky-moments {
+		grid-template-columns: none;
+		grid-auto-flow: column;
+		grid-auto-columns: 78%;
+		overflow-x: auto;
+		scroll-snap-type: x mandatory;
+		padding-bottom: 0.5rem;
+	}
+	.ky-moment {
+		scroll-snap-align: start;
+	}
+	.ky-years-grid {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+	.ky-vol {
+		min-height: 0;
+	}
+	.ky-vol--myth {
+		grid-column: span 1;           /* 25 (2 ô) + 26? (1 ô) lấp đủ hàng 3 cột */
+	}
+	/* Điện thoại: chỉ 6 ảnh thẻ, phần còn lại ở "Cả lớp →" */
+	.ky-class .ky-face:nth-of-type(n+7) {
+		display: none;
+	}
+	.ky-class {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+}
+@media (prefers-reduced-motion: reduce) {
+	.ky-topic {
+		transition: none;
 	}
 }

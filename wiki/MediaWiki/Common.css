@@ -75,6 +75,11 @@ html.skin-theme-clientpref-night {
 	letter-spacing: -0.02em;
 }
 
+/* ===== Trang Chính tự có tiêu đề (bìa kỷ yếu): ẩn tiêu đề trang mặc định ở cả hai skin ===== */
+body.rootpage-Trang_Chính .mw-first-heading {
+	display: none;
+}
+
 /* ===== Trang thành viên (UserProfileV2): "Học bạ" =====
    Khung hồ sơ nằm ngoài .mw-parser-output nên không dùng TemplateStyles được; áp dụng cho cả hai skin. */
 .profile-masthead {
@@ -182,3 +187,73 @@ html.skin-theme-clientpref-night {
 	}
 }
 
+/* ===== Thành phần gốc của MediaWiki: bảng, mục lục, ảnh, thể loại (học theo OSRS Wiki) ===== */
+.wikitable {
+	border: 1px solid var(--hs-rule, oklch(86% 0.035 230));
+	background-color: var(--hs-paper, oklch(98.5% 0.012 80));
+	color: var(--hs-ink, oklch(24% 0.012 250));
+}
+.wikitable > tr > th,
+.wikitable > tr > td,
+.wikitable > * > tr > th,
+.wikitable > * > tr > td {
+	border-color: var(--hs-rule, oklch(86% 0.035 230));
+	padding: 0.35em 0.6em;
+}
+.wikitable > tr > th,
+.wikitable > * > tr > th {
+	background-color: var(--hs-paper-2, oklch(95% 0.022 80));
+	color: var(--hs-ink, oklch(24% 0.012 250));
+}
+.wikitable > caption {
+	font-family: var(--hs-font-display, sans-serif);
+	text-align: left;
+}
+
+/* Mục lục (Vector 2010; Minerva tự ẩn) */
+#toc,
+.toc {
+	padding: 0.6em 1em 0.8em;
+	border: 1px solid var(--hs-rule, oklch(86% 0.035 230));
+	border-radius: 6px;
+	background-color: var(--hs-paper-2, oklch(95% 0.022 80));
+}
+.toc .toctitle h2 {
+	font-family: var(--hs-font-display, sans-serif);
+	font-size: 1rem;
+}
+.toc .tocnumber {
+	color: var(--hs-muted, oklch(45% 0.014 250));
+}
+
+/* Khung ảnh thumb: viền mảnh như ảnh dán vào kỷ yếu */
+.mw-parser-output figure[typeof~="mw:File/Thumb"],
+.mw-parser-output figure[typeof~="mw:File/Frame"] {
+	border: 1px solid var(--hs-rule, oklch(86% 0.035 230));
+	border-radius: 4px;
+	background-color: var(--hs-paper-2, oklch(95% 0.022 80));
+}
+.mw-parser-output figure[typeof~="mw:File/Thumb"] > figcaption,
+.mw-parser-output figure[typeof~="mw:File/Frame"] > figcaption {
+	color: var(--hs-muted, oklch(45% 0.014 250));
+}
+.mw-parser-output figure[typeof~="mw:File/Thumb"] > :not(figcaption) .mw-file-element,
+.mw-parser-output figure[typeof~="mw:File/Frame"] > :not(figcaption) .mw-file-element {
+	border-color: var(--hs-rule, oklch(86% 0.035 230));
+	background-color: var(--hs-paper, oklch(98.5% 0.012 80));
+}
+
+/* Hộp thể loại cuối trang */
+.catlinks {
+	border: 1px solid var(--hs-rule, oklch(86% 0.035 230));
+	border-radius: 6px;
+	background-color: var(--hs-paper-2, oklch(95% 0.022 80));
+}
+
+/* Chú thích nguồn: số tham chiếu và danh sách nhỏ, dễ đọc */
+.mw-parser-output .reference {
+	font-variant-numeric: tabular-nums;
+}
+.mw-parser-output .references {
+	font-size: 0.9em;
+}

@@ -1,8 +1,8 @@
 __NOTOC__ __NOEDITSECTION__<templatestyles src="Bản mẫu:Trang Chính/styles.css" /><div class="ky">
 <div class="ky-cover">
-<p class="ky-kind">Kỷ yếu</p>
+<div class="ky-cover-main">
+<p class="ky-kind">Kỷ yếu · Niên khóa Tập 1 – Tập 25</p>
 <h2 class="ky-title">Học Sinh Chân Kinh</h2>
-<p class="ky-years">Niên khóa: Tập 1 – Tập 25</p>
 <p class="ky-lead">Bộ truyện của B.R.O đã khép lại ở Tập 25. Wiki này giữ lại những gì cả lớp còn nhớ.</p>
 <inputbox>
 type=search
@@ -10,73 +10,96 @@ buttonlabel=Tìm
 placeholder=Tìm một gương mặt, một tập truyện…
 break=no
 </inputbox>
-<p class="ky-cover-cta">[[Project:Viết bài đầu tiên|Viết bài đầu tiên trong 5 phút →]]</p>
+</div>
+<ul class="ky-stats">
+<li><b>{{NUMBEROFARTICLES}}</b> bài viết</li>
+<li><b>{{NUMBEROFFILES}}</b> tệp</li>
+<li><b>{{NUMBEROFACTIVEUSERS}}</b> thành viên tích cực</li>
+<li><b>{{NUMBEROFEDITS}}</b> lần sửa</li>
+</ul>
+</div>
+<div class="ky-topics">
+{{Ô chủ đề|Thể loại:Nhân vật|Nhân vật|hình=Ô Nhân vật.webp}}
+{{Ô chủ đề|Thể loại:Học sinh|Học sinh|hình=Ô Học sinh.webp}}
+{{Ô chủ đề|Thể loại:Giáo viên|Thầy cô|hình=Ô Thầy cô.webp}}
+{{Ô chủ đề|Thể loại:Tập truyện|Tập truyện|hình=Ô Tập truyện.webp}}
+{{Ô chủ đề|Thể loại:Địa điểm|Địa điểm|hình=Ô Địa điểm.webp}}
+{{Ô chủ đề|Truyền thuyết Tập 26|Tập 26?|hình=Ô Truyền thuyết.webp}}
 </div>
 <div class="ky-section">
-<h2 class="ky-h">Ảnh tập thể</h2>
+<h2 class="ky-h">Khoảnh khắc đáng nhớ</h2>
+<div class="ky-moments">
+<div class="ky-moment">[[Tập tin:Khoảnh khắc 1.webp|480px|link=Tập 7|alt=]]<div class="ky-moment-body"><p class="ky-moment-meta">Tập 7 · Muôn sự tại nhân</p><p class="ky-moment-title">[[Tập 7|Tên khoảnh khắc]]</p><p>Một câu kể lại cảnh này cho người chưa đọc.</p></div></div>
+<div class="ky-moment">[[Tập tin:Khoảnh khắc 2.webp|480px|link=Tập 25|alt=]]<div class="ky-moment-body"><p class="ky-moment-meta">Tập 25 · Bằng lòng đi em (phần 3)</p><p class="ky-moment-title">[[Tập 25|Tên khoảnh khắc]]</p><p>Một câu kể lại cảnh này cho người chưa đọc.</p></div></div>
+<div class="ky-moment">[[Tập tin:Khoảnh khắc 3.webp|480px|link=Tập 19|alt=]]<div class="ky-moment-body"><p class="ky-moment-meta">Tập 19 · Xuân xa xôi</p><p class="ky-moment-title">[[Tập 19|Tên khoảnh khắc]]</p><p>Một câu kể lại cảnh này cho người chưa đọc.</p></div></div>
+</div>
+</div>
+<div class="ky-cols">
+<div class="ky-main">
+<div class="ky-section">
+<div class="ky-h-row"><h2 class="ky-h">Ảnh tập thể</h2>[[:Thể loại:Nhân vật|Cả lớp →]]</div>
 <div class="ky-class">
-{{Ảnh thẻ|Nhân vật 1}}
-{{Ảnh thẻ|Nhân vật 2}}
-{{Ảnh thẻ|Nhân vật 3}}
-{{Ảnh thẻ|Nhân vật 4}}
-{{Ảnh thẻ|Nhân vật 5}}
-{{Ảnh thẻ|Nhân vật 6}}
-{{Ảnh thẻ|Nhân vật 7}}
-{{Ảnh thẻ|Nhân vật 8}}
-{{Ảnh thẻ|Nhân vật 9}}
-{{Ảnh thẻ|Nhân vật 10}}
-<div class="ky-face ky-face--more">[[:Thể loại:Nhân vật|Cả lớp →]]</div>
+{{Ảnh thẻ|Nhân vật 1|hình=Chân dung 1.webp}}
+{{Ảnh thẻ|Nhân vật 2|hình=Chân dung 2.webp}}
+{{Ảnh thẻ|Nhân vật 3|hình=Chân dung 3.webp}}
+{{Ảnh thẻ|Nhân vật 4|hình=Chân dung 4.webp}}
+{{Ảnh thẻ|Nhân vật 5|hình=Chân dung 5.webp}}
+{{Ảnh thẻ|Nhân vật 6|hình=Chân dung 6.webp}}
+{{Ảnh thẻ|Nhân vật 7|hình=Chân dung 7.webp}}
+{{Ảnh thẻ|Nhân vật 8|hình=Chân dung 8.webp}}
+{{Ảnh thẻ|Nhân vật 9|hình=Chân dung 9.webp}}
+{{Ảnh thẻ|Nhân vật 10|hình=Chân dung 10.webp}}
 </div>
 </div>
 <div class="ky-section">
 <h2 class="ky-h">25 năm học</h2>
 <p class="ky-note">Mỗi tập là một năm. Bấm vào để đọc tóm tắt.</p>
 <div class="ky-years-grid">
-<div class="ky-vol">[[Tập 1|<span class="ky-vol-n">1</span>]]</div>
-<div class="ky-vol">[[Tập 2|<span class="ky-vol-n">2</span>]]</div>
-<div class="ky-vol">[[Tập 3|<span class="ky-vol-n">3</span>]]</div>
-<div class="ky-vol">[[Tập 4|<span class="ky-vol-n">4</span>]]</div>
-<div class="ky-vol">[[Tập 5|<span class="ky-vol-n">5</span>]]</div>
-<div class="ky-vol">[[Tập 6|<span class="ky-vol-n">6</span>]]</div>
-<div class="ky-vol">[[Tập 7|<span class="ky-vol-n">7</span>]]</div>
-<div class="ky-vol">[[Tập 8|<span class="ky-vol-n">8</span>]]</div>
-<div class="ky-vol">[[Tập 9|<span class="ky-vol-n">9</span>]]</div>
-<div class="ky-vol">[[Tập 10|<span class="ky-vol-n">10</span>]]</div>
-<div class="ky-vol">[[Tập 11|<span class="ky-vol-n">11</span>]]</div>
-<div class="ky-vol">[[Tập 12|<span class="ky-vol-n">12</span>]]</div>
-<div class="ky-vol">[[Tập 13|<span class="ky-vol-n">13</span>]]</div>
-<div class="ky-vol">[[Tập 14|<span class="ky-vol-n">14</span>]]</div>
-<div class="ky-vol">[[Tập 15|<span class="ky-vol-n">15</span>]]</div>
-<div class="ky-vol">[[Tập 16|<span class="ky-vol-n">16</span>]]</div>
-<div class="ky-vol">[[Tập 17|<span class="ky-vol-n">17</span>]]</div>
-<div class="ky-vol">[[Tập 18|<span class="ky-vol-n">18</span>]]</div>
-<div class="ky-vol">[[Tập 19|<span class="ky-vol-n">19</span>]]</div>
-<div class="ky-vol">[[Tập 20|<span class="ky-vol-n">20</span>]]</div>
-<div class="ky-vol">[[Tập 21|<span class="ky-vol-n">21</span>]]</div>
-<div class="ky-vol">[[Tập 22|<span class="ky-vol-n">22</span>]]</div>
-<div class="ky-vol">[[Tập 23|<span class="ky-vol-n">23</span>]]</div>
-<div class="ky-vol">[[Tập 24|<span class="ky-vol-n">24</span>]]</div>
-<div class="ky-vol ky-vol--last">[[Tập 25|<span class="ky-vol-n">25</span>]]<small>tập cuối</small></div>
-<div class="ky-vol ky-vol--myth">[[Truyền thuyết Tập 26|<span class="ky-vol-n">26?</span>]]<small>chuyện kể của fan</small></div>
+<div class="ky-vol">[[Tập 1|<span class="ky-vol-n">1</span><span class="ky-vol-t">Tên tập</span>]]</div>
+<div class="ky-vol">[[Tập 2|<span class="ky-vol-n">2</span><span class="ky-vol-t">Tên tập</span>]]</div>
+<div class="ky-vol">[[Tập 3|<span class="ky-vol-n">3</span><span class="ky-vol-t">Tên tập</span>]]</div>
+<div class="ky-vol">[[Tập 4|<span class="ky-vol-n">4</span><span class="ky-vol-t">Tên tập</span>]]</div>
+<div class="ky-vol">[[Tập 5|<span class="ky-vol-n">5</span><span class="ky-vol-t">Tên tập</span>]]</div>
+<div class="ky-vol">[[Tập 6|<span class="ky-vol-n">6</span><span class="ky-vol-t">Tên tập</span>]]</div>
+<div class="ky-vol">[[Tập 7|<span class="ky-vol-n">7</span><span class="ky-vol-t">Muôn sự tại nhân</span>]]</div>
+<div class="ky-vol">[[Tập 8|<span class="ky-vol-n">8</span><span class="ky-vol-t">Tên tập</span>]]</div>
+<div class="ky-vol">[[Tập 9|<span class="ky-vol-n">9</span><span class="ky-vol-t">Tên tập</span>]]</div>
+<div class="ky-vol">[[Tập 10|<span class="ky-vol-n">10</span><span class="ky-vol-t">Tên tập</span>]]</div>
+<div class="ky-vol">[[Tập 11|<span class="ky-vol-n">11</span><span class="ky-vol-t">Tên tập</span>]]</div>
+<div class="ky-vol">[[Tập 12|<span class="ky-vol-n">12</span><span class="ky-vol-t">Tên tập</span>]]</div>
+<div class="ky-vol">[[Tập 13|<span class="ky-vol-n">13</span><span class="ky-vol-t">Tên tập</span>]]</div>
+<div class="ky-vol">[[Tập 14|<span class="ky-vol-n">14</span><span class="ky-vol-t">Tên tập</span>]]</div>
+<div class="ky-vol">[[Tập 15|<span class="ky-vol-n">15</span><span class="ky-vol-t">Tên tập</span>]]</div>
+<div class="ky-vol">[[Tập 16|<span class="ky-vol-n">16</span><span class="ky-vol-t">Tên tập</span>]]</div>
+<div class="ky-vol">[[Tập 17|<span class="ky-vol-n">17</span><span class="ky-vol-t">Tên tập</span>]]</div>
+<div class="ky-vol">[[Tập 18|<span class="ky-vol-n">18</span><span class="ky-vol-t">Tên tập</span>]]</div>
+<div class="ky-vol">[[Tập 19|<span class="ky-vol-n">19</span><span class="ky-vol-t">Xuân xa xôi</span>]]</div>
+<div class="ky-vol">[[Tập 20|<span class="ky-vol-n">20</span><span class="ky-vol-t">Tên tập</span>]]</div>
+<div class="ky-vol">[[Tập 21|<span class="ky-vol-n">21</span><span class="ky-vol-t">Tên tập</span>]]</div>
+<div class="ky-vol">[[Tập 22|<span class="ky-vol-n">22</span><span class="ky-vol-t">Tên tập</span>]]</div>
+<div class="ky-vol">[[Tập 23|<span class="ky-vol-n">23</span><span class="ky-vol-t">Tên tập</span>]]</div>
+<div class="ky-vol">[[Tập 24|<span class="ky-vol-n">24</span><span class="ky-vol-t">Tên tập</span>]]</div>
+<div class="ky-vol ky-vol--last">[[Tập 25|<span class="ky-vol-n">25</span><span class="ky-vol-t">Bằng lòng đi em (phần 3)</span>]]<small>tập cuối</small></div>
+<div class="ky-vol ky-vol--myth">[[Truyền thuyết Tập 26|<span class="ky-vol-n">26?</span><span class="ky-vol-t">Chuyện kể của fan</span>]]</div>
 </div>
 </div>
-<div class="ky-section ky-guest">
-<div class="ky-guest-text">
+</div>
+<div class="ky-rail">
+<div class="ky-box">
+<h2 class="ky-h">Có thể bạn chưa biết</h2>
+* … rằng (một chi tiết nhỏ trong [[Tập 3]])?
+* … rằng (một chi tiết về [[Nhân vật 4]])?
+* … rằng (một chi tiết hậu trường của B.R.O)?
+<p class="ky-box-more">[[Project:Có thể bạn chưa biết|Thêm nữa →]]</p>
+</div>
+<div class="ky-box ky-guest">
 <h2 class="ky-h">Lưu bút</h2>
 <p>Bạn từng đọc ''Học Sinh Chân Kinh''? Để lại một trang về nhân vật hay tập truyện bạn còn nhớ, dù chỉ là một chi tiết nhỏ.</p>
-<p class="ky-cta">[[Project:Viết bài đầu tiên|Viết bài đầu tiên trong 5 phút →]]</p>
-<p class="ky-or">Đã biết cách viết? Gõ tên bài rồi ký:</p>
-<inputbox>
-type=create
-buttonlabel=Ký lưu bút
-placeholder=Tên bài: một nhân vật hay một tập
-break=no
-</inputbox>
-</div>
-<div class="ky-signed">
+<div class="ky-btns"><span class="ky-btn ky-btn--main">[[Project:Viết bài đầu tiên|Viết bài đầu tiên]]</span><span class="ky-btn">[[Project:Cộng đồng|Cần giúp?]]</span></div>
 <p class="ky-signed-title">Đã ký tên</p>
 <p class="ky-sign">[[Thành viên:Pisces|Pisces]] <small>dựng lớp</small></p>
 <p class="ky-signed-more">Chữ ký tiếp theo có thể là của bạn. Muốn giúp trông nom wiki thì [[Project:Ban cán sự|vào Ban cán sự lớp]].</p>
+</div>
 </div>
 </div>
 </div>
