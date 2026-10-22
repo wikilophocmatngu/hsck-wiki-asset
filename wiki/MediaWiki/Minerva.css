@@ -54,6 +54,15 @@ html.skin-theme-clientpref-night {
 .minerva-header #p-personal {
 	color: var(--color-base);
 }
+/* Chế độ tối của Minerva đảo màu wordmark (invert + hue-rotate) cho logo chữ đen; logo HSCK có màu nên giữ nguyên */
+html.skin-theme-clientpref-night .branding-box img {
+	filter: none;
+}
+@media screen and (prefers-color-scheme: dark) {
+	html.skin-theme-clientpref-os .branding-box img {
+		filter: none;
+	}
+}
 .minerva-header .branding-box a {
 	font-family: var(--hs-font-display, sans-serif);
 	font-weight: 700;
