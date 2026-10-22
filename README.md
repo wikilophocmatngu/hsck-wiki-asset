@@ -5,7 +5,7 @@ Giao diện và nội dung khởi tạo cho Wiki Học Sinh Chân Kinh (https://
 Skin: Vector 2010 (máy tính) và Minerva Neue (di động), tổ chức theo cách các wiki Weird Gloop vẫn làm
 (không dùng GloopThemes, Less hay các tính năng riêng khác của họ vì Miraheze không có):
 
-- `MediaWiki:Common.css`: dùng cho cả hai giao diện: `@import` phông Bricolage Grotesque (Google Fonts), một bộ biến màu duy nhất `--hs-*` (OKLCH, có giá trị tối), phông tiêu đề h1/h2, và khung hồ sơ thành viên "Học bạ" (UserProfileV2, nằm ngoài `.mw-parser-output` nên không dùng TemplateStyles được).
+- `MediaWiki:Common.css`: dùng cho cả hai giao diện: `@import` phông Bricolage Grotesque (Google Fonts), một bộ biến màu duy nhất `--hs-*` (OKLCH, có giá trị tối), phông tiêu đề h1/h2, và khung hồ sơ thành viên của UserProfileV2 (phẳng: ảnh thẻ, tên và nhóm quyền cạnh ảnh, mạng xã hội, logo Miraheze trên nhóm toàn cục; nằm ngoài `.mw-parser-output` nên không dùng TemplateStyles được).
 - `MediaWiki:Vector.css`: chỉ máy tính: dải đầu trang vải xanh, tab bìa hồ sơ, trang giấy kem, ruy băng đánh dấu trang, thanh bên, chân trang "bìa sau". Có chỗ chờ ảnh nền riêng.
 - `MediaWiki:Minerva.css`: chỉ di động: giấy kem (chế độ sáng), header vải xanh, menu trượt giấy có lề đỏ, tiêu đề mục dạng tab, chân trang "bìa sau".
 - CSS của từng bản mẫu nằm trong TemplateStyles (`Bản mẫu:X/styles.css`), lấy màu qua `var(--hs-*, dự phòng)`.
@@ -39,8 +39,8 @@ Skin: Vector 2010 (máy tính) và Minerva Neue (di động), tổ chức theo c
 | `wiki/Bản_mẫu/Hộp_nhân_vật.wikitext` | `Bản mẫu:Hộp nhân vật` (gọi mô đun) |
 | `wiki/Bản_mẫu/Hộp_tập_truyện.wikitext` | `Bản mẫu:Hộp tập truyện` (gọi mô đun) |
 | `wiki/MediaWiki/Gadget-RankIcons.js` | `MediaWiki:Gadget-RankIcons.js`: thay nhãn nhóm quyền trên trang hồ sơ bằng biểu tượng (theo gadget của Splatched trên Miraheze Developers Wiki) |
-| `wiki/MediaWiki/RankIcon-<nhóm>.wikitext` | `MediaWiki:RankIcon-<nhóm>`: biểu tượng của từng nhóm (bureaucrat, interface-admin, sysop, bot, rollbacker, autoconfirmed) |
-| `wiki/Tập_tin/RankIcon-<nhóm>.svg` | `Tập tin:RankIcon-<nhóm>.svg`: biểu tượng OOUI (giấy phép MIT, gói npm `oojs-ui`). Tải lên wiki, không dùng bản trên Commons vì Wikimedia giới hạn việc nhúng thẳng ảnh gốc (lỗi 429). |
+| `wiki/MediaWiki/RankIcon-<nhóm>.wikitext` | `MediaWiki:RankIcon-<nhóm>`: biểu tượng của từng nhóm, gồm 6 nhóm của wiki và 6 nhóm toàn cục của Miraheze (steward, global-admin, trustandsafety, techteam, wiki-mechanic, global-patroller). CSS không đổi màu ảnh, nên ảnh phải tự đủ tương phản trên nền nhãn ở cả chế độ sáng lẫn tối. |
+| `wiki/Tập_tin/RankIcon-<nhóm>.svg` | `Tập tin:RankIcon-<nhóm>.svg`: tạm thời là biểu tượng OOUI màu đen, sẽ thay bằng PNG (giấy phép MIT, gói npm `oojs-ui`). Tải lên wiki, không dùng bản trên Commons vì Wikimedia giới hạn việc nhúng thẳng ảnh gốc (lỗi 429). |
 | `wiki/Bản_mẫu/Hộp_thông_báo.wikitext` | `Bản mẫu:Hộp thông báo`: sơ khai, cần ảnh, cần nguồn (dùng CSS của Tiết lộ) |
 | `wiki/Bản_mẫu/Xem_thêm.wikitext` + `Xem_thêm/styles.css` | `Bản mẫu:Xem thêm`: dòng dẫn sang bài liên quan |
 | `wiki/Bản_mẫu/Ô_chủ_đề.wikitext` | `Bản mẫu:Ô chủ đề`: ô có ảnh trên Trang Chính |
@@ -50,7 +50,7 @@ Skin: Vector 2010 (máy tính) và Minerva Neue (di động), tổ chức theo c
 | `wiki/Bản_mẫu/Tiết_lộ.wikitext` + `Tiết_lộ/styles.css` | `Bản mẫu:Tiết lộ`: cảnh báo tiết lộ có "con dấu" đỏ |
 | `wiki/Bản_mẫu/Hộp_điều_hướng.wikitext` + `Hộp_điều_hướng/styles.css` | `Bản mẫu:Hộp điều hướng`: navbox (tối đa 6 nhóm) |
 
-Thư mục khác: `drafts/` = ý tưởng đã demo nhưng chưa dùng (không đăng); `tools/` = công cụ dựng ảnh demo (`build.py` chạy thử cả mô đun Lua qua TemplateSandbox, `luabundle.py` gộp mô đun với các mô đun nó require, `test-infobox.py` kiểm tra Infobox, Yesno và hai mô đun hộp); `HANDOFF.md` = bối cảnh và việc còn dở.
+Thư mục khác: `drafts/` = ý tưởng đã demo nhưng chưa dùng (không đăng); `tools/` = công cụ dựng ảnh demo (`build.py` chạy thử cả mô đun Lua qua TemplateSandbox, `upv2-edge.js` chụp 7 hồ sơ thử của trang thành viên trên 7 cấu hình, `luabundle.py` gộp mô đun với các mô đun nó require, `test-infobox.py` kiểm tra Infobox, Yesno và hai mô đun hộp); `HANDOFF.md` = bối cảnh và việc còn dở.
 
 Thứ tự đăng: trang `Bucket:*` → `Mô đun:Arguments`, `Mô đun:Yesno` → `Mô đun:Infobox` → các trang `styles.css` → `Mô đun:Infobox/*` → bản mẫu. Lưu trang `styles.css` **trước** các bản mẫu dùng nó. Trang `Bản mẫu:Hộp thông tin/styles.css` cũ không còn dùng. Các trang trong `demo/` chỉ là bài minh họa, không cần đăng.
 

@@ -1,16 +1,16 @@
 // Thử các trường hợp biên của masthead UserProfileV2: dựng 7 hồ sơ theo đúng HTML của extension,
 // chạy logic gadget RankIcons (parse qua API thật), chụp trên nhiều bề rộng và chế độ màu.
-// NODE_PATH=$(npm root -g) node edge.js <repo> <draft.css> <outdir>   (markup.json: HTML mạng xã hội, bút chì, nút Sửa lấy từ mã nguồn UserProfileV2)
+// NODE_PATH=$(npm root -g) node upv2-edge.js <repo> <outdir> [draft.css thay khối hồ sơ trong Common.css]   (upv2-markup.json: HTML mạng xã hội, bút chì, nút Sửa lấy từ mã nguồn UserProfileV2)
 const { chromium } = require('playwright'); const fs = require('fs'); const path = require('path');
-const [repo, draft, out] = process.argv.slice(2);
+const [repo, out, draft] = process.argv.slice(2);
 const common = fs.readFileSync(path.join(repo, 'wiki/MediaWiki/Common.css'), 'utf8');
 const a = common.indexOf('/* ===== Trang thành viên (UserProfileV2)'), b = common.indexOf('/* ===== Thành phần gốc');
-const css = common.slice(0, a) + fs.readFileSync(draft, 'utf8') + '\n' + common.slice(b) + '\n.edge-label{margin:2rem 0 .5rem;font:700 .8rem/1.2 sans-serif;color:#888;text-transform:uppercase;letter-spacing:.08em}';
+const css = (draft ? common.slice(0, a) + fs.readFileSync(draft, 'utf8') + '\n' + common.slice(b) : common) + '\n.edge-label{margin:2rem 0 .5rem;font:700 .8rem/1.2 sans-serif;color:#888;text-transform:uppercase;letter-spacing:.08em}';
 const skinCss = s => fs.readFileSync(path.join(repo, 'wiki/MediaWiki', s === 'vector' ? 'Vector.css' : 'Minerva.css'), 'utf8');
 const dir = path.join(repo, 'wiki/MediaWiki'), fdir = path.join(repo, 'wiki/Tập_tin');
 const icons = Object.fromEntries(fs.readdirSync(dir).filter(f => f.startsWith('RankIcon-')).map(f => [f.slice(9, -9), fs.readFileSync(path.join(dir, f), 'utf8')]));
 const files = Object.fromEntries(fs.readdirSync(fdir).filter(f => f.startsWith('RankIcon-')).map(f => [f.slice(9, -4), 'data:image/svg+xml;base64,' + fs.readFileSync(path.join(fdir, f)).toString('base64')]));
-const mk = JSON.parse(fs.readFileSync(path.join(__dirname, 'markup.json'), 'utf8'));
+const mk = JSON.parse(fs.readFileSync(path.join(__dirname, 'upv2-markup.json'), 'utf8'));
 // Ảnh thử (tùy chọn, không có trong repo): DEFAULT_AVATAR = resources/avatars/default.png của UserProfileV2, WIDE_AVATAR = một ảnh ngang bất kỳ
 const PISCES = '//static.wikitide.net/hsckwiki/upv2avatars/avatar_3.jpg';
 const img = f => f && fs.existsSync(f) ? 'data:image/' + (f.endsWith('png') ? 'png' : 'webp') + ';base64,' + fs.readFileSync(f).toString('base64') : PISCES;

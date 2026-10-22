@@ -48,7 +48,7 @@ NODE_PATH=$(npm root -g) node tools/shot-page.js <outdir> <Tên_trang> <tiền t
 Lưu ý kỹ thuật:
 - Kiểm tra CSS TemplateStyles bằng `action=parse` với `templatesandboxtitle` và `templatesandboxcontentmodel=sanitized-css`. Bộ lọc từ chối `text-decoration-thickness`, `text-underline-offset` và khai báo `background` gộp có `pos / size`.
 - RandomSelection trên Miraheze bị cache, đừng dùng cho nội dung "ngẫu nhiên".
-- Khung hồ sơ của UserProfileV2 (`.profile-masthead`) nằm ngoài `.mw-parser-output`, nên CSS "Học bạ" phải ở `Common.css`.
+- Khung hồ sơ của UserProfileV2 (`.profile-masthead`) nằm ngoài `.mw-parser-output`, nên CSS hồ sơ phải ở `Common.css`. Bản cũ "Học bạ", "Áo đồng phục" và bản kết hợp nằm trong `drafts/upv2/`.
 
 ## Trang cần tạo trên wiki
 
@@ -59,6 +59,8 @@ Lưu ý kỹ thuật:
 - `Bản mẫu:Ảnh thẻ`, `Bản mẫu:Trang Chính/styles.css` cùng các bản mẫu trong `wiki/`
 
 ## Câu hỏi còn mở
+
+- Biểu tượng nhóm quyền (`Tập tin:RankIcon-*`): Song Ngư đang tìm PNG thay cho bộ OOUI đen tạm thời. Bộ tạm thiếu tương phản trên nhãn đỏ/xanh ở chế độ sáng và trên nhãn tối ở chế độ tối; CSS cố ý không đổi màu ảnh.
 
 - Đổi tên nhóm quyền cho hợp chủ đề lớp học qua `MediaWiki:Group-*-member`?
 - Có làm bản mẫu "Lưu bút cá nhân" cho trang thành viên không?
