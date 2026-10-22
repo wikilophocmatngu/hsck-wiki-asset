@@ -38,6 +38,9 @@ Skin: Vector 2010 (máy tính) và Minerva Neue (di động), tổ chức theo c
 | `wiki/Mô_đun/Infobox/Nhân_vật.lua`, `Tập_truyện.lua` | `Mô đun:Infobox/Nhân vật`, `Mô đun:Infobox/Tập truyện`: vẽ hộp, thêm thể loại, lưu Bucket |
 | `wiki/Bản_mẫu/Hộp_nhân_vật.wikitext` | `Bản mẫu:Hộp nhân vật` (gọi mô đun) |
 | `wiki/Bản_mẫu/Hộp_tập_truyện.wikitext` | `Bản mẫu:Hộp tập truyện` (gọi mô đun) |
+| `wiki/MediaWiki/Gadget-RankIcons.js` | `MediaWiki:Gadget-RankIcons.js`: thay nhãn nhóm quyền trên trang hồ sơ bằng biểu tượng (theo gadget của Splatched trên Miraheze Developers Wiki) |
+| `wiki/MediaWiki/RankIcon-<nhóm>.wikitext` | `MediaWiki:RankIcon-<nhóm>`: biểu tượng của từng nhóm (bureaucrat, interface-admin, sysop, bot, rollbacker, autoconfirmed) |
+| `wiki/Tập_tin/RankIcon-<nhóm>.svg` | `Tập tin:RankIcon-<nhóm>.svg`: biểu tượng OOUI (giấy phép MIT, gói npm `oojs-ui`). Tải lên wiki, không dùng bản trên Commons vì Wikimedia giới hạn việc nhúng thẳng ảnh gốc (lỗi 429). |
 | `wiki/Bản_mẫu/Hộp_thông_báo.wikitext` | `Bản mẫu:Hộp thông báo`: sơ khai, cần ảnh, cần nguồn (dùng CSS của Tiết lộ) |
 | `wiki/Bản_mẫu/Xem_thêm.wikitext` + `Xem_thêm/styles.css` | `Bản mẫu:Xem thêm`: dòng dẫn sang bài liên quan |
 | `wiki/Bản_mẫu/Ô_chủ_đề.wikitext` | `Bản mẫu:Ô chủ đề`: ô có ảnh trên Trang Chính |
@@ -62,7 +65,8 @@ Sửa các trang `MediaWiki:*.css` cần quyền `interface-admin`. CSS mới c�
 3. Tạo các trang Trang Chính đang trỏ tới: `Project:Viết bài đầu tiên` (hướng dẫn ngắn có hình), `Project:Ban cán sự`, `Truyền thuyết Tập 26` (ghi rõ ngay đầu là chuyện kể của fan, không phải tập đã phát hành), `Tập 1` … `Tập 25`.
 4. Tạo các trang thể loại: `Nhân vật`, `Học sinh`, `Giáo viên`, `Tập truyện`, `Địa điểm`, `Bản mẫu hộp thông tin`, `Bản mẫu điều hướng`, `Bản mẫu định dạng`, `Bản mẫu thông báo`, `Bản mẫu trang chính`.
 5. Logo: tải lên `HSCK-logo-1x.png` (135×135), `HSCK-logo-2x.png` (270×270) và `HSCK-wordmark.png` (178×96), rồi đặt `$wgLogos` với `1x`, `2x` cho Vector 2010 và `wordmark` (`width` 89, `height` 48) cho Minerva. Logo được tách từ bìa Tập 25 bằng Canva (bản thử đầu dùng `tools/cut-logo.py`). `Minerva.css` đã tắt việc đảo màu logo ở chế độ tối.
-6. (Tùy chọn) Đổi tên không gian `Project` (`$wgMetaNamespace`), ví dụ thành `Wiki Học Sinh Chân Kinh`. Sidebar và Trang Chính đang dùng tiền tố `Project:` nên vẫn chạy sau khi đổi.
+6. Gadget RankIcons: thêm dòng `* RankIcons[ResourceLoader|default|namespaces=2|dependencies=mediawiki.api]|RankIcons.js` vào `MediaWiki:Gadgets-definition` (chỉ chạy ở không gian Thành viên), tải 6 tệp `RankIcon-*.svg` lên và tạo các trang `MediaWiki:RankIcon-*`.
+7. (Tùy chọn) Đổi tên không gian `Project` (`$wgMetaNamespace`), ví dụ thành `Wiki Học Sinh Chân Kinh`. Sidebar và Trang Chính đang dùng tiền tố `Project:` nên vẫn chạy sau khi đổi.
 
 ## Kiểm tra
 
