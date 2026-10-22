@@ -42,7 +42,7 @@ const shots = [
       if (document.body.classList.contains('skin-minerva')) content.querySelectorAll('.mw-editsection, .navbox').forEach(e => e.remove()); // như MobileFrontend
       // Hộp thể loại theo kết quả parse
       const cl = document.querySelector('#catlinks');
-      data.cats = data.cats.filter(c => !c.includes('không_tồn_tại'));
+      data.cats = data.cats.filter(c => !c.includes('không_tồn_tại') && !c.includes('Tabber')); // thể loại ẩn
       if (cl && data.cats.length) {
         cl.className = 'catlinks';
         cl.innerHTML = '<div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="#">Thể loại</a>: <ul>' + data.cats.map(c => `<li><a href="#">${c.replace(/_/g, ' ')}</a></li>`).join('') + '</ul></div>';
@@ -54,6 +54,7 @@ const shots = [
       if (bb && imgs['HSCK-wordmark.png']) bb.innerHTML = `<img src="${imgs['HSCK-wordmark.png']}" width="89" height="48" alt="Wiki Học Sinh Chân Kinh" style="display:block">`;
       const s = document.createElement('style'); s.textContent = styles; document.head.appendChild(s);
       if (window.mw && data.modulestyles) mw.loader.load(data.modulestyles);
+      if (window.mw && data.modules) mw.loader.using(data.modules).then(() => mw.hook('wikipage.content').fire($(content)));
       if (window.mw) mw.loader.using('jquery.makeCollapsible').then(() => $(content).find('.mw-collapsible').makeCollapsible());
     }, { data, styles: fixUrls(css.common + '\n' + css[skin]), theme, imgs });
     await p.getByRole('button', { name: 'OK' }).click().catch(() => {});

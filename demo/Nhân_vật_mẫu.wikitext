@@ -4,6 +4,9 @@
 {{Hộp nhân vật
 | tên           = Nhân vật mẫu
 | hình          = Chân dung 2.webp
+| nhãn          = Tập 1
+| hình2         = Chân dung 4.webp
+| nhãn2         = Tập 25
 | chú thích     = Ảnh minh họa
 | tên khác      = Biệt danh
 | giới tính     = Nữ

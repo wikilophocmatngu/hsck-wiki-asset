@@ -43,7 +43,10 @@ for root, _, files in os.walk(os.path.join(W, "Mô_đun")):
 
 
 def bundle(name):
-    return luabundle.bundle(os.path.join(W, "Mô_đun"), name)
+    src = luabundle.bundle(os.path.join(W, "Mô_đun"), name)
+    if os.environ.get("DEMO_FILES"):  # demo: coi mọi tệp là có thật, shot.js thay ảnh hỏng bằng ảnh cục bộ
+        src = src.replace(" or not title.file or not title.file.exists then", " then")
+    return src
 
 
 INVOKE = {n: m.groups() for n, s in TPL.items() if (m := re.fullmatch(r"<includeonly>\{\{#invoke:([^|}]+)\|(\w+)\}\}</includeonly>(?s:<noinclude>.*)?\s*", s)) and m.group(1) in MODS}
@@ -112,7 +115,7 @@ else:
 for key, (title, text) in pages.items():
     p = api(action="parse", prop="text|categories|modules", title=title, disablelimitreport=1,
             text=expand(text, title))["parse"]
-    json.dump({"title": title, "html": p["text"], "cats": [c["category"] for c in p["categories"]], "modulestyles": p.get("modulestyles", [])},
+    json.dump({"title": title, "html": p["text"], "cats": [c["category"] for c in p["categories"]], "modulestyles": p.get("modulestyles", []), "modules": p.get("modules", [])},
               open(os.path.join(out, key + ".json"), "w", encoding="utf-8"), ensure_ascii=False)
     print("OK", title, [c["category"] for c in p["categories"]])
 
