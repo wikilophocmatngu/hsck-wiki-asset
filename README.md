@@ -32,6 +32,7 @@ Skin: Vector 2010 (máy tính) và Minerva Neue (di động), tổ chức theo c
 | `wiki/MediaWiki/Sidebar.wikitext` | `MediaWiki:Sidebar` |
 | `wiki/Trang_Chính.wikitext` | `Trang Chính` (kiểu Kỷ yếu: bìa, Ảnh tập thể, 25 năm học, Lưu bút) |
 | `wiki/Bucket/Characters.json`, `Volumes.json` | `Bucket:Characters`, `Bucket:Volumes`: lược đồ dữ liệu hộp thông tin |
+| `wiki/Mô_đun/Arguments.lua`, `Yesno.lua` | `Mô đun:Arguments` (bản của Wikipedia, giữ nguyên), `Mô đun:Yesno` (theo Wikipedia, thêm có/không/đúng/sai/bật/tắt) |
 | `wiki/Mô_đun/Infobox.lua` | `Mô đun:Infobox`: bộ dựng hộp (theo Weird Gloop, qua bản của Wiki 100 Bạn Gái) và `store()` lưu vào Bucket |
 | `wiki/Mô_đun/Infobox/styles.css` | `Mô đun:Infobox/styles.css` (TemplateStyles của mọi hộp) |
 | `wiki/Mô_đun/Infobox/Nhân_vật.lua`, `Tập_truyện.lua` | `Mô đun:Infobox/Nhân vật`, `Mô đun:Infobox/Tập truyện`: vẽ hộp, thêm thể loại, lưu Bucket |
@@ -46,9 +47,9 @@ Skin: Vector 2010 (máy tính) và Minerva Neue (di động), tổ chức theo c
 | `wiki/Bản_mẫu/Tiết_lộ.wikitext` + `Tiết_lộ/styles.css` | `Bản mẫu:Tiết lộ`: cảnh báo tiết lộ có "con dấu" đỏ |
 | `wiki/Bản_mẫu/Hộp_điều_hướng.wikitext` + `Hộp_điều_hướng/styles.css` | `Bản mẫu:Hộp điều hướng`: navbox (tối đa 6 nhóm) |
 
-Thư mục khác: `drafts/` = ý tưởng đã demo nhưng chưa dùng (không đăng); `tools/` = công cụ dựng ảnh demo (`build.py` chạy thử cả mô đun Lua qua TemplateSandbox, `test-infobox.py` kiểm tra các hàm chuẩn hoá dữ liệu Bucket); `HANDOFF.md` = bối cảnh và việc còn dở.
+Thư mục khác: `drafts/` = ý tưởng đã demo nhưng chưa dùng (không đăng); `tools/` = công cụ dựng ảnh demo (`build.py` chạy thử cả mô đun Lua qua TemplateSandbox, `luabundle.py` gộp mô đun với các mô đun nó require, `test-infobox.py` kiểm tra Infobox, Yesno và hai mô đun hộp); `HANDOFF.md` = bối cảnh và việc còn dở.
 
-Thứ tự đăng: trang `Bucket:*` → `Mô đun:Infobox` → các trang `styles.css` → `Mô đun:Infobox/*` → bản mẫu. Lưu trang `styles.css` **trước** các bản mẫu dùng nó. Trang `Bản mẫu:Hộp thông tin/styles.css` cũ không còn dùng. Các trang trong `demo/` chỉ là bài minh họa, không cần đăng.
+Thứ tự đăng: trang `Bucket:*` → `Mô đun:Arguments`, `Mô đun:Yesno` → `Mô đun:Infobox` → các trang `styles.css` → `Mô đun:Infobox/*` → bản mẫu. Lưu trang `styles.css` **trước** các bản mẫu dùng nó. Trang `Bản mẫu:Hộp thông tin/styles.css` cũ không còn dùng. Các trang trong `demo/` chỉ là bài minh họa, không cần đăng.
 
 Hộp thông tin tự lưu dữ liệu vào Bucket khi bài nằm trong không gian chính. Nếu lưu lỗi, hộp vẫn hiện bình thường và bài vào `Thể loại:Trang lưu Bucket bị lỗi`.
 

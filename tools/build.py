@@ -2,6 +2,9 @@
 # Usage: python3 -I build.py <repo> <outdir>
 import json, os, re, sys, urllib.parse, urllib.request
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import luabundle
+
 API = "https://hsck.lophocmatngu.wiki/w/api.php"
 UA = os.environ["MIRAHEZE_UA"]
 repo, out = sys.argv[1], sys.argv[2]
@@ -40,10 +43,7 @@ for root, _, files in os.walk(os.path.join(W, "Mô_đun")):
 
 
 def bundle(name):
-    def inline(m):
-        dep = m.group(1)
-        return "(function()\n" + bundle(dep) + "\nend)()" if dep in MODS else m.group(0)
-    return re.sub(r"""require\(['"](?:Module|Mô đun):([^'"]+)['"]\)""", inline, MODS[name])
+    return luabundle.bundle(os.path.join(W, "Mô_đun"), name)
 
 
 INVOKE = {n: m.groups() for n, s in TPL.items() if (m := re.fullmatch(r"<includeonly>\{\{#invoke:([^|}]+)\|(\w+)\}\}</includeonly>(?s:<noinclude>.*)?\s*", s)) and m.group(1) in MODS}

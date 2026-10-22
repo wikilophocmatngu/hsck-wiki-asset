@@ -19,7 +19,9 @@ Bài viết trong không gian chính tự vào [[:Thể loại:Nhân vật]], th
 | gia đình      =
 | xuất hiện đầu =
 | loại          = học sinh / giáo viên
+| lưu           = (bỏ trống; ghi "không" để không lưu vào Bucket)
 }}
 </pre>
+Tham số <code>lưu</code> đọc bằng [[Mô đun:Yesno]]: <code>không</code>, <code>sai</code>, <code>tắt</code>, <code>0</code> (hoặc <code>no</code>, <code>false</code>…) thì bài không được lưu vào Bucket, dùng cho bài minh họa hoặc bài nháp trong không gian chính.
 [[Thể loại:Bản mẫu hộp thông tin]]
 </noinclude>

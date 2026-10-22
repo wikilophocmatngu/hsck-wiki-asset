@@ -8,6 +8,8 @@
 --------------------------------------------------------------------------------
 
 local InfoboxBuilder = require('Module:Infobox')
+local getArgs = require('Module:Arguments').getArgs
+local yesno = require('Module:Yesno')
 
 local p = {}
 
@@ -19,7 +21,7 @@ local function volumeLink(n, text)
 end
 
 function p.main(frame)
-	return p._main(InfoboxBuilder.getArgs(frame))
+	return p._main(getArgs(frame))
 end
 
 function p._main(args)
@@ -62,7 +64,7 @@ function p._main(args)
 		pages = InfoboxBuilder.number(args['số trang']),
 		isbn = plain(args['isbn']),
 		cover = InfoboxBuilder.file(args['bìa']),
-	})
+	}, yesno(args['lưu'], true))
 end
 
 return p

@@ -7,6 +7,8 @@
 --------------------------------------------------------------------------------
 
 local InfoboxBuilder = require('Module:Infobox')
+local getArgs = require('Module:Arguments').getArgs
+local yesno = require('Module:Yesno')
 
 local p = {}
 
@@ -31,7 +33,7 @@ local function imageList(args)
 end
 
 function p.main(frame)
-	return p._main(InfoboxBuilder.getArgs(frame))
+	return p._main(getArgs(frame))
 end
 
 function p._main(args)
@@ -71,7 +73,7 @@ function p._main(args)
 		kind = kind,
 		first_volume = InfoboxBuilder.number(args['xuất hiện đầu']),
 		image = InfoboxBuilder.file(args['hình']),
-	})
+	}, yesno(args['lưu'], true))
 end
 
 return p

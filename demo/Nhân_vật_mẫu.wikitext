@@ -11,6 +11,7 @@
 | lớp           = 8A
 | xuất hiện đầu = [[Tập 1]]
 | loại          = học sinh
+| lưu           = không
 }}
 '''Nhân vật mẫu''' là bài viết minh họa bố cục một trang nhân vật trên {{SITENAME}}. Nội dung dưới đây chỉ là chữ giữ chỗ.
 

@@ -328,23 +328,6 @@ function InfoboxBuilder.infoboxGallery(frame)
 	return mw.text.jsonEncode(entries)
 end
 
--- Tham số của bản mẫu gọi tới, bị ghi đè bởi tham số không trống của chính
--- #invoke (bản mẫu dùng cách này để truyền giá trị cần wikitext mới tính được).
--- Giá trị được cắt khoảng trắng, giá trị trống bị bỏ, nên `args.x or mặc định` dùng được.
-function InfoboxBuilder.getArgs(frame)
-	local args = {}
-	local parent = frame:getParent()
-	for _, source in ipairs({ parent and parent.args or {}, frame.args }) do
-		for k, v in pairs(source) do
-			if type(v) == 'string' then v = mw.text.trim(v) end
-			if not isBlank(v) then
-				args[k] = v
-			end
-		end
-	end
-	return args
-end
-
 -- Tham số không trống đầu tiên trong các tên cho trước (tên gọi khác).
 function InfoboxBuilder.pick(args, ...)
 	for _, name in ipairs({ ... }) do
@@ -420,10 +403,11 @@ function InfoboxBuilder.isoDate(value)
 end
 
 -- Lưu một dòng vào Bucket `name` (lược đồ ở trang Bucket:<Name>).
--- Mặc định chỉ lưu từ bài viết (không gian chính). Lưu lỗi thì không làm hỏng
--- hộp, mà trả về thể loại theo dõi để ban quản trị tìm và sửa.
-function InfoboxBuilder.store(name, data)
-	if mw.title.getCurrentTitle().namespace ~= 0 then
+-- Mặc định chỉ lưu từ bài viết (không gian chính); `enabled` = false thì bỏ qua
+-- (mô đun hộp truyền yesno(args['lưu'], true), nên bài ghi `| lưu = không` không được lưu).
+-- Lưu lỗi thì không làm hỏng hộp, mà trả về thể loại theo dõi để ban quản trị tìm và sửa.
+function InfoboxBuilder.store(name, data, enabled)
+	if enabled == false or mw.title.getCurrentTitle().namespace ~= 0 then
 		return ''
 	end
 	-- `bucket` là bảng gọi được (có __call), không phải hàm; nil khi Bucket chưa được bật.
