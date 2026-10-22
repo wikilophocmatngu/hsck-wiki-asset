@@ -1,0 +1,162 @@
+/* ===== Trang thành viên (UserProfileV2) =====
+   Bản phẳng: một khối giấy đậm, không viền, không dải nhãn. Ảnh 3×4 bên trái; tên và nhóm quyền
+   nằm ngay cạnh ảnh (cả trên điện thoại); thống kê và giới thiệu bên dưới.
+   .profile-information dùng display: contents để các phần của nó xếp thẳng vào grid của
+   .profile-identitybox. Nhóm quyền hiện bằng chữ hoặc biểu tượng (gadget RankIcon) đều được.
+   Khung hồ sơ nằm ngoài .mw-parser-output nên không dùng TemplateStyles được; chỉ dùng class của
+   UserProfileV2 và biến --hs-*, áp dụng cho mọi skin. */
+.profile-masthead {
+	margin-bottom: 1.5rem;
+	border-radius: 0.75rem;
+	background: var(--hs-paper-2, oklch(95% 0.022 80));
+	color: var(--hs-ink, oklch(24% 0.012 250));
+}
+.profile-masthead .profile-identitybox {
+	display: grid;
+	grid-template-columns: auto minmax(0, 1fr);
+	grid-template-areas:
+		"avatar header"
+		"avatar stats"
+		"avatar about";
+	grid-template-rows: auto auto 1fr;
+	align-items: start;
+	gap: 0.6rem 1.25rem;
+	margin: 0;
+	padding: 1.25rem;
+}
+.profile-masthead .profile-information {
+	display: contents;
+}
+
+/* Ảnh đại diện: 3×4, bo nhẹ, không khung */
+.profile-masthead .profile-avatar {
+	grid-area: avatar;
+	width: 6.75rem;
+	height: 9rem;
+	margin: 0;
+}
+.profile-masthead .profile-avatar-image {
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: 0;
+	border-radius: 0.5rem;             /* UserProfileV2 bo tròn ảnh thành elip */
+	background: var(--hs-photo, oklch(91% 0.04 226));
+	object-fit: cover;
+}
+
+/* Tên và nhóm quyền cạnh ảnh; nút "Sửa hồ sơ" ở góc phải */
+.profile-masthead .profile-header {
+	grid-area: header;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 0.5rem 1rem;
+	min-width: 0;
+}
+.profile-masthead .profile-header-attributes {
+	display: flex;
+	flex: 1 1 14rem;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.35rem;
+	min-width: 0;
+}
+.profile-masthead .profile-header-actions:empty {
+	display: none;
+}
+.profile-masthead .profile-header-attributes > h1 {
+	flex: 0 0 100%;                    /* tên một hàng riêng, nhóm quyền xuống hàng dưới */
+	margin: 0 0 0.15rem !important;
+	padding: 0;
+	border: 0;
+	color: var(--hs-accent, oklch(44% 0.137 259));
+	font-family: var(--hs-font-display, sans-serif) !important;   /* ghi đè font-family !important của UserProfileV2 */
+	font-size: clamp(1.5rem, 5vw, 2.1rem);
+	letter-spacing: -0.02em;
+	line-height: 1.1;
+	overflow-wrap: anywhere;
+}
+
+/* Nhóm quyền: nhãn phẳng tô màu nhạt; nếu RankIcon thay bằng biểu tượng thì nhãn chỉ còn là khoảng chứa */
+.profile-masthead .profile-user-group {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.3rem;
+	margin: 0;
+	padding: 0.2rem 0.6rem;
+	border: 0;
+	border-radius: 999px;
+	background: var(--hs-paper, oklch(98.5% 0.012 80));
+	color: var(--hs-ink, oklch(24% 0.012 250));
+	font-size: 0.8rem;
+	font-weight: 700;
+	line-height: 1.3;
+}
+.profile-masthead .profile-user-group img {
+	width: 1.25rem;
+	height: 1.25rem;
+}
+.profile-masthead .profile-user-group[data-group="bureaucrat"] {
+	background: var(--hs-pen, oklch(53% 0.2 26));
+	color: var(--hs-paper, oklch(98.5% 0.012 80));
+}
+.profile-masthead .profile-user-group[data-group="interface-admin"] {
+	background: var(--hs-peach, oklch(79% 0.132 62));
+	color: var(--hs-ink-fixed, oklch(24% 0.012 250));
+}
+.profile-masthead .profile-user-group[data-group="sysop"] {
+	background: var(--hs-accent, oklch(44% 0.137 259));
+	color: var(--hs-paper, oklch(98.5% 0.012 80));
+}
+
+/* Thống kê: số đậm, không khung */
+.profile-masthead .profile-header-statistics {
+	grid-area: stats;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.25rem 1.25rem;
+	margin: 0 !important;
+	padding: 0;                        /* Minerva thêm lề trái cho danh sách */
+	color: var(--hs-muted, oklch(45% 0.014 250));
+	list-style: none;
+	text-align: left;
+	text-transform: none;
+}
+.profile-masthead .profile-header-statistics li {
+	margin: 0;
+	padding: 0;
+	font-weight: 700;
+}
+/* UserProfileV2 chèn dấu "·" giữa các mục; các mục đã tách nhau bằng khoảng cách */
+.profile-masthead .profile-header-statistics li::before {
+	content: none !important;
+}
+.profile-masthead .profile-header-about {
+	grid-area: about;
+	max-width: 60ch;
+}
+.profile-masthead .profile-header-about:empty {
+	display: none;
+}
+
+/* Điện thoại: ảnh nhỏ lại nhưng tên và nhóm quyền vẫn ở cạnh; thống kê và giới thiệu trải hết bề ngang */
+@media (max-width: 639px) {
+	.profile-masthead .profile-identitybox {
+		grid-template-areas:
+			"avatar header"
+			"stats stats"
+			"about about";
+		grid-template-rows: auto;
+		gap: 0.75rem 0.9rem;
+		padding: 1rem;
+	}
+	.profile-masthead .profile-avatar {
+		width: 4.5rem;
+		height: 6rem;
+	}
+	.profile-masthead .profile-header-attributes {
+		flex-basis: 100%;
+	}
+}
