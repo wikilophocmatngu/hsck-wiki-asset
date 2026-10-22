@@ -4,6 +4,7 @@
  * và cột phải kiểu Minecraft Wiki (Có thể bạn chưa biết, Lưu bút). */
 .ky {
 	display: grid;
+	grid-template-columns: minmax(0, 1fr);   /* kệ sách cuộn ngang không được đẩy trang rộng ra */
 	gap: 2.25rem;
 	max-width: 68rem;
 	margin: 0 auto;
@@ -249,54 +250,77 @@
 	object-fit: cover;
 }
 
-/* ===== 25 năm học: số tập và tên tập ===== */
-.ky-years-grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(6.25rem, 1fr));
-	gap: 0.5rem;
+/* ===== 25 năm học: kệ sách, mỗi tập một gáy sách ===== */
+/* Số tập nằm ngang ở đầu gáy, tên tập in dọc như gáy truyện thật. Kệ trải hết bề ngang trang;
+   màn hẹp thì vuốt ngang. */
+.ky-shelf {
+	display: flex;
+	gap: 0.25rem;
+	padding: 0 0.25rem;
+	border-bottom: 0.6rem solid var(--hs-spine, oklch(32% 0.11 259));   /* tấm ván kệ */
+	overflow-x: auto;
+	scroll-snap-type: x proximity;
 }
 .ky-vol {
-	display: flex;
-	min-height: 5.5rem;
+	flex: 1 0 2.2rem;
+	max-width: 3.25rem;
+	height: 11.5rem;
 	border: 2px solid var(--hs-ink, oklch(24% 0.012 250));
-	border-radius: 0.2rem;
+	border-bottom: 0;
+	border-radius: 0.25rem 0.25rem 0 0;
 	background: var(--hs-paper-2, oklch(95% 0.022 80));
-	line-height: 1.15;
+	scroll-snap-align: start;
+	transition: translate 0.15s ease-out;
+}
+/* Gáy so le chiều cao như sách thật trên kệ */
+.ky-vol:nth-child(3n+2) {
+	height: 10.75rem;
+	margin-top: 0.75rem;
+}
+.ky-vol:nth-child(4n+3) {
+	height: 11rem;
+	margin-top: 0.5rem;
+}
+.ky-vol:hover {
+	translate: 0 -0.4rem;               /* rút sách ra khỏi kệ */
 }
 .ky-vol > a {
 	display: flex;
-	flex: 1;
 	flex-direction: column;
-	gap: 0.25rem;
-	padding: 0.45rem 0.55rem;
+	align-items: center;
+	gap: 0.4rem;
+	height: 100%;
+	box-sizing: border-box;
+	padding: 0.4rem 0 0.5rem;
 	color: var(--hs-ink, oklch(24% 0.012 250));
+	text-decoration: none;
 }
 .ky-vol-n {
 	font-family: var(--hs-font-display, sans-serif);
-	font-size: 1.3rem;
+	font-size: 1.05rem;
 	font-weight: 700;
+	line-height: 1;
 	font-variant-numeric: tabular-nums;
 }
 .ky-vol-t {
-	font-size: 0.8rem;
-}
-.ky-vol small {
-	align-self: end;
-	padding: 0 0.55rem 0.45rem 0;
+	flex: 1;
+	min-height: 0;
+	overflow: hidden;
 	font-size: 0.75rem;
+	line-height: 1.1;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	writing-mode: vertical-rl;
 }
 .ky-vol--last {
-	grid-column: span 2;
 	border-color: var(--hs-pen, oklch(53% 0.2 26));
 	background: var(--hs-note-pink, oklch(91% 0.05 358));
-	color: var(--hs-ink-fixed, oklch(24% 0.012 250));
 }
 .ky-vol--last > a {
 	color: var(--hs-ink-fixed, oklch(24% 0.012 250));
 }
 /* Tập 26: chỉ là chuyện kể của fan, vẽ như bóng mờ */
 .ky-vol--myth {
-	grid-column: span 2;
 	border-style: dashed;
 	border-color: var(--hs-muted, oklch(45% 0.014 250));
 	background: transparent;
@@ -415,14 +439,10 @@
 	.ky-moment {
 		scroll-snap-align: start;
 	}
-	.ky-years-grid {
-		grid-template-columns: repeat(3, minmax(0, 1fr));
-	}
+	/* Kệ sách: gáy rộng hơn chút cho dễ bấm, vuốt ngang để xem hết */
 	.ky-vol {
-		min-height: 0;
-	}
-	.ky-vol--myth {
-		grid-column: span 1;           /* 25 (2 ô) + 26? (1 ô) lấp đủ hàng 3 cột */
+		flex-basis: 2.6rem;
+		max-width: none;
 	}
 	/* Điện thoại: chỉ 6 ảnh thẻ, phần còn lại ở "Cả lớp →" */
 	.ky-class .ky-face:nth-of-type(n+7) {
@@ -433,7 +453,8 @@
 	}
 }
 @media (prefers-reduced-motion: reduce) {
-	.ky-topic {
+	.ky-topic,
+	.ky-vol {
 		transition: none;
 	}
 }

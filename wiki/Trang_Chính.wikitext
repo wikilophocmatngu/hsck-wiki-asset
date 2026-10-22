@@ -11,12 +11,14 @@ placeholder=Tìm một gương mặt, một tập truyện…
 break=no
 </inputbox>
 </div>
+<!-- Số liệu chỉ hiện khi wiki có từ 50 bài: con số nhỏ làm trang trông trống trải -->{{#ifexpr: {{NUMBEROFARTICLES:R}} >= 50 |
 <ul class="ky-stats">
 <li><b>{{NUMBEROFARTICLES}}</b> bài viết</li>
 <li><b>{{NUMBEROFFILES}}</b> tệp</li>
 <li><b>{{NUMBEROFACTIVEUSERS}}</b> thành viên tích cực</li>
 <li><b>{{NUMBEROFEDITS}}</b> lần sửa</li>
 </ul>
+}}
 </div>
 <div class="ky-topics">
 {{Ô chủ đề|Thể loại:Nhân vật|Nhân vật|hình=Ô Nhân vật.webp}}
@@ -34,27 +36,10 @@ break=no
 <div class="ky-moment">[[Tập tin:Khoảnh khắc 3.webp|480px|link=Tập 19|alt=]]<div class="ky-moment-body"><p class="ky-moment-meta">Tập 19 · Xuân xa xôi</p><p class="ky-moment-title">[[Tập 19|Tên khoảnh khắc]]</p><p>Một câu kể lại cảnh này cho người chưa đọc.</p></div></div>
 </div>
 </div>
-<div class="ky-cols">
-<div class="ky-main">
-<div class="ky-section">
-<div class="ky-h-row"><h2 class="ky-h">Ảnh tập thể</h2>[[:Thể loại:Nhân vật|Cả lớp →]]</div>
-<div class="ky-class">
-{{Ảnh thẻ|Nhân vật 1|hình=Chân dung 1.webp}}
-{{Ảnh thẻ|Nhân vật 2|hình=Chân dung 2.webp}}
-{{Ảnh thẻ|Nhân vật 3|hình=Chân dung 3.webp}}
-{{Ảnh thẻ|Nhân vật 4|hình=Chân dung 4.webp}}
-{{Ảnh thẻ|Nhân vật 5|hình=Chân dung 5.webp}}
-{{Ảnh thẻ|Nhân vật 6|hình=Chân dung 6.webp}}
-{{Ảnh thẻ|Nhân vật 7|hình=Chân dung 7.webp}}
-{{Ảnh thẻ|Nhân vật 8|hình=Chân dung 8.webp}}
-{{Ảnh thẻ|Nhân vật 9|hình=Chân dung 9.webp}}
-{{Ảnh thẻ|Nhân vật 10|hình=Chân dung 10.webp}}
-</div>
-</div>
 <div class="ky-section">
 <h2 class="ky-h">25 năm học</h2>
-<p class="ky-note">Mỗi tập là một năm. Bấm vào để đọc tóm tắt.</p>
-<div class="ky-years-grid">
+<p class="ky-note">Mỗi tập là một năm; Tập 25 là năm cuối. Bấm vào gáy sách để đọc tóm tắt.</p>
+<div class="ky-shelf">
 <div class="ky-vol">[[Tập 1|<span class="ky-vol-n">1</span><span class="ky-vol-t">Tên tập</span>]]</div>
 <div class="ky-vol">[[Tập 2|<span class="ky-vol-n">2</span><span class="ky-vol-t">Tên tập</span>]]</div>
 <div class="ky-vol">[[Tập 3|<span class="ky-vol-n">3</span><span class="ky-vol-t">Tên tập</span>]]</div>
@@ -79,8 +64,25 @@ break=no
 <div class="ky-vol">[[Tập 22|<span class="ky-vol-n">22</span><span class="ky-vol-t">Tên tập</span>]]</div>
 <div class="ky-vol">[[Tập 23|<span class="ky-vol-n">23</span><span class="ky-vol-t">Tên tập</span>]]</div>
 <div class="ky-vol">[[Tập 24|<span class="ky-vol-n">24</span><span class="ky-vol-t">Tên tập</span>]]</div>
-<div class="ky-vol ky-vol--last">[[Tập 25|<span class="ky-vol-n">25</span><span class="ky-vol-t">Bằng lòng đi em (phần 3)</span>]]<small>tập cuối</small></div>
+<div class="ky-vol ky-vol--last">[[Tập 25|<span class="ky-vol-n">25</span><span class="ky-vol-t">Bằng lòng đi em (phần 3)</span>]]</div>
 <div class="ky-vol ky-vol--myth">[[Truyền thuyết Tập 26|<span class="ky-vol-n">26?</span><span class="ky-vol-t">Chuyện kể của fan</span>]]</div>
+</div>
+</div>
+<div class="ky-cols">
+<div class="ky-main">
+<div class="ky-section">
+<div class="ky-h-row"><h2 class="ky-h">Ảnh tập thể</h2>[[:Thể loại:Nhân vật|Cả lớp →]]</div>
+<div class="ky-class">
+{{Ảnh thẻ|Nhân vật 1|hình=Chân dung 1.webp}}
+{{Ảnh thẻ|Nhân vật 2|hình=Chân dung 2.webp}}
+{{Ảnh thẻ|Nhân vật 3|hình=Chân dung 3.webp}}
+{{Ảnh thẻ|Nhân vật 4|hình=Chân dung 4.webp}}
+{{Ảnh thẻ|Nhân vật 5|hình=Chân dung 5.webp}}
+{{Ảnh thẻ|Nhân vật 6|hình=Chân dung 6.webp}}
+{{Ảnh thẻ|Nhân vật 7|hình=Chân dung 7.webp}}
+{{Ảnh thẻ|Nhân vật 8|hình=Chân dung 8.webp}}
+{{Ảnh thẻ|Nhân vật 9|hình=Chân dung 9.webp}}
+{{Ảnh thẻ|Nhân vật 10|hình=Chân dung 10.webp}}
 </div>
 </div>
 </div>
