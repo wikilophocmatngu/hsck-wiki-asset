@@ -1,4 +1,4 @@
-<templatestyles src="Bản mẫu:Tiết lộ/styles.css" /><div class="hsck-spoiler" role="note"><span class="hsck-seal" aria-hidden="true">Tiết lộ</span><div class="hsck-spoiler-text">'''Cảnh báo tiết lộ nội dung:''' bài viết có chi tiết cốt truyện{{#if:{{{1|}}}|&#32;đến hết {{{1}}}}}. Hãy cân nhắc nếu bạn chưa đọc.</div></div><noinclude>
+<templatestyles src="Bản mẫu:Tiết lộ/styles.css" /><div class="hsck-spoiler" role="note"><span class="hsck-seal" aria-hidden="true">Tiết lộ</span><div class="hsck-spoiler-text">Bài viết có tiết lộ cốt truyện{{#if:{{{1|}}}|&#32;đến hết {{{1}}}}}. Chưa đọc thì nên dừng ở đây.</div></div><noinclude>
 == Cách dùng ==
 Đặt ở đầu bài hoặc đầu đoạn có tiết lộ cốt truyện.
 <pre>

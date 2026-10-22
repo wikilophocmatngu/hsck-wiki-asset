@@ -32,6 +32,6 @@ Hộp điều hướng đặt cuối bài. Nhờ class <code>navbox</code>, Mobi
 | danh sách2   = [[D]] · [[E]]
 }}
 </pre>
-Hỗ trợ tối đa 6 nhóm. Tạo bản mẫu riêng (ví dụ <code>Bản mẫu:Điều hướng nhân vật</code>) gọi bản mẫu này để dùng lại.
+Mỗi hộp có tối đa 6 nhóm. Muốn dùng một hộp ở nhiều bài, tạo bản mẫu riêng (ví dụ <code>Bản mẫu:Điều hướng nhân vật</code>) gọi tới bản mẫu này.
 [[Thể loại:Bản mẫu điều hướng]]
 </noinclude>

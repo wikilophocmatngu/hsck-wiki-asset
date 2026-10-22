@@ -23,7 +23,7 @@ __NOTOC__ __NOEDITSECTION__
 <div class="tin-note tin-note--award">
 <span class="tin-award-title">Giấy khen</span>
 <p>Tặng bạn [[Thành viên:Pisces|Pisces]]<br />vì đã kê bàn và mở cửa lớp.</p>
-<p class="tin-award-next">Giấy khen kế tiếp: [[Project:Cộng đồng|để trống tên bạn]]</p>
+<p class="tin-award-next">Giấy khen kế tiếp: [[Project:Cộng đồng|chừa chỗ cho tên bạn]]</p>
 </div>
 <div class="tin-note tin-note--search">
 <span class="tin-kicker">Tìm gì đó?</span>

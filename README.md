@@ -1,14 +1,14 @@
 # hsck-wiki-asset
 
-Giao diện và nội dung khởi tạo cho **Wiki Học Sinh Chân Kinh** (https://hsck.lophocmatngu.wiki, Miraheze, MW 1.46.2).
-Đây là wiki tưởng niệm: bộ truyện đã ngưng ở **Tập 25**; Tập 26 chỉ là chuyện kể trong cộng đồng fan.
-Skin: **Vector 2010** (máy tính) + **Minerva Neue** (di động), tổ chức theo cách các wiki Weird Gloop vẫn làm
+Giao diện và nội dung khởi tạo cho Wiki Học Sinh Chân Kinh (https://hsck.lophocmatngu.wiki, Miraheze, MW 1.46.2).
+Đây là wiki tưởng niệm: bộ truyện đã ngưng ở Tập 25; Tập 26 chỉ là chuyện kể trong cộng đồng fan.
+Skin: Vector 2010 (máy tính) và Minerva Neue (di động), tổ chức theo cách các wiki Weird Gloop vẫn làm
 (không dùng GloopThemes, Less hay các tính năng riêng khác của họ vì Miraheze không có):
 
-- `MediaWiki:Common.css`: dùng cho cả hai giao diện: `@import` phông Bricolage Grotesque (Google Fonts), **một bộ biến màu duy nhất `--hs-*`** (OKLCH, có giá trị tối), phông tiêu đề h1/h2, và khung hồ sơ thành viên "Học bạ" (UserProfileV2, nằm ngoài `.mw-parser-output` nên không dùng TemplateStyles được).
+- `MediaWiki:Common.css`: dùng cho cả hai giao diện: `@import` phông Bricolage Grotesque (Google Fonts), một bộ biến màu duy nhất `--hs-*` (OKLCH, có giá trị tối), phông tiêu đề h1/h2, và khung hồ sơ thành viên "Học bạ" (UserProfileV2, nằm ngoài `.mw-parser-output` nên không dùng TemplateStyles được).
 - `MediaWiki:Vector.css`: chỉ máy tính: dải đầu trang vải xanh, tab bìa hồ sơ, trang giấy kem, ruy băng đánh dấu trang, thanh bên, chân trang "bìa sau". Có chỗ chờ ảnh nền riêng.
 - `MediaWiki:Minerva.css`: chỉ di động: giấy kem (chế độ sáng), header vải xanh, menu trượt giấy có lề đỏ, tiêu đề mục dạng tab, chân trang "bìa sau".
-- CSS của từng bản mẫu nằm trong **TemplateStyles** (`Bản mẫu:X/styles.css`), lấy màu qua `var(--hs-*, dự phòng)`.
+- CSS của từng bản mẫu nằm trong TemplateStyles (`Bản mẫu:X/styles.css`), lấy màu qua `var(--hs-*, dự phòng)`.
 - Hộp điều hướng dùng class `navbox`, nên MobileFrontend tự gỡ nó trên di động.
 
 ## Bảng màu "Kỷ yếu" (token `--hs-*` trong `Common.css`)

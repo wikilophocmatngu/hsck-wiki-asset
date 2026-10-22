@@ -76,7 +76,7 @@ break=no
 <div class="ky-signed">
 <p class="ky-signed-title">Đã ký tên</p>
 <p class="ky-sign">[[Thành viên:Pisces|Pisces]] <small>dựng lớp</small></p>
-<p class="ky-signed-more">Chữ ký tiếp theo là của bạn. Muốn giúp giữ lớp lâu hơn? [[Project:Ban cán sự|Vào Ban cán sự lớp]].</p>
+<p class="ky-signed-more">Chữ ký tiếp theo có thể là của bạn. Muốn giúp trông nom wiki thì [[Project:Ban cán sự|vào Ban cán sự lớp]].</p>
 </div>
 </div>
 </div>
