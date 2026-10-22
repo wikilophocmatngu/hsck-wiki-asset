@@ -28,7 +28,7 @@
 	display: contents;
 }
 
-/* Ảnh đại diện: 3×4, bo nhẹ, không khung */
+/* Ảnh đại diện: ảnh thẻ 3×4 có viền giấy mỏng, không đổ bóng */
 .profile-masthead .profile-avatar {
 	grid-area: avatar;
 	width: 6.75rem;
@@ -39,8 +39,10 @@
 	display: block;
 	width: 100%;
 	height: 100%;
-	border: 0;
-	border-radius: 0.5rem;             /* UserProfileV2 bo tròn ảnh thành elip */
+	box-sizing: border-box;
+	border: 0.3rem solid var(--hs-paper-fixed, oklch(98.5% 0.012 80));
+	border-radius: 0.2rem;             /* UserProfileV2 bo tròn ảnh thành elip */
+	outline: 1px solid var(--hs-rule, oklch(86% 0.035 230));
 	background: var(--hs-photo, oklch(91% 0.04 226));
 	object-fit: cover;
 }
@@ -176,22 +178,49 @@ html.skin-theme-clientpref-night .profile-masthead .profile-user-group:not([data
 	display: none;
 }
 
-/* Điện thoại: ảnh nhỏ lại nhưng tên và nhóm quyền vẫn ở cạnh; thống kê và giới thiệu trải hết bề ngang */
+/* Điện thoại: ảnh nhỏ lại nhưng tên và nhóm quyền vẫn ở cạnh; thống kê và giới thiệu trải hết bề ngang;
+   nút "Sửa hồ sơ" xuống hàng cuối, rộng hết khung */
 @media (max-width: 639px) {
 	.profile-masthead .profile-identitybox {
 		grid-template-areas:
 			"avatar header"
 			"stats stats"
-			"about about";
+			"about about"
+			"actions actions";
 		grid-template-rows: auto;
 		gap: 0.75rem 0.9rem;
 		padding: 1rem;
 	}
-	.profile-masthead .profile-avatar {
-		width: 4.5rem;
-		height: 6rem;
+	.profile-masthead .profile-header {
+		display: contents;
 	}
 	.profile-masthead .profile-header-attributes {
-		flex-basis: 100%;
+		grid-area: header;
+		align-self: center;
+	}
+	.profile-masthead .profile-header-actions {
+		grid-area: actions;
+	}
+	.profile-masthead .profile-header-actions > * {
+		box-sizing: border-box;
+		width: 100%;
+		justify-content: center;
+	}
+	.profile-masthead .profile-avatar {
+		width: 4.75rem;
+		height: 6.33rem;
+	}
+}
+
+/* Riêng Minerva: masthead trải hết bề ngang màn hình ngay dưới thanh công cụ của trang,
+   như phần đầu hồ sơ trong ứng dụng; nội dung trang cách ra một khoảng */
+@media (max-width: 639px) {
+	.skin-minerva .profile-masthead {
+		margin: 0 -1rem 1.25rem;          /* Minerva để lề 16px hai bên nội dung */
+		border-radius: 0;
+		border-bottom: 1px solid var(--hs-rule, oklch(86% 0.035 230));
+	}
+	.skin-minerva .profile-masthead .profile-identitybox {
+		padding: 1rem;
 	}
 }
