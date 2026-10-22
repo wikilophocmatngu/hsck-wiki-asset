@@ -1,0 +1,36 @@
+/* TemplateStyles cho Bản mẫu:Tiết lộ và Bản mẫu:Hộp thông báo: hộp trên nền giấy, con dấu mang màu nhấn
+   (học theo hộp thông báo có biểu tượng bên trái của RuneScape Wiki). */
+.hsck-spoiler {
+	display: flex;
+	align-items: center;
+	gap: 1em;
+	margin: 0 0 1em;
+	padding: 0.6em 1em;
+	border: 1px solid var(--hs-rule, oklch(86% 0.035 230));
+	border-radius: 6px;
+	background: var(--hs-paper, oklch(98.5% 0.012 80));
+	color: var(--color-base, #202122);
+}
+.hsck-seal {
+	flex: none;
+	padding: 0.15em 0.4em;
+	border: 3px double var(--hs-pen, oklch(53% 0.2 26));
+	border-radius: 4px;
+	color: var(--hs-pen, oklch(53% 0.2 26));
+	font-weight: bold;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	transform: rotate(-8deg);
+}
+.hsck-spoiler-text {
+	flex: 1;
+}
+.hsck-seal--note {
+	border-color: var(--hs-accent, oklch(44% 0.137 259));
+	color: var(--hs-accent, oklch(44% 0.137 259));
+	transform: rotate(-4deg);
+}
+.hsck-spoiler-text small {
+	display: block;
+	color: var(--hs-muted, oklch(45% 0.014 250));
+}

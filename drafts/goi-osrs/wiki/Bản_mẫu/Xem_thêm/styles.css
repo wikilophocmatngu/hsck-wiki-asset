@@ -1,0 +1,7 @@
+/* TemplateStyles cho Bản mẫu:Xem thêm: dòng dẫn kiểu "For other uses" của Minecraft Wiki. */
+.hsck-hatnote {
+	margin: 0 0 0.8em;
+	padding-left: 1.6em;
+	color: var(--hs-muted, oklch(45% 0.014 250));
+	font-style: italic;
+}

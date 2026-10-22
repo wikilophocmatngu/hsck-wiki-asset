@@ -1,0 +1,8 @@
+<templatestyles src="Bản mẫu:Xem thêm/styles.css" /><div class="hsck-hatnote" role="note">Xem thêm: [[{{{1}}}]]{{#if:{{{2|}}}|, [[{{{2}}}]]}}{{#if:{{{3|}}}|, [[{{{3}}}]]}}</div><noinclude>
+== Cách dùng ==
+Dòng dẫn sang bài liên quan, đặt ngay dưới tiêu đề bài hoặc tiêu đề mục. Tối đa 3 bài.
+<pre>
+{{Xem thêm|Tập 1|Tập 2}}
+</pre>
+[[Thể loại:Bản mẫu định dạng]]
+</noinclude>

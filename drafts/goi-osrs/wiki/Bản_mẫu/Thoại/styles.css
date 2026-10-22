@@ -1,0 +1,40 @@
+/* TemplateStyles cho Bản mẫu:Thoại — bong bóng thoại nét viền kiểu truyện tranh. */
+.hsck-quote {
+	display: flow-root;                /* nằm cạnh ảnh float thay vì đè lên */
+	max-width: 36em;
+	margin: 1em 0 1.25em;
+}
+.hsck-quote-bubble {
+	position: relative;
+	padding: 0.7em 1.1em;
+	border: 2px solid var(--hs-line, oklch(24% 0.012 250));
+	border-radius: 1.4em;
+	background: var(--hs-paper, oklch(98.5% 0.012 80));
+	color: var(--color-base, #202122);
+	font-size: 1.05em;
+}
+/* Đuôi bong bóng: tam giác viền + tam giác nền đè lên */
+.hsck-quote-bubble::before,
+.hsck-quote-bubble::after {
+	content: "";
+	position: absolute;
+	left: 1.6em;
+	border-style: solid;
+	border-color: transparent;
+}
+.hsck-quote-bubble::before {
+	bottom: -14px;
+	border-width: 14px 12px 0 0;
+	border-top-color: var(--hs-line, oklch(24% 0.012 250));
+}
+.hsck-quote-bubble::after {
+	bottom: -10px;
+	left: calc(1.6em + 2px);
+	border-width: 10px 8px 0 0;
+	border-top-color: var(--hs-paper, oklch(98.5% 0.012 80));
+}
+.hsck-quote-by {
+	margin: 0.6em 0 0 3.4em;
+	color: var(--color-subtle, #54595d);
+	font-size: 0.9em;
+}

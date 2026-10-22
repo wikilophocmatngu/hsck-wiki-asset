@@ -1,0 +1,12 @@
+<templatestyles src="Bản mẫu:Tiết lộ/styles.css" /><div class="hsck-spoiler" role="note"><span class="hsck-seal hsck-seal--note" aria-hidden="true">{{#switch:{{lc:{{{1|}}}}}|sơ khai=Sơ khai|cần ảnh=Cần ảnh|cần nguồn=Cần nguồn|Ghi chú}}</span><div class="hsck-spoiler-text">'''{{#switch:{{lc:{{{1|}}}}}|sơ khai=Bài này còn ngắn.|cần ảnh=Bài này cần thêm ảnh.|cần nguồn=Bài này cần ghi tập và trang làm nguồn.|{{{2|}}}}}'''<small>{{#switch:{{lc:{{{1|}}}}}|sơ khai=Bạn đã đọc truyện? [{{fullurl:{{FULLPAGENAME}}|action=edit}} Viết thêm vào đây].|cần ảnh=Tải lên một khung truyện có [[{{PAGENAME}}]] rồi thêm vào bài.|cần nguồn=Ghi rõ tập và trang cho những chi tiết chưa có nguồn.|{{{3|}}}}}</small></div></div><includeonly>{{#ifeq:{{NAMESPACE}}||{{#switch:{{lc:{{{1|}}}}}|sơ khai=[[Thể loại:Bài sơ khai]]|cần ảnh=[[Thể loại:Bài cần ảnh]]|cần nguồn=[[Thể loại:Bài cần nguồn]]}}}}</includeonly><noinclude>
+== Cách dùng ==
+Hộp thông báo bảo trì, đặt ở đầu bài. Dùng chung kiểu với [[Bản mẫu:Tiết lộ]].
+<pre>
+{{Hộp thông báo|sơ khai}}
+{{Hộp thông báo|cần ảnh}}
+{{Hộp thông báo|cần nguồn}}
+{{Hộp thông báo||Dòng chính|Dòng phụ}}
+</pre>
+{{Hộp thông báo|cần ảnh}}
+[[Thể loại:Bản mẫu thông báo]]
+</noinclude>

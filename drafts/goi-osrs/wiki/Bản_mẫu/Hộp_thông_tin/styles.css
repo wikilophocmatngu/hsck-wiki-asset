@@ -1,0 +1,69 @@
+/* TemplateStyles dùng chung cho Bản mẫu:Hộp nhân vật và Bản mẫu:Hộp tập truyện.
+   Giữ class .infobox để Minerva tự trải rộng hộp trên điện thoại.
+   Màu lấy từ biến --hs-* trong MediaWiki:Common.css (có giá trị tối). */
+.hsck-infobox {
+	float: right;
+	clear: right;
+	width: 22em;
+	margin: 0 0 1em 1em;
+	border: 1px solid var(--hs-rule, oklch(86% 0.035 230));
+	border-radius: 6px;
+	overflow: hidden;
+	border-collapse: separate;
+	border-spacing: 0;
+	background: var(--hs-paper, oklch(98.5% 0.012 80));
+	color: var(--hs-ink, oklch(24% 0.012 250));
+	font-size: 0.9em;
+	line-height: 1.5;
+}
+.hsck-infobox th,
+.hsck-infobox td {
+	padding: 0.35em 0.6em;
+	vertical-align: top;
+	text-align: left;
+}
+.hsck-infobox .hsck-infobox-title {
+	background: var(--hs-blue, oklch(44% 0.137 259));
+	color: var(--hs-chalk, oklch(95.7% 0.015 94));
+	font-size: 1.25em;
+	text-align: center;
+}
+.hsck-infobox .hsck-infobox-image {
+	text-align: center;
+	padding: 0.5em;
+}
+.hsck-infobox .hsck-infobox-caption {
+	display: block;
+	color: var(--color-subtle, #54595d);
+	font-size: 0.9em;
+}
+/* Kiểu OSRS: tiêu đề phụ nhạt, nhãn đậm căn phải ngăn với giá trị bằng một nét dọc, không tô nền từng hàng */
+.hsck-infobox .hsck-infobox-header {
+	padding-top: 0.5em;
+	border-bottom: 2px solid var(--hs-peach, oklch(79% 0.132 62));
+	background: var(--hs-paper-2, oklch(95% 0.022 80));
+	color: var(--hs-ink, oklch(24% 0.012 250));
+	font-size: 0.85em;
+	letter-spacing: 0.08em;
+	text-align: center;
+	text-transform: uppercase;
+}
+.hsck-infobox th[scope="row"] {
+	width: 38%;
+	border-right: 1px solid var(--hs-rule, oklch(86% 0.035 230));
+	color: var(--hs-accent, oklch(44% 0.137 259));
+	text-align: right;
+}
+.hsck-infobox .hsck-infobox-nav {
+	border-top: 1px solid var(--hs-rule, oklch(86% 0.035 230));
+	text-align: center;
+	background: var(--hs-paper-2, oklch(95% 0.022 80));
+}
+@media (max-width: 639px) {
+	.hsck-infobox {
+		display: table;                /* Minerva ép mọi bảng thành block để cuộn ngang; hộp thông tin cần giữ dạng bảng */
+		float: none;
+		width: 100%;
+		margin: 0 0 1em;
+	}
+}

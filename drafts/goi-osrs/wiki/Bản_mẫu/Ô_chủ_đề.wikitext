@@ -1,0 +1,8 @@
+<templatestyles src="Bản mẫu:Trang Chính/styles.css" /><div class="ky-topic">[[Tập tin:{{{hình|}}}|400px|link={{{1}}}|alt=]][[:{{{1}}}|{{{2|{{{1}}}}}}]]</div><noinclude>
+== Cách dùng ==
+Một ô chủ đề có ảnh trên Trang Chính (bọc trong <code><nowiki><div class="ky-topics"></nowiki></code>). Ảnh được cắt vuông.
+<pre>
+{{Ô chủ đề|Thể loại:Nhân vật|Nhân vật|hình=Ô Nhân vật.webp}}
+</pre>
+[[Thể loại:Bản mẫu trang chính]]
+</noinclude>

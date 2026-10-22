@@ -1,0 +1,259 @@
+/* Phông tiêu đề (có dấu tiếng Việt). @import phải đứng đầu file. */
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700&display=swap");
+/* Hallmark · genre: playful · theme: custom (Kỷ yếu · vải xanh mực, chữ ép cam, giấy kem, mực đỏ) · Bricolage Grotesque + phông skin
+   Wiki Học Sinh Chân Kinh — CSS dùng chung cho máy tính (Vector 2010) và di động (Minerva).
+   Kiểm tra trên MW 1.46.2. Chế độ tối: có trên Minerva (skin-theme-clientpref-*); Vector 2010 không có.
+   Theo cách Weird Gloop tổ chức: Common.css = cả hai giao diện · Vector.css = chỉ máy tính ·
+   Minerva.css = chỉ di động · CSS của bản mẫu nằm trong TemplateStyles (Bản mẫu:X/styles.css).
+   File này giữ một bộ biến màu duy nhất --hs-* (OKLCH) để mọi nơi dùng qua var(--hs-*, dự phòng).
+
+   Tương phản (WCAG): chalk/blue 7.0 · pen/paper 5.6 · muted/paper 7.1 · accent/paper 7.9 ·
+                      ink-fixed/peach 8.1 · peach/blue 4.0 (chỉ dùng cho chữ lớn) */
+
+/* ===== Tokens ===== */
+:root {
+	--hs-font-display: "Bricolage Grotesque", sans-serif;
+	/* Đổi theo chế độ tối */
+	--hs-paper: oklch(98.5% 0.012 80);
+	--hs-paper-2: oklch(95% 0.022 80);
+	--hs-ink: oklch(24% 0.012 250);
+	--hs-muted: oklch(45% 0.014 250);
+	--hs-rule: oklch(86% 0.035 230);
+	--hs-margin: oklch(78% 0.09 20);
+	--hs-pen: oklch(53% 0.2 26);               /* mực đỏ */
+	--hs-accent: oklch(44% 0.137 259);         /* chữ nhấn trên nền nội dung */
+	--hs-soft: oklch(95% 0.02 230);            /* nền nhạt: nhãn hộp thông tin */
+	--hs-line: oklch(24% 0.012 250);           /* nét viền kiểu truyện tranh */
+	--hs-note-pink: oklch(91% 0.05 358);
+	/* Không đổi theo chế độ tối */
+	--hs-blue: oklch(44% 0.137 259);           /* vải bìa */
+	--hs-spine: oklch(32% 0.11 259);           /* gáy bìa */
+	--hs-cloth-weave: oklch(40% 0.12 259 / 0.35);
+	--hs-peach: oklch(79% 0.132 62);           /* chữ ép trên bìa */
+	--hs-sky: oklch(81% 0.107 226);
+	--hs-chalk: oklch(95.7% 0.015 94);
+	--hs-paper-fixed: oklch(98.5% 0.012 80);
+	--hs-paper-2-fixed: oklch(93% 0.025 80);   /* tab, viền trang giấy */
+	--hs-photo: oklch(91% 0.04 226);           /* ảnh thẻ chưa có ảnh */
+	--hs-ink-fixed: oklch(24% 0.012 250);      /* chữ trên bề mặt luôn sáng */
+	--hs-desk: oklch(96% 0.02 230);            /* nền bàn quanh trang (Vector 2010) */
+}
+html.skin-theme-clientpref-night {
+	--hs-paper: oklch(23% 0.012 250);
+	--hs-paper-2: oklch(27% 0.014 250);
+	--hs-ink: oklch(94% 0.008 80);
+	--hs-muted: oklch(76% 0.012 80);
+	--hs-rule: oklch(38% 0.03 230);
+	--hs-margin: oklch(45% 0.08 20);
+	--hs-pen: oklch(74% 0.14 26);
+	--hs-accent: oklch(80% 0.08 245);
+	--hs-soft: oklch(28% 0.03 240);
+	--hs-line: oklch(70% 0.01 250);
+	--hs-note-pink: oklch(86% 0.05 358);
+}
+@media screen and (prefers-color-scheme: dark) {
+	html.skin-theme-clientpref-os {
+		--hs-paper: oklch(23% 0.012 250);
+		--hs-paper-2: oklch(27% 0.014 250);
+		--hs-ink: oklch(94% 0.008 80);
+		--hs-muted: oklch(76% 0.012 80);
+		--hs-rule: oklch(38% 0.03 230);
+		--hs-margin: oklch(45% 0.08 20);
+		--hs-pen: oklch(74% 0.14 26);
+		--hs-accent: oklch(80% 0.08 245);
+		--hs-soft: oklch(28% 0.03 240);
+		--hs-line: oklch(70% 0.01 250);
+		--hs-note-pink: oklch(86% 0.05 358);
+	}
+}
+
+/* ===== Tiêu đề: phông kỷ yếu cho cả hai skin ===== */
+#firstHeading,
+.mw-parser-output .mw-heading2 > h2 {
+	font-family: var(--hs-font-display, sans-serif);
+	font-weight: 700;
+	letter-spacing: -0.02em;
+}
+
+/* ===== Trang Chính tự có tiêu đề (bìa kỷ yếu): ẩn tiêu đề trang mặc định ở cả hai skin ===== */
+body.rootpage-Trang_Chính .mw-first-heading {
+	display: none;
+}
+
+/* ===== Trang thành viên (UserProfileV2): "Học bạ" =====
+   Khung hồ sơ nằm ngoài .mw-parser-output nên không dùng TemplateStyles được; áp dụng cho cả hai skin. */
+.profile-masthead {
+	position: relative;
+	margin-bottom: 1.5rem;
+	padding: 2.4rem 1.25rem 1rem;
+	border: 2px solid var(--hs-line, oklch(24% 0.012 250));
+	border-radius: 0.75rem;
+	background: var(--hs-paper, oklch(98.5% 0.012 80));
+	color: var(--hs-ink, oklch(24% 0.012 250));
+	overflow: hidden;
+}
+/* Dải nhãn bìa học bạ */
+.profile-masthead::before {
+	content: "Học bạ";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	padding: 0.3rem 1.25rem;
+	background-color: var(--hs-blue, oklch(44% 0.137 259));
+	background-image: repeating-linear-gradient(45deg, transparent 0, transparent 3px, var(--hs-cloth-weave, oklch(40% 0.12 259 / 0.35)) 3px, var(--hs-cloth-weave, oklch(40% 0.12 259 / 0.35)) 4px);
+	color: var(--hs-chalk, oklch(95.7% 0.015 94));
+	font-family: var(--hs-font-display, sans-serif);
+	font-size: 0.8rem;
+	font-weight: 700;
+	letter-spacing: 0.3em;
+	text-transform: uppercase;
+}
+.profile-masthead .profile-identitybox {
+	gap: 1.25rem;
+	margin-bottom: 0;
+}
+/* Ảnh đại diện đóng khung ảnh thẻ 3×4 */
+.profile-masthead .profile-avatar {
+	width: 7.5rem;
+	height: 10rem;
+	margin-right: 0;
+	flex: none;
+}
+.profile-masthead .profile-avatar-image {
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	border: 0.35rem solid var(--hs-paper-fixed, oklch(98.5% 0.012 80));
+	border-radius: 0.2rem;
+	outline: 1px solid var(--hs-rule, oklch(86% 0.035 230));
+	background: var(--hs-photo, oklch(91% 0.04 226));
+	object-fit: cover;
+}
+.profile-masthead .profile-header-attributes > h1 {
+	display: block;
+	margin-bottom: 0.4rem !important;
+	color: var(--hs-accent, oklch(44% 0.137 259));
+	font-family: var(--hs-font-display, sans-serif) !important;   /* ghi đè font-family !important của UserProfileV2 */
+	font-size: clamp(1.6rem, 5vw, 2.2rem);
+	letter-spacing: -0.02em;
+	line-height: 1.1;
+	overflow-wrap: anywhere;
+}
+/* Nhóm quyền thành nhãn chức vụ */
+.profile-masthead .profile-user-group {
+	margin: 0 0.4rem 0.4rem 0;
+	border: 1px solid var(--hs-accent, oklch(44% 0.137 259));
+	border-radius: 999px;
+	background: var(--hs-soft, oklch(95% 0.02 230));
+	color: var(--hs-accent, oklch(44% 0.137 259));
+}
+.profile-masthead .profile-user-group[data-group="bureaucrat"] {
+	border-color: var(--hs-pen, oklch(53% 0.2 26));
+	color: var(--hs-pen, oklch(53% 0.2 26));
+}
+.profile-masthead .profile-user-group[data-group="interface-admin"] {
+	border-color: var(--hs-peach, oklch(79% 0.132 62));
+	background: var(--hs-peach, oklch(79% 0.132 62));
+	color: var(--hs-ink-fixed, oklch(24% 0.012 250));
+}
+/* Thống kê: khoanh như ô điểm bằng mực đỏ */
+.profile-masthead .profile-header-statistics {
+	margin: 0.6rem 0 0 !important;
+	padding: 0;                        /* Minerva thêm lề trái cho danh sách */
+	text-align: left;
+	text-transform: none;
+}
+.profile-masthead .profile-header-statistics li {
+	padding: 0.15rem 0.7rem;
+	border: 2px solid var(--hs-pen, oklch(53% 0.2 26));
+	border-radius: 50%;
+	color: var(--hs-pen, oklch(53% 0.2 26));
+	font-family: var(--hs-font-display, sans-serif);
+	font-weight: 700;
+	rotate: -2deg;
+}
+.profile-masthead .profile-header-about {
+	margin-top: 0.6rem;
+	max-width: 60ch;
+}
+@media (max-width: 639px) {
+	.profile-masthead .profile-identitybox {
+		align-items: flex-start;
+	}
+	.profile-masthead .profile-avatar {
+		width: 5.5rem;
+		height: 7.33rem;
+	}
+}
+
+/* ===== Thành phần gốc của MediaWiki: bảng, mục lục, ảnh, thể loại (học theo OSRS Wiki) ===== */
+.wikitable {
+	border: 1px solid var(--hs-rule, oklch(86% 0.035 230));
+	background-color: var(--hs-paper, oklch(98.5% 0.012 80));
+	color: var(--hs-ink, oklch(24% 0.012 250));
+}
+.wikitable > tr > th,
+.wikitable > tr > td,
+.wikitable > * > tr > th,
+.wikitable > * > tr > td {
+	border-color: var(--hs-rule, oklch(86% 0.035 230));
+	padding: 0.35em 0.6em;
+}
+.wikitable > tr > th,
+.wikitable > * > tr > th {
+	background-color: var(--hs-paper-2, oklch(95% 0.022 80));
+	color: var(--hs-ink, oklch(24% 0.012 250));
+}
+.wikitable > caption {
+	font-family: var(--hs-font-display, sans-serif);
+	text-align: left;
+}
+
+/* Mục lục (Vector 2010; Minerva tự ẩn) */
+#toc,
+.toc {
+	padding: 0.6em 1em 0.8em;
+	border: 1px solid var(--hs-rule, oklch(86% 0.035 230));
+	border-radius: 6px;
+	background-color: var(--hs-paper-2, oklch(95% 0.022 80));
+}
+.toc .toctitle h2 {
+	font-family: var(--hs-font-display, sans-serif);
+	font-size: 1rem;
+}
+.toc .tocnumber {
+	color: var(--hs-muted, oklch(45% 0.014 250));
+}
+
+/* Khung ảnh thumb: viền mảnh như ảnh dán vào kỷ yếu */
+.mw-parser-output figure[typeof~="mw:File/Thumb"],
+.mw-parser-output figure[typeof~="mw:File/Frame"] {
+	border: 1px solid var(--hs-rule, oklch(86% 0.035 230));
+	border-radius: 4px;
+	background-color: var(--hs-paper-2, oklch(95% 0.022 80));
+}
+.mw-parser-output figure[typeof~="mw:File/Thumb"] > figcaption,
+.mw-parser-output figure[typeof~="mw:File/Frame"] > figcaption {
+	color: var(--hs-muted, oklch(45% 0.014 250));
+}
+.mw-parser-output figure[typeof~="mw:File/Thumb"] > :not(figcaption) .mw-file-element,
+.mw-parser-output figure[typeof~="mw:File/Frame"] > :not(figcaption) .mw-file-element {
+	border-color: var(--hs-rule, oklch(86% 0.035 230));
+	background-color: var(--hs-paper, oklch(98.5% 0.012 80));
+}
+
+/* Hộp thể loại cuối trang */
+.catlinks {
+	border: 1px solid var(--hs-rule, oklch(86% 0.035 230));
+	border-radius: 6px;
+	background-color: var(--hs-paper-2, oklch(95% 0.022 80));
+}
+
+/* Chú thích nguồn: số tham chiếu và danh sách nhỏ, dễ đọc */
+.mw-parser-output .reference {
+	font-variant-numeric: tabular-nums;
+}
+.mw-parser-output .references {
+	font-size: 0.9em;
+}
