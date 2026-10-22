@@ -1,0 +1,17 @@
+/* Nền: bảng đen có vệt phấn; thanh bên viết bằng phấn */
+body.skin-vector-legacy {
+	--hs-board: oklch(34% 0.05 170);
+	--hs-chalk-dust: oklch(95.7% 0.015 94 / 0.06);
+	background-color: var(--hs-board);
+	background-image:
+		radial-gradient(ellipse 18rem 6rem at 20% 85%, var(--hs-chalk-dust), transparent),
+		radial-gradient(ellipse 12rem 4rem at 8% 40%, var(--hs-chalk-dust), transparent);
+	background-attachment: fixed;
+}
+body.skin-vector-legacy #mw-panel a,
+body.skin-vector-legacy #mw-panel a:visited {
+	color: var(--hs-chalk, oklch(95.7% 0.015 94));        /* 10:1 trên bảng */
+}
+body.skin-vector-legacy .vector-legacy-sidebar .vector-menu-portal .vector-menu-heading {
+	color: var(--hs-peach, oklch(79% 0.132 62)) !important;  /* 5.8:1; ghi đè màu xanh của mục lục */
+}

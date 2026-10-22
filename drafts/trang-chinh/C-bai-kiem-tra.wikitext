@@ -1,0 +1,47 @@
+__NOTOC__ __NOEDITSECTION__
+<templatestyles src="Bản mẫu:Trang Chính C/styles.css" />
+<div class="thi">
+<div class="thi-head">
+<div class="thi-school">{{SITENAME}}<br />Kiểm tra 15 phút · Môn: Fan cứng</div>
+<div class="thi-score" aria-label="Điểm: 10"><span>Điểm</span>10</div>
+<div class="thi-who">Họ và tên: <span class="thi-blank">bạn đọc</span> Lớp: <span class="thi-blank">fan</span></div>
+</div>
+<h2 class="thi-title">Làm bài vui, không chép bài.</h2>
+<p class="thi-intro">Wiki do fan viết về ''Học Sinh Chân Kinh'' của B.R.O. Mỗi câu hỏi dẫn tới một góc của wiki. Đáp án đúng đã khoanh sẵn.</p>
+<div class="thi-q">
+<p class="thi-q-text"><b>Câu 1.</b> ''Học Sinh Chân Kinh'' do nhóm tác giả nào vẽ? <span class="thi-pts">(2 điểm)</span></p>
+<div class="thi-opts">
+<div class="thi-opt thi-opt--right">A. B.R.O</div>
+<div class="thi-opt">B. Lớp Học Mật Ngữ <small>(tên một bộ truyện khác của B.R.O)</small></div>
+<div class="thi-opt">C. Phan Thị <small>(đơn vị phát hành)</small></div>
+</div>
+<p class="thi-link">[[Học Sinh Chân Kinh|Đọc về bộ truyện →]]</p>
+</div>
+<div class="thi-q">
+<p class="thi-q-text"><b>Câu 2.</b> Tập 25 có tên là gì? <span class="thi-pts">(2 điểm)</span></p>
+<div class="thi-opts">
+<div class="thi-opt">A. Muôn sự tại nhân <small>(đó là tập 7)</small></div>
+<div class="thi-opt thi-opt--right">B. Bằng lòng đi em (phần 3)</div>
+</div>
+<p class="thi-link">[[:Thể loại:Tập truyện|Xem tất cả các tập →]]</p>
+</div>
+<div class="thi-q">
+<p class="thi-q-text"><b>Câu 3.</b> Kể tên ba bạn học sinh trong lớp. <span class="thi-pts">(3 điểm)</span></p>
+<div class="thi-lines" aria-hidden="true"></div>
+<p class="thi-link">Gợi ý: [[:Thể loại:Học sinh|danh sách học sinh →]]</p>
+</div>
+<div class="thi-q thi-q--essay">
+<p class="thi-q-text"><b>Câu 4 (tự luận).</b> Viết một bài về nhân vật hoặc tập truyện bạn thích nhất. <span class="thi-pts">(3 điểm)</span></p>
+<inputbox>
+type=create
+buttonlabel=Nộp bài
+placeholder=Tên bài: ví dụ một nhân vật
+break=no
+</inputbox>
+<p class="thi-hint">Chưa biết bắt đầu từ đâu? [[Special:WantedPages|Những bài cả lớp đang chờ]].</p>
+</div>
+<div class="thi-remark">
+<span class="thi-remark-label">Lời phê</span>
+Cảm ơn [[Thành viên:Pisces|Pisces]] đã dựng lớp. Lời khen tiếp theo dành cho người viết bài kế tiếp.
+</div>
+</div>

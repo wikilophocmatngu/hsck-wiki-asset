@@ -1,0 +1,210 @@
+/* Hallmark · genre: playful · macrostructure: Ecosystem Index (bảng tin lớp) · theme: custom (lớp học truyện tranh) · enrichment: Tier A CSS art (bảng bần, ghim, mẩu xé) · nav/footer: của skin */
+.tin {
+	display: grid;
+	gap: 1rem;
+	color: var(--hs-ink, oklch(24% 0.012 250));
+}
+.tin .tin-title {
+	margin: 0;
+	border: 0;
+	font-family: var(--hs-font-display, sans-serif);
+	font-size: clamp(2rem, 5vw, 3rem);
+	font-weight: 700;
+	line-height: 1.05;
+	letter-spacing: -0.025em;
+}
+.tin-head p {
+	max-width: 56ch;
+	margin: 0.25rem 0 0;
+}
+
+/* ===== Bảng bần ===== */
+.tin-board {
+	display: grid;
+	grid-template-columns: repeat(12, minmax(0, 1fr));
+	gap: 1.5rem 1.25rem;
+	padding: 2rem 1.5rem;
+	border: 0.6rem solid var(--hs-wood, oklch(52% 0.07 60));
+	border-radius: 0.5rem;
+	background:
+		radial-gradient(circle at 20% 30%, var(--hs-cork-dot, oklch(62% 0.08 60 / 0.5)) 1px, transparent 1.5px) 0 0 / 9px 9px,
+		radial-gradient(circle at 70% 60%, var(--hs-cork-dot, oklch(62% 0.08 60 / 0.5)) 1px, transparent 1.5px) 0 0 / 13px 13px,
+		var(--hs-cork, oklch(70% 0.08 68));
+}
+.tin-note {
+	position: relative;
+	padding: 1.25rem 1rem 1rem;
+	border-radius: 2px;
+	background: var(--hs-note-yellow, oklch(93% 0.09 98));
+	color: var(--hs-ink-fixed, oklch(24% 0.012 250));
+	box-shadow: 0 6px 12px -6px var(--hs-shadow, oklch(20% 0.01 60 / 0.15));
+	rotate: -1.5deg;
+}
+.tin-note a {
+	color: var(--hs-link-fixed, oklch(42% 0.14 259));
+}
+/* Đinh ghim */
+.tin-note::before {
+	content: "";
+	position: absolute;
+	top: -0.45rem;
+	left: 50%;
+	width: 0.9rem;
+	height: 0.9rem;
+	margin-left: -0.45rem;
+	border-radius: 50%;
+	background: var(--hs-pin, oklch(56.6% 0.205 26));
+	box-shadow: 0 2px 2px var(--hs-shadow, oklch(20% 0.01 60 / 0.15));
+}
+.tin-kicker {
+	display: block;
+	margin-bottom: 0.4rem;
+	font-size: 0.75rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+.tin-note p {
+	margin: 0.25rem 0 0;
+}
+.tin-big {
+	font-family: var(--hs-font-display, sans-serif);
+	font-size: 1.6rem;
+	font-weight: 700;
+	line-height: 1.15;
+}
+
+.tin-note--notice { grid-column: span 5; }
+.tin-note--faces { grid-column: span 7; rotate: 1deg; background: var(--hs-paper-fixed, oklch(98.5% 0.012 80)); }
+.tin-note--award { grid-column: span 5; rotate: 1.5deg; }
+.tin-note--search { grid-column: span 3; rotate: -2deg; background: var(--hs-note-blue, oklch(91% 0.04 226)); }
+.tin-note--flyer { grid-column: span 4; rotate: 0.5deg; background: var(--hs-paper-fixed, oklch(98.5% 0.012 80)); }
+
+/* Ảnh chụp lấy liền */
+.tin-polaroids {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 0.75rem;
+}
+.tin-polaroid {
+	padding: 0.4rem 0.4rem 0.5rem;
+	background: var(--hs-paper-fixed, oklch(98.5% 0.012 80));
+	box-shadow: 0 2px 6px var(--hs-shadow, oklch(20% 0.01 60 / 0.15));
+	text-align: center;
+	font-size: 0.85rem;
+	font-weight: 700;
+}
+.tin-polaroid:nth-child(2) { rotate: 3deg; }
+.tin-polaroid:nth-child(3) { rotate: -2deg; }
+.tin-photo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	aspect-ratio: 1;
+	margin-bottom: 0.35rem;
+	background: var(--hs-blue, oklch(44% 0.137 259));
+	color: var(--hs-chalk, oklch(95.7% 0.015 94));
+	font-family: var(--hs-font-display, sans-serif);
+	font-size: 2rem;
+}
+.tin-more {
+	text-align: right;
+	font-weight: 700;
+}
+
+/* Giấy khen */
+.tin-note--award {
+	border: 3px double var(--hs-pen-fixed, oklch(53% 0.2 26));
+	background: var(--hs-note-pink, oklch(91% 0.05 358));
+	text-align: center;
+}
+.tin-award-title {
+	display: block;
+	color: var(--hs-pen-fixed, oklch(53% 0.2 26));
+	font-family: var(--hs-font-display, sans-serif);
+	font-size: 2rem;
+	font-weight: 700;
+	letter-spacing: 0.02em;
+	text-transform: uppercase;
+}
+.tin-award-next {
+	font-size: 0.85rem;
+}
+
+/* Ô tìm kiếm trên giấy note */
+.tin-note--search form {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4rem;
+}
+.tin-note--search .mw-inputbox-centered {
+	text-align: left;
+}
+.tin-note--search .cdx-text-input {
+	flex: 1 1 10rem;
+	min-width: 0;
+}
+.tin-note--search input[name="fulltext"] {
+	display: none;
+}
+
+/* Tờ rơi có mẩu xé */
+.tin-note--flyer {
+	padding-bottom: 0;
+}
+.tin-flyer-title {
+	font-family: var(--hs-font-display, sans-serif);
+	font-size: 1.5rem;
+	font-weight: 700;
+	line-height: 1.1;
+}
+.tin-tabs {
+	display: flex;
+	margin: 0.75rem -1rem 0;
+	border-top: 2px dashed var(--hs-rule-fixed, oklch(70% 0.02 250));
+}
+.tin-tab {
+	flex: 1;
+	min-height: 5.5rem;
+	padding: 0.4rem 0.1rem;
+	border-right: 2px dashed var(--hs-rule-fixed, oklch(70% 0.02 250));
+	writing-mode: vertical-rl;
+	text-align: center;
+	font-size: 0.8rem;
+	font-weight: 700;
+}
+.tin-tab:last-child {
+	border-right: 0;
+}
+.tin-tab:nth-child(2) {
+	translate: 0 0.4rem;
+	rotate: 4deg;
+}
+
+@media (max-width: 899px) {
+	.tin-board {
+		grid-template-columns: minmax(0, 1fr);
+		padding: 1.5rem 1rem;
+	}
+	.tin-note--notice,
+	.tin-note--faces,
+	.tin-note--award,
+	.tin-note--search,
+	.tin-note--flyer {
+		grid-column: auto;
+	}
+}
+
+/* Ô nhập của InputBox có size=50: giới hạn theo khung chứa */
+.tin-note--search .cdx-text-input__input {
+	box-sizing: border-box;
+	max-width: 100%;
+}
+
+/* Tên dưới ảnh: một dòng, không gãy liên kết */
+.tin-polaroid a {
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}

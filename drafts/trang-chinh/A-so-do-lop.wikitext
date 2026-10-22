@@ -1,0 +1,54 @@
+__NOTOC__ __NOEDITSECTION__
+<templatestyles src="Bản mẫu:Trang Chính A/styles.css" />
+<div class="lop">
+<div class="lop-board">
+<div class="lop-date">{{CURRENTDAYNAME}}, ngày {{CURRENTDAY}} tháng {{CURRENTMONTH}}</div>
+<h2 class="lop-title">Hôm nay học gì?</h2>
+<p class="lop-lead">Lớp ''Học Sinh Chân Kinh'' của B.R.O tan học sau Tập 25. Chọn một bàn bên dưới để đọc, hoặc tìm thẳng:</p>
+<inputbox>
+type=search
+buttonlabel=Tìm
+placeholder=Tên nhân vật, tên tập…
+break=no
+</inputbox>
+</div>
+<div class="lop-room">
+<div class="lop-window">
+<span class="lop-tag">Cửa sổ</span>
+Buổi học cuối: [[Tập 25]]<br />Bằng lòng đi em (phần 3)
+</div>
+<div class="lop-teacher">
+<span class="lop-tag">Bàn giáo viên</span>
+[[:Thể loại:Giáo viên|Thầy cô trong truyện]]
+</div>
+<div class="lop-door">
+<span class="lop-tag">Cửa lớp</span>
+[[Project:Cộng đồng|Vào lớp viết bài →]]
+</div>
+<div class="lop-desks">
+<div class="lop-desk">[[Nhân vật 1]] [[Nhân vật 2]]</div>
+<div class="lop-desk">[[Nhân vật 3]] [[Nhân vật 4]]</div>
+<div class="lop-desk">[[Nhân vật 5]] [[Nhân vật 6]]</div>
+<div class="lop-desk">[[Nhân vật 7]] [[Nhân vật 8]]</div>
+<div class="lop-desk">[[Nhân vật 9]] [[Nhân vật 10]]</div>
+<div class="lop-desk lop-desk--empty">[[Project:Cộng đồng|Chỗ trống]] [[Special:WantedPages|Chỗ trống]]</div>
+</div>
+<p class="lop-legend">Mỗi bàn hai bạn, bấm vào tên để đọc. Bàn cuối còn trống: ai viết thì người đó ngồi.</p>
+</div>
+<div class="lop-roster">
+<h2 class="lop-roster-title">Bảng phân công trực nhật</h2>
+<p>Cảm ơn những bạn đã trực nhật cho wiki.</p>
+{| class="lop-roster-table"
+! Ca !! Bạn trực !! Việc
+|-
+| Thứ Hai || [[Thành viên:Pisces|Pisces]] || Dựng lớp, kê bàn ghế
+|-
+| Thứ Ba || ''còn trống'' || [[Special:WantedPages|Viết trang còn thiếu]]
+|-
+| Thứ Tư || ''còn trống'' || [[Special:UncategorizedPages|Xếp thể loại]]
+|-
+| Thứ Năm || ''còn trống'' || [[Special:Upload|Tải ảnh bìa]]
+|}
+<p class="lop-roster-cta">[[Project:Cộng đồng|Nhận một ca trực →]]</p>
+</div>
+</div>

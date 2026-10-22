@@ -1,0 +1,11 @@
+/* Nền: vở ô ly (4 dòng kẻ nhỏ trong mỗi ô lớn, như vở tập viết) */
+body.skin-vector-legacy {
+	--hs-oly-paper: oklch(98% 0.01 300);
+	--hs-oly-fine: oklch(90% 0.035 300);
+	--hs-oly-main: oklch(80% 0.07 300);
+	background-color: var(--hs-oly-paper);
+	background-image:
+		repeating-linear-gradient(to right, var(--hs-oly-main) 0, var(--hs-oly-main) 1px, transparent 1px, transparent 2rem),
+		repeating-linear-gradient(to bottom, var(--hs-oly-main) 0, var(--hs-oly-main) 1px, transparent 1px, transparent 2rem),
+		repeating-linear-gradient(to bottom, var(--hs-oly-fine) 0, var(--hs-oly-fine) 1px, transparent 1px, transparent 0.5rem);
+}

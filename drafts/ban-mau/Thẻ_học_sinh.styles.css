@@ -1,0 +1,112 @@
+/* Ý tưởng: hộp thông tin nhân vật dạng thẻ học sinh. Dùng div (không dùng bảng) nên Minerva không can thiệp. */
+.hsck-idcard {
+	float: right;
+	clear: right;
+	width: 22em;
+	margin: 0 0 1em 1em;
+	border: 2px solid var(--hsck-line, #202122);
+	border-radius: 12px;
+	overflow: hidden;
+	background: var(--hsck-paper, #fffaf2);
+	color: var(--color-base, #202122);
+	font-size: 0.9em;
+	box-shadow: 4px 4px 0 var(--hsck-peach, #f6a65a);
+}
+.hsck-idcard-head {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	gap: 0.5em;
+	padding: 0.45em 0.8em;
+	background: var(--hsck-leaf, #0d6b52);
+	color: #fff;
+}
+.hsck-idcard-kind {
+	font-weight: bold;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+.hsck-idcard-school {
+	font-size: 0.85em;
+	text-align: right;
+}
+.hsck-idcard-body {
+	display: flex;
+	gap: 0.8em;
+	padding: 0.8em;
+}
+.hsck-idcard-photo {
+	flex: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 6.5em;
+	aspect-ratio: 3 / 4;
+	border: 2px solid var(--hsck-line, #202122);
+	border-radius: 4px;
+	background: var(--hsck-ink, #1d4f9c);
+	color: #fff;
+	overflow: hidden;
+}
+.hsck-idcard-photo img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.hsck-idcard-initial {
+	font-size: 2.4em;
+	font-weight: bold;
+}
+.hsck-idcard-fields {
+	flex: 1;
+	min-width: 0;
+	line-height: 1.45;
+}
+.hsck-idcard-name {
+	margin-bottom: 0.3em;
+	color: var(--hsck-accent, #0d6b52);
+	font-size: 1.3em;
+	font-weight: bold;
+	line-height: 1.2;
+}
+.hsck-idcard-label {
+	display: block;
+	color: var(--color-subtle, #54595d);
+	font-size: 0.8em;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+}
+.hsck-idcard-row {
+	margin-bottom: 0.25em;
+}
+.hsck-idcard-foot {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.4em 0.8em;
+	border-top: 2px dashed var(--border-color-base, #a2a9b1);
+	/* mã vạch trang trí: xám trung tính để thấy được ở cả nền sáng lẫn tối */
+	background-image: repeating-linear-gradient(90deg, #72777d 0, #72777d 2px, transparent 2px, transparent 4px, #72777d 4px, #72777d 5px, transparent 5px, transparent 8px);
+	background-position: right 4.5em center;
+	background-size: 6em 1.2em;
+	background-repeat: no-repeat;
+}
+.hsck-idcard-year {
+	color: var(--color-subtle, #54595d);
+	font-size: 0.85em;
+}
+.hsck-idcard-stamp {
+	padding: 0.05em 0.35em;
+	border: 2px solid var(--hsck-seal, #d42a2f);
+	border-radius: 3px;
+	color: var(--hsck-seal, #d42a2f);
+	font-weight: bold;
+	transform: rotate(-10deg);
+}
+@media (max-width: 639px) {
+	.hsck-idcard {
+		float: none;
+		width: auto;
+		margin: 0 4px 1em 0;
+	}
+}

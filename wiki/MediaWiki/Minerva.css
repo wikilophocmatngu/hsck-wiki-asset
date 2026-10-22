@@ -4,13 +4,14 @@
 
 /* ===== Tokens: liên kết & nút chính theo màu "mực" của bìa truyện ===== */
 :root, .notheme, .skin-invert {
+	--background-color-base: var(--hs-paper, oklch(98.5% 0.012 80));   /* giấy kem như Vector; chế độ tối giữ nền của skin */
 	--color-progressive: #1d4f9c;              /* 7.9:1 trên #fff */
 	--color-progressive--hover: #2a63ba;
 	--color-progressive--active: #143a74;
 	--background-color-progressive: #1d4f9c;
 	--border-color-progressive: #1d4f9c;
-	--hsck-header-bg: #0d6b52;
-	--hsck-header-fg: #fff;                    /* 6.5:1 */
+	--hsck-header-bg: var(--hs-blue, oklch(44% 0.137 259));   /* vải bìa kỷ yếu */
+	--hsck-header-fg: var(--hs-chalk, oklch(95.7% 0.015 94));  /* 7.4:1 */
 }
 html.skin-theme-clientpref-night {
 	--color-progressive: #7fb8f0;              /* 8.8:1 trên #101418 */
@@ -18,7 +19,7 @@ html.skin-theme-clientpref-night {
 	--color-progressive--active: #5d9fe0;
 	--background-color-progressive: #7fb8f0;
 	--border-color-progressive: #7fb8f0;
-	--hsck-header-bg: #123a30;
+	--hsck-header-bg: oklch(30% 0.09 259);
 	--hsck-header-fg: #eaecf0;                 /* 10.6:1 */
 }
 @media screen and (prefers-color-scheme: dark) {
@@ -28,7 +29,7 @@ html.skin-theme-clientpref-night {
 		--color-progressive--active: #5d9fe0;
 		--background-color-progressive: #7fb8f0;
 		--border-color-progressive: #7fb8f0;
-		--hsck-header-bg: #123a30;
+		--hsck-header-bg: oklch(30% 0.09 259);
 		--hsck-header-fg: #eaecf0;
 	}
 }
@@ -36,7 +37,8 @@ html.skin-theme-clientpref-night {
 /* ===== Header ===== */
 .header-container.header-chrome {
 	background-color: var(--hsck-header-bg);
-	border-bottom: 3px solid var(--hsck-peach, #f6a65a);
+	background-image: repeating-linear-gradient(45deg, transparent 0, transparent 3px, var(--hs-cloth-weave, oklch(40% 0.12 259 / 0.35)) 3px, var(--hs-cloth-weave, oklch(40% 0.12 259 / 0.35)) 4px);
+	border-bottom: 3px solid var(--hs-peach, oklch(79% 0.132 62));
 	box-shadow: none;
 }
 .minerva-header .branding-box a,
@@ -52,13 +54,57 @@ html.skin-theme-clientpref-night {
 .minerva-header #p-personal {
 	color: var(--color-base);
 }
+.minerva-header .branding-box a {
+	font-family: var(--hs-font-display, sans-serif);
+	font-weight: 700;
+	letter-spacing: -0.01em;
+}
+
+/* ===== Menu trượt: trang giấy có lề đỏ ===== */
+#mw-mf-page-left {
+	background:
+		linear-gradient(90deg, transparent 0.6rem, var(--hs-margin, oklch(78% 0.09 20)) 0.6rem, var(--hs-margin, oklch(78% 0.09 20)) calc(0.6rem + 2px), transparent calc(0.6rem + 2px)),
+		var(--hs-paper, oklch(98.5% 0.012 80));
+}
+/* Minerva tô trắng từng mục bằng #mw-mf-page-left ul .toggle-list-item: cùng selector, nạp sau thì thắng */
+#mw-mf-page-left ul .toggle-list-item {
+	background-color: transparent;
+}
+#mw-mf-page-left .hlist {
+	padding-left: 1rem;                /* đưa liên kết cuối menu ra khỏi lề đỏ */
+}
 
 /* ===== Nội dung ===== */
 .skin-minerva #firstHeading {
-	color: var(--hsck-accent, #0d6b52);
+	color: var(--hs-accent, oklch(44% 0.137 259));
 }
 
-/* ===== Chân trang ===== */
+/* ===== Riêng Minerva: tiêu đề mục là tab mục lục kỷ yếu (vẫn gập/mở được) ===== */
+.skin-minerva .mw-parser-output .mw-heading2 {
+	padding: 0.2rem 0.6rem;
+	border-bottom: 2px solid var(--hs-peach, oklch(79% 0.132 62));
+	border-radius: 0.5rem 0.5rem 0 0;
+	background: var(--hs-soft, oklch(95% 0.02 230));
+}
+
+/* ===== Chân trang: bìa sau bằng vải xanh ===== */
 .minerva-footer {
-	border-top: 3px solid var(--hsck-peach, #f6a65a);
+	isolation: isolate;                /* chế độ tối của Minerva đặt logo footer z-index: -100; giữ nó trên nền vải */
+	border-top: 3px solid var(--hs-peach, oklch(79% 0.132 62));
+	background-color: var(--hs-blue, oklch(44% 0.137 259));
+	background-image: repeating-linear-gradient(45deg, transparent 0, transparent 3px, var(--hs-cloth-weave, oklch(40% 0.12 259 / 0.35)) 3px, var(--hs-cloth-weave, oklch(40% 0.12 259 / 0.35)) 4px);
+}
+/* Ghi chú bản quyền và liên kết pháp lý giữ nguyên, chỉ đổi màu cho đọc được trên nền vải */
+.minerva-footer,
+.minerva-footer a,
+.minerva-footer .minerva-footer-logo {
+	color: var(--hs-chalk, oklch(95.7% 0.015 94));
+}
+/* Thanh "Xem lịch sử sửa đổi" nằm trong footer: giữ nền giấy như trang */
+.minerva-footer .last-modified-bar {
+	background: var(--hs-paper, oklch(98.5% 0.012 80));
+	color: var(--hs-ink, oklch(24% 0.012 250));
+}
+.minerva-footer .last-modified-bar a {
+	color: var(--hs-ink, oklch(24% 0.012 250));
 }

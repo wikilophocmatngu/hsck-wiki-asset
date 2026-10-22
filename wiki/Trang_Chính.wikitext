@@ -1,6 +1,4 @@
-__NOTOC__ __NOEDITSECTION__
-<templatestyles src="Bản mẫu:Trang Chính/styles.css" />
-<div class="ky">
+__NOTOC__ __NOEDITSECTION__<templatestyles src="Bản mẫu:Trang Chính/styles.css" /><div class="ky">
 <div class="ky-cover">
 <p class="ky-kind">Kỷ yếu</p>
 <h2 class="ky-title">Học Sinh Chân Kinh</h2>
@@ -12,6 +10,7 @@ buttonlabel=Tìm
 placeholder=Tìm một gương mặt, một tập truyện…
 break=no
 </inputbox>
+<p class="ky-cover-cta">[[Project:Viết bài đầu tiên|Viết bài đầu tiên trong 5 phút →]]</p>
 </div>
 <div class="ky-section">
 <h2 class="ky-h">Ảnh tập thể</h2>
@@ -64,8 +63,9 @@ break=no
 <div class="ky-section ky-guest">
 <div class="ky-guest-text">
 <h2 class="ky-h">Lưu bút</h2>
-<p>Bạn từng đọc ''Học Sinh Chân Kinh''? Để lại một trang: một nhân vật bạn nhớ, một tập bạn thích, hay chỉ một chi tiết nhỏ.</p>
+<p>Bạn từng đọc ''Học Sinh Chân Kinh''? Để lại một trang về nhân vật hay tập truyện bạn còn nhớ, dù chỉ là một chi tiết nhỏ.</p>
 <p class="ky-cta">[[Project:Viết bài đầu tiên|Viết bài đầu tiên trong 5 phút →]]</p>
+<p class="ky-or">Đã biết cách viết? Gõ tên bài rồi ký:</p>
 <inputbox>
 type=create
 buttonlabel=Ký lưu bút
@@ -76,8 +76,7 @@ break=no
 <div class="ky-signed">
 <p class="ky-signed-title">Đã ký tên</p>
 <p class="ky-sign">[[Thành viên:Pisces|Pisces]] <small>dựng lớp</small></p>
-<p class="ky-sign ky-sign--empty">[[Project:Ban cán sự|Chỗ này dành cho bạn]]</p>
-<p class="ky-signed-more">Muốn vào Ban cán sự lớp? [[Project:Ban cán sự|Đọc thêm →]]</p>
+<p class="ky-signed-more">Chữ ký tiếp theo là của bạn. Muốn giúp giữ lớp lâu hơn? [[Project:Ban cán sự|Vào Ban cán sự lớp]].</p>
 </div>
 </div>
 </div>

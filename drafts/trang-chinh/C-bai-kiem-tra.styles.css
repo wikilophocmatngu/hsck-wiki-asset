@@ -1,0 +1,191 @@
+/* Hallmark · genre: playful · macrostructure: Conversational FAQ (bài kiểm tra 15 phút) · theme: custom (lớp học truyện tranh) · enrichment: Tier A CSS art (giấy thi, mực đỏ) · nav/footer: của skin */
+.thi {
+	max-width: 46rem;
+	padding: 1.5rem 1.5rem 1.75rem 3.5rem;
+	border: 1px solid var(--hs-rule, oklch(86% 0.035 230));
+	background:
+		linear-gradient(90deg, transparent 2.4rem, var(--hs-margin, oklch(78% 0.09 20)) 2.4rem, var(--hs-margin, oklch(78% 0.09 20)) calc(2.4rem + 2px), transparent calc(2.4rem + 2px)),
+		var(--hs-paper, oklch(98.5% 0.012 80));
+	color: var(--hs-ink, oklch(24% 0.012 250));
+	box-shadow: 0.5rem 0.5rem 0 var(--hs-paper-2, oklch(95% 0.022 80));
+}
+
+/* ===== Đầu bài ===== */
+.thi-head {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) auto;
+	grid-template-areas:
+		"school score"
+		"who score";
+	gap: 0.5rem 1rem;
+	padding-bottom: 1rem;
+	border-bottom: 2px solid var(--hs-ink, oklch(24% 0.012 250));
+}
+.thi-school {
+	grid-area: school;
+	font-size: 0.85rem;
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+.thi-who {
+	grid-area: who;
+}
+.thi-blank {
+	display: inline-block;
+	min-width: 6rem;
+	margin-right: 1rem;
+	border-bottom: 1px dotted var(--hs-ink, oklch(24% 0.012 250));
+	color: var(--hs-pen, oklch(53% 0.2 26));
+	font-weight: 700;
+	text-align: center;
+}
+.thi-score {
+	grid-area: score;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 5rem;
+	height: 5rem;
+	border: 3px solid var(--hs-pen, oklch(53% 0.2 26));
+	border-radius: 50%;
+	color: var(--hs-pen, oklch(53% 0.2 26));
+	font-family: var(--hs-font-display, sans-serif);
+	font-size: 2.2rem;
+	font-weight: 700;
+	line-height: 1;
+	rotate: -8deg;
+}
+.thi-score span {
+	font-family: inherit;
+	font-size: 0.7rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+/* ===== Tiêu đề ===== */
+.thi .thi-title {
+	margin: 1.25rem 0 0.25rem;
+	padding: 0;
+	border: 0;
+	font-family: var(--hs-font-display, sans-serif);
+	font-size: clamp(1.8rem, 5vw, 2.6rem);
+	font-weight: 700;
+	line-height: 1.1;
+	letter-spacing: -0.025em;
+	overflow-wrap: anywhere;
+}
+.thi-intro {
+	max-width: 58ch;
+	margin: 0 0 1.25rem;
+	color: var(--hs-muted, oklch(45% 0.014 250));
+}
+
+/* ===== Câu hỏi ===== */
+.thi-q {
+	padding: 1rem 0;
+	border-top: 1px solid var(--hs-rule, oklch(86% 0.035 230));
+}
+.thi-q-text {
+	margin: 0 0 0.6rem;
+	font-size: 1.05rem;
+}
+.thi-pts {
+	color: var(--hs-muted, oklch(45% 0.014 250));
+	font-size: 0.85rem;
+}
+.thi-opts {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem 1.75rem;
+}
+.thi-opt {
+	padding: 0.15rem 0.6rem;
+	border: 2px solid transparent;
+	border-radius: 50%;
+}
+.thi-opt small {
+	color: var(--hs-muted, oklch(45% 0.014 250));
+}
+/* Đáp án đúng: khoanh bằng mực đỏ */
+.thi-opt--right {
+	border-color: var(--hs-pen, oklch(53% 0.2 26));
+	font-weight: 700;
+	rotate: -2deg;
+}
+.thi-link {
+	margin: 0.6rem 0 0;
+	font-weight: 700;
+}
+.thi-lines {
+	height: 4.5rem;
+	background: repeating-linear-gradient(to bottom, transparent 0, transparent calc(1.5rem - 1px), var(--hs-rule, oklch(86% 0.035 230)) calc(1.5rem - 1px), var(--hs-rule, oklch(86% 0.035 230)) 1.5rem);
+}
+
+/* ===== Câu tự luận = ô tạo bài ===== */
+.thi-q--essay .mw-inputbox-centered {
+	text-align: left;
+}
+.thi-q--essay form {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+.thi-q--essay .cdx-text-input {
+	flex: 1 1 14rem;
+	min-width: 0;
+}
+.thi-q--essay input[name="title"] {
+	width: 100%;
+}
+.thi-hint {
+	margin: 0.5rem 0 0;
+	font-size: 0.9rem;
+}
+
+/* ===== Lời phê ===== */
+.thi-remark {
+	margin-top: 1rem;
+	padding: 0.75rem 1rem;
+	border: 2px solid var(--hs-pen, oklch(53% 0.2 26));
+	border-radius: 0.25rem;
+	color: var(--hs-pen, oklch(53% 0.2 26));
+	font-weight: 700;
+	rotate: -0.5deg;
+}
+.thi-remark a {
+	color: inherit;
+	text-decoration: underline;
+}
+.thi-remark-label {
+	display: block;
+	font-size: 0.75rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+@media (max-width: 639px) {
+	/* Mỗi phương án một dòng để vòng khoanh mực đỏ không bị gãy */
+	.thi-opts {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	.thi {
+		padding: 1rem 0.75rem 1.25rem 2.25rem;
+		background:
+			linear-gradient(90deg, transparent 1.4rem, var(--hs-margin, oklch(78% 0.09 20)) 1.4rem, var(--hs-margin, oklch(78% 0.09 20)) calc(1.4rem + 2px), transparent calc(1.4rem + 2px)),
+			var(--hs-paper, oklch(98.5% 0.012 80));
+	}
+	.thi-score {
+		width: 4rem;
+		height: 4rem;
+		font-size: 1.7rem;
+	}
+}
+
+/* Ô nhập của InputBox có size=50: giới hạn theo khung chứa */
+.thi-q--essay .cdx-text-input__input {
+	box-sizing: border-box;
+	max-width: 100%;
+}

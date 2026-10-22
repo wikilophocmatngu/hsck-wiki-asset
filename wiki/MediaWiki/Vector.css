@@ -1,47 +1,115 @@
-/* Wiki Học Sinh Chân Kinh — khung giao diện Vector 2010 (legacy).
-   Kiểm tra trên Vector (MW 1.46.2). Chế độ tối: không (skin không hỗ trợ).
-   Chỉ đổi màu nền/viền/tab; giữ nguyên màu liên kết mặc định (#0645ad). */
+/* Hallmark · genre: playful · theme: custom (Kỷ yếu) · phạm vi: khung Vector 2010 · nav/footer: của skin
+   Wiki Học Sinh Chân Kinh — khung giao diện Vector 2010 (legacy), kiểm tra trên MW 1.46.2.
+   Chế độ tối: không (skin không hỗ trợ). Màu lấy từ --hs-* trong MediaWiki:Common.css. */
 
-/* ===== Nền & dải đầu trang ===== */
+/* ===== Nền & dải đầu trang: vải xanh như bìa kỷ yếu ===== */
 body.skin-vector-legacy {
-	background-color: #eaf6fc;
+	background-color: var(--hs-desk, oklch(96% 0.02 230));
+	/* Ảnh nền riêng (tải lên wiki rồi trỏ tới đây): chỉ lộ ở cột thanh bên và quanh chân trang.
+	   background-image: url("https://hsck.lophocmatngu.wiki/wiki/Special:Redirect/file/<Tên_ảnh>"); */
 }
 body.skin-vector-legacy #mw-page-base {
-	background-color: #eaf6fc;
-	background-image: linear-gradient(to bottom, #bdeafb 0%, #eaf6fc 100%);
+	background-color: var(--hs-blue, oklch(44% 0.137 259));
+	background-image: repeating-linear-gradient(45deg, transparent 0, transparent 3px, var(--hs-cloth-weave, oklch(40% 0.12 259 / 0.35)) 3px, var(--hs-cloth-weave, oklch(40% 0.12 259 / 0.35)) 4px);
+	border-bottom: 3px solid var(--hs-peach, oklch(79% 0.132 62));
 }
 
-/* ===== Nội dung ===== */
-body.skin-vector-legacy .mw-body {
-	border-color: #8fd1bd;
+/* Công cụ cá nhân nằm trên dải vải: chữ phấn trắng */
+body.skin-vector-legacy #p-personal li,
+body.skin-vector-legacy #p-personal li a {
+	color: var(--hs-chalk, oklch(95.7% 0.015 94));
 }
-body.skin-vector-legacy .mw-body .firstHeading {
-	border-bottom-color: #8fd1bd;
+/* Biểu tượng người là ảnh xám của skin, gần như vô hình trên vải xanh: bỏ đi, giữ chữ */
+body.skin-vector-legacy .vector-user-menu-legacy #pt-anonuserpage,
+body.skin-vector-legacy .vector-user-menu-legacy #pt-userpage a {
+	background-image: none;
+	padding-left: 0;
 }
 
-/* ===== Tab (gốc dùng gradient xanh #77c1f6/#a7d7f9 → đổi sang xanh lá) ===== */
-body.skin-vector-legacy .vector-menu-tabs-legacy li {
-	background-image: linear-gradient(to top, #1f9e7a 0, #e6f6fd 1px, #fff 100%);
-}
-body.skin-vector-legacy .vector-menu-tabs-legacy .selected {
-	background: #fff;
-}
+/* ===== Tab: tab bìa hồ sơ trên nền vải ===== */
 body.skin-vector-legacy .vector-menu-tabs,
 body.skin-vector-legacy .vector-menu-tabs a,
 body.skin-vector-legacy #mw-head .vector-menu-dropdown .vector-menu-heading {
-	background-image: linear-gradient(to bottom, rgba(143, 209, 189, 0) 0, #8fd1bd 100%);
+	background-image: none;
 }
-
-/* ===== Thanh bên ===== */
-body.skin-vector-legacy .vector-legacy-sidebar .vector-menu-portal .vector-menu-heading {
-	color: #0d6b52;                    /* 5.8:1 trên nền #eaf6fc */
+body.skin-vector-legacy .vector-menu-tabs-legacy li {
+	margin-right: 2px;
+	border-radius: 0.5em 0.5em 0 0;
+	background: var(--hs-paper-2-fixed, oklch(93% 0.025 80));
+	background-image: none;
+}
+body.skin-vector-legacy .vector-menu-tabs-legacy .selected {
+	background: var(--hs-paper-fixed, oklch(98.5% 0.012 80));
+}
+body.skin-vector-legacy .vector-menu-tabs-legacy .selected a {
 	font-weight: bold;
-	background-image: linear-gradient(to right, rgba(31, 158, 122, 0) 0, #1f9e7a 33%, #1f9e7a 66%, rgba(31, 158, 122, 0) 100%);
+}
+body.skin-vector-legacy #mw-head .vector-menu-dropdown .vector-menu-heading {
+	border-radius: 0.5em 0.5em 0 0;
+	background: var(--hs-paper-2-fixed, oklch(93% 0.025 80));
+	color: var(--hs-ink-fixed, oklch(24% 0.012 250));
 }
 
-/* ===== Chân trang ===== */
+/* Ô tìm kiếm trên dải vải: nền giấy đặc để đủ tương phản */
+body.skin-vector-legacy .vector-search-box-input {
+	border-color: var(--hs-spine, oklch(32% 0.11 259));
+	background-color: var(--hs-paper-fixed, oklch(98.5% 0.012 80));
+}
+
+/* ===== Nội dung: trang giấy ===== */
+body.skin-vector-legacy .mw-body {
+	position: relative;                /* neo cho ruy băng đánh dấu trang */
+	border-color: var(--hs-paper-2-fixed, oklch(93% 0.025 80));
+	background-color: var(--hs-paper-fixed, oklch(98.5% 0.012 80));
+}
+/* Riêng Vector: ruy băng đánh dấu trang treo từ mép dải vải, như sợi dây trong cuốn kỷ yếu */
+body.skin-vector-legacy .mw-body::before {
+	content: "";
+	position: absolute;
+	top: -3px;
+	right: 1.75rem;
+	width: 1.1rem;
+	height: 3.5rem;
+	background: var(--hs-peach, oklch(79% 0.132 62));
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 78%, 0 100%);
+	pointer-events: none;
+}
+body.skin-vector-legacy .mw-indicators {
+	margin-right: 2.5rem;              /* chừa chỗ cho ruy băng */
+}
+body.skin-vector-legacy .mw-body .firstHeading {
+	border-bottom: 2px solid var(--hs-peach, oklch(79% 0.132 62));
+}
+
+/* ===== Thanh bên: mục lục kỷ yếu ===== */
+body.skin-vector-legacy .vector-legacy-sidebar .vector-menu-portal .vector-menu-heading {
+	color: var(--hs-blue, oklch(44% 0.137 259));           /* 7.4:1 trên nền bàn */
+	font-family: var(--hs-font-display, sans-serif);
+	font-size: 0.85em;
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	background-image: linear-gradient(var(--hs-peach, oklch(79% 0.132 62)), var(--hs-peach, oklch(79% 0.132 62)));
+	background-size: 2em 2px;
+	background-position: left bottom;
+}
+
+/* ===== Chân trang: bìa sau bằng vải xanh (riêng Vector) ===== */
 body.skin-vector-legacy #footer {
-	border-top: 3px solid #f6a65a;
+	display: flow-root;                /* chứa cả các liên kết và huy hiệu float bên trong nền vải */
+	border-top: 3px solid var(--hs-peach, oklch(79% 0.132 62));
+	border-radius: 0 0 0 0.75rem;
+	background-color: var(--hs-blue, oklch(44% 0.137 259));
+	background-image: repeating-linear-gradient(45deg, transparent 0, transparent 3px, var(--hs-cloth-weave, oklch(40% 0.12 259 / 0.35)) 3px, var(--hs-cloth-weave, oklch(40% 0.12 259 / 0.35)) 4px);
+}
+/* Ghi chú bản quyền và liên kết pháp lý giữ nguyên, chỉ đổi màu cho đọc được trên nền vải (7:1) */
+body.skin-vector-legacy #footer li,
+body.skin-vector-legacy #footer a {
+	color: var(--hs-chalk, oklch(95.7% 0.015 94));
+}
+body.skin-vector-legacy #footer a {
+	text-decoration: underline;
+	text-decoration-color: var(--hs-peach, oklch(79% 0.132 62));
 }
 
 /* ===== Trang Chính ===== */

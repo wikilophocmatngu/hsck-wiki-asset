@@ -1,0 +1,233 @@
+/* Hallmark · genre: playful · macrostructure: Map / Diagram (sơ đồ lớp học) · theme: custom (lớp học truyện tranh) · enrichment: Tier A CSS art (bảng đen, bàn ghế) · nav/footer: của skin */
+.lop {
+	display: grid;
+	gap: 2.5rem;
+	color: var(--hs-ink, oklch(24% 0.012 250));
+}
+
+/* ===== Bảng đen ===== */
+.lop-board {
+	position: relative;
+	padding: 1.5rem 1.75rem 1.75rem;
+	border: 0.75rem solid var(--hs-wood, oklch(52% 0.07 60));
+	border-radius: 0.5rem;
+	background:
+		radial-gradient(ellipse 60% 40% at 30% 30%, var(--hs-board-glow, oklch(40% 0.05 170 / 0.6)), transparent),
+		var(--hs-board, oklch(34% 0.05 170));
+	color: var(--hs-chalk, oklch(95.7% 0.015 94));
+}
+.lop-date {
+	text-align: right;
+	font-size: 0.9rem;
+	opacity: 0.85;
+}
+.lop .lop-title {
+	margin: 0.25rem 0 0.5rem;
+	padding: 0;
+	border: 0;
+	color: var(--hs-chalk, oklch(95.7% 0.015 94));
+	font-family: var(--hs-font-display, sans-serif);
+	font-size: clamp(2rem, 6vw, 3.5rem);
+	font-weight: 700;
+	line-height: 1.05;
+	letter-spacing: -0.025em;
+	overflow-wrap: anywhere;
+}
+.lop-lead {
+	max-width: 52ch;
+	margin: 0 0 1rem;
+}
+.lop-board .mw-inputbox-centered {
+	text-align: left;
+}
+.lop-board form {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+.lop-board .mw-inputbox-centered {
+	margin: 0;
+}
+.lop-board .cdx-text-input {
+	flex: 1 1 12rem;
+	min-width: 0;
+}
+.lop-board input[name="fulltext"] {
+	display: none;
+}
+/* Nét gạch phấn dưới ô tìm kiếm */
+.lop-board::after {
+	content: "";
+	position: absolute;
+	right: 1.5rem;
+	bottom: 0.6rem;
+	width: 4rem;
+	height: 0.4rem;
+	border-radius: 0.2rem;
+	background: var(--hs-chalk, oklch(95.7% 0.015 94));
+	opacity: 0.7;
+}
+
+/* ===== Sơ đồ chỗ ngồi ===== */
+.lop-room {
+	display: grid;
+	grid-template-columns: minmax(0, 0.8fr) minmax(0, 3fr) minmax(0, 0.8fr);
+	grid-template-areas:
+		"window teacher door"
+		"window desks door"
+		"legend legend legend";
+	gap: 1rem 1.5rem;
+	padding: 1.5rem;
+	border: 2px dashed var(--hs-rule, oklch(86% 0.035 230));
+	border-radius: 0.75rem;
+	background: var(--hs-paper, oklch(98.5% 0.012 80));
+}
+.lop-tag {
+	display: block;
+	margin-bottom: 0.25rem;
+	color: var(--hs-muted, oklch(45% 0.014 250));
+	font-size: 0.75rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+.lop-window {
+	grid-area: window;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	padding: 0.75rem;
+	border: 3px solid var(--hs-blue, oklch(44% 0.137 259));
+	border-radius: 0.25rem;
+	background: var(--hs-note-blue, oklch(91% 0.04 226));
+	color: var(--hs-ink-fixed, oklch(24% 0.012 250));
+	font-size: 0.9rem;
+}
+/* Ô kính có song cửa, nằm dưới phần chữ để không đè lên liên kết */
+.lop-window::after {
+	content: "";
+	flex: 1;
+	min-height: 4rem;
+	border: 3px solid var(--hs-blue, oklch(44% 0.137 259));
+	background:
+		linear-gradient(90deg, transparent calc(50% - 1.5px), var(--hs-blue, oklch(44% 0.137 259)) calc(50% - 1.5px), var(--hs-blue, oklch(44% 0.137 259)) calc(50% + 1.5px), transparent calc(50% + 1.5px)),
+		var(--hs-sky, oklch(81% 0.107 226));
+}
+/* Cửa sổ và cửa lớp luôn sáng: dùng màu liên kết cố định để đủ tương phản ở chế độ tối */
+.lop-window a,
+.lop-door a {
+	color: var(--hs-link-fixed, oklch(42% 0.14 259));
+}
+.lop-window .lop-tag {
+	color: var(--hs-ink-fixed, oklch(24% 0.012 250));
+}
+.lop-teacher {
+	grid-area: teacher;
+	justify-self: center;
+	min-width: min(100%, 16rem);
+	padding: 0.6rem 1rem;
+	border: 2px solid var(--hs-wood, oklch(52% 0.07 60));
+	border-radius: 0.25rem;
+	background: var(--hs-paper-2, oklch(95% 0.022 80));
+	text-align: center;
+	font-weight: 700;
+}
+.lop-door {
+	grid-area: door;
+	align-self: end;
+	padding: 1rem 0.75rem;
+	border: 3px solid var(--hs-wood, oklch(52% 0.07 60));
+	border-radius: 0.75rem 0.75rem 0 0;
+	background: var(--hs-note-yellow, oklch(93% 0.09 98));
+	color: var(--hs-ink-fixed, oklch(24% 0.012 250));
+	font-weight: 700;
+}
+.lop-door .lop-tag {
+	color: var(--hs-ink-fixed, oklch(24% 0.012 250));
+}
+.lop-desks {
+	grid-area: desks;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(min(100%, 13rem), 1fr));
+	gap: 1.25rem 1rem;
+}
+.lop-desk {
+	display: flex;
+	justify-content: space-around;
+	gap: 0.5rem;
+	padding: 0.9rem 0.5rem 0.6rem;
+	border-bottom: 0.4rem solid var(--hs-wood, oklch(52% 0.07 60));
+	border-radius: 0.25rem;
+	background: var(--hs-paper-2, oklch(95% 0.022 80));
+	box-shadow: 0 1px 2px var(--hs-shadow, oklch(20% 0.01 60 / 0.15));
+	text-align: center;
+	font-size: 0.9rem;
+	font-weight: 700;
+}
+.lop-desk a {
+	white-space: nowrap;
+}
+.lop-desk--empty {
+	border-bottom-style: dashed;
+	background: transparent;
+	outline: 2px dashed var(--hs-rule, oklch(86% 0.035 230));
+}
+.lop-legend {
+	grid-area: legend;
+	margin: 0;
+	color: var(--hs-muted, oklch(45% 0.014 250));
+	font-size: 0.85rem;
+}
+
+/* ===== Bảng trực nhật ===== */
+.lop-roster {
+	max-width: 40rem;
+}
+.lop .lop-roster-title {
+	margin: 0 0 0.25rem;
+	border: 0;
+	font-family: var(--hs-font-display, sans-serif);
+	font-size: 1.6rem;
+	font-weight: 700;
+	letter-spacing: -0.02em;
+}
+.lop-roster-table {
+	width: 100%;
+	border-collapse: collapse;
+	font-variant-numeric: tabular-nums;
+}
+.lop-roster-table th,
+.lop-roster-table td {
+	padding: 0.4rem 0.6rem;
+	border-bottom: 1px solid var(--hs-rule, oklch(86% 0.035 230));
+	text-align: left;
+}
+.lop-roster-table th {
+	color: var(--hs-muted, oklch(45% 0.014 250));
+	font-size: 0.8rem;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+}
+.lop-roster-cta {
+	font-weight: 700;
+}
+
+@media (max-width: 719px) {
+	.lop-room {
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+		grid-template-areas:
+			"teacher teacher"
+			"desks desks"
+			"window door"
+			"legend legend";
+		padding: 1rem;
+	}
+	.lop-door {
+		align-self: stretch;
+	}
+}
+
+/* Ô nhập của InputBox có size=50: giới hạn theo khung chứa */
+.lop-board .cdx-text-input__input {
+	box-sizing: border-box;
+	max-width: 100%;
+}

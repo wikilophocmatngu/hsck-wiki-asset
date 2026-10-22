@@ -18,7 +18,7 @@
 }
 .ky-kind {
 	margin: 0;
-	color: var(--hs-peach, oklch(79% 0.132 62));
+	color: var(--hs-chalk, oklch(95.7% 0.015 94));          /* chữ nhỏ: dùng phấn trắng 7:1 thay vì cam 4:1 */
 	font-size: 0.85rem;
 	font-weight: 700;
 	letter-spacing: 0.3em;
@@ -70,6 +70,15 @@
 .ky-cover input[name="fulltext"] {
 	display: none;
 }
+.ky-cover-cta {
+	margin: 0.9rem 0 0;
+	font-weight: 700;
+}
+.ky-cover-cta a {
+	color: var(--hs-chalk, oklch(95.7% 0.015 94));
+	text-decoration: underline;
+	text-decoration-color: var(--hs-peach, oklch(79% 0.132 62));
+}
 
 /* ===== Tiêu đề mục ===== */
 .ky .ky-h {
@@ -111,7 +120,7 @@
 	margin-bottom: 0.4rem;
 	border: 0.35rem solid var(--hs-paper-fixed, oklch(98.5% 0.012 80));
 	outline: 1px solid var(--hs-rule, oklch(86% 0.035 230));
-	background: var(--hs-sky, oklch(81% 0.107 226));
+	background: var(--hs-photo, oklch(91% 0.04 226));
 	color: var(--hs-ink-fixed, oklch(24% 0.012 250));
 	font-family: var(--hs-font-display, sans-serif);
 	font-size: 2rem;
@@ -157,7 +166,7 @@
 	font-variant-numeric: tabular-nums;
 }
 .ky-vol small {
-	font-size: 0.65rem;
+	font-size: 0.75rem;
 }
 .ky-vol--last {
 	grid-column: span 2;
@@ -198,7 +207,46 @@
 	margin: 0 0 0.8rem;
 }
 .ky-cta {
+	margin-bottom: 1.2rem;
+}
+/* Lời mời chính của Lưu bút: một nút duy nhất */
+.ky-cta a {
+	display: inline-block;
+	padding: 0.4rem 0.9rem;
+	border-radius: 0.4rem;
+	background: var(--hs-blue, oklch(44% 0.137 259));
+	color: var(--hs-chalk, oklch(95.7% 0.015 94));
 	font-weight: 700;
+	line-height: 1.6rem;
+	white-space: nowrap;
+}
+.ky-cta a:hover {
+	background: var(--hs-spine, oklch(32% 0.11 259));
+	text-decoration: none;
+}
+.ky-cta a:focus-visible {
+	outline: 3px solid var(--hs-peach, oklch(79% 0.132 62));
+	outline-offset: 2px;
+}
+.ky-or {
+	color: var(--hs-muted, oklch(45% 0.014 250));
+	font-size: 0.9rem;
+}
+/* Nút "Ký lưu bút": màu rõ ràng, không phụ thuộc token Codex của skin */
+.ky-guest input[type="submit"] {
+	border: 2px solid var(--hs-blue, oklch(44% 0.137 259));
+	border-radius: 0.4rem;
+	background: var(--hs-paper-fixed, oklch(98.5% 0.012 80));
+	color: var(--hs-blue, oklch(44% 0.137 259));
+	font-weight: 700;
+	cursor: pointer;
+}
+.ky-guest input[type="submit"]:hover {
+	background: var(--hs-soft, oklch(95% 0.02 230));
+}
+.ky-guest input[type="submit"]:focus-visible {
+	outline: 3px solid var(--hs-peach, oklch(79% 0.132 62));
+	outline-offset: 2px;
 }
 .ky-signed-title {
 	font-weight: 700;
@@ -220,14 +268,16 @@
 	font-size: 0.75rem;
 	color: var(--hs-muted, oklch(45% 0.014 250));
 }
-.ky-sign--empty {
-	opacity: 0.7;
-	rotate: 1deg;
-}
 .ky-signed-more {
 	font-size: 0.9rem;
 }
 
+@media (max-width: 639px) {
+	/* Điện thoại: chỉ 6 ảnh thẻ, phần còn lại ở "Cả lớp →" */
+	.ky-class .ky-face:nth-of-type(n+7):not(.ky-face--more) {
+		display: none;
+	}
+}
 @media (max-width: 719px) {
 	.ky-guest {
 		grid-template-columns: minmax(0, 1fr);

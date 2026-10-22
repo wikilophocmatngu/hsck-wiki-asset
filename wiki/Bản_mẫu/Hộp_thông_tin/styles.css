@@ -7,7 +7,6 @@
 	width: 22em;
 	margin: 0 0 1em 1em;
 	border: 1px solid var(--border-color-base, #a2a9b1);
-	border-top: 4px solid var(--hsck-leaf, #0d6b52);
 	border-radius: 6px;
 	border-collapse: separate;
 	border-spacing: 0;
@@ -23,8 +22,8 @@
 	text-align: left;
 }
 .hsck-infobox .hsck-infobox-title {
-	background: var(--hsck-leaf, #0d6b52);
-	color: #fff;
+	background: var(--hs-blue, oklch(44% 0.137 259));
+	color: var(--hs-chalk, oklch(95.7% 0.015 94));
 	font-size: 1.25em;
 	text-align: center;
 }
@@ -38,18 +37,18 @@
 	font-size: 0.9em;
 }
 .hsck-infobox .hsck-infobox-header {
-	background: var(--hsck-ink, #1d4f9c);
-	color: #fff;
+	background: var(--hs-peach, oklch(79% 0.132 62));
+	color: var(--hs-ink-fixed, oklch(24% 0.012 250));      /* 8.1:1 */
 	text-align: center;
 }
 .hsck-infobox th[scope="row"] {
 	width: 38%;
-	background: var(--hsck-soft, #e6f6fd);
-	color: var(--hsck-accent, #0d6b52);
+	background: var(--hs-soft, oklch(95% 0.02 230));
+	color: var(--hs-accent, oklch(44% 0.137 259));
 }
 .hsck-infobox .hsck-infobox-nav {
 	text-align: center;
-	background: var(--hsck-soft, #e6f6fd);
+	background: var(--hs-soft, oklch(95% 0.02 230));
 }
 @media (max-width: 639px) {
 	.hsck-infobox {

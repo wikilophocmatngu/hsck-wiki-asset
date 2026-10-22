@@ -15,20 +15,20 @@
 	border-top: 1px solid var(--border-color-subtle, #c8ccd1);
 }
 .hsck-navbox .hsck-navbox-title {
-	background: var(--hsck-leaf, #0d6b52);
-	color: #fff;
+	background: var(--hs-blue, oklch(44% 0.137 259));
+	color: var(--hs-chalk, oklch(95.7% 0.015 94));
 	font-size: 1.1em;
 	text-align: center;
 }
 .hsck-navbox .hsck-navbox-title .mw-collapsible-toggle,
 .hsck-navbox .hsck-navbox-title .mw-collapsible-toggle a,
 .hsck-navbox .hsck-navbox-title .mw-collapsible-text {
-	color: #fff;
+	color: var(--hs-chalk, oklch(95.7% 0.015 94));
 }
 .hsck-navbox th[scope="row"] {
 	width: 1%;
 	white-space: nowrap;
-	background: var(--hsck-soft, #e6f6fd);
-	color: var(--hsck-accent, #0d6b52);
+	background: var(--hs-soft, oklch(95% 0.02 230));
+	color: var(--hs-accent, oklch(44% 0.137 259));
 	text-align: right;
 }

@@ -1,0 +1,64 @@
+/* Ý tưởng: lưới quan hệ nhân vật. Bọc các {{Quan hệ}} trong <div class="hsck-rel-grid">. */
+.hsck-rel-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(min(100%, 15em), 1fr));
+	gap: 0.6em;
+	margin: 0.5em 0 1em;
+}
+.hsck-rel {
+	--rel: var(--hsck-ink, #1d4f9c);
+	display: flex;
+	align-items: center;
+	gap: 0.6em;
+	padding: 0.5em 0.7em;
+	border: 1px solid var(--border-color-subtle, #c8ccd1);
+	border-left: 5px solid var(--rel);
+	border-radius: 8px;
+	background: var(--background-color-base, #fff);
+}
+.hsck-rel--friend { --rel: var(--hsck-leaf, #0d6b52); }
+.hsck-rel--family { --rel: var(--hsck-blossom, #b0336a); }
+.hsck-rel--rival { --rel: #d42a2f; }      /* cố định: chữ trắng 5:1 ở cả nền tối */
+.hsck-rel--teacher { --rel: var(--hsck-ink, #1d4f9c); }
+.hsck-rel-avatar {
+	flex: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 3em;
+	height: 3em;
+	border: 2px solid var(--hsck-line, #202122);
+	border-radius: 50%;
+	background: var(--rel);
+	color: #fff;
+	font-size: 1.1em;
+	font-weight: bold;
+	overflow: hidden;
+}
+.hsck-rel-avatar img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.hsck-rel-text {
+	min-width: 0;
+	line-height: 1.35;
+}
+.hsck-rel-name {
+	display: block;
+	font-weight: bold;
+}
+.hsck-rel-tag {
+	display: inline-block;
+	margin-top: 0.15em;
+	padding: 0 0.5em;
+	border-radius: 1em;
+	background: var(--rel);
+	color: #fff;
+	font-size: 0.8em;
+}
+.hsck-rel-note {
+	display: block;
+	color: var(--color-subtle, #54595d);
+	font-size: 0.85em;
+}

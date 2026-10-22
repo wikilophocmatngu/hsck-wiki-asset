@@ -1,0 +1,15 @@
+<templatestyles src="Bản mẫu:Thẻ học sinh/styles.css" /><div class="hsck-idcard" role="group" aria-label="Thẻ học sinh: {{{tên|{{PAGENAME}}}}}">
+<div class="hsck-idcard-head"><span class="hsck-idcard-kind">Thẻ học sinh</span><span class="hsck-idcard-school">{{{trường|Trường …}}}</span></div>
+<div class="hsck-idcard-body">
+<div class="hsck-idcard-photo">{{#if:{{{hình|}}}|[[Tập tin:{{{hình}}}|120px|alt={{{tên|{{PAGENAME}}}}}]]|<span class="hsck-idcard-initial">{{uc:{{padleft:|1|{{#lstelem:{{{tên|{{PAGENAME}}}}}|\_|-1}}}}}}</span>}}</div>
+<div class="hsck-idcard-fields">
+<div class="hsck-idcard-name">{{{tên|{{PAGENAME}}}}}</div>
+{{#if:{{{lớp|}}}|<div class="hsck-idcard-row"><span class="hsck-idcard-label">Lớp</span> {{{lớp}}}</div>}}
+{{#if:{{{chức vụ|}}}|<div class="hsck-idcard-row"><span class="hsck-idcard-label">Chức vụ</span> {{{chức vụ}}}</div>}}
+{{#if:{{{sinh nhật|}}}|<div class="hsck-idcard-row"><span class="hsck-idcard-label">Sinh nhật</span> {{{sinh nhật}}}</div>}}
+{{#if:{{{biệt danh|}}}|<div class="hsck-idcard-row"><span class="hsck-idcard-label">Biệt danh</span> {{{biệt danh}}}</div>}}
+{{#if:{{{xuất hiện đầu|}}}|<div class="hsck-idcard-row"><span class="hsck-idcard-label">Xuất hiện đầu</span> {{{xuất hiện đầu}}}</div>}}
+</div>
+</div>
+<div class="hsck-idcard-foot"><span class="hsck-idcard-year">Niên khóa {{{niên khóa|…}}}</span><span class="hsck-idcard-stamp" aria-hidden="true">B.R.O</span></div>
+</div>

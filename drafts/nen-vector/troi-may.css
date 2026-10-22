@@ -1,0 +1,14 @@
+/* Nền: trời xanh có mây, như nền các bìa truyện */
+body.skin-vector-legacy {
+	--hs-sky-top: oklch(86% 0.08 226);
+	--hs-sky-bottom: oklch(95% 0.03 226);
+	--hs-cloud: oklch(99% 0.005 226);
+	background-color: var(--hs-sky-bottom);
+	background-image:
+		radial-gradient(ellipse 5rem 1.6rem at 3rem 70%, var(--hs-cloud) 60%, transparent 62%),
+		radial-gradient(ellipse 3.2rem 1.4rem at 6.5rem 67%, var(--hs-cloud) 60%, transparent 62%),
+		radial-gradient(ellipse 4rem 1.3rem at 7rem 88%, var(--hs-cloud) 60%, transparent 62%),
+		radial-gradient(ellipse 2.6rem 1.1rem at 3.8rem 86%, var(--hs-cloud) 60%, transparent 62%),
+		linear-gradient(to bottom, var(--hs-sky-top), var(--hs-sky-bottom));
+	background-attachment: fixed;
+}

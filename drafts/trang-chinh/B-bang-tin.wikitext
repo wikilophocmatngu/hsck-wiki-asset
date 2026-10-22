@@ -1,0 +1,49 @@
+__NOTOC__ __NOEDITSECTION__
+<templatestyles src="Bản mẫu:Trang Chính B/styles.css" />
+<div class="tin">
+<div class="tin-head">
+<h2 class="tin-title">Bảng tin lớp</h2>
+<p>Bảng tin cũ của lớp ''Học Sinh Chân Kinh''. Lớp ra trường sau Tập 25; những gì cả lớp còn nhớ được ghim lại ở đây.</p>
+</div>
+<div class="tin-board">
+<div class="tin-note tin-note--notice">
+<span class="tin-kicker">Thông báo cuối cùng</span>
+<p class="tin-big">Lớp đã tan sau [[Tập 25]].</p>
+<p>''Bằng lòng đi em'' (phần 3) là buổi học cuối. Còn Tập 26? [[Truyền thuyết Tập 26|Nghe kể lại ở đây]].</p>
+</div>
+<div class="tin-note tin-note--faces">
+<span class="tin-kicker">Gương mặt trong lớp</span>
+<div class="tin-polaroids">
+<div class="tin-polaroid"><span class="tin-photo">1</span>[[Nhân vật 1]]</div>
+<div class="tin-polaroid"><span class="tin-photo">2</span>[[Nhân vật 2]]</div>
+<div class="tin-polaroid"><span class="tin-photo">3</span>[[Nhân vật 3]]</div>
+</div>
+<p class="tin-more">[[:Thể loại:Nhân vật|Cả lớp →]]</p>
+</div>
+<div class="tin-note tin-note--award">
+<span class="tin-award-title">Giấy khen</span>
+<p>Tặng bạn [[Thành viên:Pisces|Pisces]]<br />vì đã kê bàn và mở cửa lớp.</p>
+<p class="tin-award-next">Giấy khen kế tiếp: [[Project:Cộng đồng|để trống tên bạn]]</p>
+</div>
+<div class="tin-note tin-note--search">
+<span class="tin-kicker">Tìm gì đó?</span>
+<inputbox>
+type=search
+buttonlabel=Tìm
+placeholder=Tên nhân vật, tên tập…
+break=no
+</inputbox>
+</div>
+<div class="tin-note tin-note--flyer">
+<p class="tin-flyer-title">Tuyển cộng tác viên</p>
+<p>Không cần kinh nghiệm, chỉ cần đã đọc truyện. Xé một mẩu bên dưới rồi viết bài đó.</p>
+<div class="tin-tabs">
+<span class="tin-tab">[[Tập 1]]</span>
+<span class="tin-tab">[[Tập 2]]</span>
+<span class="tin-tab">[[Tập 7]]</span>
+<span class="tin-tab">[[Nhân vật 4]]</span>
+<span class="tin-tab">[[Special:WantedPages|Còn nữa]]</span>
+</div>
+</div>
+</div>
+</div>

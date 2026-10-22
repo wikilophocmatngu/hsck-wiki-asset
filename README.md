@@ -5,20 +5,22 @@ Giao diện và nội dung khởi tạo cho **Wiki Học Sinh Chân Kinh** (http
 Skin: **Vector 2010** (máy tính) + **Minerva Neue** (di động), tổ chức theo cách các wiki Weird Gloop vẫn làm
 (không dùng GloopThemes, Less hay các tính năng riêng khác của họ vì Miraheze không có):
 
-- `MediaWiki:Common.css`: dùng cho cả hai giao diện, **chỉ** chứa biến màu (`--hsck-*` cho bản mẫu nội dung, `--hs-*` OKLCH cho Trang Chính, đều có giá trị tối) và `@import` phông Bricolage Grotesque từ Google Fonts.
-- `MediaWiki:Vector.css`: chỉ máy tính. `MediaWiki:Minerva.css`: chỉ di động.
-- CSS của từng bản mẫu nằm trong **TemplateStyles** (`Bản mẫu:X/styles.css`), lấy màu qua `var(--hsck-*, dự phòng)`.
+- `MediaWiki:Common.css`: dùng cho cả hai giao diện: `@import` phông Bricolage Grotesque (Google Fonts), **một bộ biến màu duy nhất `--hs-*`** (OKLCH, có giá trị tối), phông tiêu đề h1/h2, và khung hồ sơ thành viên "Học bạ" (UserProfileV2, nằm ngoài `.mw-parser-output` nên không dùng TemplateStyles được).
+- `MediaWiki:Vector.css`: chỉ máy tính: dải đầu trang vải xanh, tab bìa hồ sơ, trang giấy kem, ruy băng đánh dấu trang, thanh bên, chân trang "bìa sau". Có chỗ chờ ảnh nền riêng.
+- `MediaWiki:Minerva.css`: chỉ di động: giấy kem (chế độ sáng), header vải xanh, menu trượt giấy có lề đỏ, tiêu đề mục dạng tab, chân trang "bìa sau".
+- CSS của từng bản mẫu nằm trong **TemplateStyles** (`Bản mẫu:X/styles.css`), lấy màu qua `var(--hs-*, dự phòng)`.
 - Hộp điều hướng dùng class `navbox`, nên MobileFrontend tự gỡ nó trên di động.
 
-## Bảng màu (lấy từ bìa truyện)
+## Bảng màu "Kỷ yếu" (token `--hs-*` trong `Common.css`)
 
-| Tên | Mã | Dùng cho | Tương phản |
-|---|---|---|---|
-| Lá đậm | `#0d6b52` | tiêu đề hộp, header Minerva, nhãn | 6.5:1 với chữ trắng |
-| Mực | `#1d4f9c` | liên kết (Minerva), tiêu đề phụ | 7.9:1 trên nền trắng |
-| Hồng đậm | `#b0336a` | hộp "Tham gia đóng góp" | 6.0:1 với chữ trắng |
-| Cam | `#f6a65a` | viền nhấn, hộp "Tập truyện" | 8.1:1 với chữ `#202122` |
-| Trời | `#6dcff6` → `#eaf6fc` | nền banner, nền Vector | 14.6:1 với chữ `#202122` |
+| Token | Vai trò | Tương phản |
+|---|---|---|
+| `--hs-blue` / `--hs-spine` | vải bìa (header, chân trang, tiêu đề hộp), gáy bìa | chữ `--hs-chalk` 7.0:1 |
+| `--hs-peach` | chữ ép trên bìa, gạch nhấn, ruy băng | trên `--hs-blue` 4.0:1, chỉ cho chữ lớn |
+| `--hs-paper` / `--hs-paper-fixed` | giấy kem (đổi theo chế độ tối / luôn sáng) | — |
+| `--hs-pen` | mực đỏ: con dấu, ô điểm, chữ ký | 5.6:1 trên giấy |
+| `--hs-accent` | chữ nhấn, tiêu đề | 7.9:1 trên giấy |
+| `--hs-ink-fixed` | chữ trên bề mặt luôn sáng | 8.1:1 trên cam |
 
 ## Ánh xạ file → trang wiki
 
@@ -37,6 +39,8 @@ Skin: **Vector 2010** (máy tính) + **Minerva Neue** (di động), tổ chức 
 | `wiki/Bản_mẫu/Thoại.wikitext` + `Thoại/styles.css` | `Bản mẫu:Thoại`: bong bóng thoại kiểu truyện tranh |
 | `wiki/Bản_mẫu/Tiết_lộ.wikitext` + `Tiết_lộ/styles.css` | `Bản mẫu:Tiết lộ`: cảnh báo tiết lộ có "con dấu" đỏ |
 | `wiki/Bản_mẫu/Hộp_điều_hướng.wikitext` + `Hộp_điều_hướng/styles.css` | `Bản mẫu:Hộp điều hướng`: navbox (tối đa 6 nhóm) |
+
+Thư mục khác: `drafts/` = ý tưởng đã demo nhưng chưa dùng (không đăng); `tools/` = công cụ dựng ảnh demo; `HANDOFF.md` = bối cảnh và việc còn dở.
 
 Lưu trang `styles.css` **trước** các bản mẫu dùng nó. `demo/Nhân_vật_mẫu.wikitext` chỉ là bài minh họa, không cần đăng.
 
