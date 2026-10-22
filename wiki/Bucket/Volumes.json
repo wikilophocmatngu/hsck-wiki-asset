@@ -1,25 +1,25 @@
 {
-	"so_tap": {
+	"volume": {
 		"type": "INTEGER",
 		"index": true,
 		"repeated": false
 	},
-	"ten": {
+	"title": {
 		"type": "TEXT",
 		"index": false,
 		"repeated": false
 	},
-	"phat_hanh": {
+	"release_date": {
 		"type": "TEXT",
 		"index": true,
 		"repeated": false
 	},
-	"nha_xuat_ban": {
+	"publisher": {
 		"type": "TEXT",
 		"index": true,
 		"repeated": false
 	},
-	"so_trang": {
+	"pages": {
 		"type": "INTEGER",
 		"index": false,
 		"repeated": false
@@ -29,7 +29,7 @@
 		"index": false,
 		"repeated": false
 	},
-	"bia": {
+	"cover": {
 		"type": "TEXT",
 		"index": false,
 		"repeated": false

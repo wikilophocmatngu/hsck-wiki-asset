@@ -1,45 +1,45 @@
 {
-	"ten": {
+	"name": {
 		"type": "TEXT",
 		"index": true,
 		"repeated": false
 	},
-	"ten_khac": {
+	"aliases": {
 		"type": "TEXT",
 		"index": false,
 		"repeated": false
 	},
-	"gioi_tinh": {
+	"gender": {
 		"type": "TEXT",
 		"index": true,
 		"repeated": false
 	},
-	"sinh_nhat": {
+	"birthday": {
 		"type": "TEXT",
 		"index": false,
 		"repeated": false
 	},
-	"vai_tro": {
+	"role": {
 		"type": "TEXT",
 		"index": true,
 		"repeated": false
 	},
-	"lop": {
+	"class_name": {
 		"type": "TEXT",
 		"index": true,
 		"repeated": false
 	},
-	"loai": {
+	"kind": {
 		"type": "TEXT",
 		"index": true,
 		"repeated": false
 	},
-	"xuat_hien_dau": {
+	"first_volume": {
 		"type": "INTEGER",
 		"index": true,
 		"repeated": false
 	},
-	"hinh": {
+	"image": {
 		"type": "TEXT",
 		"index": false,
 		"repeated": false

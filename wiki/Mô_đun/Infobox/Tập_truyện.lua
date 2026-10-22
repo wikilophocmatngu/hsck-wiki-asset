@@ -55,13 +55,13 @@ function p._main(args)
 
 	local plain = InfoboxBuilder.plain
 	return out .. InfoboxBuilder.store('volumes', {
-		so_tap = number,
-		ten = plain(args['tên']),
-		phat_hanh = InfoboxBuilder.isoDate(args['phát hành']),
-		nha_xuat_ban = plain(args['nhà xuất bản']),
-		so_trang = InfoboxBuilder.number(args['số trang']),
+		volume = number,
+		title = plain(args['tên']),
+		release_date = InfoboxBuilder.isoDate(args['phát hành']),
+		publisher = plain(args['nhà xuất bản']),
+		pages = InfoboxBuilder.number(args['số trang']),
 		isbn = plain(args['isbn']),
-		bia = InfoboxBuilder.file(args['bìa']),
+		cover = InfoboxBuilder.file(args['bìa']),
 	})
 end
 

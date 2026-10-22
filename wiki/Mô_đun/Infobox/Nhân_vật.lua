@@ -62,15 +62,15 @@ function p._main(args)
 
 	local plain = InfoboxBuilder.plain
 	return out .. InfoboxBuilder.store('characters', {
-		ten = plain(name),
-		ten_khac = plain(args['tên khác']),
-		gioi_tinh = plain(args['giới tính']),
-		sinh_nhat = plain(args['sinh nhật']),
-		vai_tro = plain(args['vai trò']),
-		lop = plain(args['lớp']),
-		loai = kind,
-		xuat_hien_dau = InfoboxBuilder.number(args['xuất hiện đầu']),
-		hinh = InfoboxBuilder.file(args['hình']),
+		name = plain(name),
+		aliases = plain(args['tên khác']),
+		gender = plain(args['giới tính']),
+		birthday = plain(args['sinh nhật']),
+		role = plain(args['vai trò']),
+		class_name = plain(args['lớp']),
+		kind = kind,
+		first_volume = InfoboxBuilder.number(args['xuất hiện đầu']),
+		image = InfoboxBuilder.file(args['hình']),
 	})
 end
 
