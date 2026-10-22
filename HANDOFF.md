@@ -38,7 +38,8 @@ Chưa có bot password, nên chưa có trang nào được đăng lên wiki. M�
 
 ```sh
 python3 -I tools/build.py <thư mục gốc> <outdir>     # gọi API parse, xuất HTML + modulestyles
-NODE_PATH=$(npm root -g) node tools/shot.js <outdir> [keys]   # DEMO_IMG, ONLY_SKIN tùy chọn
+NODE_PATH=$(npm root -g) node tools/shot.js <outdir> [thư mục ảnh]   # ONLY=trang-chinh-vector-day,... tùy chọn
+python3 -I tools/test-infobox.py .                    # kiểm tra hàm chuẩn hoá dữ liệu Bucket
 NODE_PATH=$(npm root -g) node tools/shot-page.js <outdir> <Tên_trang> <tiền tố>  # chụp trang thật, chỉ chèn CSS
 ```
 

@@ -1,0 +1,47 @@
+{
+	"ten": {
+		"type": "TEXT",
+		"index": true,
+		"repeated": false
+	},
+	"ten_khac": {
+		"type": "TEXT",
+		"index": false,
+		"repeated": false
+	},
+	"gioi_tinh": {
+		"type": "TEXT",
+		"index": true,
+		"repeated": false
+	},
+	"sinh_nhat": {
+		"type": "TEXT",
+		"index": false,
+		"repeated": false
+	},
+	"vai_tro": {
+		"type": "TEXT",
+		"index": true,
+		"repeated": false
+	},
+	"lop": {
+		"type": "TEXT",
+		"index": true,
+		"repeated": false
+	},
+	"loai": {
+		"type": "TEXT",
+		"index": true,
+		"repeated": false
+	},
+	"xuat_hien_dau": {
+		"type": "INTEGER",
+		"index": true,
+		"repeated": false
+	},
+	"hinh": {
+		"type": "TEXT",
+		"index": false,
+		"repeated": false
+	}
+}

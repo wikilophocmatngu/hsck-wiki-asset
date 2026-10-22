@@ -15,6 +15,8 @@ const shots = [
   ['trang-chinh', 'Trang_Chính', 'minerva', 'night', 390],
   ['nhan-vat-mau', 'Nhân_vật_mẫu', 'minerva', 'day', 390],
   ['nhan-vat-mau', 'Nhân_vật_mẫu', 'minerva', 'night', 390],
+  ['tap-7', 'Tập_7', 'vector', 'day', 1440],
+  ['tap-7', 'Tập_7', 'minerva', 'night', 390],
 ];
 (async () => {
   const browser = await chromium.launch({ proxy: { server: process.env.HTTPS_PROXY } });

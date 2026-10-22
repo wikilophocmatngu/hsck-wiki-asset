@@ -1,38 +1,15 @@
-<templatestyles src="Bản mẫu:Hộp thông tin/styles.css" />
-{| class="infobox hsck-infobox"
-! colspan="2" class="hsck-infobox-title" | {{{tên|{{PAGENAME}}}}}
-|-
-{{#if:{{{hình|}}}|{{!}} colspan="2" class="hsck-infobox-image" {{!}} [[Tập tin:{{{hình}}}|250px|alt={{{tên|{{PAGENAME}}}}}]]{{#if:{{{chú thích|}}}|<span class="hsck-infobox-caption">{{{chú thích}}}</span>}}}}
-|-
-! colspan="2" class="hsck-infobox-header" | Thông tin
-|-
-{{#if:{{{tên khác|}}}|! scope="row" {{!}} Tên khác
-{{!}} {{{tên khác}}}}}
-|-
-{{#if:{{{giới tính|}}}|! scope="row" {{!}} Giới tính
-{{!}} {{{giới tính}}}}}
-|-
-{{#if:{{{sinh nhật|}}}|! scope="row" {{!}} Sinh nhật
-{{!}} {{{sinh nhật}}}}}
-|-
-{{#if:{{{vai trò|}}}|! scope="row" {{!}} Vai trò
-{{!}} {{{vai trò}}}}}
-|-
-{{#if:{{{lớp|}}}|! scope="row" {{!}} Lớp
-{{!}} {{{lớp}}}}}
-|-
-{{#if:{{{gia đình|}}}|! scope="row" {{!}} Gia đình
-{{!}} {{{gia đình}}}}}
-|-
-{{#if:{{{xuất hiện đầu|}}}|! scope="row" {{!}} Xuất hiện đầu
-{{!}} {{{xuất hiện đầu}}}}}
-|}<includeonly>{{#ifeq:{{NAMESPACE}}||[[Thể loại:Nhân vật]]{{#switch:{{lc:{{{loại|}}}}}|học sinh=[[Thể loại:Học sinh]]|giáo viên=[[Thể loại:Giáo viên]]}}}}</includeonly><noinclude>
+<includeonly>{{#invoke:Infobox/Nhân vật|main}}</includeonly><noinclude>
 == Cách dùng ==
-Đặt ở đầu bài viết về nhân vật. Mọi tham số đều không bắt buộc; dòng nào để trống sẽ bị ẩn. Bài viết trong không gian chính tự vào [[:Thể loại:Nhân vật]], và thêm [[:Thể loại:Học sinh]] hoặc [[:Thể loại:Giáo viên]] theo tham số <code>loại</code>.
+Đặt ở đầu bài viết về nhân vật. Mọi tham số đều không bắt buộc; dòng nào để trống sẽ bị ẩn. Hộp do [[Mô đun:Infobox/Nhân vật]] vẽ.
+
+Bài viết trong không gian chính tự vào [[:Thể loại:Nhân vật]], thêm [[:Thể loại:Học sinh]] hoặc [[:Thể loại:Giáo viên]] theo tham số <code>loại</code>, và được lưu vào [[Bucket:Nhan vat]] để các trang khác truy vấn.
+
+Ảnh: <code>hình</code>, <code>hình2</code>, <code>hình3</code>. Có từ hai ảnh trở lên thì thành tab, tên tab lấy từ <code>nhãn</code>, <code>nhãn2</code>, <code>nhãn3</code>. Tệp chưa có trên wiki thì bị bỏ qua.
 <pre>
 {{Hộp nhân vật
 | tên           =
 | hình          =
+| nhãn          =
 | chú thích     =
 | tên khác      =
 | giới tính     =

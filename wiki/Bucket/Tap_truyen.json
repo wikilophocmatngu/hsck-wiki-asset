@@ -1,0 +1,37 @@
+{
+	"so_tap": {
+		"type": "INTEGER",
+		"index": true,
+		"repeated": false
+	},
+	"ten": {
+		"type": "TEXT",
+		"index": false,
+		"repeated": false
+	},
+	"phat_hanh": {
+		"type": "TEXT",
+		"index": true,
+		"repeated": false
+	},
+	"nha_xuat_ban": {
+		"type": "TEXT",
+		"index": true,
+		"repeated": false
+	},
+	"so_trang": {
+		"type": "INTEGER",
+		"index": false,
+		"repeated": false
+	},
+	"isbn": {
+		"type": "TEXT",
+		"index": false,
+		"repeated": false
+	},
+	"bia": {
+		"type": "TEXT",
+		"index": false,
+		"repeated": false
+	}
+}
