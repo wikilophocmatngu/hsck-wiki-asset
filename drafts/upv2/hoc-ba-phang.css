@@ -17,8 +17,9 @@
 	grid-template-areas:
 		"avatar header"
 		"avatar stats"
+		"avatar social"
 		"avatar about";
-	grid-template-rows: auto auto 1fr;
+	grid-template-rows: auto auto auto 1fr;
 	align-items: start;
 	gap: 0.6rem 1.25rem;
 	margin: 0;
@@ -31,6 +32,7 @@
 /* Ảnh đại diện: ảnh thẻ 3×4 có viền giấy mỏng, không đổ bóng */
 .profile-masthead .profile-avatar {
 	grid-area: avatar;
+	position: relative;                /* neo cho nút bút chì đổi ảnh */
 	width: 6.75rem;
 	height: 9rem;
 	margin: 0;
@@ -170,6 +172,103 @@ html.skin-theme-clientpref-night .profile-masthead .profile-user-group:not([data
 .profile-masthead .profile-header-statistics li::before {
 	content: none !important;
 }
+/* Mạng xã hội (Discord, X/Twitter, Mastodon): nhãn có biểu tượng và chữ.
+   Biểu tượng của UserProfileV2 vẽ nét đen cố định (stroke="#000000"): cho theo màu chữ để thấy được ở chế độ tối.
+   X và Mastodon chỉ có biểu tượng, không có chữ: thêm tên dịch vụ để người xem và trình đọc màn hình biết là gì.
+   Tên Discord vốn chỉ hiện khi rê chuột (không xem được trên điện thoại): hiện luôn cạnh biểu tượng. */
+.profile-masthead .profile-externalLinks {
+	grid-area: social;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4rem;
+}
+.profile-masthead .profile-externalLinks > a,
+.profile-masthead .profile-externalLinks > .external-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.35rem;
+	margin: 0;
+	padding: 0.2rem 0.7rem 0.2rem 0.45rem;
+	border-radius: 999px;
+	background: var(--hs-paper, oklch(98.5% 0.012 80));
+	color: var(--hs-ink, oklch(24% 0.012 250));
+	font-size: 0.85rem;
+	font-weight: 700;
+	line-height: 1.3;
+	text-decoration: none;
+}
+.profile-masthead .profile-externalLinks > a:hover {
+	background: var(--hs-soft, oklch(95% 0.02 230));
+}
+.profile-masthead .profile-externalLinks svg {
+	flex: none;
+	color: inherit;                    /* SVG tự đặt color="#000000", nên currentColor vẫn là đen */
+	width: 1.15rem;
+	height: 1.15rem;
+}
+.profile-masthead .profile-externalLinks svg path {
+	stroke: currentColor;
+}
+.profile-masthead .profile-externalLinks > a[href^="https://x.com/"]::after {
+	content: "X";
+}
+.profile-masthead .profile-externalLinks > a[href^="https://mastodon.social/"]::after {
+	content: "Mastodon";
+}
+.profile-masthead .profile-externalLinks > .external-link.tooltip::after,
+.profile-masthead .profile-externalLinks > .external-link.tooltip:hover::after {
+	content: attr(username);
+	position: static;
+	padding: 0;
+	background: none;
+	transform: none;
+	white-space: nowrap;
+}
+
+/* Nút bút chì đổi ảnh (chỉ chủ hồ sơ thấy): tròn phẳng ở góc dưới ảnh */
+.profile-masthead .profile-avatar-edit-action {
+	right: -0.5rem;
+	bottom: -0.5rem;
+}
+.profile-masthead .profile-avatar-edit-button {
+	width: 2rem;
+	height: 2rem;
+	border: 1px solid var(--hs-rule, oklch(86% 0.035 230));
+	background: var(--hs-paper, oklch(98.5% 0.012 80));
+	box-shadow: none;
+	color: var(--hs-ink, oklch(24% 0.012 250));
+}
+.profile-masthead .profile-avatar-edit-button svg {
+	color: inherit;
+	width: 1.1rem;
+	height: 1.1rem;
+}
+.profile-masthead .profile-avatar-edit-button svg path {
+	stroke: currentColor;
+}
+
+/* Nút "Sửa" của UserProfileV2 dùng class mw-ui-button (đã bỏ trong MediaWiki mới): tự tạo kiểu */
+.profile-masthead #userProfileV2-edit {
+	padding: 0.4rem 1rem;
+	border: 0;
+	border-radius: 0.4rem;
+	background: var(--hs-blue, oklch(44% 0.137 259));
+	color: var(--hs-chalk, oklch(95.7% 0.015 94));
+	font: inherit;
+	font-weight: 700;
+	cursor: pointer;
+}
+.profile-masthead #userProfileV2-edit:hover {
+	background: var(--hs-spine, oklch(32% 0.11 259));
+}
+/* UserProfileV2 tắt viền focus của nút bút chì: trả lại cho người dùng bàn phím */
+.profile-masthead #userProfileV2-edit:focus-visible,
+.profile-masthead .profile-avatar-edit-button:focus-visible,
+.profile-masthead .profile-externalLinks > a:focus-visible {
+	outline: 3px solid var(--hs-peach, oklch(79% 0.132 62));
+	outline-offset: 2px;
+}
+
 .profile-masthead .profile-header-about {
 	grid-area: about;
 	max-width: 60ch;
@@ -185,6 +284,7 @@ html.skin-theme-clientpref-night .profile-masthead .profile-user-group:not([data
 		grid-template-areas:
 			"avatar header"
 			"stats stats"
+			"social social"
 			"about about"
 			"actions actions";
 		grid-template-rows: auto;
@@ -209,6 +309,10 @@ html.skin-theme-clientpref-night .profile-masthead .profile-user-group:not([data
 	.profile-masthead .profile-avatar {
 		width: 4.75rem;
 		height: 6.33rem;
+	}
+	.profile-masthead .profile-avatar-edit-button {
+		width: 1.75rem;
+		height: 1.75rem;
 	}
 }
 
