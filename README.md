@@ -59,6 +59,8 @@ Hộp thông tin tự lưu dữ liệu vào Bucket khi bài nằm trong không g
 
 Sửa các trang `MediaWiki:*.css` cần quyền `interface-admin`. CSS mới có thể mất vài phút mới hiện (cache ResourceLoader).
 
+Thứ tự đăng từng trang và việc cần làm trên wiki: xem `DEPLOY.md`.
+
 ## Việc cần làm trên ManageWiki
 
 1. `Special:ManageWiki/settings` → *Styling*: `$wgDefaultSkin = vector` (Vector 2010) và skin di động = `minerva`.

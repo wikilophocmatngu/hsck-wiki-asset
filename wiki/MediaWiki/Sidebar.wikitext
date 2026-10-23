@@ -11,6 +11,9 @@
 ** Project:Cộng đồng|Cổng cộng đồng
 ** Special:NewPages|Trang mới
 ** Special:WantedPages|Trang cần viết
+** Project:Viết bài đầu tiên|Viết bài đầu tiên
+** Project:Ban cán sự|Ban cán sự
+** https://discord.gg/UrfHSzFff3|Discord
 * SEARCH
 * TOOLBOX
 * LANGUAGES
