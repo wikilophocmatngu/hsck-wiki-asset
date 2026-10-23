@@ -131,6 +131,13 @@
 .infobox-root .tabber__tabs {
 	justify-content: center;
 }
+/* Màu tab theo bộ màu của wiki (token Codex của TabberNeue không có trên Vector 2010) */
+.infobox-root .tabber__tab {
+	color: var(--hs-muted, oklch(45% 0.014 250));
+}
+.infobox-root .tabber__tab[aria-selected="true"] {
+	color: var(--hs-accent, oklch(44% 0.137 259));
+}
 .infobox-root .tabber__panel {
 	padding: 0;
 }

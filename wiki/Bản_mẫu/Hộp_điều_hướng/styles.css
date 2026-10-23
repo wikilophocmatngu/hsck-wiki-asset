@@ -4,9 +4,9 @@
 	clear: both;
 	width: 100%;
 	margin: 1.5em 0 0.5em;
-	border: 1px solid var(--border-color-base, #a2a9b1);
+	border: 1px solid var(--hs-rule, oklch(86% 0.035 230));
 	border-collapse: collapse;
-	background: var(--background-color-base, #fff);
+	background: var(--hs-paper, oklch(98.5% 0.012 80));
 	font-size: 0.9em;
 }
 .hsck-navbox th,

@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700&display=swap");
 /* Hallmark · genre: playful · theme: custom (Kỷ yếu · vải xanh mực, chữ ép cam, giấy kem, mực đỏ) · Bricolage Grotesque + phông skin
    Wiki Học Sinh Chân Kinh — CSS dùng chung cho máy tính (Vector 2010) và di động (Minerva).
-   Kiểm tra trên MW 1.46.2. Chế độ tối: có trên Minerva (skin-theme-clientpref-*); Vector 2010 không có.
+   Kiểm tra trên MW 1.46.2. Chế độ tối: Minerva theo skin-theme-clientpref-*; Vector 2010 theo hệ điều hành (prefers-color-scheme).
    Theo cách Weird Gloop tổ chức: Common.css = cả hai giao diện · Vector.css = chỉ máy tính ·
    Minerva.css = chỉ di động · CSS của bản mẫu nằm trong TemplateStyles (Bản mẫu:X/styles.css).
    File này giữ một bộ biến màu duy nhất --hs-* (OKLCH) để mọi nơi dùng qua var(--hs-*, dự phòng).
@@ -51,8 +51,10 @@ html.skin-theme-clientpref-night {
 	--hs-line: oklch(70% 0.01 250);
 	--hs-note-pink: oklch(86% 0.05 358);
 }
+/* Vector 2010 không có chế độ tối riêng: theo hệ điều hành (phần khung ở MediaWiki:Vector.css) */
 @media screen and (prefers-color-scheme: dark) {
-	html.skin-theme-clientpref-os {
+	html.skin-theme-clientpref-os,
+	body.skin-vector-legacy {
 		--hs-paper: oklch(23% 0.012 250);
 		--hs-paper-2: oklch(27% 0.014 250);
 		--hs-ink: oklch(94% 0.008 80);

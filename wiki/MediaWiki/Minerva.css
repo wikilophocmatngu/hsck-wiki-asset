@@ -77,7 +77,7 @@ html.skin-theme-clientpref-night .branding-box img {
 /* ===== Menu trượt: trang giấy có lề đỏ ===== */
 #mw-mf-page-left {
 	background:
-		linear-gradient(90deg, transparent 0.6rem, var(--hs-margin, oklch(78% 0.09 20)) 0.6rem, var(--hs-margin, oklch(78% 0.09 20)) calc(0.6rem + 2px), transparent calc(0.6rem + 2px)),
+		linear-gradient(90deg, transparent 0.25rem, var(--hs-margin, oklch(78% 0.09 20)) 0.25rem, var(--hs-margin, oklch(78% 0.09 20)) calc(0.25rem + 2px), transparent calc(0.25rem + 2px)),
 		var(--hs-paper, oklch(98.5% 0.012 80));
 }
 /* Minerva tô trắng từng mục bằng #mw-mf-page-left ul .toggle-list-item: cùng selector, nạp sau thì thắng */
@@ -121,4 +121,26 @@ html.skin-theme-clientpref-night .branding-box img {
 }
 .minerva-footer .last-modified-bar a {
 	color: var(--hs-ink, oklch(24% 0.012 250));
+}
+
+/* ===== Menu trượt: hai nhóm của gadget MinervaMenu =====
+   Biểu tượng là mask như biểu tượng gốc của Minerva (tô bằng background-color của skin).
+   Nguồn: OOUI (MIT, gói npm oojs-ui) và iconoir (MIT, biểu tượng Discord của UserProfileV2). */
+.minerva-icon-portletlink-n-nhanvat {
+	mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj48cGF0aCBkPSJNMTIgMTFhNiA2IDAgMCAxIDYgNnYySDJ2LTJhNiA2IDAgMCAxIDYtNnoiLz48Y2lyY2xlIGN4PSIxMCIgY3k9IjUiIHI9IjQiLz48L3N2Zz4=");
+}
+.minerva-icon-portletlink-n-taptruyen {
+	mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj48cGF0aCBkPSJNNC44NzYgMUM2Ljc4MSAxIDguNjAyIDEuNzEgMTAgMi45NjZBNy42NyA3LjY3IDAgMCAxIDE1LjEyNCAxSDE5djE2aC0zLjg3NmE1LjY3IDUuNjcgMCAwIDAtNC4zNTUgMi4wNEg5LjIzQTUuNjcgNS42NyAwIDAgMCA0Ljg3NiAxN0gxVjF6TTMgMTVoMS44NzZBNy42NiA3LjY2IDAgMCAxIDkgMTYuMjA3VjQuNzc5QTUuNjcgNS42NyAwIDAgMCA0Ljg3NiAzSDN6TTE1LjEyNCAzQTUuNjcgNS42NyAwIDAgMCAxMSA0Ljc4djExLjQyN0E3LjY2IDcuNjYgMCAwIDEgMTUuMTI0IDE1SDE3VjN6Ii8+PC9zdmc+");
+}
+.minerva-icon-portletlink-n-diadiem {
+	mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj48cGF0aCBkPSJNOS4xNSAxOS4wN2gxLjdsNS41LThhNy4xNiA3LjIgMCAxIDAtMTIuNyAwek0xMCAxNi44bC00LjEtNmE1LjE2IDUuMTQgMCAxIDEgOC4yIDB6Ii8+PGNpcmNsZSBjeD0iMTAiIGN5PSI4IiByPSIyIi8+PC9zdmc+");
+}
+.minerva-icon-portletlink-n-vietbai {
+	mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj48cGF0aCBkPSJNMTEgOWgzdjJoLTN2M0g5di0zSDZWOWgzVjZoMnoiLz48cGF0aCBkPSJNMTggMHYyMEgyVjB6TTQgMnYxNmgxMlYyeiIvPjwvc3ZnPg==");
+}
+.minerva-icon-portletlink-n-bancansu {
+	mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj48cGF0aCBkPSJNNyAxMGMuOTEgMCAxLjc2NC4yNDQgMi41LjY3QTUgNSAwIDAgMSAxMiAxMGgzYTUgNSAwIDAgMSA1IDV2Mkgwdi0yYTUgNSAwIDAgMSA1LTV6bTUgMnEtLjQ3My4wMDItLjkwMS4xMzhjLjU2Ny44MS45MDEgMS43OTcuOTAxIDIuODYyaDZhMyAzIDAgMCAwLTMtM3ptMS41LTlhMyAzIDAgMSAxIDAgNiAzIDMgMCAwIDEgMC02bTAgMmExIDEgMCAxIDAgMCAyIDEgMSAwIDAgMCAwLTIiLz48Y2lyY2xlIGN4PSI2IiBjeT0iNiIgcj0iMyIvPjwvc3ZnPg==");
+}
+.minerva-icon-portletlink-n-discord {
+	mask-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHN0cm9rZS13aWR0aD0iMS41IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGNvbG9yPSIjMDAwMDAwIj48cGF0aCBkPSJNNS41IDE2QzEwLjUgMTguNSAxMy41IDE4LjUgMTguNSAxNiIgc3Ryb2tlPSIjMDAwMDAwIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48L3BhdGg+PHBhdGggZD0iTTE1LjUgMTcuNUwxNi41IDE5LjVDMTYuNSAxOS41IDIwLjY3MTMgMTguMTcxNyAyMiAxNkMyMiAxNSAyMi41MzAxIDcuODUzMzkgMTkgNS41QzE3LjUgNC41IDE1IDQgMTUgNEwxNCA2SDEyIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjwvcGF0aD48cGF0aCBkPSJNOC41MjgzMiAxNy41TDcuNTI4MzIgMTkuNUM3LjUyODMyIDE5LjUgMy4zNTY5OSAxOC4xNzE3IDIuMDI4MzIgMTZDMi4wMjgzMiAxNSAxLjQ5ODIzIDcuODUzMzkgNS4wMjgzMiA1LjVDNi41MjgzMiA0LjUgOS4wMjgzMiA0IDkuMDI4MzIgNEwxMC4wMjgzIDZIMTIuMDI4MyIgc3Ryb2tlPSIjMDAwMDAwIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48L3BhdGg+PHBhdGggZD0iTTguNSAxNEM3LjY3MTU3IDE0IDcgMTMuMTA0NiA3IDEyQzcgMTAuODk1NCA3LjY3MTU3IDEwIDguNSAxMEM5LjMyODQzIDEwIDEwIDEwLjg5NTQgMTAgMTJDMTAgMTMuMTA0NiA5LjMyODQzIDE0IDguNSAxNFoiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PC9wYXRoPjxwYXRoIGQ9Ik0xNS41IDE0QzE0LjY3MTYgMTQgMTQgMTMuMTA0NiAxNCAxMkMxNCAxMC44OTU0IDE0LjY3MTYgMTAgMTUuNSAxMEMxNi4zMjg0IDEwIDE3IDEwLjg5NTQgMTcgMTJDMTcgMTMuMTA0NiAxNi4zMjg0IDE0IDE1LjUgMTRaIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjwvcGF0aD48L3N2Zz4=");
 }

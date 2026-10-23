@@ -262,6 +262,7 @@
 	scroll-snap-type: x proximity;
 }
 .ky-vol {
+	box-sizing: border-box;           /* viền nằm trong bề rộng, 26 gáy vừa một kệ */
 	flex: 1 0 2.2rem;
 	max-width: 3.25rem;
 	height: 11.5rem;

@@ -1,12 +1,13 @@
 /* Hallmark · genre: playful · theme: custom (Kỷ yếu) · phạm vi: khung Vector 2010 · nav/footer: của skin
    Wiki Học Sinh Chân Kinh — khung giao diện Vector 2010 (legacy), kiểm tra trên MW 1.46.2.
-   Chế độ tối: không (skin không hỗ trợ). Màu lấy từ --hs-* trong MediaWiki:Common.css. */
+   Chế độ tối: theo hệ điều hành (prefers-color-scheme), không có nút bật tắt. Màu lấy từ --hs-* trong
+   MediaWiki:Common.css; bề mặt trang dùng token đổi theo chế độ, khung vải xanh giữ nguyên. */
 
 /* ===== Nền & dải đầu trang =====
    Học theo OSRS Wiki: ảnh minh họa chỉ nằm ở dải đầu trang (sau logo và tab), phần còn lại là giấy trơn.
    Thanh bên dùng giấy đậm hơn trang nội dung, như bìa lót của cuốn kỷ yếu. */
 body.skin-vector-legacy {
-	background-color: var(--hs-paper-2-fixed, oklch(93% 0.025 80));
+	background-color: var(--hs-paper-2, oklch(95% 0.022 80));
 }
 body.skin-vector-legacy #mw-page-base {
 	border-bottom: 3px solid var(--hs-peach, oklch(79% 0.132 62));
@@ -40,32 +41,34 @@ body.skin-vector-legacy #mw-head .vector-menu-dropdown .vector-menu-heading {
 body.skin-vector-legacy .vector-menu-tabs-legacy li {
 	margin-right: 2px;
 	border-radius: 0.5em 0.5em 0 0;
-	background: var(--hs-paper-2-fixed, oklch(93% 0.025 80));
+	background: var(--hs-paper-2, oklch(95% 0.022 80));
 	background-image: none;
 }
 body.skin-vector-legacy .vector-menu-tabs-legacy .selected {
-	background: var(--hs-paper-fixed, oklch(98.5% 0.012 80));
+	background: var(--hs-paper, oklch(98.5% 0.012 80));
 }
 body.skin-vector-legacy .vector-menu-tabs-legacy .selected a {
 	font-weight: bold;
 }
 body.skin-vector-legacy #mw-head .vector-menu-dropdown .vector-menu-heading {
 	border-radius: 0.5em 0.5em 0 0;
-	background: var(--hs-paper-2-fixed, oklch(93% 0.025 80));
-	color: var(--hs-ink-fixed, oklch(24% 0.012 250));
+	background: var(--hs-paper-2, oklch(95% 0.022 80));
+	color: var(--hs-ink, oklch(24% 0.012 250));
 }
 
 /* Ô tìm kiếm trên dải vải: nền giấy đặc để đủ tương phản */
 body.skin-vector-legacy .vector-search-box-input {
 	border-color: var(--hs-spine, oklch(32% 0.11 259));
-	background-color: var(--hs-paper-fixed, oklch(98.5% 0.012 80));
+	background-color: var(--hs-paper, oklch(98.5% 0.012 80));
+	color: var(--hs-ink, oklch(24% 0.012 250));
 }
 
 /* ===== Nội dung: trang giấy ===== */
 body.skin-vector-legacy .mw-body {
 	position: relative;                /* neo cho ruy băng đánh dấu trang */
-	border-color: var(--hs-paper-2-fixed, oklch(93% 0.025 80));
-	background-color: var(--hs-paper-fixed, oklch(98.5% 0.012 80));
+	border-color: var(--hs-paper-2, oklch(95% 0.022 80));
+	background-color: var(--hs-paper, oklch(98.5% 0.012 80));
+	color: var(--hs-ink, oklch(24% 0.012 250));
 }
 /* Riêng Vector: ruy băng đánh dấu trang treo từ mép dải vải, như sợi dây trong cuốn kỷ yếu */
 body.skin-vector-legacy .mw-body::before {
@@ -88,7 +91,7 @@ body.skin-vector-legacy .mw-body .firstHeading {
 
 /* ===== Thanh bên: mục lục kỷ yếu ===== */
 body.skin-vector-legacy .vector-legacy-sidebar .vector-menu-portal .vector-menu-heading {
-	color: var(--hs-blue, oklch(44% 0.137 259));           /* 6.6:1 trên giấy đậm */
+	color: var(--hs-accent, oklch(44% 0.137 259));         /* 6.6:1 trên giấy đậm; chế độ tối là xanh nhạt */
 	font-family: var(--hs-font-display, sans-serif);
 	font-size: 0.85em;
 	font-weight: 700;
@@ -115,4 +118,64 @@ body.skin-vector-legacy #footer a {
 body.skin-vector-legacy #footer a {
 	text-decoration: underline;
 	text-decoration-color: var(--hs-peach, oklch(79% 0.132 62));
+}
+
+/* ===== Chế độ tối (theo hệ điều hành) =====
+   Vector 2010 đặt cứng màu chữ, liên kết, tiêu đề và khối mã cho nền trắng: đổi sang tông tối.
+   Khung vải xanh (dải đầu trang, chân trang) và chữ phấn trắng trên đó giữ nguyên. */
+@media screen and (prefers-color-scheme: dark) {
+	body.skin-vector-legacy {
+		color-scheme: dark;              /* ô nhập, thanh cuộn của trình duyệt cũng tối */
+		color: var(--hs-ink, oklch(94% 0.008 80));
+	}
+	body.skin-vector-legacy .mw-body,
+	body.skin-vector-legacy .mw-body h1,
+	body.skin-vector-legacy .mw-body h2,
+	body.skin-vector-legacy .mw-body h3,
+	body.skin-vector-legacy .mw-body h4,
+	body.skin-vector-legacy .mw-body h5,
+	body.skin-vector-legacy .mw-body h6 {
+		color: var(--hs-ink, oklch(94% 0.008 80));
+	}
+	body.skin-vector-legacy .mw-body h1,
+	body.skin-vector-legacy .mw-body h2,
+	body.skin-vector-legacy .mw-heading1,
+	body.skin-vector-legacy .mw-heading2 {
+		border-color: var(--hs-rule, oklch(38% 0.03 230));
+	}
+	/* Liên kết: xanh nhạt 8:1, đã xem tím nhạt, trang chưa có đỏ nhạt (vẫn phải đỏ).
+	   `a` để độ đặc hiệu thấp như của skin (thắng nhờ nạp sau), nên màu riêng của bản mẫu
+	   (nút, gáy sách…) vẫn thắng; thanh bên và tab có selector riêng nên phải ghi rõ. */
+	a,
+	body.skin-vector-legacy .toctogglelabel,
+	body.skin-vector-legacy .vector-menu-tabs-legacy li a,
+	body.skin-vector-legacy #mw-panel .vector-menu-portal .vector-menu-content li a {
+		color: oklch(80% 0.08 245);
+	}
+	a:visited,
+	body.skin-vector-legacy #mw-panel .vector-menu-portal .vector-menu-content li a:visited {
+		color: oklch(78% 0.08 300);
+	}
+	a.new,
+	a.new:visited,
+	body.skin-vector-legacy .vector-menu-tabs-legacy li.new a {
+		color: oklch(74% 0.14 26);
+	}
+	body.skin-vector-legacy .vector-menu-tabs-legacy .selected a {
+		color: var(--hs-ink, oklch(94% 0.008 80));
+	}
+	/* Khu vực công cụ cá nhân và chân trang nằm trên vải xanh: giữ chữ phấn trắng */
+	body.skin-vector-legacy #p-personal li a,
+	body.skin-vector-legacy #footer a {
+		color: var(--hs-chalk, oklch(95.7% 0.015 94));
+	}
+	body.skin-vector-legacy .mw-body code,
+	body.skin-vector-legacy .mw-body pre {
+		border-color: var(--hs-rule, oklch(38% 0.03 230));
+		background-color: var(--hs-paper-2, oklch(27% 0.014 250));
+		color: var(--hs-ink, oklch(94% 0.008 80));
+	}
+	body.skin-vector-legacy .mw-body hr {
+		background-color: var(--hs-rule, oklch(38% 0.03 230));
+	}
 }

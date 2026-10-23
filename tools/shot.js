@@ -23,7 +23,7 @@ const shots = [
   for (const [key, page, skin, theme, width] of shots) {
     if (process.env.ONLY && !process.env.ONLY.split(',').includes(`${key}-${skin}-${theme}`)) continue;
     const data = JSON.parse(fs.readFileSync(path.join(out, key + '.json'), 'utf8'));
-    const ctx = await browser.newContext({ userAgent: process.env.MIRAHEZE_UA, viewport: { width, height: 900 } });
+    const ctx = await browser.newContext({ userAgent: process.env.MIRAHEZE_UA, viewport: { width, height: 900 }, colorScheme: process.env.SCHEME || 'light' });  // SCHEME=dark: hệ điều hành để tối
     const p = await ctx.newPage();
     await p.goto('https://hsck.lophocmatngu.wiki/wiki/' + encodeURIComponent(page) + '?useskin=' + skin, { waitUntil: 'networkidle' });
     await p.evaluate(({ data, styles, theme, imgs }) => {
@@ -59,7 +59,7 @@ const shots = [
     }, { data, styles: fixUrls(css.common + '\n' + css[skin]), theme, imgs });
     await p.getByRole('button', { name: 'OK' }).click().catch(() => {});
     await p.waitForTimeout(2500);
-    const file = path.join(out, `${key}-${skin}-${theme}.png`);
+    const file = path.join(out, `${key}-${skin}-${theme}${process.env.SCHEME ? '-' + process.env.SCHEME : ''}.png`);
     await p.screenshot({ path: file, fullPage: true });
     console.log(file);
     await ctx.close();
