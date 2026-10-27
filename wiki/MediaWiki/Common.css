@@ -210,7 +210,7 @@ body.rootpage-Trang_Chính .mw-first-heading {
 }
 .profile-masthead .profile-user-group img {
 	display: block;
-	width: 1.25rem;
+	width: auto;
 	height: 1.25rem;
 }
 .profile-masthead .profile-user-group[data-group="bureaucrat"] {
@@ -290,6 +290,13 @@ body.rootpage-Trang_Chính .mw-first-heading {
 	box-shadow: 0 0 0 2px var(--hs-paper-2, oklch(95% 0.022 80));   /* viền cùng màu nền masthead, tách huy hiệu khỏi nhãn */
 	background-color: var(--hs-paper-fixed, oklch(98.5% 0.012 80));
 	background-size: 80%;
+}
+/* Biểu tượng lấy từ bộ nhóm quyền của Miraheze Commons (xem MediaWiki:RankIcon-*) đã có tổ ong Miraheze, bỏ huy hiệu kẻo lặp */
+.profile-masthead .profile-user-group[data-group="steward"]:has(img)::before,
+.profile-masthead .profile-user-group[data-group="global-admin"]:has(img)::before,
+.profile-masthead .profile-user-group[data-group="global-interwiki-admin"]:has(img)::before,
+.profile-masthead .profile-user-group[data-group="global-patroller"]:has(img)::before {
+	content: none;
 }
 /* Thống kê: số đậm, không khung */
 .profile-masthead .profile-header-statistics {

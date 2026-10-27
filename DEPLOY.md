@@ -23,7 +23,7 @@ DEMO_FILES=1 python3 -I tools/build.py . out  # mọi TemplateStyles qua bộ l�
 
 | Tệp | Dùng ở | Bắt buộc? |
 |---|---|---|
-| `RankIcon-<nhóm>.svg` × 12 (`wiki/Tập_tin/`) | biểu tượng nhóm quyền trên trang hồ sơ | có, hoặc thay bằng PNG rồi sửa tên trong bước 6 |
+| `RankIcon-<nhóm>.svg` × 9 (`wiki/Tập_tin/`) | biểu tượng nhóm quyền trên trang hồ sơ | có, hoặc thay bằng PNG rồi sửa tên trong bước 6. Bốn nhóm steward, global-admin, global-patroller, global-interwiki-admin dùng thẳng ảnh của Miraheze Commons, không cần tải |
 | logo `1x`, `2x`, `wordmark` | `$wgLogos` | có |
 | `Đầu_trang.webp` | ảnh dải đầu trang (`Vector.css`, `Minerva.css`) | không: thiếu thì dải đầu trang chỉ có nền xanh |
 | `Ô <chủ đề>.webp` × 6, `Khoảnh khắc <1–3>.webp`, `Chân dung <1–10>.webp` | Trang Chính | thiếu thì Trang Chính hiện liên kết tệp màu đỏ |
@@ -62,7 +62,7 @@ CSS mới có thể mất vài phút mới hiện (cache ResourceLoader).
 
 1. `MediaWiki:Gadget-RankIcons.js`, `MediaWiki:Gadget-MinervaMenu.js`
 2. `MediaWiki:Gadgets-definition` (trang chưa có trên wiki, đăng nguyên tệp)
-3. `MediaWiki:RankIcon-<nhóm>` × 12
+3. `MediaWiki:RankIcon-<nhóm>` × 13
 
 ## 7. Trang Chính và trang đích
 

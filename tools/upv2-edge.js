@@ -18,13 +18,13 @@ const AV = { pisces: PISCES, def: img(process.env.DEFAULT_AVATAR), wide: img(pro
 const LABEL = { bureaucrat: 'Hành chính viên', 'interface-admin': 'Bảo quản viên giao diện', sysop: 'Bảo quản viên', autoconfirmed: 'Thành viên tự động xác nhận',
   steward: 'Tiếp viên', 'global-admin': 'Bảo quản viên toàn cục', trustandsafety: 'Thành viên Tin cậy và An toàn', techteam: 'Thành viên Nhóm Công Nghệ',
   'wiki-mechanic': 'Kĩ thuật viên', 'global-patroller': 'Tuần tra viên toàn cục', 'global-ipblock-exempt': 'Người được miễn cấm IP toàn cục',
-  'assistant-steward': 'Trợ lý tiếp viên', founder: '⧼group-founder-member⧽', checkuser: 'Kiểm định viên', suppress: 'Giám sát viên' };
+  'assistant-steward': 'Trợ lý tiếp viên', 'global-interwiki-admin': 'Bảo quản viên liên wiki toàn cục', founder: '⧼group-founder-member⧽', checkuser: 'Kiểm định viên', suppress: 'Giám sát viên' };
 const discordLong = mk.discord.replace('username="pisces.hsck"', 'username="averyveryverylongdiscordusername_with_numbers_1234567890"');
 const V = [
   { id: 'A. Chủ hồ sơ, đủ mọi phần', name: 'Pisces', av: AV.pisces, groups: ['bureaucrat', 'interface-admin', 'sysop'], owner: true, stats: ['0 Sửa đổi'], social: mk.twitter + mk.mastodon + mk.discord, about: 'Dựng lớp Học Sinh Chân Kinh. Thích nhất Tập 7.' },
   { id: 'B. Thành viên mới: ảnh mặc định, không nhóm, không giới thiệu', name: 'Ban Moi', av: AV.def, groups: [], stats: ['0 Sửa đổi'] },
   { id: 'C. Tên rất dài không dấu cách, có tên thật, giới thiệu 200 ký tự có đường dẫn', name: 'PiscesHocSinhChanKinhFanCungTuTap1DenTap25KhongCoDauCach', realname: 'aka Nguyễn Văn Song Ngư Thích Đọc Truyện Tranh', av: AV.pisces, groups: ['autoconfirmed'], stats: ['1.234 Sửa đổi'], about: 'Đọc từ Tập 1. Danh sách tập yêu thích: https://hsck.lophocmatngu.wiki/wiki/Thành_viên:PiscesHocSinhChanKinh/Danh_sách_tập_yêu_thích_từ_Tập_1_đến_Tập_25' },
-  { id: 'D. Nhóm toàn cục (tiếp viên Miraheze) + sửa đổi toàn cục', name: 'Steward Miraheze', av: AV.def, groups: ['sysop', 'bureaucrat', 'steward', 'global-admin', 'trustandsafety', 'techteam', 'wiki-mechanic', 'global-patroller', 'global-ipblock-exempt', 'assistant-steward'], stats: ['56 Sửa đổi', '123.456 Sửa đổi toàn cục'], social: mk.discord },
+  { id: 'D. Nhóm toàn cục (tiếp viên Miraheze) + sửa đổi toàn cục', name: 'Steward Miraheze', av: AV.def, groups: ['sysop', 'bureaucrat', 'steward', 'global-admin', 'trustandsafety', 'techteam', 'wiki-mechanic', 'global-patroller', 'global-ipblock-exempt', 'assistant-steward', 'global-interwiki-admin'], stats: ['56 Sửa đổi', '123.456 Sửa đổi toàn cục'], social: mk.discord },
   { id: 'E. Nhóm thiếu tên hiển thị và nhóm chưa có biểu tượng', name: 'Kiem Dinh', av: AV.pisces, groups: ['founder', 'checkuser', 'suppress'], stats: ['7 Sửa đổi'] },
   { id: 'F. Ảnh ngang (không đúng 3×4) + tên Discord rất dài', name: 'Anh Ngang', av: AV.wide, groups: ['sysop'], stats: ['42 Sửa đổi'], social: mk.twitter + discordLong },
   { id: 'G. Tài khoản bị khoá toàn cục', name: 'Bi Khoa', av: AV.def, groups: [], stats: ['3 Sửa đổi'], social: mk.twitter, locked: true },
