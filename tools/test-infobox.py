@@ -37,11 +37,16 @@ local g = B.infoboxGallery({ getParent = function() return { args = { 'A lúc nh
 local entries = mw.text.jsonDecode(g)
 t('gallery tabs', #entries, 3)
 t('gallery tab 2', entries[3].tabName .. '/' .. entries[3].file, 'Hiện tại/A.png')
-local meta = tostring(B('thu'):metadata({ ['tên'] = 'An', ['trống'] = '', [1] = 'x' }, { template = 'Hộp nhân vật' }))
+local meta = tostring(B('thu'):metadata({ ['tên'] = 'An', ['trống'] = '', [1] = 'x' }, { template = 'Nhân vật' }))
 local json = mw.text.jsonDecode(mw.text.decode(meta:match('display:none">(.-)</div>'), true))
-t('meta template', json.template, 'Hộp nhân vật')
+t('meta template', json.template, 'Nhân vật')
 t('meta field', json.fields['tên'], 'An')
 t('meta blank dropped', json.fields['trống'], nil)
+t('bullets 1', B.bullets('Ba'), 'Ba')
+t('bullets n', B.bullets('Ba, mẹ, [[Ô Sin]]'), '* Ba\n* mẹ\n* [[Ô Sin]]')
+t('bullets *', B.bullets('* A\n* B'), '* A\n* B')
+t('list', table.concat(B.list('* Ngang Lùn\n* Ổi Bo') or {}, '|'), 'Ngang Lùn|Ổi Bo')
+t('list link', table.concat(B.list('A, [[X|Y]]') or {}, '|'), 'A|Y')
 t('yesno có', yesno(' Có '), true)
 t('yesno không', yesno('không'), false)
 t('yesno 0', yesno('0'), false)
@@ -54,8 +59,8 @@ module_src["Thử"] = luabundle.REQUIRE.sub(lambda m: "(function()\n" + bundle(m
 failed = False
 result = expand("Thử", "{{#invoke:Thử|f}}")
 print("Hàm:", result); failed |= result != "ALL OK"
-for module, call in (("Infobox/Nhân vật", "|tên=An|lớp=8A|xuất hiện đầu=[[Tập 1]]|lưu=không"),
-                     ("Infobox/Tập truyện", "|tên=Muôn sự tại nhân|số trang=160")):
+for module, call in (("Nhân vật", "|tên=An|lớp=8A|xuất hiện đầu=[[Tập 1]]|lưu=không"),
+                     ("Tập truyện", "|tên=Muôn sự tại nhân|số trang=160")):
     w = expand(module, "{{#invoke:" + module + "|main" + call + "}}", title="Tập 7")
     ok = "scribunto-error" not in w and "infobox-json" not in w.split("infobox-root")[0] and "infobox-json" in w and "Bucket bị lỗi" not in w
     print(module + ":", "OK" if ok else "LỖI\n" + w[:800]); failed |= not ok

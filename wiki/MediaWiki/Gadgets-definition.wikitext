@@ -1,3 +1,3 @@
-== hsck-giao-dien ==
 * RankIcons[ResourceLoader|default|hidden|namespaces=2|dependencies=mediawiki.api]|RankIcons.js
 * MinervaMenu[ResourceLoader|default|hidden|skins=minerva|dependencies=mediawiki.util]|MinervaMenu.js
+* OOUIDemo[ResourceLoader|default|hidden|namespaces=4|supportsUrlLoad=true]|OOUIDemo.js

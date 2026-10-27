@@ -6,8 +6,8 @@
 	},
 	"aliases": {
 		"type": "TEXT",
-		"index": false,
-		"repeated": false
+		"index": true,
+		"repeated": true
 	},
 	"gender": {
 		"type": "TEXT",
@@ -22,7 +22,7 @@
 	"role": {
 		"type": "TEXT",
 		"index": true,
-		"repeated": false
+		"repeated": true
 	},
 	"class_name": {
 		"type": "TEXT",

@@ -1,7 +1,7 @@
 --------------------------------------------------------------------------------
--- Mô đun:Infobox/Nhân vật
+-- Mô đun:Nhân vật
 --
--- Hộp thông tin nhân vật, gọi từ {{Hộp nhân vật}}.
+-- Hộp thông tin nhân vật, gọi từ {{Nhân vật}}.
 -- Vẽ hộp, thêm thể loại và lưu một dòng vào [[Bucket:Characters]].
 -- Tên tham số giữ nguyên như bản mẫu wikitext cũ.
 --------------------------------------------------------------------------------
@@ -41,18 +41,19 @@ function p._main(args)
 	local name = args['tên'] or page.text
 	local kind = args['loại'] and mw.ustring.lower(args['loại'])
 
+	local bullets = InfoboxBuilder.bullets
 	local infobox = InfoboxBuilder('nhan-vat'):title(name)
 	infobox:images(imageList(args))
 	infobox:section('Thông tin')
-		:row{ label = 'Tên khác', value = args['tên khác'] }
+		:row{ label = 'Tên khác', value = bullets(args['tên khác']) }
 		:row{ label = 'Giới tính', value = args['giới tính'] }
 		:row{ label = 'Sinh nhật', value = args['sinh nhật'] }
-		:row{ label = 'Vai trò', value = args['vai trò'] }
+		:row{ label = 'Vai trò', value = bullets(args['vai trò']) }
 		:row{ label = 'Lớp', value = args['lớp'] }
-		:row{ label = 'Gia đình', value = args['gia đình'] }
+		:row{ label = 'Gia đình', value = bullets(args['gia đình']) }
 		:row{ label = 'Xuất hiện đầu', value = args['xuất hiện đầu'] }
 
-	infobox:metadata(args, { template = 'Hộp nhân vật' })
+	infobox:metadata(args, { template = 'Nhân vật' })
 
 	local out = InfoboxBuilder.styles() .. tostring(infobox)
 	if page.namespace == 0 then
@@ -63,12 +64,13 @@ function p._main(args)
 	end
 
 	local plain = InfoboxBuilder.plain
+	local list = InfoboxBuilder.list
 	return out .. InfoboxBuilder.store('characters', {
 		name = plain(name),
-		aliases = plain(args['tên khác']),
+		aliases = list(args['tên khác']),
 		gender = plain(args['giới tính']),
 		birthday = plain(args['sinh nhật']),
-		role = plain(args['vai trò']),
+		role = list(args['vai trò']),
 		class_name = plain(args['lớp']),
 		kind = kind,
 		first_volume = InfoboxBuilder.number(args['xuất hiện đầu']),

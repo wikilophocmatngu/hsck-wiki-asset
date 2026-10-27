@@ -1,6 +1,11 @@
-/* Wiki Học Sinh Chân Kinh — khung giao diện Minerva Neue (di động).
-   Kiểm tra trên MinervaNeue (MW 1.46.2). Chế độ tối: có (day / night / os).
-   Giả định $wgMFCustomSiteModules = false (mặc định Miraheze) → Common.css vẫn nạp. */
+/***
+ ______     ______     __   __     ______     __   __     ______     __  __     __  __     __  __     ______    
+/\  ___\   /\  __ \   /\ "-.\ \   /\  ___\   /\ "-.\ \   /\  ___\   /\ \/\ \   /\_\_\_\   /\ \_\ \   /\___  \   
+\ \___  \  \ \ \/\ \  \ \ \-.  \  \ \ \__ \  \ \ \-.  \  \ \ \__ \  \ \ \_\ \  \/_/\_\/_  \ \____ \  \/_/  /__  
+ \/\_____\  \ \_____\  \ \_\\"\_\  \ \_____\  \ \_\\"\_\  \ \_____\  \ \_____\   /\_\/\_\  \/\_____\   /\_____\ 
+  \/_____/   \/_____/   \/_/ \/_/   \/_____/   \/_/ \/_/   \/_____/   \/_____/   \/_/\/_/   \/_____/   \/_____/ 
+                                                                                                                
+*/
 
 /* ===== Tokens: liên kết & nút chính theo màu "mực" của bìa truyện ===== */
 :root, .notheme, .skin-invert {
@@ -10,6 +15,9 @@
 	--color-progressive--active: #143a74;
 	--background-color-progressive: #1d4f9c;
 	--border-color-progressive: #1d4f9c;
+	--background-color-error: #bf3c2c;         /* nút chính Nguy hiểm: chữ trắng 5.4:1 (#f54739 của Codex chỉ 3.6:1), cả sáng lẫn tối */
+	--background-color-error--hover: #d73333;
+	--background-color-error--active: #9f3526;
 	--hsck-header-bg: var(--hs-blue, oklch(44% 0.137 259));   /* vải bìa kỷ yếu */
 	--hsck-header-fg: var(--hs-chalk, oklch(95.7% 0.015 94));  /* 7.4:1 */
 }
@@ -17,7 +25,9 @@ html.skin-theme-clientpref-night {
 	--color-progressive: #7fb8f0;              /* 8.8:1 trên #101418 */
 	--color-progressive--hover: #a3ccf5;
 	--color-progressive--active: #5d9fe0;
-	--background-color-progressive: #7fb8f0;
+	--background-color-progressive: #2a63ba;   /* 5.8:1 với chữ trắng #fff */
+	--background-color-progressive--hover: #3674d4;
+	--background-color-progressive--active: #1d4f9c;
 	--border-color-progressive: #7fb8f0;
 	--hsck-header-bg: oklch(30% 0.09 259);
 	--hsck-header-fg: #eaecf0;                 /* 10.6:1 */
@@ -27,7 +37,9 @@ html.skin-theme-clientpref-night {
 		--color-progressive: #7fb8f0;
 		--color-progressive--hover: #a3ccf5;
 		--color-progressive--active: #5d9fe0;
-		--background-color-progressive: #7fb8f0;
+		--background-color-progressive: #2a63ba;
+		--background-color-progressive--hover: #3674d4;
+		--background-color-progressive--active: #1d4f9c;
 		--border-color-progressive: #7fb8f0;
 		--hsck-header-bg: oklch(30% 0.09 259);
 		--hsck-header-fg: #eaecf0;

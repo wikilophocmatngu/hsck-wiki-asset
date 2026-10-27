@@ -1,37 +1,37 @@
 <templatestyles src="Bản mẫu:Hộp điều hướng/styles.css" />
-{| class="navbox hsck-navbox mw-collapsible{{#ifeq:{{{trạng thái|}}}|thu gọn|&#32;mw-collapsed}}"
-! colspan="2" class="hsck-navbox-title" | {{{tiêu đề|{{PAGENAME}}}}}
+{| class="navbox hsck-navbox mw-collapsible{{#ifeq:{{{status|}}}|collapsed|&#32;mw-collapsed}}"
+! colspan="2" class="hsck-navbox-title" | {{{title|{{PAGENAME}}}}}
 |-
-{{#if:{{{nhóm1|}}}|! scope="row" {{!}} {{{nhóm1}}}
-{{!}} {{{danh sách1|}}}}}
+{{#if:{{{group1|}}}|! scope="row" {{!}} {{{group1}}}
+{{!}} {{{list1|}}}}}
 |-
-{{#if:{{{nhóm2|}}}|! scope="row" {{!}} {{{nhóm2}}}
-{{!}} {{{danh sách2|}}}}}
+{{#if:{{{group2|}}}|! scope="row" {{!}} {{{group2}}}
+{{!}} {{{list2|}}}}}
 |-
-{{#if:{{{nhóm3|}}}|! scope="row" {{!}} {{{nhóm3}}}
-{{!}} {{{danh sách3|}}}}}
+{{#if:{{{group3|}}}|! scope="row" {{!}} {{{group3}}}
+{{!}} {{{list3|}}}}}
 |-
-{{#if:{{{nhóm4|}}}|! scope="row" {{!}} {{{nhóm4}}}
-{{!}} {{{danh sách4|}}}}}
+{{#if:{{{group4|}}}|! scope="row" {{!}} {{{group4}}}
+{{!}} {{{list4|}}}}}
 |-
-{{#if:{{{nhóm5|}}}|! scope="row" {{!}} {{{nhóm5}}}
-{{!}} {{{danh sách5|}}}}}
+{{#if:{{{group5|}}}|! scope="row" {{!}} {{{group5}}}
+{{!}} {{{list5|}}}}}
 |-
-{{#if:{{{nhóm6|}}}|! scope="row" {{!}} {{{nhóm6}}}
-{{!}} {{{danh sách6|}}}}}
+{{#if:{{{group6|}}}|! scope="row" {{!}} {{{group6}}}
+{{!}} {{{list6|}}}}}
 |}<noinclude>
 == Cách dùng ==
 Hộp điều hướng đặt cuối bài. Nhờ class <code>navbox</code>, MobileFrontend tự gỡ hộp này khỏi giao diện di động.
 <pre>
 {{Hộp điều hướng
-| tiêu đề      = Nhân vật
-| trạng thái   = thu gọn
-| nhóm1        = Học sinh
-| danh sách1   = [[A]] · [[B]] · [[C]]
-| nhóm2        = Giáo viên
-| danh sách2   = [[D]] · [[E]]
+| title  = Nhân vật
+| status = collapsed
+| group1 = Học sinh
+| list1  = [[A]] · [[B]] · [[C]]
+| group2 = Giáo viên
+| list2  = [[D]] · [[E]]
 }}
 </pre>
-Mỗi hộp có tối đa 6 nhóm. Muốn dùng một hộp ở nhiều bài, tạo bản mẫu riêng (ví dụ <code>Bản mẫu:Điều hướng nhân vật</code>) gọi tới bản mẫu này.
+Mỗi hộp có tối đa 6 group. Muốn dùng một hộp ở nhiều bài, tạo bản mẫu riêng (ví dụ <code>Bản mẫu:Điều hướng nhân vật</code>) gọi tới bản mẫu này.
 [[Thể loại:Bản mẫu điều hướng]]
 </noinclude>

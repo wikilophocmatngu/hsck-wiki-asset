@@ -2,7 +2,7 @@
 
 Wiki: https://hsck.lophocmatngu.wiki (Miraheze, MediaWiki 1.46.2). Truy cập bằng User-Agent trong biến `MIRAHEZE_UA`. Chủ dự án: Pisces (gọi là Song Ngư khi trả lời tiếng Việt). Có điều gì chưa rõ thì hỏi ngay.
 
-Chưa có bot password, nên chưa có trang nào được đăng lên wiki. Mọi thứ trong repo là bản để dán tay.
+Chưa có bot password; Song Ngư đăng tay. Từ 25–26/10 phần lớn `wiki/` đã lên wiki, và repo đã được kéo lại cho khớp với bản trên wiki (27/10). Khi sửa trực tiếp trên wiki, nhớ kéo về repo.
 
 ## Đã chốt
 
@@ -58,6 +58,14 @@ Lưu ý kỹ thuật:
 - `Tập 1` đến `Tập 25`
 - `Bản mẫu:Ảnh thẻ`, `Bản mẫu:Trang Chính/styles.css` cùng các bản mẫu trong `wiki/`
 
+## Audit OOUI (27/10)
+
+Chụp `WHSCK:OOUI demo` (1184 phần tử) trên Vector sáng/tối và Minerva day/night/os, đo tương phản mọi dòng chữ trong `#ooui-test` (script tạm, không lưu trong repo). Đã sửa trong repo, **chưa đăng**:
+- Nút chính "Nguy hiểm" dùng `--background-color-error`: Codex cho #fd7865 (Vector tối, 2.6:1) và #f54739 (Minerva, 3.6:1) với chữ trắng. Đổi sang #bf3c2c (5.4:1) trong `Vector.css` và `Minerva.css`.
+- Vector sáng: màu trạng thái của Codex tính cho nền trắng, trên giấy kem bị dưới 4.5:1 (lỗi 4.4, thành công 4.1, nhãn phụ 4.2, nút Nguy hiểm viền 4.1). Thêm `--color-error`, `--color-destructive`, `--color-success`, `--color-base--subtle` đậm hơn vào `body.skin-vector-legacy`.
+- Minerva 390px: trang tràn ngang tới 679px do ActionFieldLayout căn trái/phải, nhãn dài không khoảng trắng và nút "Hộp thoại thông điệp (2 nút nhãn dài, tự xếp dọc)". Thêm hai luật CSS trong `core.js` và rút ngắn nhãn nút.
+- Biểu tượng OOUI ở chế độ tối hiển thị đúng trên cả hai skin. Sau khi sửa, cả 5 cấu hình đều không còn chữ dưới ngưỡng WCAG AA (trừ phần tử vô hiệu hóa, vốn được miễn).
+
 ## Câu hỏi còn mở
 
 - Biểu tượng nhóm quyền (`Tập tin:RankIcon-*`): Song Ngư đang tìm PNG thay cho bộ OOUI đen tạm thời. Bộ tạm thiếu tương phản trên nhãn đỏ/xanh ở chế độ sáng và trên nhãn tối ở chế độ tối; CSS cố ý không đổi màu ảnh.
@@ -66,5 +74,4 @@ Lưu ý kỹ thuật:
 - Có làm bản mẫu "Lưu bút cá nhân" cho trang thành viên không?
 - Ảnh bìa và ảnh nhân vật: nguồn và bản quyền.
 - Ảnh nền Vector của Song Ngư.
-- Tên nhân vật thật để thay "Nhân vật 1…10" trong Ảnh tập thể.
 - Nút "Ký lưu bút" (InputBox `type=create`) bị khóa khi ô trống. Đó là hành vi mặc định của InputBox; hỏi xem có cần đổi không.

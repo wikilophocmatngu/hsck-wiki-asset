@@ -3,7 +3,7 @@
 --
 -- Bộ dựng hộp thông tin. Thêm các hàm title, header, group, section, row,
 -- image, images, tabber, metadata vào mọi nút mw.html (vá metatable dùng chung).
--- Mỗi loại hộp nằm ở Mô đun:Infobox/<Loại>, gọi bộ dựng này để vẽ hộp,
+-- Mỗi loại hộp nằm ở Mô đun:<Loại>, gọi bộ dựng này để vẽ hộp,
 -- metadata() để ghi JSON cho Wiki-Bot và các dịch vụ khác đọc, và
 -- InfoboxBuilder.store() để lưu dữ liệu vào Bucket.
 --
@@ -357,6 +357,24 @@ function InfoboxBuilder.link(value, target, text)
 	return string.format('[[%s|%s]]', target, text or target)
 end
 
+-- Đổi chuỗi ngăn bằng dấu phẩy thành danh sách wikitext `* ` khi có từ 2 mục trở lên;
+-- giữ nguyên cú pháp liên kết (vd. "Ba, mẹ, [[Ô Sin]]" → "* Ba\n* mẹ\n* [[Ô Sin]]").
+-- Nếu chỉ có 1 mục (hoặc đã là danh sách `*`) thì trả lại nguyên vẹn.
+function InfoboxBuilder.bullets(value)
+	if isBlank(value) then return nil end
+	local s = mw.text.trim(tostring(value))
+	if s:match('^%*') then return s end
+	local items = {}
+	for _, part in ipairs(mw.text.split(s, '%s*,%s*')) do
+		if part ~= '' then
+			table.insert(items, part)
+		end
+	end
+	if #items == 0 then return nil end
+	if #items == 1 then return items[1] end
+	return '* ' .. table.concat(items, '\n* ')
+end
+
 -- Thẻ TemplateStyles của hộp. Đặt trước hộp trong kết quả của mô đun.
 function InfoboxBuilder.styles()
 	return mw.getCurrentFrame():extensionTag('templatestyles', '', { src = 'Mô đun:Infobox/styles.css' })
@@ -375,6 +393,22 @@ function InfoboxBuilder.plain(value)
 	s = s:gsub('<[^>]*>', ' '):gsub("'''?", ''):gsub('%s+', ' ')
 	s = mw.text.trim(s)
 	return s ~= '' and s or nil
+end
+
+-- Danh sách phân tách bằng dấu phẩy hoặc dấu đầu dòng `*` (cho trường repeated trong Bucket):
+-- "Ngang Lùn, Ổi Bo, [[X|Y]]" hoặc "* Ngang Lùn\n* Ổi Bo" → { "Ngang Lùn", "Ổi Bo", "Y" }.
+function InfoboxBuilder.list(value)
+	if isBlank(value) then return nil end
+	local s = tostring(value):gsub('^%s*%*%s*', ''):gsub('\n+%s*%*%s*', ',')
+	s = InfoboxBuilder.plain(s)
+	if not s then return nil end
+	local out = {}
+	for _, part in ipairs(mw.text.split(s, '%s*,%s*')) do
+		if part ~= '' then
+			table.insert(out, part)
+		end
+	end
+	return #out > 0 and out or nil
 end
 
 -- Số đầu tiên trong giá trị: "[[Tập 7]]" → 7, "20 trang" → 20.

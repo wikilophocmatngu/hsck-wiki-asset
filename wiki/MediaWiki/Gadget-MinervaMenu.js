@@ -15,7 +15,7 @@ mw.loader.using( 'mediawiki.util' ).then( function () {
 		[ 'p-congdong', [
 			[ 'Project:Viết bài đầu tiên', 'Viết bài đầu tiên', 'n-vietbai' ],
 			[ 'Project:Ban cán sự', 'Ban cán sự', 'n-bancansu' ],
-			[ 'https://discord.gg/UrfHSzFff3', 'Discord', 'n-discord' ]
+			[ 'https://go.lophocmatngu.wiki/discord', 'Discord', 'n-discord' ]
 		] ]
 	];
 	GROUPS.forEach( function ( group ) {

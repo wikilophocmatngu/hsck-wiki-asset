@@ -213,8 +213,8 @@
 /* ===== Ảnh tập thể: ảnh thẻ 3×4, tên dưới ảnh ===== */
 .ky-class {
 	display: grid;
-	grid-template-columns: repeat(5, minmax(0, 1fr));     /* 10 ảnh thẻ = 2 hàng đều */
-	gap: 1.25rem 1rem;
+	grid-template-columns: repeat(7, minmax(0, 1fr));     /* 14 ảnh thẻ = 2 hàng đều (13 học sinh + GVCN) */
+	gap: 1.25rem 0.75rem;
 }
 .ky-face {
 	text-align: center;

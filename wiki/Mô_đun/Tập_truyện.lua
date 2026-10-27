@@ -1,7 +1,7 @@
 --------------------------------------------------------------------------------
--- Mô đun:Infobox/Tập truyện
+-- Mô đun:Tập truyện
 --
--- Hộp thông tin tập truyện, gọi từ {{Hộp tập truyện}}.
+-- Hộp thông tin tập truyện, gọi từ {{Tập truyện}}.
 -- Vẽ hộp, thêm thể loại và lưu một dòng vào [[Bucket:Volumes]].
 -- Số tập lấy từ tên trang ("Tập 7") khi không ghi `số tập`; tập trước/sau tự
 -- tính từ số tập, trừ khi ghi rõ.
@@ -48,7 +48,7 @@ function p._main(args)
 	end
 	nav:row{ label = 'Tập sau', value = following and volumeLink(following, 'Tập ' .. following .. ' →') }
 
-	infobox:metadata(args, { template = 'Hộp tập truyện' })
+	infobox:metadata(args, { template = 'Tập truyện' })
 
 	local out = InfoboxBuilder.styles() .. tostring(infobox)
 	if page.namespace == 0 then

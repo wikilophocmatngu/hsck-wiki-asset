@@ -1,0 +1,3 @@
+[[mw:OOUI|OOUI]] là thư viện cung cấp các phần tử giao diện chuẩn hóa (nút bấm, ô nhập liệu, danh sách chọn, bố cục, hộp thoại...) được sử dụng trong giao diện MediaWiki. Trang này trình diễn toàn bộ các thành phần đó để phục vụ việc kiểm thử và tinh chỉnh giao diện (dựa trên [https://doc.wikimedia.org/oojs-ui/master/demos bản demo OOUI của Wikimedia]).
+
+<div id="ooui-test">Cần bật JavaScript để xem nội dung này. Bản demo có thể mất vài giây để tải. [{{fullurl:Project:OOUI demo|withgadget=OOUIDemo}} Nhấn vào đây] để nạp trang với tiện ích OOUI demo.</div>

@@ -32,13 +32,15 @@ Skin: Vector 2010 (máy tính) và Minerva Neue (di động), tổ chức theo c
 | `wiki/MediaWiki/Sidebar.wikitext` | `MediaWiki:Sidebar` |
 | `wiki/Trang_Chính.wikitext` | `Trang Chính` (kiểu Kỷ yếu: bìa, Ảnh tập thể, 25 năm học, Lưu bút) |
 | `wiki/Bucket/Characters.json`, `Volumes.json` | `Bucket:Characters`, `Bucket:Volumes`: lược đồ dữ liệu hộp thông tin |
-| `wiki/Mô_đun/Arguments.lua`, `Yesno.lua` | `Mô đun:Arguments` (bản của Wikipedia, giữ nguyên), `Mô đun:Yesno` (theo Wikipedia, thêm có/không/đúng/sai/bật/tắt) |
-| `wiki/Mô_đun/Infobox.lua` | `Mô đun:Infobox`: bộ dựng hộp (theo Weird Gloop, qua bản của Wiki 100 Bạn Gái) và `store()` lưu vào Bucket |
+| `wiki/Mô_đun/Arguments.lua`, `Yesno.lua` | `Mô đun:Arguments` (bản của Wikipedia, giữ nguyên), `Mô đun:Yesno` (theo Wikipedia tiếng Việt: có/c/đúng/thực/rồi/bật, không/ko/k/sai/s/chưa/tắt) |
+| `wiki/Mô_đun/Infobox.lua` | `Mô đun:Infobox`: bộ dựng hộp (theo Weird Gloop, qua bản của Wiki 100 Bạn Gái), `store()` lưu vào Bucket, `bullets()` đổi chuỗi có dấu phẩy thành danh sách `*`, `list()` tách danh sách cho trường lặp của Bucket |
 | `wiki/Mô_đun/Infobox/styles.css` | `Mô đun:Infobox/styles.css` (TemplateStyles của mọi hộp) |
-| `wiki/Mô_đun/Infobox/Nhân_vật.lua`, `Tập_truyện.lua` | `Mô đun:Infobox/Nhân vật`, `Mô đun:Infobox/Tập truyện`: vẽ hộp, thêm thể loại, lưu Bucket |
-| `wiki/Bản_mẫu/Hộp_nhân_vật.wikitext` | `Bản mẫu:Hộp nhân vật` (gọi mô đun) |
-| `wiki/Bản_mẫu/Hộp_tập_truyện.wikitext` | `Bản mẫu:Hộp tập truyện` (gọi mô đun) |
+| `wiki/Mô_đun/Nhân_vật.lua`, `Tập_truyện.lua` | `Mô đun:Nhân vật`, `Mô đun:Tập truyện`: vẽ hộp, thêm thể loại, lưu Bucket (tên khác, vai trò, gia đình hiện thành danh sách) |
+| `wiki/Bản_mẫu/Nhân_vật.wikitext` | `Bản mẫu:Nhân vật` (gọi mô đun) |
+| `wiki/Bản_mẫu/Tập_truyện.wikitext` | `Bản mẫu:Tập truyện` (gọi mô đun) |
 | `wiki/MediaWiki/Gadget-MinervaMenu.js` | `MediaWiki:Gadget-MinervaMenu.js`: thêm nhóm Nhân vật / Tập truyện / Địa điểm và nhóm Viết bài đầu tiên / Ban cán sự / Discord vào menu trượt của Minerva (biểu tượng ở `Minerva.css`) |
+| `wiki/MediaWiki/Gadget-OOUIDemo.js`, `Gadget-OOUIDemo/core.js` | Gadget OOUIDemo: chỉ chạy trên `WHSCK:OOUI demo`, nạp `core.js` bằng `action=raw` (vì ResourceLoader từ chối cú pháp ES6) để dựng mọi phần tử OOUI, dùng kiểm tra giao diện sáng/tối |
+| `wiki/WHSCK/OOUI_demo.wikitext` | `WHSCK:OOUI demo` (WHSCK là tên mới của không gian Project) |
 | `wiki/MediaWiki/Gadget-RankIcons.js` | `MediaWiki:Gadget-RankIcons.js`: thay nhãn nhóm quyền trên trang hồ sơ bằng biểu tượng (theo gadget của Splatched trên Miraheze Developers Wiki) |
 | `wiki/MediaWiki/RankIcon-<nhóm>.wikitext` | `MediaWiki:RankIcon-<nhóm>`: biểu tượng của từng nhóm, gồm 6 nhóm của wiki và 6 nhóm toàn cục của Miraheze (steward, global-admin, trustandsafety, techteam, wiki-mechanic, global-patroller). CSS không đổi màu ảnh, nên ảnh phải tự đủ tương phản trên nền nhãn ở cả chế độ sáng lẫn tối. |
 | `wiki/Tập_tin/RankIcon-<nhóm>.svg` | `Tập tin:RankIcon-<nhóm>.svg`: tạm thời là biểu tượng OOUI màu đen, sẽ thay bằng PNG (giấy phép MIT, gói npm `oojs-ui`). Tải lên wiki, không dùng bản trên Commons vì Wikimedia giới hạn việc nhúng thẳng ảnh gốc (lỗi 429). |
@@ -49,11 +51,11 @@ Skin: Vector 2010 (máy tính) và Minerva Neue (di động), tổ chức theo c
 | `wiki/Bản_mẫu/Ảnh_thẻ.wikitext` | `Bản mẫu:Ảnh thẻ`: một ảnh trong "Ảnh tập thể" (chưa có ảnh thì hiện chữ cái đầu tên riêng) |
 | `wiki/Bản_mẫu/Thoại.wikitext` + `Thoại/styles.css` | `Bản mẫu:Thoại`: bong bóng thoại kiểu truyện tranh |
 | `wiki/Bản_mẫu/Tiết_lộ.wikitext` + `Tiết_lộ/styles.css` | `Bản mẫu:Tiết lộ`: cảnh báo tiết lộ có "con dấu" đỏ |
-| `wiki/Bản_mẫu/Hộp_điều_hướng.wikitext` + `Hộp_điều_hướng/styles.css` | `Bản mẫu:Hộp điều hướng`: navbox (tối đa 6 nhóm) |
+| `wiki/Bản_mẫu/Hộp_điều_hướng.wikitext` + `Hộp_điều_hướng/styles.css` | `Bản mẫu:Hộp điều hướng`: navbox (tối đa 6 nhóm; tham số `title`, `status=collapsed`, `group1`…`group6`, `list1`…`list6`) |
 
 Thư mục khác: `drafts/` = ý tưởng đã demo nhưng chưa dùng (không đăng); `tools/` = công cụ dựng ảnh demo (`build.py` chạy thử cả mô đun Lua qua TemplateSandbox, `upv2-edge.js` chụp 7 hồ sơ thử của trang thành viên trên 7 cấu hình, `luabundle.py` gộp mô đun với các mô đun nó require, `test-infobox.py` kiểm tra Infobox, Yesno và hai mô đun hộp); `HANDOFF.md` = bối cảnh và việc còn dở.
 
-Thứ tự đăng: trang `Bucket:*` → `Mô đun:Arguments`, `Mô đun:Yesno` → `Mô đun:Infobox` → các trang `styles.css` → `Mô đun:Infobox/*` → bản mẫu. Lưu trang `styles.css` **trước** các bản mẫu dùng nó. Trang `Bản mẫu:Hộp thông tin/styles.css` cũ không còn dùng. Các trang trong `demo/` chỉ là bài minh họa, không cần đăng.
+Thứ tự đăng: trang `Bucket:*` → `Mô đun:Arguments`, `Mô đun:Yesno` → `Mô đun:Infobox` → các trang `styles.css` → `Mô đun:Nhân vật`, `Mô đun:Tập truyện` → bản mẫu. Lưu trang `styles.css` **trước** các bản mẫu dùng nó. Trang `Bản mẫu:Hộp thông tin/styles.css` cũ không còn dùng. Các trang trong `demo/` chỉ là bài minh họa, không cần đăng.
 
 Hộp thông tin tự lưu dữ liệu vào Bucket khi bài nằm trong không gian chính. Nếu lưu lỗi, hộp vẫn hiện bình thường và bài vào `Thể loại:Trang lưu Bucket bị lỗi`.
 
@@ -69,10 +71,11 @@ Thứ tự đăng từng trang và việc cần làm trên wiki: xem `DEPLOY.md`
 4. Tạo các trang thể loại: `Nhân vật`, `Học sinh`, `Giáo viên`, `Tập truyện`, `Địa điểm`, `Bản mẫu hộp thông tin`, `Bản mẫu điều hướng`, `Bản mẫu định dạng`, `Bản mẫu thông báo`, `Bản mẫu trang chính`.
 5. Logo: tải lên `HSCK-logo-1x.png` (135×135), `HSCK-logo-2x.png` (270×270) và `HSCK-wordmark.png` (178×96), rồi đặt `$wgLogos` với `1x`, `2x` cho Vector 2010 và `wordmark` (`width` 89, `height` 48) cho Minerva. Logo được tách từ bìa Tập 25 bằng Canva (bản thử đầu dùng `tools/cut-logo.py`). `Minerva.css` đã tắt việc đảo màu logo ở chế độ tối.
 6. Gadget RankIcons: thêm dòng `* RankIcons[ResourceLoader|default|namespaces=2|dependencies=mediawiki.api]|RankIcons.js` vào `MediaWiki:Gadgets-definition` (chỉ chạy ở không gian Thành viên), tải 6 tệp `RankIcon-*.svg` lên và tạo các trang `MediaWiki:RankIcon-*`.
-7. Gadget MinervaMenu: thêm `* MinervaMenu[ResourceLoader|default|skins=minerva|dependencies=mediawiki.util]|MinervaMenu.js` vào `MediaWiki:Gadgets-definition`. Danh sách liên kết nằm trong gadget, giữ khớp với `MediaWiki:Sidebar`. Discord đang dùng link của WLHMN (`discord.gg/UrfHSzFff3`).
-8. (Tùy chọn) Đổi tên không gian `Project` (`$wgMetaNamespace`), ví dụ thành `Wiki Học Sinh Chân Kinh`. Sidebar và Trang Chính đang dùng tiền tố `Project:` nên vẫn chạy sau khi đổi.
+7. Gadget MinervaMenu: thêm `* MinervaMenu[ResourceLoader|default|skins=minerva|dependencies=mediawiki.util]|MinervaMenu.js` vào `MediaWiki:Gadgets-definition`. Danh sách liên kết nằm trong gadget, giữ khớp với `MediaWiki:Sidebar`. Discord trỏ tới `go.lophocmatngu.wiki/discord`.
+8. Không gian `Project` đã đổi tên thành `WHSCK` (26/10). Sidebar và Trang Chính dùng tiền tố `Project:` nên vẫn chạy.
 
 ## Kiểm tra
 
 - `https://hsck.lophocmatngu.wiki/wiki/Trang_Chính?useskin=vector`
+- `https://hsck.lophocmatngu.wiki/wiki/WHSCK:OOUI_demo?useskin=vector` và `?useskin=minerva`: mọi phần tử OOUI, kiểm tra sáng/tối.
 - `https://hsck.lophocmatngu.wiki/wiki/Trang_Chính?useskin=minerva`: đặt hệ điều hành sang chế độ tối (hoặc chọn chế độ tối trong tùy chọn giao diện của Minerva nếu wiki đã bật), rồi thu cửa sổ nhỏ hơn 640px.
