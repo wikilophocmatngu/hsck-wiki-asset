@@ -94,11 +94,17 @@ html.skin-theme-clientpref-night .branding-box img {
 }
 
 /* ===== Riêng Minerva: tiêu đề mục là tab mục lục kỷ yếu (vẫn gập/mở được) ===== */
+/* Minerva mặc định xếp các mục gập sát nhau, chỉ cách bằng một nét kẻ; tab có nền thì cần khoảng hở.
+   Gập: tab tròn đủ bốn góc. Mở (MobileFrontend thêm .open-block): chỉ bo trên, nối với nội dung bên dưới. */
 .skin-minerva .mw-parser-output .mw-heading2 {
+	margin-top: 0.75rem;
 	padding: 0.2rem 0.6rem;
 	border-bottom: 2px solid var(--hs-peach, oklch(79% 0.132 62));
-	border-radius: 0.5rem 0.5rem 0 0;
+	border-radius: 0.5rem;
 	background: var(--hs-soft, oklch(95% 0.02 230));
+}
+.skin-minerva .mw-parser-output .mw-heading2.open-block {
+	border-radius: 0.5rem 0.5rem 0 0;
 }
 
 /* ===== Chân trang: bìa sau bằng vải xanh ===== */
