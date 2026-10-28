@@ -104,4 +104,14 @@ break=no
 </div>
 </div>
 </div>
+<div class="ky-section">
+<div class="ky-h-row"><h2 class="ky-h">Dự án chị em</h2>[https://songngu.xyz SongNgư.xyz →]</div>
+<p class="ky-note">Các wiki khác cũng do SongNgư.xyz bảo quản.</p>
+<div class="ky-sisters">
+<div class="ky-sister">{{#ifexist:Tập tin:Dự án chị em Lớp Học Mật Ngữ.svg|[[Tập tin:Dự án chị em Lớp Học Mật Ngữ.svg|48px|link=https://lophocmatngu.wiki|alt=]]|<span class="ky-sister-mark">LHMN</span>}}<div><p class="ky-sister-name">[https://lophocmatngu.wiki Wiki Lớp Học Mật Ngữ]</p><p>Bách khoa về vũ trụ truyện tranh Lớp Học Mật Ngữ, viết từ năm 2019.</p></div></div>
+<div class="ky-sister">{{#ifexist:Tập tin:Dự án chị em Cookie Run.png|[[Tập tin:Dự án chị em Cookie Run.png|48px|link=https://vi.cookierun.wiki|alt=]]|<span class="ky-sister-mark">CR</span>}}<div><p class="ky-sister-name">[https://vi.cookierun.wiki Wiki Cookie Run tiếng Việt]</p><p>Kiến thức cho cộng đồng người chơi Cookie Run.</p></div></div>
+<div class="ky-sister">{{#ifexist:Tập tin:Dự án chị em Custom Gameshows.png|[[Tập tin:Dự án chị em Custom Gameshows.png|48px|link=https://cg.songngu.xyz|alt=]]|<span class="ky-sister-mark">CG</span>}}<div><p class="ky-sister-name">[https://cg.songngu.xyz Custom Gameshows Wiki]</p><p>Lưu trữ vũ trụ gameshow và các chương trình truyền hình mô phỏng.</p></div></div>
+<div class="ky-sister">{{#ifexist:Tập tin:Dự án chị em 100 Bạn Gái.svg|[[Tập tin:Dự án chị em 100 Bạn Gái.svg|48px|link=https://100bangai.songngu.xyz|alt=]]|<span class="ky-sister-mark">100</span>}}<div><p class="ky-sister-name">[https://100bangai.songngu.xyz Wiki 100 Bạn Gái tiếng Việt]</p><p>Bách khoa tiếng Việt về truyện tranh và anime 100 Cô Bạn Gái.</p></div></div>
+</div>
+</div>
 </div>

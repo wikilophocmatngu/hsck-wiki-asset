@@ -120,6 +120,22 @@ html.skin-theme-clientpref-night .branding-box img {
 .minerva-footer .minerva-footer-logo {
 	color: var(--hs-chalk, oklch(95.7% 0.015 94));
 }
+/* Tên wiki một hàng riêng, biểu tượng ($wgFooterIcons) xếp bên dưới, tự xuống dòng và căn giữa thay vì cuộn ngang.
+   li "supportedby" chứa hai nút: display: contents để cả năm nút cùng là ô của một hàng flex. */
+.minerva-footer .minerva-footer-logo {
+	flex-direction: column;
+	align-items: center;
+	gap: 0.75rem;
+	text-align: center;
+}
+.minerva-footer #footer-icons {
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 0.375rem;
+}
+.minerva-footer #footer-icons > li {
+	display: contents;
+}
 /* Thanh "Xem lịch sử sửa đổi" nằm trong footer: giữ nền giấy như trang */
 .minerva-footer .last-modified-bar {
 	background: var(--hs-paper, oklch(98.5% 0.012 80));

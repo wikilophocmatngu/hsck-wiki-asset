@@ -26,6 +26,7 @@ DEMO_FILES=1 python3 -I tools/build.py . out  # mọi TemplateStyles qua bộ l�
 | `RankIcon-<nhóm>.svg` × 9 (`wiki/Tập_tin/`) | biểu tượng nhóm quyền trên trang hồ sơ | có, hoặc thay bằng PNG rồi sửa tên trong bước 6. Bốn nhóm steward, global-admin, global-patroller, global-interwiki-admin dùng thẳng ảnh của Miraheze Commons, không cần tải |
 | logo `1x`, `2x`, `wordmark` | `$wgLogos` | có |
 | `Đầu_trang.webp` | ảnh dải đầu trang (`Vector.css`, `Minerva.css`) | không: thiếu thì dải đầu trang chỉ có nền xanh |
+| `Dự án chị em <tên>.svg/.png` × 4 (`wiki/Tập_tin/`) | khối "Dự án chị em" cuối Trang Chính | không: thiếu tệp nào thì ô đó hiện chữ viết tắt (LHMN, CR, CG, 100) |
 | `Ô <chủ đề>.webp` × 6, `Khoảnh khắc <1–3>.webp`, `Chân dung <1–10>.webp` | Trang Chính | thiếu thì Trang Chính hiện liên kết tệp màu đỏ |
 
 ## 2. Bucket (cần quyền sửa không gian Bucket)

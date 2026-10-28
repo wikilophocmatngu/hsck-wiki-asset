@@ -330,6 +330,50 @@
 	color: var(--hs-muted, oklch(45% 0.014 250));
 }
 
+/* ===== Dự án chị em: các wiki khác của SongNgư.xyz, logo bên trái như mục cùng tên của Wikipedia ===== */
+.ky-sisters {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+	gap: 1rem 1.5rem;
+}
+.ky-sister {
+	display: flex;
+	align-items: flex-start;
+	gap: 0.75rem;
+	color: var(--hs-muted, oklch(45% 0.014 250));
+	font-size: 0.9rem;
+	line-height: 1.45;
+}
+.ky-sister img,
+.ky-sister-mark {
+	flex: none;
+	width: 3rem;
+	height: 3rem;
+	border-radius: 0.6rem;
+}
+/* Khi chưa tải logo lên: ô chữ viết tắt cùng cỡ */
+.ky-sister-mark {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--hs-soft, oklch(95% 0.02 230));
+	color: var(--hs-accent, oklch(44% 0.137 259));
+	font-family: var(--hs-font-display, sans-serif);
+	font-weight: 800;
+	font-size: 0.85rem;
+}
+.ky-sister-name {
+	color: var(--hs-ink, oklch(24% 0.012 250));
+	font-weight: 700;
+	font-size: 1rem;
+}
+/* Liên kết ngoài: bỏ mũi tên của skin, cả khối đã là danh sách wiki khác */
+.ky-sister a.external,
+.ky-h-row > a.external {
+	padding-right: 0;
+	background-image: none;
+}
+
 /* ===== Lưu bút: giấy kẻ dòng, cặp nút kiểu Minecraft Wiki ===== */
 .ky-guest {
 	padding-left: 2.5rem;
