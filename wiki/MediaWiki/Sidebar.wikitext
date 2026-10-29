@@ -1,3 +1,5 @@
+* hsck-discord
+** https://discord.gg/UrfHSzFff3|Discord
 * navigation
 ** mainpage|mainpage-description
 ** recentchanges-url|recentchanges
@@ -13,7 +15,6 @@
 ** Special:WantedPages|Trang cần viết
 ** Project:Viết bài đầu tiên|Viết bài đầu tiên
 ** Project:Ban cán sự|Ban cán sự
-** https://discord.gg/UrfHSzFff3|Discord
 * SEARCH
 * TOOLBOX
 * LANGUAGES
