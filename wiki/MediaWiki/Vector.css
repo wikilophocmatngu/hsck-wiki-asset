@@ -65,25 +65,9 @@ body.skin-vector-legacy .vector-search-box-input {
 
 /* ===== Nội dung: trang giấy ===== */
 body.skin-vector-legacy .mw-body {
-	position: relative;                /* neo cho ruy băng đánh dấu trang */
 	border-color: var(--hs-paper-2, oklch(95% 0.022 80));
 	background-color: var(--hs-paper, oklch(98.5% 0.012 80));
 	color: var(--hs-ink, oklch(24% 0.012 250));
-}
-/* Riêng Vector: ruy băng đánh dấu trang treo từ mép dải vải, như sợi dây trong cuốn kỷ yếu */
-body.skin-vector-legacy .mw-body::before {
-	content: "";
-	position: absolute;
-	top: -3px;
-	right: 1.75rem;
-	width: 1.1rem;
-	height: 3.5rem;
-	background: var(--hs-peach, oklch(79% 0.132 62));
-	clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 78%, 0 100%);
-	pointer-events: none;
-}
-body.skin-vector-legacy .mw-indicators {
-	margin-right: 2.5rem;              /* chừa chỗ cho ruy băng */
 }
 body.skin-vector-legacy .mw-body .firstHeading {
 	border-bottom: 2px solid var(--hs-peach, oklch(79% 0.132 62));
@@ -118,6 +102,88 @@ body.skin-vector-legacy #footer a {
 body.skin-vector-legacy #footer a {
 	text-decoration: underline;
 	text-decoration-color: var(--hs-peach, oklch(79% 0.132 62));
+}
+
+/* ===== Danh sách: chấm vuông màu nhấn thay ảnh chấm đen của Vector (ảnh không đổi màu theo chế độ tối) ===== */
+body.skin-vector-legacy .mw-body ul {
+	list-style-image: none;
+	list-style-type: square;
+}
+body.skin-vector-legacy .mw-body li::marker {
+	color: var(--hs-accent, oklch(44% 0.137 259));
+}
+body.skin-vector-legacy .mw-body .toc ul {
+	list-style: none;                  /* mục lục đã có số thứ tự */
+}
+
+/* ===== Biểu tượng trên dải vải (thông báo, trang cá nhân) =====
+   Vector và Echo vẽ chúng bằng ảnh đen, chìm trên nền xanh ở cả hai chế độ. Vẽ lại bằng mask tô màu phấn;
+   số đếm thông báo (::after) giữ nguyên. Hình: OOUI bell, tray, userAvatar (MIT, gói npm oojs-ui 0.54.2). */
+body.skin-vector-legacy #p-personal .mw-echo-notifications-badge {
+	background-image: none;
+	opacity: 1;
+}
+body.skin-vector-legacy #p-personal .mw-echo-notifications-badge::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background-color: var(--hs-chalk, oklch(95.7% 0.015 94));
+	mask: var(--hs-icon) center / 20px no-repeat;
+}
+body.skin-vector-legacy #pt-notifications-alert {
+	--hs-icon: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj48cGF0aCBkPSJNOCAxN2g0djFhMiAyIDAgMSAxLTQgMHpNOSAwaDJ2MS42YTUgNSAwIDAgMSA0IDV2NGwyIDIuOFYxNkgzdi0yLjZsMi0yLjh2LTRhNSA1IDAgMCAxIDQtNXoiLz48L3N2Zz4=");
+}
+body.skin-vector-legacy #pt-notifications-notice {
+	--hs-icon: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj48cGF0aCBkPSJNMSAxaDE4djE4SDF6bTIgMnYxMGg0bDEuNyAyaDIuNmwxLjctMmg0VjN6Ii8+PC9zdmc+");
+}
+body.skin-vector-legacy #p-personal .mw-echo-notifications-badge-all-read::before {
+	opacity: 0.6;
+}
+body.skin-vector-legacy .vector-user-menu-legacy #pt-userpage a,
+body.skin-vector-legacy .vector-user-menu-legacy #pt-anonuserpage {
+	position: relative;
+	background-image: none;
+	padding-left: 1.5em;
+}
+body.skin-vector-legacy .vector-user-menu-legacy #pt-userpage a::before,
+body.skin-vector-legacy .vector-user-menu-legacy #pt-anonuserpage::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0.33333333em;
+	width: 1.16666667em;
+	height: 1.16666667em;
+	background-color: var(--hs-chalk, oklch(95.7% 0.015 94));
+	mask: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj48cGF0aCBkPSJNMTIgMTFhNiA2IDAgMCAxIDYgNnYySDJ2LTJhNiA2IDAgMCAxIDYtNnoiLz48Y2lyY2xlIGN4PSIxMCIgY3k9IjUiIHI9IjQiLz48L3N2Zz4=") center / contain no-repeat;
+}
+
+/* ===== Nút Discord ở thanh bên (mục cuối nhóm Cộng đồng trong MediaWiki:Sidebar) =====
+   Màu Discord đậm hơn #5865f2 một chút để chữ trắng đạt 4.5:1. Biểu tượng: iconoir (MIT), như menu Minerva. */
+body.skin-vector-legacy #mw-panel .vector-menu-portal .vector-menu-content li#n-Discord {
+	padding-top: 0.4em;
+}
+body.skin-vector-legacy #mw-panel .vector-menu-portal .vector-menu-content li#n-Discord a,
+body.skin-vector-legacy #mw-panel .vector-menu-portal .vector-menu-content li#n-Discord a:visited {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4em;
+	padding: 0.35em 0.8em 0.35em 0.6em;
+	border-radius: 999px;
+	background: #4752c4;
+	color: #fff;
+	font-weight: 700;
+	text-decoration: none;
+}
+body.skin-vector-legacy #mw-panel .vector-menu-portal .vector-menu-content li#n-Discord a:hover {
+	background: #3c45a5;
+}
+body.skin-vector-legacy #n-Discord a::before {
+	content: "";
+	flex: none;
+	width: 1.3em;
+	height: 1.3em;
+	background-color: currentColor;
+	mask: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHN0cm9rZS13aWR0aD0iMS41IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGNvbG9yPSIjMDAwMDAwIj48cGF0aCBkPSJNNS41IDE2QzEwLjUgMTguNSAxMy41IDE4LjUgMTguNSAxNiIgc3Ryb2tlPSIjMDAwMDAwIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48L3BhdGg+PHBhdGggZD0iTTE1LjUgMTcuNUwxNi41IDE5LjVDMTYuNSAxOS41IDIwLjY3MTMgMTguMTcxNyAyMiAxNkMyMiAxNSAyMi41MzAxIDcuODUzMzkgMTkgNS41QzE3LjUgNC41IDE1IDQgMTUgNEwxNCA2SDEyIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjwvcGF0aD48cGF0aCBkPSJNOC41MjgzMiAxNy41TDcuNTI4MzIgMTkuNUM3LjUyODMyIDE5LjUgMy4zNTY5OSAxOC4xNzE3IDIuMDI4MzIgMTZDMi4wMjgzMiAxNSAxLjQ5ODIzIDcuODUzMzkgNS4wMjgzMiA1LjVDNi41MjgzMiA0LjUgOS4wMjgzMiA0IDkuMDI4MzIgNEwxMC4wMjgzIDZIMTIuMDI4MyIgc3Ryb2tlPSIjMDAwMDAwIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48L3BhdGg+PHBhdGggZD0iTTguNSAxNEM3LjY3MTU3IDE0IDcgMTMuMTA0NiA3IDEyQzcgMTAuODk1NCA3LjY3MTU3IDEwIDguNSAxMEM5LjMyODQzIDEwIDEwIDEwLjg5NTQgMTAgMTJDMTAgMTMuMTA0NiA5LjMyODQzIDE0IDguNSAxNFoiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PC9wYXRoPjxwYXRoIGQ9Ik0xNS41IDE0QzE0LjY3MTYgMTQgMTQgMTMuMTA0NiAxNCAxMkMxNCAxMC44OTU0IDE0LjY3MTYgMTAgMTUuNSAxMEMxNi4zMjg0IDEwIDE3IDEwLjg5NTQgMTcgMTJDMTcgMTMuMTA0NiAxNi4zMjg0IDE0IDE1LjUgMTRaIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjwvcGF0aD48L3N2Zz4=") center / contain no-repeat;
 }
 
 /* ===== Chế độ tối (theo hệ điều hành) =====
@@ -177,5 +243,13 @@ body.skin-vector-legacy #footer a {
 	}
 	body.skin-vector-legacy .mw-body hr {
 		background-color: var(--hs-rule, oklch(38% 0.03 230));
+	}
+	/* Biểu tượng đơn sắc đen của skin nằm trên nền giấy tối: đảo sang trắng, như MediaWiki tự làm với biểu tượng OOUI.
+	   Chỉ áp cho hình đen một màu; ảnh màu, logo và nội dung bài không bị đụng tới. */
+	body.skin-vector-legacy .searchButton,
+	body.skin-vector-legacy .vector-menu-dropdown .vector-menu-heading::after,
+	body.skin-vector-legacy .vector-menu-tabs #ca-watch.icon a::before,
+	body.skin-vector-legacy .mw-body .magnify a {
+		filter: invert(1);
 	}
 }
