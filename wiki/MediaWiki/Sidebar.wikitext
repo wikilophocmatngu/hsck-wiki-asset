@@ -1,5 +1,5 @@
 * hsck-discord
-** https://discord.gg/UrfHSzFff3|Discord
+** https://discord.gg/UrfHSzFff3|Discord cộng đồng
 * navigation
 ** mainpage|mainpage-description
 ** recentchanges-url|recentchanges

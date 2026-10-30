@@ -173,8 +173,8 @@ body.skin-vector-legacy .vector-legacy-sidebar #p-navigation .vector-menu-conten
 body.skin-vector-legacy .vector-legacy-sidebar #p-hsck-discord .vector-menu-content {
 	margin-left: 0.5em;
 }
-body.skin-vector-legacy #mw-panel .vector-menu-portal .vector-menu-content li#n-Discord a,
-body.skin-vector-legacy #mw-panel .vector-menu-portal .vector-menu-content li#n-Discord a:visited {
+body.skin-vector-legacy #mw-panel #p-hsck-discord .vector-menu-content li a,
+body.skin-vector-legacy #mw-panel #p-hsck-discord .vector-menu-content li a:visited {
 	display: inline-flex;
 	align-items: center;
 	gap: 0.4em;
@@ -185,10 +185,10 @@ body.skin-vector-legacy #mw-panel .vector-menu-portal .vector-menu-content li#n-
 	font-weight: 700;
 	text-decoration: none;
 }
-body.skin-vector-legacy #mw-panel .vector-menu-portal .vector-menu-content li#n-Discord a:hover {
+body.skin-vector-legacy #mw-panel #p-hsck-discord .vector-menu-content li a:hover {
 	background: #3c45a5;
 }
-body.skin-vector-legacy #n-Discord a::before {
+body.skin-vector-legacy #p-hsck-discord li a::before {
 	content: "";
 	flex: none;
 	width: 1.3em;
