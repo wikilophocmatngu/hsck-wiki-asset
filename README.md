@@ -35,9 +35,9 @@ Skin: Vector 2010 (máy tính) và Minerva Neue (di động), tổ chức theo c
 | `wiki/Mô_đun/Arguments.lua`, `Yesno.lua` | `Mô đun:Arguments` (bản của Wikipedia, giữ nguyên), `Mô đun:Yesno` (theo Wikipedia, thêm có/không/đúng/sai/bật/tắt) |
 | `wiki/Mô_đun/Infobox.lua` | `Mô đun:Infobox`: bộ dựng hộp (theo Weird Gloop, qua bản của Wiki 100 Bạn Gái) và `store()` lưu vào Bucket |
 | `wiki/Mô_đun/Infobox/styles.css` | `Mô đun:Infobox/styles.css` (TemplateStyles của mọi hộp) |
-| `wiki/Mô_đun/Infobox/Nhân_vật.lua`, `Tập_truyện.lua` | `Mô đun:Infobox/Nhân vật`, `Mô đun:Infobox/Tập truyện`: vẽ hộp, thêm thể loại, lưu Bucket |
-| `wiki/Bản_mẫu/Hộp_nhân_vật.wikitext` | `Bản mẫu:Hộp nhân vật` (gọi mô đun) |
-| `wiki/Bản_mẫu/Hộp_tập_truyện.wikitext` | `Bản mẫu:Hộp tập truyện` (gọi mô đun) |
+| `wiki/Mô_đun/Nhân_vật.lua`, `Tập_truyện.lua` | `Mô đun:Nhân vật`, `Mô đun:Tập truyện`: vẽ hộp, thêm thể loại, lưu Bucket |
+| `wiki/Bản_mẫu/Nhân_vật.wikitext` | `Bản mẫu:Nhân vật` (gọi mô đun) |
+| `wiki/Bản_mẫu/Tập_truyện.wikitext` | `Bản mẫu:Tập truyện` (gọi mô đun) |
 | `wiki/MediaWiki/Gadget-MinervaMenu.js` | `MediaWiki:Gadget-MinervaMenu.js`: thêm nhóm Nhân vật / Tập truyện / Địa điểm và nhóm Viết bài đầu tiên / Ban cán sự / Discord vào menu trượt của Minerva (biểu tượng ở `Minerva.css`) |
 | `wiki/MediaWiki/Gadget-RankIcons.js` | `MediaWiki:Gadget-RankIcons.js`: thay nhãn nhóm quyền trên trang hồ sơ bằng biểu tượng (theo gadget của Splatched trên Miraheze Developers Wiki) |
 | `wiki/MediaWiki/RankIcon-<nhóm>.wikitext` | `MediaWiki:RankIcon-<nhóm>`: biểu tượng của từng nhóm, gồm 6 nhóm của wiki và 7 nhóm toàn cục của Miraheze. Steward, global-admin, global-patroller và global-interwiki-admin dùng bộ biểu tượng nhóm quyền của Miraheze Commons (đã có tổ ong Miraheze nên CSS bỏ huy hiệu logo); trustandsafety, techteam, wiki-mechanic chưa có ảnh trên Commons nên giữ biểu tượng OOUI kèm huy hiệu logo Miraheze. CSS không đổi màu ảnh, nên ảnh phải tự đủ tương phản trên nền nhãn ở cả chế độ sáng lẫn tối. |

@@ -1,7 +1,7 @@
 {{Xem thêm|Nhân vật 2|Tập 1}}
 {{Tiết lộ|Tập 25}}
 {{Hộp thông báo|cần nguồn}}
-{{Hộp nhân vật
+{{Nhân vật
 | tên           = Nhân vật mẫu
 | hình          = Chân dung 2.webp
 | nhãn          = Tập 1
@@ -39,9 +39,9 @@
 |}
 
 {{Hộp điều hướng
-| tiêu đề    = Nhân vật
-| nhóm1      = Học sinh
-| danh sách1 = [[Nhân vật mẫu]] · [[Nhân vật 2]] · [[Nhân vật 3]] · [[Nhân vật 4]]
-| nhóm2      = Giáo viên
-| danh sách2 = [[Nhân vật 5]] · [[Nhân vật 6]]
+| title  = Nhân vật
+| group1 = Học sinh
+| list1  = [[Nhân vật mẫu]] · [[Nhân vật 2]] · [[Nhân vật 3]] · [[Nhân vật 4]]
+| group2 = Giáo viên
+| list2  = [[Nhân vật 5]] · [[Nhân vật 6]]
 }}

@@ -1,11 +1,12 @@
-/* Hallmark · genre: playful · theme: custom (Kỷ yếu) · phạm vi: khung Vector 2010 · nav/footer: của skin
-   Wiki Học Sinh Chân Kinh — khung giao diện Vector 2010 (legacy), kiểm tra trên MW 1.46.2.
-   Chế độ tối: theo hệ điều hành (prefers-color-scheme), không có nút bật tắt. Màu lấy từ --hs-* trong
-   MediaWiki:Common.css; bề mặt trang dùng token đổi theo chế độ, khung vải xanh giữ nguyên. */
+/***
+ ______     ______     __   __     ______     __   __     ______     __  __     __  __     __  __     ______    
+/\  ___\   /\  __ \   /\ "-.\ \   /\  ___\   /\ "-.\ \   /\  ___\   /\ \/\ \   /\_\_\_\   /\ \_\ \   /\___  \   
+\ \___  \  \ \ \/\ \  \ \ \-.  \  \ \ \__ \  \ \ \-.  \  \ \ \__ \  \ \ \_\ \  \/_/\_\/_  \ \____ \  \/_/  /__  
+ \/\_____\  \ \_____\  \ \_\\"\_\  \ \_____\  \ \_\\"\_\  \ \_____\  \ \_____\   /\_\/\_\  \/\_____\   /\_____\ 
+  \/_____/   \/_____/   \/_/ \/_/   \/_____/   \/_/ \/_/   \/_____/   \/_____/   \/_/\/_/   \/_____/   \/_____/ 
+                                                                                                                
+*/
 
-/* ===== Nền & dải đầu trang =====
-   Học theo OSRS Wiki: ảnh minh họa chỉ nằm ở dải đầu trang (sau logo và tab), phần còn lại là giấy trơn.
-   Thanh bên dùng giấy đậm hơn trang nội dung, như bìa lót của cuốn kỷ yếu. */
 body.skin-vector-legacy {
 	background-color: var(--hs-paper-2, oklch(95% 0.022 80));
 }

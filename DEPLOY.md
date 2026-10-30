@@ -40,15 +40,15 @@ DEMO_FILES=1 python3 -I tools/build.py . out  # mọi TemplateStyles qua bộ l�
 2. `Mô đun:Yesno`
 3. `Mô đun:Infobox`
 4. `Mô đun:Infobox/styles.css` (wiki tự nhận mô hình *sanitized-css* cho trang `…/styles.css`)
-5. `Mô đun:Infobox/Nhân vật`
-6. `Mô đun:Infobox/Tập truyện`
+5. `Mô đun:Nhân vật`
+6. `Mô đun:Tập truyện`
 
 ## 4. Bản mẫu
 
 Đăng trang `styles.css` **trước** bản mẫu dùng nó.
 
 1. `Bản mẫu:Trang Chính/styles.css`, `Bản mẫu:Tiết lộ/styles.css`, `Bản mẫu:Thoại/styles.css`, `Bản mẫu:Hộp điều hướng/styles.css`, `Bản mẫu:Xem thêm/styles.css`
-2. `Bản mẫu:Ảnh thẻ`, `Bản mẫu:Ô chủ đề`, `Bản mẫu:Tiết lộ`, `Bản mẫu:Hộp thông báo`, `Bản mẫu:Thoại`, `Bản mẫu:Xem thêm`, `Bản mẫu:Hộp điều hướng`, `Bản mẫu:InfoboxGallery`, `Bản mẫu:Hộp nhân vật`, `Bản mẫu:Hộp tập truyện`
+2. `Bản mẫu:Ảnh thẻ`, `Bản mẫu:Ô chủ đề`, `Bản mẫu:Tiết lộ`, `Bản mẫu:Hộp thông báo`, `Bản mẫu:Thoại`, `Bản mẫu:Xem thêm`, `Bản mẫu:Hộp điều hướng`, `Bản mẫu:InfoboxGallery`, `Bản mẫu:Nhân vật`, `Bản mẫu:Tập truyện`
 
 ## 5. Giao diện (cần quyền interface-admin)
 
@@ -75,4 +75,4 @@ CSS mới có thể mất vài phút mới hiện (cache ResourceLoader).
 - `Trang_Chính?useskin=vector` và `?useskin=minerva`, đổi hệ điều hành sang tối.
 - `Thành_viên:Pisces?useskin=minerva`: biểu tượng nhóm quyền hiện, logo Miraheze trên nhóm toàn cục.
 - Mở menu trượt trên Minerva: có hai nhóm Nhân vật… và Viết bài đầu tiên…
-- Tạo thử một bài có `{{Hộp nhân vật}}`, rồi xem trang `Bucket:Characters` có dòng mới không. Bài vào `Thể loại:Trang lưu Bucket bị lỗi` nghĩa là lưu không được.
+- Tạo thử một bài có `{{Nhân vật}}`, rồi xem trang `Bucket:Characters` có dòng mới không. Bài vào `Thể loại:Trang lưu Bucket bị lỗi` nghĩa là lưu không được.

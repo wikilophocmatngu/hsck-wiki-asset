@@ -1,3 +1,5 @@
-== hsck-giao-dien ==
 * RankIcons[ResourceLoader|default|hidden|namespaces=2|dependencies=mediawiki.api]|RankIcons.js
 * MinervaMenu[ResourceLoader|default|hidden|skins=minerva|dependencies=mediawiki.util]|MinervaMenu.js
+* OOUIDemo[ResourceLoader|default|hidden|namespaces=4|supportsUrlLoad=true]|OOUIDemo.js
+* TACP[ResourceLoader|package|requiresES6|dependencies=mediawiki.util]|TACP.js|TACP-config.json|TACP.css
+* TACP-core[ResourceLoader|hidden|package|requiresES6|dependencies=ext.gadget.TACP,vue,@wikimedia/codex,mediawiki.api,mediawiki.jqueryMsg,mediawiki.language,mediawiki.storage,mediawiki.Title,mediawiki.user,mediawiki.util,user.options]|TACP-core.js|TACP-core.css

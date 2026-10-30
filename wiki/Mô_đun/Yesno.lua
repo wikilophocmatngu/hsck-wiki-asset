@@ -1,15 +1,15 @@
 -- Mô đun:Yesno
 -- Đọc giá trị kiểu có/không trong wikitext một cách nhất quán, như bản mẫu {{yesno}}.
--- Theo https://en.wikipedia.org/wiki/Module:Yesno (CC BY-SA 4.0), thêm các từ tiếng Việt.
+-- Theo https://vi.wikipedia.org/wiki/Module:Yesno (CC BY-SA 4.0)
 --
 --   local yesno = require('Module:Yesno')
 --   yesno('có') --> true     yesno('không') --> false
 --   yesno(nil) --> nil       yesno('gì đó', true) --> true (giá trị mặc định)
 
 local YES = { ['yes'] = true, ['y'] = true, ['true'] = true, ['t'] = true, ['on'] = true,
-	['có'] = true, ['c'] = true, ['đúng'] = true, ['bật'] = true }
+	['có'] = true, ['c'] = true, ['đúng'] = true, ['thực'] = true, ['rồi'] = true, ['bật'] = true }
 local NO = { ['no'] = true, ['n'] = true, ['false'] = true, ['f'] = true, ['off'] = true,
-	['không'] = true, ['k'] = true, ['sai'] = true, ['tắt'] = true }
+	['không'] = true, ['ko'] = true, ['k'] = true, ['sai'] = true, ['s'] = true, ['chưa'] = true, ['tắt'] = true }
 
 return function(val, default)
 	if type(val) == 'string' then

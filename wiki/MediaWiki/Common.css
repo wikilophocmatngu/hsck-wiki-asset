@@ -1,14 +1,15 @@
-/* Phông tiêu đề (có dấu tiếng Việt). @import phải đứng đầu file. */
-@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700&display=swap");
-/* Hallmark · genre: playful · theme: custom (Kỷ yếu · vải xanh mực, chữ ép cam, giấy kem, mực đỏ) · Bricolage Grotesque + phông skin
-   Wiki Học Sinh Chân Kinh — CSS dùng chung cho máy tính (Vector 2010) và di động (Minerva).
-   Kiểm tra trên MW 1.46.2. Chế độ tối: Minerva theo skin-theme-clientpref-*; Vector 2010 theo hệ điều hành (prefers-color-scheme).
-   Theo cách Weird Gloop tổ chức: Common.css = cả hai giao diện · Vector.css = chỉ máy tính ·
-   Minerva.css = chỉ di động · CSS của bản mẫu nằm trong TemplateStyles (Bản mẫu:X/styles.css).
-   File này giữ một bộ biến màu duy nhất --hs-* (OKLCH) để mọi nơi dùng qua var(--hs-*, dự phòng).
 
-   Tương phản (WCAG): chalk/blue 7.0 · pen/paper 5.6 · muted/paper 7.1 · accent/paper 7.9 ·
-                      ink-fixed/peach 8.1 · peach/blue 4.0 (chỉ dùng cho chữ lớn) */
+/*
+ ______     ______     __   __     ______     __   __     ______     __  __     __  __     __  __     ______    
+/\  ___\   /\  __ \   /\ "-.\ \   /\  ___\   /\ "-.\ \   /\  ___\   /\ \/\ \   /\_\_\_\   /\ \_\ \   /\___  \   
+\ \___  \  \ \ \/\ \  \ \ \-.  \  \ \ \__ \  \ \ \-.  \  \ \ \__ \  \ \ \_\ \  \/_/\_\/_  \ \____ \  \/_/  /__  
+ \/\_____\  \ \_____\  \ \_\\"\_\  \ \_____\  \ \_\\"\_\  \ \_____\  \ \_____\   /\_\/\_\  \/\_____\   /\_____\ 
+  \/_____/   \/_____/   \/_/ \/_/   \/_____/   \/_/ \/_/   \/_____/   \/_____/   \/_/\/_/   \/_____/   \/_____/ 
+                                                                                                                
+*/
+
+/* @import */
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700&display=swap");
 
 /* ===== Tokens ===== */
 :root {

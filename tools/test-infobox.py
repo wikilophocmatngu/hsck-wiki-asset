@@ -54,8 +54,8 @@ module_src["Thử"] = luabundle.REQUIRE.sub(lambda m: "(function()\n" + bundle(m
 failed = False
 result = expand("Thử", "{{#invoke:Thử|f}}")
 print("Hàm:", result); failed |= result != "ALL OK"
-for module, call in (("Infobox/Nhân vật", "|tên=An|lớp=8A|xuất hiện đầu=[[Tập 1]]|lưu=không"),
-                     ("Infobox/Tập truyện", "|tên=Muôn sự tại nhân|số trang=160")):
+for module, call in (("Nhân vật", "|tên=An|lớp=8A|xuất hiện đầu=[[Tập 1]]|lưu=không"),
+                     ("Tập truyện", "|tên=Muôn sự tại nhân|số trang=160")):
     w = expand(module, "{{#invoke:" + module + "|main" + call + "}}", title="Tập 7")
     ok = "scribunto-error" not in w and "infobox-json" not in w.split("infobox-root")[0] and "infobox-json" in w and "Bucket bị lỗi" not in w
     print(module + ":", "OK" if ok else "LỖI\n" + w[:800]); failed |= not ok

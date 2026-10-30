@@ -73,16 +73,20 @@ break=no
 <div class="ky-section">
 <div class="ky-h-row"><h2 class="ky-h">Ảnh tập thể</h2>[[:Thể loại:Nhân vật|Cả lớp →]]</div>
 <div class="ky-class">
-{{Ảnh thẻ|Nhân vật 1|hình=Chân dung 1.webp}}
-{{Ảnh thẻ|Nhân vật 2|hình=Chân dung 2.webp}}
-{{Ảnh thẻ|Nhân vật 3|hình=Chân dung 3.webp}}
-{{Ảnh thẻ|Nhân vật 4|hình=Chân dung 4.webp}}
-{{Ảnh thẻ|Nhân vật 5|hình=Chân dung 5.webp}}
-{{Ảnh thẻ|Nhân vật 6|hình=Chân dung 6.webp}}
-{{Ảnh thẻ|Nhân vật 7|hình=Chân dung 7.webp}}
-{{Ảnh thẻ|Nhân vật 8|hình=Chân dung 8.webp}}
-{{Ảnh thẻ|Nhân vật 9|hình=Chân dung 9.webp}}
-{{Ảnh thẻ|Nhân vật 10|hình=Chân dung 10.webp}}
+{{Ảnh thẻ|Hà Mã|hình=Chân dung Hà Mã.webp}}
+{{Ảnh thẻ|Gia Phú Tiêu Sang|Gia Phú|hình=Chân dung Gia Phú.webp}}
+{{Ảnh thẻ|Nguyễn Hữu Chí|Hữu Chí|hình=Chân dung Hữu Chí.webp}}
+{{Ảnh thẻ|Đẫm Mỹ Lệ|Mỹ Lệ|hình=Chân dung Mỹ Lệ.webp}}
+{{Ảnh thẻ|Cao Như Ngang|Như Ngang|hình=Chân dung Như Ngang.webp}}
+{{Ảnh thẻ|Minh Tuệ|hình=Chân dung Minh Tuệ.webp}}
+{{Ảnh thẻ|Thường Hay Mơ|Thường|hình=Chân dung Thường.webp}}
+{{Ảnh thẻ|Ngọc Bất Trác|Ngọc|hình=Chân dung Ngọc.webp}}
+{{Ảnh thẻ|Thù Văn Toán|Toán|hình=Chân dung Toán.webp}}
+{{Ảnh thẻ|Trâu Chậm Phát|Phát|hình=Chân dung Phát.webp}}
+{{Ảnh thẻ|Vui A Dua|A Dua|hình=Chân dung A Dua.webp}}
+{{Ảnh thẻ|Vũ Quảng Đại|Đại|hình=Chân dung Đại.webp}}
+{{Ảnh thẻ|Đại Danh Họa|Họa|hình=Chân dung Họa.webp}}
+{{Ảnh thẻ|Quách Thành Nhân|Thầy Nhân|hình=Chân dung Thầy Nhân.webp}}
 </div>
 </div>
 </div>
