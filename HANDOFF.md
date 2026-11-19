@@ -2,7 +2,7 @@
 
 Wiki: https://hsck.lophocmatngu.wiki (Miraheze, MediaWiki 1.46.2). Truy cập bằng User-Agent trong biến `MIRAHEZE_UA`. Chủ dự án: Pisces (gọi là Song Ngư khi trả lời tiếng Việt). Có điều gì chưa rõ thì hỏi ngay.
 
-Chưa có bot password, nên chưa có trang nào được đăng lên wiki. Mọi thứ trong repo là bản để dán tay.
+Bot PisceSBot đã có quyền trên wiki qua Litmus (OAuth, chỉ chạy thử, người duyệt mới ghi). Bản trên wiki hiện là bản trước lần dựng lại "kỷ yếu hiện đại" (kiểm tra 19/11/2026). Đọc API trực tiếp cần User-Agent trong `MIRAHEZE_UA`; plugin MediaWiki MCP bị Miraheze chặn vì User-Agent riêng, trừ khi đặt `MCP_USER_AGENT`.
 
 ## Đã chốt
 
@@ -57,7 +57,7 @@ Lưu ý kỹ thuật:
 - `Truyền thuyết Tập 26`
 - `Tập 1` đến `Tập 25`
 - `Bản mẫu:Ảnh thẻ`, `Bản mẫu:Bìa tập`, `Bản mẫu:Trang Chính/styles.css` cùng các bản mẫu trong `wiki/`
-- Ảnh cho Trang Chính (đều tự có chỗ trống khi chưa tải): `Bìa Trang Chính.webp`, `Bìa Tập 1.webp` … `Bìa Tập 25.webp`, `Ô <chủ đề>.webp`, `Khoảnh khắc 1–3.webp`, `Chân dung <tên>.webp`
+- Ảnh còn thiếu cho Trang Chính (đều tự có chỗ trống khi chưa tải): `Bìa Tập 1.webp` … `Bìa Tập 25.webp`, chân dung Thường Hay Mơ và Ngọc Bất Trác. Các ảnh khác dùng tệp `HSCK_*` đã tải lên ngày 19/11/2026.
 
 ## Câu hỏi còn mở
 

@@ -60,6 +60,8 @@ const shots = [
       if (window.mw) mw.loader.using('jquery.makeCollapsible').then(() => $(content).find('.mw-collapsible').makeCollapsible());
     }, { data, styles: fixUrls(css.common + '\n' + css[skin]), theme, imgs });
     await p.getByRole('button', { name: 'OK' }).click().catch(() => {});
+    await p.evaluate(() => document.querySelectorAll('img[loading=lazy]').forEach(i => { i.loading = 'eager'; }));  // ảnh dưới màn hình đầu
+    await p.mouse.move(0, 0);  // tránh popup xem trước trang
     await p.waitForTimeout(2500);
     const file = path.join(out, `${key}-${skin}-${theme}${process.env.SCHEME ? '-' + process.env.SCHEME : ''}.png`);
     await p.screenshot({ path: file, fullPage: true });

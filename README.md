@@ -36,7 +36,7 @@ Bìa tập chưa có ảnh dùng năm màu in luân phiên (`#f2b632`, `#ef7a55`
 | `wiki/MediaWiki/Vector.css` | `MediaWiki:Vector.css` |
 | `wiki/MediaWiki/Minerva.css` | `MediaWiki:Minerva.css` |
 | `wiki/MediaWiki/Sidebar.wikitext` | `MediaWiki:Sidebar` |
-| `wiki/Trang_Chính.wikitext` | `Trang Chính` (kiểu Kỷ yếu: bìa, Ảnh tập thể, 25 năm học, Lưu bút). Ảnh bìa: `Tập tin:Bìa Trang Chính.webp` (ngang, chủ thể lệch phải, nửa trái tối và trống cho chữ); chưa có thì hiện bảng xanh |
+| `wiki/Trang_Chính.wikitext` | `Trang Chính` (kiểu Kỷ yếu: bìa, Ảnh tập thể, 25 năm học, Lưu bút). Ảnh bìa: `Tập tin:HSCK Wallpaper Thang06.jpg`, phủ tối phía chữ; tệp không có thì hiện bảng xanh. Ô chủ đề, Khoảnh khắc và Ảnh tập thể dùng các tệp `HSCK_*` Song Ngư tải lên ngày 19/11/2026 |
 | `wiki/Bucket/Characters.json`, `Volumes.json` | `Bucket:Characters`, `Bucket:Volumes`: lược đồ dữ liệu hộp thông tin |
 | `wiki/Mô_đun/Arguments.lua`, `Yesno.lua` | `Mô đun:Arguments` (bản của Wikipedia, giữ nguyên), `Mô đun:Yesno` (theo Wikipedia, thêm có/không/đúng/sai/bật/tắt) |
 | `wiki/Mô_đun/Infobox.lua` | `Mô đun:Infobox`: bộ dựng hộp (theo Weird Gloop, qua bản của Wiki 100 Bạn Gái) và `store()` lưu vào Bucket |

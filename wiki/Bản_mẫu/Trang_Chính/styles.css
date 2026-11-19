@@ -65,7 +65,7 @@
 	content: "";
 	position: absolute;
 	inset: 0;
-	background: linear-gradient(90deg, rgb(0 0 0 / 0.64), rgb(0 0 0 / 0.32) 50%, rgb(0 0 0 / 0) 80%);
+	background: linear-gradient(90deg, rgb(0 0 0 / 0.72), rgb(0 0 0 / 0.56) 50%, rgb(0 0 0 / 0) 85%);
 }
 .ky-cover-main {
 	max-width: 36rem;
@@ -412,6 +412,7 @@
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
+	object-position: top;              /* tranh nhân vật toàn thân: giữ phần đầu */
 }
 
 /* ===== Lưu bút ===== */
@@ -544,6 +545,10 @@
 	}
 	.ky-lead {
 		font-size: 1rem;
+	}
+	/* Màn hẹp: chữ phủ gần hết ảnh, phủ tối đều cả khung */
+	.ky-cover-img::after {
+		background: rgb(0 0 0 / 0.6);
 	}
 	.ky .ky-stats {
 		display: flex;
