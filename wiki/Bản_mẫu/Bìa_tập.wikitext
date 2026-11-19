@@ -1,0 +1,8 @@
+<templatestyles src="Bản mẫu:Trang Chính/styles.css" /><div class="ky-vol{{#ifeq:{{{1}}}|25|&#32;ky-vol--last}}">{{#ifexist:Tập tin:Bìa Tập {{{1}}}.webp|<span class="ky-vol-cover">[[Tập tin:Bìa Tập {{{1}}}.webp|200px|link=Tập {{{1}}}|alt=Bìa Tập {{{1}}}]]</span>|[[Tập {{{1}}}|<span class="ky-vol-cover"><span class="ky-vol-n">{{{1}}}</span></span>]]}}<p class="ky-vol-t">[[Tập {{{1}}}|{{{2|Tập {{{1}}}}}}]]</p></div><noinclude>
+== Cách dùng ==
+Một bìa tập trong mục "25 năm học" của Trang Chính (bọc trong <code><nowiki><div class="ky-shelf"></nowiki></code>). Có tệp <code>Bìa Tập N.webp</code> thì hiện ảnh bìa; chưa có thì hiện số tập trên nền màu in. Tập 25 có vệt dạ quang.
+<pre>
+{{Bìa tập|7|Muôn sự tại nhân}}
+</pre>
+[[Thể loại:Bản mẫu trang chính]]
+</noinclude>

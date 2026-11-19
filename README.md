@@ -5,22 +5,28 @@ Giao diện và nội dung khởi tạo cho Wiki Học Sinh Chân Kinh (https://
 Skin: Vector 2010 (máy tính) và Minerva Neue (di động), tổ chức theo cách các wiki Weird Gloop vẫn làm
 (không dùng GloopThemes, Less hay các tính năng riêng khác của họ vì Miraheze không có):
 
-- `MediaWiki:Common.css`: dùng cho cả hai giao diện: `@import` phông Bricolage Grotesque (Google Fonts), một bộ biến màu duy nhất `--hs-*` (OKLCH, có giá trị tối), phông tiêu đề h1/h2, và khung hồ sơ thành viên của UserProfileV2 (phẳng: ảnh thẻ, tên và nhóm quyền cạnh ảnh, mạng xã hội, logo Miraheze trên nhóm toàn cục; nằm ngoài `.mw-parser-output` nên không dùng TemplateStyles được).
-- `MediaWiki:Vector.css`: chỉ máy tính (chế độ tối theo hệ điều hành, không có nút bật tắt; không bật Extension:DarkMode vì nó đảo màu cả trang): dải đầu trang vải xanh, tab bìa hồ sơ, trang giấy kem, ruy băng đánh dấu trang, thanh bên, chân trang "bìa sau". Có chỗ chờ ảnh nền riêng.
-- `MediaWiki:Minerva.css`: chỉ di động: giấy kem (chế độ sáng), header vải xanh, menu trượt giấy có lề đỏ, tiêu đề mục dạng tab, chân trang "bìa sau".
+- `MediaWiki:Common.css`: dùng cho cả hai giao diện: `@import` phông Be Vietnam Pro (Google Fonts) cho toàn bộ chữ, một bộ biến màu duy nhất `--hs-*` (có giá trị tối), và khung hồ sơ thành viên của UserProfileV2 (phẳng: ảnh thẻ, tên và nhóm quyền cạnh ảnh, mạng xã hội, logo Miraheze trên nhóm toàn cục; nằm ngoài `.mw-parser-output` nên không dùng TemplateStyles được).
+- `MediaWiki:Vector.css`: chỉ máy tính (chế độ tối theo hệ điều hành, không có nút bật tắt; không bật Extension:DarkMode vì nó đảo màu cả trang): nền xám ấm, trang giấy trắng nét mảnh, tab phẳng (tab đang mở có vệt dạ quang), liên kết xanh lá bảng, thanh bên và chân trang phẳng. Có chỗ chờ ảnh nền riêng.
+- `MediaWiki:Minerva.css`: chỉ di động: token Codex (liên kết, nút chính xanh lá bảng), header và menu trượt cùng nền giấy, chân trang phẳng.
 - CSS của từng bản mẫu nằm trong TemplateStyles (`Bản mẫu:X/styles.css`), lấy màu qua `var(--hs-*, dự phòng)`.
 - Hộp điều hướng dùng class `navbox`, nên MobileFrontend tự gỡ nó trên di động.
 
-## Bảng màu "Kỷ yếu" (token `--hs-*` trong `Common.css`)
+## Bảng màu "Kỷ yếu hiện đại" (token `--hs-*` trong `Common.css`)
 
-| Token | Vai trò | Tương phản |
-|---|---|---|
-| `--hs-blue` / `--hs-spine` | vải bìa (header, chân trang, tiêu đề hộp), gáy bìa | chữ `--hs-chalk` 7.0:1 |
-| `--hs-peach` | chữ ép trên bìa, gạch nhấn, ruy băng | trên `--hs-blue` 4.0:1, chỉ cho chữ lớn |
-| `--hs-paper` / `--hs-paper-fixed` | giấy kem (đổi theo chế độ tối / luôn sáng) | — |
-| `--hs-pen` | mực đỏ: con dấu, ô điểm, chữ ký | 5.6:1 trên giấy |
-| `--hs-accent` | chữ nhấn, tiêu đề | 7.9:1 trên giấy |
-| `--hs-ink-fixed` | chữ trên bề mặt luôn sáng | 8.1:1 trên cam |
+Khung trang trung tính, một màu nhấn. Màu mạnh chỉ ở bìa Trang Chính và dãy 25 bìa tập. Vàng dạ quang là chi tiết riêng, chỉ dùng ở ba chỗ: chữ khoá trên bìa, Tập 25, tab đang mở (Vector).
+
+| Token | Sáng / tối | Vai trò | Tương phản |
+|---|---|---|---|
+| `--hs-bg` | `#f7f6f3` / `#12110f` | nền quanh trang | — |
+| `--hs-paper` / `--hs-paper-2` | `#fff` / `#1a1917`, `#f0eee9` / `#24221f` | trang và thẻ / bề mặt nổi (đầu bảng, mục lục, ô trống chờ ảnh) | — |
+| `--hs-rule` | mực 12% | nét mảnh | — |
+| `--hs-ink` / `--hs-ink-2` / `--hs-muted` | `#1f1d1a` / `#5a554d` / `#757068` | chữ chính / phụ / ghi chú | 16:1 / 7.4:1 / 4.9:1 trên trắng |
+| `--hs-accent` / `--hs-accent-strong` / `--hs-soft` | `#0f7a4a` / `#5cc98f` | xanh lá bảng: liên kết, nút chính, tab chọn | 5.4:1 trên trắng, 8.5:1 trên giấy tối |
+| `--hs-pen` / `--hs-pen-soft` | `#c8322b` / `#f0716a` | đỏ: chỉ nhãn tiết lộ, nhóm hành chính viên | 5.3:1 |
+| `--hs-hi` | `#ffe45c` (cố định) | bút dạ quang, chữ trên nó là `--hs-ink-fixed` | 13:1 |
+| `--hs-board` / `--hs-chalk` | `#1e3a2f` / `#f3f1ea` (cố định) | bảng xanh: bìa Trang Chính khi chưa có ảnh / chữ trên bảng | 10.9:1 |
+
+Bìa tập chưa có ảnh dùng năm màu in luân phiên (`#f2b632`, `#ef7a55`, `#f29fb5`, `#7cc58f`, `#7fb6e6`), chữ mực trên mọi màu ≥ 6:1.
 
 ## Ánh xạ file → trang wiki
 
@@ -30,7 +36,7 @@ Skin: Vector 2010 (máy tính) và Minerva Neue (di động), tổ chức theo c
 | `wiki/MediaWiki/Vector.css` | `MediaWiki:Vector.css` |
 | `wiki/MediaWiki/Minerva.css` | `MediaWiki:Minerva.css` |
 | `wiki/MediaWiki/Sidebar.wikitext` | `MediaWiki:Sidebar` |
-| `wiki/Trang_Chính.wikitext` | `Trang Chính` (kiểu Kỷ yếu: bìa, Ảnh tập thể, 25 năm học, Lưu bút) |
+| `wiki/Trang_Chính.wikitext` | `Trang Chính` (kiểu Kỷ yếu: bìa, Ảnh tập thể, 25 năm học, Lưu bút). Ảnh bìa: `Tập tin:Bìa Trang Chính.webp` (ngang, chủ thể lệch phải, nửa trái tối và trống cho chữ); chưa có thì hiện bảng xanh |
 | `wiki/Bucket/Characters.json`, `Volumes.json` | `Bucket:Characters`, `Bucket:Volumes`: lược đồ dữ liệu hộp thông tin |
 | `wiki/Mô_đun/Arguments.lua`, `Yesno.lua` | `Mô đun:Arguments` (bản của Wikipedia, giữ nguyên), `Mô đun:Yesno` (theo Wikipedia, thêm có/không/đúng/sai/bật/tắt) |
 | `wiki/Mô_đun/Infobox.lua` | `Mô đun:Infobox`: bộ dựng hộp (theo Weird Gloop, qua bản của Wiki 100 Bạn Gái) và `store()` lưu vào Bucket |
@@ -44,9 +50,10 @@ Skin: Vector 2010 (máy tính) và Minerva Neue (di động), tổ chức theo c
 | `wiki/Tập_tin/RankIcon-<nhóm>.svg` | `Tập tin:RankIcon-<nhóm>.svg`: tạm thời là biểu tượng OOUI màu đen, sẽ thay bằng PNG (giấy phép MIT, gói npm `oojs-ui`). Tải lên wiki, không dùng bản trên Commons vì Wikimedia giới hạn việc nhúng thẳng ảnh gốc (lỗi 429). |
 | `wiki/Bản_mẫu/Hộp_thông_báo.wikitext` | `Bản mẫu:Hộp thông báo`: sơ khai, cần ảnh, cần nguồn (dùng CSS của Tiết lộ) |
 | `wiki/Bản_mẫu/Xem_thêm.wikitext` + `Xem_thêm/styles.css` | `Bản mẫu:Xem thêm`: dòng dẫn sang bài liên quan |
-| `wiki/Bản_mẫu/Ô_chủ_đề.wikitext` | `Bản mẫu:Ô chủ đề`: ô có ảnh trên Trang Chính |
+| `wiki/Bản_mẫu/Ô_chủ_đề.wikitext` | `Bản mẫu:Ô chủ đề`: ô có ảnh trên Trang Chính (chưa có ảnh thì hiện ô trống cùng cỡ) |
+| `wiki/Bản_mẫu/Bìa_tập.wikitext` | `Bản mẫu:Bìa tập`: một bìa trong "25 năm học", dùng `Tập tin:Bìa Tập N.webp` nếu có, không thì hiện số tập trên nền màu in |
 | `wiki/Bản_mẫu/Trang_Chính/styles.css` | `Bản mẫu:Trang Chính/styles.css` (TemplateStyles) |
-| `wiki/Bản_mẫu/Ảnh_thẻ.wikitext` | `Bản mẫu:Ảnh thẻ`: một ảnh trong "Ảnh tập thể" (chưa có ảnh thì hiện chữ cái đầu tên riêng) |
+| `wiki/Bản_mẫu/Ảnh_thẻ.wikitext` | `Bản mẫu:Ảnh thẻ`: một ảnh trong "Ảnh tập thể" (chưa có ảnh hoặc tệp chưa tải lên thì hiện chữ cái đầu tên riêng) |
 | `wiki/Bản_mẫu/Thoại.wikitext` + `Thoại/styles.css` | `Bản mẫu:Thoại`: bong bóng thoại kiểu truyện tranh |
 | `wiki/Bản_mẫu/Tiết_lộ.wikitext` + `Tiết_lộ/styles.css` | `Bản mẫu:Tiết lộ`: cảnh báo tiết lộ có "con dấu" đỏ |
 | `wiki/Bản_mẫu/Hộp_điều_hướng.wikitext` + `Hộp_điều_hướng/styles.css` | `Bản mẫu:Hộp điều hướng`: navbox (tối đa 6 nhóm) |

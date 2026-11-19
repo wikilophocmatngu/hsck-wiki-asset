@@ -8,10 +8,10 @@ Chưa có bot password, nên chưa có trang nào được đăng lên wiki. M�
 
 - Đây là wiki tưởng niệm. Bộ truyện dừng ở Tập 25; Tập 26 chỉ là chuyện fan kể với nhau, trên wiki gọi là "Truyền thuyết Tập 26".
 - Skin: Vector 2010 cho máy tính, Minerva cho di động. CSS chia theo cách của Weird Gloop: `Common.css` cho cả hai, `Vector.css` chỉ máy tính, `Minerva.css` chỉ di động, CSS của bản mẫu nằm trong TemplateStyles. Bỏ những gì Miraheze không có (GloopThemes, ThemeToggle…).
-- Trang Chính theo kiểu Kỷ yếu (phương án D). Các bản mẫu không dính tới Trang Chính được giữ nguyên.
-- Màu dùng một bộ biến `--hs-*` (OKLCH) trong `Common.css`; bảng tra ở README. Bộ `--hsck-*` cũ đã bỏ, trừ hai biến cục bộ cho header trong `Minerva.css`.
-- Phông tiêu đề: Bricolage Grotesque qua Google Fonts (CSP của Miraheze cho phép).
-- Nền Vector đang là màu `--hs-desk`. Song Ngư sẽ tự đưa ảnh nền sau; chỗ thay có ghi chú trong `Vector.css`. Ảnh phải tải lên wiki vì CSP chặn ảnh ngoài.
+- Trang Chính theo kiểu Kỷ yếu (phương án D). Tháng 11/2026 dựng lại toàn bộ giao diện ("kỷ yếu hiện đại"): bỏ vải xanh, giấy kem, kẻ dòng, gáy so le, chữ ký nghiêng; khung trung tính, màu nhấn xanh lá bảng, chi tiết riêng là vệt bút dạ quang; màu mạnh dồn vào bìa Trang Chính và dãy 25 bìa tập. Giữ nguyên các mục và thứ tự mục.
+- Màu dùng một bộ biến `--hs-*` trong `Common.css`; bảng tra ở README. Bộ `--hsck-*` cũ đã bỏ hẳn.
+- Phông: Be Vietnam Pro (400/500/600) cho toàn bộ chữ, qua Google Fonts (CSP của Miraheze cho phép).
+- Nền Vector đang là màu `--hs-bg`. Song Ngư sẽ tự đưa ảnh nền sau; chỗ thay có ghi chú trong `Vector.css`. Ảnh phải tải lên wiki vì CSP chặn ảnh ngoài.
 - "Demo" nghĩa là gửi ảnh chụp, không đăng thử lên wiki.
 
 ## Khảo sát độc giả (79 câu trả lời)
@@ -30,7 +30,7 @@ Chưa có bot password, nên chưa có trang nào được đăng lên wiki. M�
 | `wiki/` | Bản dùng thật: MediaWiki CSS, Sidebar, Trang Chính, bản mẫu. Mọi CSS TemplateStyles đã qua bộ lọc sanitized-css. |
 | `demo/` | Trang nhân vật mẫu để chụp ảnh. |
 | `drafts/trang-chinh/` | Ba phương án Trang Chính không chọn: A (sơ đồ lớp), B (bảng tin), C (bài kiểm tra). |
-| `drafts/ban-mau/` | Thẻ học sinh, Quan hệ. Vẫn dùng biến `--hsck-*` cũ, cần đổi sang `--hs-*` trước khi dùng. |
+| `drafts/ban-mau/` | Thẻ học sinh, Quan hệ. Vẫn dùng biến `--hsck-*` cũ và giao diện kỷ yếu cũ, cần làm lại theo bộ `--hs-*` mới trước khi dùng. |
 | `drafts/nen-vector/` | Ba nền Vector đã thử: ô ly, bảng đen, trời mây. |
 | `tools/` | Dựng và chụp ảnh demo. |
 
@@ -56,7 +56,8 @@ Lưu ý kỹ thuật:
 - `Project:Ban cán sự`
 - `Truyền thuyết Tập 26`
 - `Tập 1` đến `Tập 25`
-- `Bản mẫu:Ảnh thẻ`, `Bản mẫu:Trang Chính/styles.css` cùng các bản mẫu trong `wiki/`
+- `Bản mẫu:Ảnh thẻ`, `Bản mẫu:Bìa tập`, `Bản mẫu:Trang Chính/styles.css` cùng các bản mẫu trong `wiki/`
+- Ảnh cho Trang Chính (đều tự có chỗ trống khi chưa tải): `Bìa Trang Chính.webp`, `Bìa Tập 1.webp` … `Bìa Tập 25.webp`, `Ô <chủ đề>.webp`, `Khoảnh khắc 1–3.webp`, `Chân dung <tên>.webp`
 
 ## Câu hỏi còn mở
 

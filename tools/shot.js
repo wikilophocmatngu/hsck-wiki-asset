@@ -52,6 +52,8 @@ const shots = [
       if (logo && imgs['HSCK-logo-1x.png']) logo.style.backgroundImage = `url(${imgs['HSCK-logo-1x.png']})`;
       const bb = document.querySelector('.branding-box a');
       if (bb && imgs['HSCK-wordmark.png']) bb.innerHTML = `<img src="${imgs['HSCK-wordmark.png']}" width="89" height="48" alt="Wiki Học Sinh Chân Kinh" style="display:block">`;
+      // Gỡ CSS site đang chạy trên wiki (MediaWiki:Common.css, Vector.css…) để ảnh chỉ phản ánh CSS trong repo
+      document.querySelectorAll('link[rel=stylesheet][href*="site.styles"], style[data-mw-site]').forEach(l => l.remove());
       const s = document.createElement('style'); s.textContent = styles; document.head.appendChild(s);
       if (window.mw && data.modulestyles) mw.loader.load(data.modulestyles);
       if (window.mw && data.modules) mw.loader.using(data.modules).then(() => mw.hook('wikipage.content').fire($(content)));

@@ -7,62 +7,37 @@
                                                                                                                 
 */
 
-/* ===== Tokens: liên kết & nút chính theo màu "mực" của bìa truyện ===== */
+/* ===== Tokens của Minerva (Codex): liên kết và nút chính màu xanh lá bảng, nền là giấy của wiki ===== */
 :root, .notheme, .skin-invert {
-	--background-color-base: var(--hs-paper, oklch(98.5% 0.012 80));   /* giấy kem như Vector; chế độ tối giữ nền của skin */
-	--color-progressive: #1d4f9c;              /* 7.9:1 trên #fff */
-	--color-progressive--hover: #2a63ba;
-	--color-progressive--active: #143a74;
-	--background-color-progressive: #1d4f9c;
-	--border-color-progressive: #1d4f9c;
-	--hsck-header-bg: var(--hs-blue, oklch(44% 0.137 259));   /* vải bìa kỷ yếu */
-	--hsck-header-fg: var(--hs-chalk, oklch(95.7% 0.015 94));  /* 7.4:1 */
+	--background-color-base: var(--hs-paper, #ffffff);
+	--color-progressive: #0f7a4a;              /* 5.4:1 trên #fff */
+	--color-progressive--hover: #0b6640;
+	--color-progressive--active: #0a5434;
+	--background-color-progressive: #0f7a4a;
+	--border-color-progressive: #0f7a4a;
 }
 html.skin-theme-clientpref-night {
-	--color-progressive: #7fb8f0;              /* 8.8:1 trên #101418 */
-	--color-progressive--hover: #a3ccf5;
-	--color-progressive--active: #5d9fe0;
-	--background-color-progressive: #7fb8f0;
-	--border-color-progressive: #7fb8f0;
-	--hsck-header-bg: oklch(30% 0.09 259);
-	--hsck-header-fg: #eaecf0;                 /* 10.6:1 */
+	--color-progressive: #5cc98f;              /* 8.5:1 trên #1a1917 */
+	--color-progressive--hover: #7ad6a5;
+	--color-progressive--active: #48b57c;
+	--background-color-progressive: #5cc98f;
+	--border-color-progressive: #5cc98f;
 }
 @media screen and (prefers-color-scheme: dark) {
 	html.skin-theme-clientpref-os {
-		--color-progressive: #7fb8f0;
-		--color-progressive--hover: #a3ccf5;
-		--color-progressive--active: #5d9fe0;
-		--background-color-progressive: #7fb8f0;
-		--border-color-progressive: #7fb8f0;
-		--hsck-header-bg: oklch(30% 0.09 259);
-		--hsck-header-fg: #eaecf0;
+		--color-progressive: #5cc98f;
+		--color-progressive--hover: #7ad6a5;
+		--color-progressive--active: #48b57c;
+		--background-color-progressive: #5cc98f;
+		--border-color-progressive: #5cc98f;
 	}
 }
 
-/* ===== Header ===== */
-/* Ảnh minh họa ở header như OSRS Wiki, phủ xanh mực để biểu tượng phấn trắng đủ tương phản */
+/* ===== Header: cùng nền giấy với trang, ngăn bằng nét mảnh ===== */
 .header-container.header-chrome {
-	background-color: var(--hsck-header-bg);
-	background-image:
-		linear-gradient(oklch(25% 0.09 259 / 0.65), oklch(25% 0.09 259 / 0.65)),
-		url("https://hsck.lophocmatngu.wiki/wiki/Special:Redirect/file/Đầu_trang.webp");
-	background-position: center 35%;
-	background-size: cover;
-	border-bottom: 3px solid var(--hs-peach, oklch(79% 0.132 62));
+	border-bottom: 1px solid var(--hs-rule, rgb(31 29 26 / 0.12));
+	background: var(--hs-paper, #ffffff);
 	box-shadow: none;
-}
-.minerva-header .branding-box a,
-.header-container .minerva-header .cdx-button {
-	color: var(--hsck-header-fg);
-}
-/* Biểu tượng Minerva là ảnh mask tô bằng background-color (mặc định --color-subtle) */
-.header-container .minerva-header .cdx-button .minerva-icon {
-	background-color: var(--hsck-header-fg);
-}
-/* Menu trượt & menu thành viên nằm bên trong header: trả lại màu chữ gốc */
-.minerva-header #mw-mf-page-left,
-.minerva-header #p-personal {
-	color: var(--color-base);
 }
 /* Chế độ tối của Minerva đảo màu wordmark (invert + hue-rotate) cho logo chữ đen; logo HSCK có màu nên giữ nguyên */
 html.skin-theme-clientpref-night .branding-box img {
@@ -74,56 +49,35 @@ html.skin-theme-clientpref-night .branding-box img {
 	}
 }
 .minerva-header .branding-box a {
-	font-family: var(--hs-font-display, sans-serif);
-	font-weight: 700;
-	letter-spacing: -0.01em;
+	color: var(--hs-ink, #1f1d1a);
+	font-family: var(--hs-font, sans-serif);
+	font-weight: 600;
 }
 
-/* ===== Menu trượt: trang giấy có lề đỏ ===== */
+/* ===== Menu trượt ===== */
 #mw-mf-page-left {
-	background:
-		linear-gradient(90deg, transparent 0.25rem, var(--hs-margin, oklch(78% 0.09 20)) 0.25rem, var(--hs-margin, oklch(78% 0.09 20)) calc(0.25rem + 2px), transparent calc(0.25rem + 2px)),
-		var(--hs-paper, oklch(98.5% 0.012 80));
+	background: var(--hs-paper, #ffffff);
 }
 /* Minerva tô trắng từng mục bằng #mw-mf-page-left ul .toggle-list-item: cùng selector, nạp sau thì thắng */
 #mw-mf-page-left ul .toggle-list-item {
 	background-color: transparent;
 }
-#mw-mf-page-left .hlist {
-	padding-left: 1rem;                /* đưa liên kết cuối menu ra khỏi lề đỏ */
-}
 
 /* ===== Nội dung ===== */
-.skin-minerva #firstHeading {
-	color: var(--hs-accent, oklch(44% 0.137 259));
-}
-
-/* ===== Riêng Minerva: tiêu đề mục là tab mục lục kỷ yếu (vẫn gập/mở được) ===== */
-/* Minerva mặc định xếp các mục gập sát nhau, chỉ cách bằng một nét kẻ; tab có nền thì cần khoảng hở.
-   Gập: tab tròn đủ bốn góc. Mở (MobileFrontend thêm .open-block): chỉ bo trên, nối với nội dung bên dưới. */
 .skin-minerva .mw-parser-output .mw-heading2 {
-	margin-top: 0.75rem;
-	padding: 0.2rem 0.6rem;
-	border-bottom: 2px solid var(--hs-peach, oklch(79% 0.132 62));
-	border-radius: 0.5rem;
-	background: var(--hs-soft, oklch(95% 0.02 230));
-}
-.skin-minerva .mw-parser-output .mw-heading2.open-block {
-	border-radius: 0.5rem 0.5rem 0 0;
+	border-bottom-color: var(--hs-rule, rgb(31 29 26 / 0.12));
 }
 
-/* ===== Chân trang: bìa sau bằng vải xanh ===== */
+/* ===== Chân trang: phẳng, chữ phụ ===== */
 .minerva-footer {
-	isolation: isolate;                /* chế độ tối của Minerva đặt logo footer z-index: -100; giữ nó trên nền vải */
-	border-top: 3px solid var(--hs-peach, oklch(79% 0.132 62));
-	background-color: var(--hs-blue, oklch(44% 0.137 259));
-	background-image: repeating-linear-gradient(45deg, transparent 0, transparent 3px, var(--hs-cloth-weave, oklch(40% 0.12 259 / 0.35)) 3px, var(--hs-cloth-weave, oklch(40% 0.12 259 / 0.35)) 4px);
+	isolation: isolate;                /* chế độ tối của Minerva đặt logo footer z-index: -100 */
+	border-top: 1px solid var(--hs-rule, rgb(31 29 26 / 0.12));
+	background: var(--hs-bg, #f7f6f3);
 }
-/* Ghi chú bản quyền và liên kết pháp lý giữ nguyên, chỉ đổi màu cho đọc được trên nền vải */
 .minerva-footer,
 .minerva-footer a,
 .minerva-footer .minerva-footer-logo {
-	color: var(--hs-chalk, oklch(95.7% 0.015 94));
+	color: var(--hs-ink-2, #5a554d);
 }
 /* Tên wiki một hàng riêng, biểu tượng ($wgFooterIcons) xếp bên dưới, tự xuống dòng và căn giữa thay vì cuộn ngang.
    li "supportedby" chứa hai nút: display: contents để cả năm nút cùng là ô của một hàng flex. */
@@ -136,18 +90,17 @@ html.skin-theme-clientpref-night .branding-box img {
 .minerva-footer #footer-icons {
 	flex-wrap: wrap;
 	justify-content: center;
-	gap: 0.375rem;
+	gap: 0.5rem;
 }
 .minerva-footer #footer-icons > li {
 	display: contents;
 }
-/* Thanh "Xem lịch sử sửa đổi" nằm trong footer: giữ nền giấy như trang */
 .minerva-footer .last-modified-bar {
-	background: var(--hs-paper, oklch(98.5% 0.012 80));
-	color: var(--hs-ink, oklch(24% 0.012 250));
+	background: var(--hs-paper, #ffffff);
+	color: var(--hs-ink-2, #5a554d);
 }
 .minerva-footer .last-modified-bar a {
-	color: var(--hs-ink, oklch(24% 0.012 250));
+	color: var(--hs-ink-2, #5a554d);
 }
 
 /* ===== Menu trượt: hai nhóm của gadget MinervaMenu =====
