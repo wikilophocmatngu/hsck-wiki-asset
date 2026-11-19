@@ -80,7 +80,7 @@ break=no
 {{Ảnh thẻ|Đẫm Mỹ Lệ|Mỹ Lệ|hình=HSCK NhanVat MyLe.jpg}}
 {{Ảnh thẻ|Cao Như Ngang|Như Ngang|hình=HSCK NhanVat CaoNhuNgang.jpg}}
 {{Ảnh thẻ|Minh Tuệ|hình=HSCK NhanVat MinhTue.jpg}}
-{{Ảnh thẻ|Thường Hay Mơ|Thường|hình=Chân dung Thường.webp}}
+{{Ảnh thẻ|Thường Hay Mơ|Thường|hình=HSCK Art NamNgu BongThoai.jpg|vị trí=phải}}
 {{Ảnh thẻ|Ngọc Bất Trác|Ngọc|hình=Chân dung Ngọc.webp}}
 {{Ảnh thẻ|Thù Văn Toán|Toán|hình=HSCK NhanVat ThuVanToan.jpg}}
 {{Ảnh thẻ|Trâu Chậm Phát|Phát|hình=HSCK NhanVat ChauChamPhat.jpg}}

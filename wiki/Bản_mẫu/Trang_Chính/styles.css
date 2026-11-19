@@ -404,7 +404,9 @@
 	font-size: 1.75rem;
 	font-weight: 500;
 }
+.ky-photo > span,                     /* <span typeof="mw:File"> bọc ảnh */
 .ky-photo a {
+	display: block;
 	width: 100%;
 	height: 100%;
 }
@@ -414,6 +416,7 @@
 	object-fit: cover;
 	object-position: top;              /* tranh nhân vật toàn thân: giữ phần đầu */
 }
+.ky-photo--phai img { object-position: 78% 30%; }   /* Ảnh thẻ|vị trí=phải */
 
 /* ===== Lưu bút ===== */
 .ky-guest > p {

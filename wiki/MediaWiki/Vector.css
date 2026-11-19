@@ -281,4 +281,13 @@ body.skin-vector-legacy #p-hsck-discord li a::before {
 	body.skin-vector-legacy .mw-body .magnify a {
 		filter: invert(1);
 	}
+	/* Nút OOUI không viền: OOUI trên Vector 2010 không có chế độ tối, chữ #202122 và biểu tượng đen chìm vào nền.
+	   Nút có cờ progressive/destructive giữ màu riêng; nút có viền vẫn nền trắng nên không cần đổi. */
+	body.skin-vector-legacy .oo-ui-buttonElement-frameless.oo-ui-widget-enabled:not(.oo-ui-flaggedElement-progressive):not(.oo-ui-flaggedElement-destructive) > .oo-ui-buttonElement-button {
+		color: var(--hs-ink, #efebe4);
+	}
+	body.skin-vector-legacy .oo-ui-buttonElement-frameless.oo-ui-widget-enabled:not(.oo-ui-flaggedElement-progressive):not(.oo-ui-flaggedElement-destructive) > .oo-ui-buttonElement-button > .oo-ui-iconElement-icon,
+	body.skin-vector-legacy .oo-ui-buttonElement-frameless.oo-ui-widget-enabled:not(.oo-ui-flaggedElement-progressive):not(.oo-ui-flaggedElement-destructive) > .oo-ui-buttonElement-button > .oo-ui-indicatorElement-indicator {
+		filter: invert(1);
+	}
 }
